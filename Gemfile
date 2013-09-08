@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+gem 'builder'
+gem 'nanoc'
+gem 'nokogiri'
+gem 'pygments.rb'
+gem 'rdiscount'
+gem 'rubypants'
+gem 'sass'
+gem 'systemu'
