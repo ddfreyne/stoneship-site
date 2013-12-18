@@ -38,15 +38,13 @@
         </script>
     </head>
     <body>
-        <div id="sidebar">
-            <ol id="nav">
-                <li><%= link_to_unless_current('home',       '/'           ) %></li>
-                <li><%= link_to_unless_current('about',      '/about/'     , :rel => 'me') %></li>
-                <li><%= link_to_unless_current('essays',     '/essays/'    ) %></li>
-                <li><%= link_to_unless_current('software',   '/software/'  ) %></li>
-                <li><%= link_to_unless_current('reviews',    '/reviews/'   ) %></li>
-            </ol>
-        </div>
+        <ol id="nav">
+            <li><%= link_to_unless_current('home',       '/'           ) %></li>
+            <li><%= link_to_unless_current('about',      '/about/'     , :rel => 'me') %></li>
+            <li><%= link_to_unless_current('essays',     '/essays/'    ) %></li>
+            <li><%= link_to_unless_current('software',   '/software/'  ) %></li>
+            <li><%= link_to_unless_current('reviews',    '/reviews/'   ) %></li>
+        </ol>
         <%= yield %>
         <div id="footer">
             <div class="wrapper">

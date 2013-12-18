@@ -1,5 +1,5 @@
 ---
-version:      "45"
+version:      "46"
 is_hidden:    true
 ---
 
@@ -55,6 +55,8 @@ $font-nav-title:   "PT Sans", Helvetica, Arial, sans-serif;
 * {
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
 }
 
 a img {
@@ -75,16 +77,15 @@ body {
     line-height: 20px;
 
     padding: 20px;
-    margin: 0;
+    margin: 0 auto;
 
-    width: 720px;
+    width: 560px;
 }
 
 /** ========== HEADER ========== */
 
 #header {
-    padding: 0 0 0 160px;
-    margin-right: -60px;
+    padding-bottom: 20px;
 }
 
 #header h1 {
@@ -94,68 +95,66 @@ body {
     font-weight: normal;
     font-size: 39px;
 
-    line-height: 40px;
+    text-align: center;
 
-    margin:  0    0 40px 0;
-    padding: 40px 0 0    0;
+    line-height: 40px;
 }
 
-/** ========== SIDEBAR ========== */
+/** ========== NAVIGATION ========== */
 
-#sidebar {
-    float: left;
+#nav {
+    text-align: center;
 
-    text-align: right;
-
-    position: fixed;
-
-    top: 140px;
-    left: 20px;
-
-    width: 120px;
+    padding: 0 0 40px 0;
 }
 
 /* navigation */
 
-#sidebar li {
+#nav li {
     font-family: $font-nav;
     font-size: 13px;
     font-weight: bold;
 
     letter-spacing: 1px;
 
+    display: inline;
+
     text-transform: uppercase;
 
     list-style-type: none;
 }
 
-#sidebar span.active {
+#nav li + li:before {
+    content: " - ";
+}
+
+#nav span.active {
     color: $color-text-sidebar-current;
 }
 
 /* links */
 
-#sidebar a {
+#nav a {
     text-decoration: none;
 }
 
-#sidebar a:link,
-#sidebar a:visited {
+#nav a:link,
+#nav a:visited {
     color: $color-text-sidebar-link;
 }
 
-#sidebar a:hover {
+#nav a:hover {
     color: $color-text-sidebar-hover;
 }
 
-#sidebar a:active {
+#nav a:active {
     color: $color-text-sidebar-active;
 }
 
 /** ========== CONTENT ========== */
 
 #content {
-    margin-left: 160px;
+    padding-top: 20px;
 }
 
 /* headers */
@@ -212,6 +211,13 @@ body {
     letter-spacing: 3px;
 
     text-transform: uppercase;
+}
+
+#content p.meta-big {
+    margin-top: -20px;
+    padding-bottom: 20px;
+
+    text-align: center;
 }
 
 #content .note {
@@ -396,8 +402,8 @@ body {
 
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-    width: 500px;
-    
+    width: 520px;
+
     margin: 0 0 20px 0;
     padding: 10px;
 }
@@ -511,9 +517,7 @@ body {
 /** ========== FOOTER ========== */
 
 #footer {
-    clear: both;
-
-    padding: 100px 0 20px 160px;
+    margin-top: 60px;
 }
 
 /* text */
