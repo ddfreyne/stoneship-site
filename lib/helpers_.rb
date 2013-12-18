@@ -1,9 +1,9 @@
 # Helpers - built-in
-include Nanoc3::Helpers::Blogging
-include Nanoc3::Helpers::LinkTo
-include Nanoc3::Helpers::HTMLEscape
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::XMLSitemap
+include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::HTMLEscape
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::XMLSitemap
 
 # Helpers - custom
 include StoneshipSite::Helpers::HTMLSitemap

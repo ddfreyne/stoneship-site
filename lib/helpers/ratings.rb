@@ -1,19 +1,15 @@
 module StoneshipSite::Helpers
-  
+
   module Ratings
 
-    def rating_code_for(item)
-      full_star  = '&#9733;'
-      empty_star = '&#9734;'
+    def rating_stars_for(item)
+      full_star  = '<span class="full">&#9733;</span>'
+      empty_star = '<span class="empty">&#9734;</span>'
 
-      code = ''
-
-      code << %[<abbr class="rating" title="#{item[:rating]}">]
-      code << '<span class="full">'  + (full_star  * (  item[:rating])) + '</span>'
-      code << '<span class="empty">' + (empty_star * (5-item[:rating])) + '</span>'
-      code << '</abbr>'
-
-      code
+      '<span class="rating">' +
+      (full_star  * item[:rating]) +
+      (empty_star * (5-item[:rating])) +
+      '</span>'
     end
 
   end
