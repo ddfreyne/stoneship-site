@@ -1,5 +1,5 @@
 ---
-version:      "46"
+version:      "47"
 is_hidden:    true
 ---
 
@@ -79,7 +79,7 @@ body {
     padding: 20px;
     margin: 0 auto;
 
-    width: 560px;
+    max-width: 560px;
 }
 
 /** ========== HEADER ========== */
