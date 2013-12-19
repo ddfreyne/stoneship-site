@@ -41,10 +41,19 @@ preprocess do
     end
   end
 
+  def assign_cachebuster_id
+    parts = %w( screen print )
+    parts.each do |part|
+      stylesheet = @items["/assets/style/#{part}/"]
+      stylesheet[:cbid] = stylesheet.raw_content.checksum
+    end
+  end
+
   hide_assets
   generate_quick_reviews
   delete_drafts
   convert_dates
+  assign_cachebuster_id
 
 end
 
@@ -108,8 +117,8 @@ route '/sitemap_xml/' do
 end
 
 route '/assets/*' do
-  version_part = item[:version] ? '-v' + item[:version].to_s : ''
-  item.identifier[0..-2] + version_part + '.' + item[:extension]
+  cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
+  item.identifier.chop + cbid_part + '.' + item[:extension]
 end
 
 route '*', :rep => :raw do
