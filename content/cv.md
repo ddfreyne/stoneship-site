@@ -12,6 +12,12 @@ I enjoy committing myself with a team of talented co-workers, getting done what 
 Experience
 ----------
 
+### Software Engineer, SoundCloud
+
+Period: June 2013 - …
+
+This description intentionally left blank.
+
 ### Software Engineer, MediaGeniX NG
 
 Period: September 2010 - May 2013
@@ -91,10 +97,10 @@ Skills
 
 ### Spoken languages
 
-* Dutch: native
+* Dutch: fluent (native)
 * English: fluent
-* German: basic conversational
-* French: basic conversational
+* German: good
+* French: basic
 
 ### Programming languages
 
