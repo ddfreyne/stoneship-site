@@ -464,7 +464,8 @@ body {
 }
 
 #content code .c,
-#content code .cm {
+#content code .cm,
+#content code .c1 {
     /* comment */
     color: #666;
     background: rgba(0, 0, 0, 0.1);

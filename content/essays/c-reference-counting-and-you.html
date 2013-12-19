@@ -18,22 +18,22 @@ has_code:   true
 
 	<p>For this example, I've written a very simple dynamic array. (A dynamic array automatically expands when adding new elements, unlike a normal C array.) Here's the interface:</p>
 
-	<pre><code class="language-c">/* array type */
+	<pre><code class="language-c">// array type
 typedef struct array_s array_t;
 
-/* creates an array */
+// creates an array
 array_t *array_create(void);
 
-/* deallocates an array */
+// deallocates an array
 void array_destroy(array_t *a_array);
 
-/* adds a pointer to the array */
+// adds a pointer to the array
 void array_add(array_t *a_array, void *a_data);
 
-/* gets the pointer at the given index */
+// gets the pointer at the given index
 void *array_get(array_t *a_array, unsigned a_index);
 
-/* removes the pointer at the given index */
+// removes the pointer at the given index
 void array_remove(array_t *a_array, unsigned a_index);</code></pre>
 
 	<p>For flexibility reasons, this array only holds pointers in its internal storage. It doesn't do anything with them, though &mdash; it doesn't allocate memory for the elements we add to it, and obviously it doesn't free any memory either.</p>
@@ -77,7 +77,7 @@ void array_remove(array_t *a_array, unsigned a_index);</code></pre>
     char     *first_name;
     char     *last_name;
 
-    /* ... */
+    // ...
 
     unsigned  reference_count;
 }</code></pre>
@@ -86,25 +86,25 @@ void array_remove(array_t *a_array, unsigned a_index);</code></pre>
 
 	<p>A nicer solution is introducing a new object structure, which will wrap around existing objects. This new <code>objwrapper_t</code> type will require only one retain and release function, and it's much nicer to work with in arrays as well. Here's the interface:</p>
 
-	<pre><code class="language-c">/* object wrapper type */
+	<pre><code class="language-c">// object wrapper type
 typedef struct objwrapper_s objwrapper_t;
 
-/* object wrapper destructor type */
+// object wrapper destructor type
 typedef void (*objwrapper_destructor_t)(void *a_data);
 
-/* creates an object wrapper */
+// creates an object wrapper
 objwrapper_t *objwrapper_create(
     void *a_data,
     objwrapper_destructor_t a_destructor
 );
 
-/* returns the object in the object wrapper */
+// returns the object in the object wrapper
 void *objwrapper_get_object(objwrapper_t *a_objwrapper);
 
-/* retains the object inside a wrapper */
+// retains the object inside a wrapper
 void objwrapper_retain(objwrapper_t *a_objwrapper);
 
-/* releases the object inside a wrapper */
+// releases the object inside a wrapper
 void objwrapper_release(objwrapper_t *a_objwrapper);</code></pre>
 
 	<p>The <code>struct objwrapper_s</code> contains a pointer to the actual object, as well as the destructor and, obviously, the reference count:</p>
@@ -134,22 +134,22 @@ void objwrapper_release(objwrapper_t *a_objwrapper);</code></pre>
 
 	<p>The array implementation won't change too much. Most importantly, arrays will keep a collection of <em>object wrappers</em>, not pointers, in memory; the interface will need to be changed to reflect this. Here's the new one:</p>
 
-	<pre><code class="language-c">/* array type */
+	<pre><code class="language-c">// array type
 typedef struct array_s array_t;
 
-/* creates an array */
+// creates an array
 array_t *array_create(void);
 
-/* deallocates an array */
+// deallocates an array
 void array_destroy(array_t *a_array);
 
-/* adds an object wrapper to the array */
+// adds an object wrapper to the array
 void array_add(array_t *a_array, objwrapper_t *a_objwrapper);
 
-/* gets the object wrapper at the given index */
+// gets the object wrapper at the given index
 objwrapper_t *array_get(array_t *a_array, unsigned a_index);
 
-/* removes the object wrapper at the given index */
+// removes the object wrapper at the given index
 void array_remove(array_t *a_array, unsigned a_index);</code></pre>
 
 	<p>Here's what these functions do to the object wrappers, under the hood:</p>
