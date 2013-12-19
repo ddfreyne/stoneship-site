@@ -107,16 +107,18 @@ Skills
 * Ruby: Expert
 * C: Expert
 * Smalltalk: Expert
+* Clojure: Intermediate
 * Objective-C: Intermediate
 * Go: Intermediate
 * Java: Intermediate
 * JavaScript: Intermediate
+* Scala: Beginner
 
 ### Technologies
 
 In no particular order:
 
-Ruby, Ruby on Rails, Sinatra, MySQL, PostgreSQL, Oracle, Subversion, git, Mercurial, HTTP, CSS, JavaScript, Microformats, Mac OS X, Windows, Linux, Unix, jQuery, …
+Ruby on Rails, Sinatra, MySQL, PostgreSQL, Oracle RDBMS, Subversion, git, Mercurial, HTTP, CSS, JavaScript, Microformats, Mac OS X, Windows, Linux, Unix, jQuery, Hadoop, …
 
 Miscellaneous
 -------------
