@@ -1,7 +1,7 @@
 ---
 markdown:         true
 kind:             essay
-title:            "On Requiring Parens in Ruby"
+title:            "On Requiring Parens in Ruby"
 excerpt:          "I have been rethinking my idea of requiring parentheses in Ruby for a while, and I've come to the conclusion that requiring them is the wrong answer to a problem I didn't even explain well."
 oneliner:         "Errata."
 published_on:     "2008-01-29"
@@ -11,7 +11,7 @@ tags:             [ 'ruby' ]
 
 My criticism on the Ruby programming language (no longer available) wasn't as well-received as I had hoped. Especially the idea of requiring parentheses in method calls got [loads of negative feedback](http://reddit.com/r/programming/info/65g1r/comments/).
 
-I have been rethinking the idea for a while, and I've come to the conclusion that requiring parentheses is the wrong answer to a problem I didn't even explain well. 
+I have been rethinking the idea for a while, and I've come to the conclusion that requiring parentheses is the wrong answer to a problem I didn't even explain well.
 
 ## Making Ruby Ugly
 

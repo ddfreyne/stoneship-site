@@ -1,7 +1,7 @@
 ---
 markdown:         true
 kind:             essay
-title:            "Myst Online and Me"
+title:            "Myst Online and Me"
 excerpt:          "When I started playing Myst Online: Uru Live, I was very excited. After playing the game for over a year, my enthousiasm has mostly disappeared. Here's why I don’t like playing it much anymore."
 oneliner:         "on Uru Live's future"
 published_on:     "2008-01-14 14:00:00"
@@ -49,7 +49,7 @@ Unfortunately, I don't think there is anything you can do about that. Except for
 
 ### It gets dull
 
-It doesn't take a long time before you've solved all puzzles and visited all ages. Adventure games like Myst don't have a great replay value: once you've solved a puzzle, you never forget how to solve it. In other words, replaying is dull because it's reduced to routine. 
+It doesn't take a long time before you've solved all puzzles and visited all ages. Adventure games like Myst don't have a great replay value: once you've solved a puzzle, you never forget how to solve it. In other words, replaying is dull because it's reduced to routine.
 
 Myst games don't have any monsters to kill. There are no quests to take. You don't level up. You can't keep on playing just to get more experience and more money so you can buy better weapons so you can kill stronger monsters, so you can get more experience and more money, et cetera.
 
