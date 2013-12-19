@@ -467,46 +467,46 @@ body {
 #content code .cm {
     /* comment */
     color: #666;
-    font-style: italic;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 #content code .s,
 #content code .s1,
 #content code .sr {
     /* string */
-    color: #309;
+    color: #06c;
 }
 
 #content code .mi,
 #content code .ss,
 #content code .nb {
     /* integer, symbol, builtin */
-    color: #903;
+    color: #c30;
 }
 
 #content code .nf {
     /* function */
     font-weight: bold;
-    color: #930;
+    color: #c60;
 }
 
 #content code .kt,
 #content code .nc,
 #content code .no {
     /* type, class */
-    color: #930;
+    color: #c90;
 }
 
 #content code .n,
 #content code .vi {
     /* variable */
-    color: #390;
+    color: #096;
 }
 
 #content code .k,
 #content code .kp {
     /* keyword */
-    color: #039;
+    color: #06c;
 }
 
 /** ========== FOOTER ========== */
