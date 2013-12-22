@@ -1,15 +1,14 @@
 $color-x-background: lighten(#ecdebf, 10%);
 $color-x-text1:      #5d5350;
 $color-x-text2:      #999a8b;
-$color-x-strong1:    #db793e;
-$color-x-strong2:    #7b6356;
+$color-x-strong:     #db793e;
 
 $color-background:              $color-x-background;
-$color-site-name:               $color-x-strong1;
+$color-site-name:               $color-x-strong;
 
-$color-text-h1:                 $color-x-strong1;
-$color-text-h2:                 $color-x-strong1;
-$color-text-h3:                 $color-x-strong1;
+$color-text-h1:                 $color-x-strong;
+$color-text-h2:                 $color-x-strong;
+$color-text-h3:                 $color-x-strong;
 
 $color-text:                    $color-x-text1;
 $color-text-blockquote:         $color-x-text1;
@@ -17,26 +16,27 @@ $color-text-note:               $color-x-text1;
 $color-text-pre:                $color-x-text1;
 $color-text-code-output:        $color-x-text1;
 $color-text-meta:               $color-x-text2;
-$color-text-strong:             $color-x-strong1;
-$color-text-sidebar-current:    $color-x-strong1;
+$color-text-strong:             $color-x-strong;
+$color-text-sidebar-current:    $color-x-strong;
 $color-text-footer:             $color-x-text2;
 $color-text-rating:             $color-x-text1;
 $color-id-key: $color-x-text2;
 $color-id-value: $color-x-text1;
 $color-text-link:               $color-x-text1;
-$color-text-link-hover:         $color-x-strong2;
+$color-text-link-hover:         $color-x-strong;
 $color-text-link-active:        #000;
-$color-text-current:            $color-x-strong1;
+$color-text-current:            $color-x-strong;
 $color-text-list:               $color-x-text1;
-$color-text-sidebar-link:       $color-x-text2;
-$color-text-sidebar-hover:      $color-x-strong2;
-$color-text-sidebar-active:     $color-x-strong2;
+$color-text-sidebar-link:       $color-x-text1;
+$color-text-sidebar-separator:  $color-x-text2;
+$color-text-sidebar-hover:      $color-x-strong;
+$color-text-sidebar-active:     $color-x-strong;
 
 $color-text-footer-link:        $color-x-text2;
-$color-text-footer-link-hover:  $color-x-strong2;
-$color-text-footer-link-active: $color-x-strong2;
+$color-text-footer-link-hover:  $color-x-strong;
+$color-text-footer-link-active: $color-x-strong;
 
-$color-border-note:             $color-x-strong1;
+$color-border-note:             $color-x-strong;
 $color-border-blockquote:       $color-x-text2;
 $color-border-pre:              $color-x-text2;
 $color-border-footer:           $color-x-text2;
@@ -107,20 +107,23 @@ body {
 
 #nav li {
     font-family: $font-nav;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
-
-    letter-spacing: 1px;
+    line-height: 20px;
 
     display: inline;
-
-    text-transform: uppercase;
 
     list-style-type: none;
 }
 
 #nav li + li:before {
-    content: " - ";
+    content: "/";
+
+    padding: 0 10px;
+
+    font-weight: normal;
+
+    color: $color-text-sidebar-separator;
 }
 
 #nav span.active {
