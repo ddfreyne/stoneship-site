@@ -100,7 +100,9 @@ compile '*' do
 
   if item[:markdown]
     filter :rdiscount
-  else
+  end
+
+  if item[:is_dynamic]
     filter :erb
   end
 
