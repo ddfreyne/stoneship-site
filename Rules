@@ -57,9 +57,6 @@ preprocess do
 
 end
 
-compile '*', :rep => :raw do
-end
-
 ### Compilation rules ########################################################
 
 compile '/assets/style/*' do
@@ -76,9 +73,6 @@ compile '/404/' do
 end
 
 compile '/assets/*/' do
-end
-
-compile '/cv/', :rep => :raw do
 end
 
 compile '*' do
@@ -119,16 +113,6 @@ end
 route '/assets/*' do
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
   item.identifier.chop + cbid_part + '.' + item[:extension]
-end
-
-route '*', :rep => :raw do
-  if item[:partial]
-    nil
-  elsif item.identifier == '/'
-    '/index.txt'
-  else
-    item.identifier.chop + '.txt'
-  end
 end
 
 route '*' do
