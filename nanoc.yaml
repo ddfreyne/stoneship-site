@@ -1,0 +1,17 @@
+base_url: "http://stoneship.org"
+
+enable_output_diff: true
+
+prune:
+  auto_prune: true
+
+data_sources:
+  - type: filesystem_unified
+
+deploy:
+  public:
+    kind: rsync
+    dst:  "ectype:sites/stoneship/public"
+  staging:
+    kind: rsync
+    dst:  "ectype:sites/stoneship/public/new"
