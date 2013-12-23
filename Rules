@@ -17,11 +17,10 @@ preprocess do
     groups.each_pair do |subtype, quick_reviews|
       quick_reviews.each_pair do |title, rating|
         attributes = {
-          :title   => title.to_s,
-          :subtype => subtype.to_s,
-          :rating  => rating,
-          :quick   => true,
-          :partial => true
+          :title      => title.to_s,
+          :subtype    => subtype.to_s,
+          :rating     => rating,
+          :is_partial => true,
         }
         identifier = "/reviews/#{title.to_s.downcase.gsub(/[^a-z]+/, '-')}"
         items << Nanoc3::Item.new('', attributes, identifier)
@@ -76,7 +75,7 @@ compile '/assets/*/' do
 end
 
 compile '*' do
-  next if item[:partial]
+  next if item[:is_partial]
 
   if item[:markdown]
     filter :rdiscount
@@ -116,7 +115,7 @@ route '/assets/*' do
 end
 
 route '*' do
-  if item[:partial]
+  if item[:is_partial]
     nil
   else
     item.identifier + 'index.html'
