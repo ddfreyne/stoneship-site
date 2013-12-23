@@ -5,7 +5,6 @@ title:            "Myst Online and Me"
 excerpt:          "When I started playing Myst Online: Uru Live, I was very excited. After playing the game for over a year, my enthousiasm has mostly disappeared. Here's why I don’t like playing it much anymore."
 oneliner:         "on Uru Live's future"
 published_on:     "2008-01-14 14:00:00"
-enable_comments:  "true"
 tags:             [ 'games' ]
 ---
 

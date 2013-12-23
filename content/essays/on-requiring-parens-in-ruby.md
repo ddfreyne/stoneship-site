@@ -5,7 +5,6 @@ title:            "On Requiring Parens in Ruby"
 excerpt:          "I have been rethinking my idea of requiring parentheses in Ruby for a while, and I've come to the conclusion that requiring them is the wrong answer to a problem I didn't even explain well."
 oneliner:         "Errata."
 published_on:     "2008-01-29"
-enable_comments:  "true"
 tags:             [ 'ruby' ]
 ---
 
