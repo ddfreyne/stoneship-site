@@ -13,7 +13,7 @@ preprocess do
   end
 
   def generate_quick_reviews
-    groups = items.find { |i| i.identifier == '/reviews/' }[:quick_reviews]
+    groups = items['/reviews/'][:quick_reviews]
     groups.each_pair do |subtype, quick_reviews|
       quick_reviews.each_pair do |title, rating|
         attributes = {
