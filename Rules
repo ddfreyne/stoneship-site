@@ -56,23 +56,44 @@ preprocess do
 
 end
 
-### Compilation rules ########################################################
+### Compilation + routing rules ##############################################
 
-compile '/assets/style/*' do
-  filter :sass, :syntax => :scss, :style => :compressed
-  filter :relativize_paths, :type => :css
-end
-
-compile '/sitemap_xml/' do
-  filter :erb
-end
+# 404
 
 compile '/404/' do
   filter :erb
 end
 
+route '/404/' do
+  '/error/404.php'
+end
+
+# sitemap
+
+compile '/sitemap_xml/' do
+  filter :erb
+end
+
+route '/sitemap_xml/' do
+  '/sitemap.xml'
+end
+
+# assets
+
+compile '/assets/style/*/' do
+  filter :sass, :syntax => :scss, :style => :compressed
+  filter :relativize_paths, :type => :css
+end
+
 compile '/assets/*/' do
 end
+
+route '/assets/*/' do
+  cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
+  item.identifier.chop + cbid_part + '.' + item[:extension]
+end
+
+# other
 
 compile '*' do
   next if item[:is_partial]
@@ -97,21 +118,6 @@ compile '*' do
 
   filter :rubypants
   filter :relativize_paths, :type => :html
-end
-
-### Routing rules ############################################################
-
-route '/404/' do
-  '/error/404.php'
-end
-
-route '/sitemap_xml/' do
-  '/sitemap.xml'
-end
-
-route '/assets/*' do
-  cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
-  item.identifier.chop + cbid_part + '.' + item[:extension]
 end
 
 route '*' do
