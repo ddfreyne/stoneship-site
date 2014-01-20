@@ -2,5 +2,8 @@
     <h1><%= @item[:title] %></h1>
 </div>
 <div id="content">
+	<% if @item[:published_on] %>
+		<p class="meta">Published on <%= format_date(@item[:published_on]) %></p>
+	<% end %>
     <%= yield %>
 </div>

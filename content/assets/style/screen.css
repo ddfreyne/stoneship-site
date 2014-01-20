@@ -204,17 +204,6 @@ body {
 #content p.meta {
     color: $color-text-meta;
 
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-#content p.meta-big {
-    margin-top: -20px;
-    padding-bottom: 20px;
-
     text-align: center;
 }
 
