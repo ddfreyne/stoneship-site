@@ -107,6 +107,7 @@ Skills
 * Ruby: Expert
 * C: Advanced
 * Smalltalk: Advanced
+* Lua: Intermediate
 * Clojure: Intermediate
 * Objective-C: Intermediate
 * Go: Intermediate
