@@ -78,6 +78,13 @@ route '/sitemap_xml/' do
   '/sitemap.xml'
 end
 
+# favicon
+
+compile '/favicon/' do
+end
+
+passthrough '/favicon/'
+
 # assets
 
 compile '/assets/style/*/' do
