@@ -53,7 +53,6 @@ preprocess do
   delete_drafts
   convert_dates
   assign_cachebuster_id
-
 end
 
 ### Compilation + routing rules ##############################################
@@ -61,11 +60,12 @@ end
 # 404
 
 compile '/404/' do
-  filter :erb
+  layout 'page'
+  layout 'default'
 end
 
 route '/404/' do
-  '/error/404.php'
+  '/404.html'
 end
 
 # sitemap
