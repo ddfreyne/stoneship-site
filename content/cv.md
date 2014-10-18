@@ -105,8 +105,8 @@ Skills
 ### Programming languages
 
 * Ruby: Expert
-* C: Expert
-* Smalltalk: Expert
+* C: Advanced
+* Smalltalk: Advanced
 * Clojure: Intermediate
 * Objective-C: Intermediate
 * Go: Intermediate
