@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'builder'
-gem 'nanoc'
+gem 'nanoc', github: 'nanoc/nanoc', branch: 'release-4.0.x'
 gem 'nokogiri'
 gem 'pygments.rb'
 gem 'rdiscount'

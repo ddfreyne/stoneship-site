@@ -5,8 +5,11 @@ enable_output_diff: true
 prune:
   auto_prune: true
 
+string_pattern_type: legacy
+
 data_sources:
   - type: filesystem_unified
+    identifier_type: legacy
 
 deploy:
   public:

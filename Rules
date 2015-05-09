@@ -26,7 +26,8 @@ preprocess do
 
   def assign_cachebuster_id
     stylesheet = @items["/assets/style/style/"]
-    stylesheet[:cbid] = stylesheet.raw_content.checksum.gsub(/[^a-zA-Z0-9]/, '_')
+    digest = Digest::SHA1.base64digest(stylesheet.raw_content)
+    stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
   end
 
   hide_assets
