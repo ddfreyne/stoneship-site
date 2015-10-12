@@ -3,56 +3,60 @@ title:      Denis Defreyne’s Curriculum&nbsp;Vitae
 markdown:   basic
 ---
 
-I am a software engineer who has been developing applications for at least half of my life, and I’m only getting started.
-
-I put my heart and soul into the projects I work on. I don’t just cross the finish line, but I go further and deliver a truly satisfying experience to clients. I am dedicated: I don’t do half work. I take the responsibilities necessary for getting a project done, even if that means stepping outside the boundaries of being a software developer.
-
-I enjoy committing myself with a team of talented co-workers, getting done what needs to be done, delivering high-quality software without cutting corners, and having fun while doing it.
-
 Experience
 ----------
 
 ### Software Engineer, SoundCloud
 
-**Period:** June 2013 - …
+**Period:** June 2013 - … (2+ years)
 
-As a backend engineer, I built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program. For this project, I designed and implemented a flexible logic engine that proved to be quite capable in handling ever-changing business needs.
+* built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle ever-changing business needs
 
-At the technical side of things, I brought consistency to the team’s projects, benefiting both maintenance and operational aspects. I focused on the technical health of the team’s systems, and in doing so, improved stability and reduced the risk of changes causing outages.
+* brought consistency to the team’s projects to improve maintenance and operations
 
-I pushed the team towards being fast to react to emergencies, and deliver results in a predictable way. I raised the bar for technical documentation by introducing design documents to the team and setting a standard for API documentation.
+* improved stability and reduced the risk of changes causing outages
+
+* pushed the team towards being fast to react to emergencies, and deliver results in a predictable way
+
+* introduced design documents and set a standard for API documentation
 
 **Skills:** (J)Ruby, JVM, MySQL, microservices
 
 ### Software Engineer, MediaGeniX NG
 
-**Period:** September 2010 - May 2013
+**Period:** September 2010 - May 2013 (2 years, 8 months)
 
-Developed many features of [MediaGenix](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia. During this period, I also performed two major upgrades for these clients. I implemented the necessary developments for the introduction of WHATS’On to MTV Adria.
+* developed many features of [MediaGeniX](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia
+
+* performed two major _WHATS’On_ upgrades for aforementioned clients
+
+* implemented the requirements for the introduction of WHATS’On to MTV Adria
 
 **Skills:** Smalltalk, Scrum/kanban, TDD, OOP, Oracle RDBMS
 
 ### Intern, Netlog
 
-**Period:** August 2009 - September 2009
+**Period:** August 2009 - September 2009 (2 months)
 
-Optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/). I also proved that the abuse detection system was fundamentally flawed and would not work in real-world situations. Gathered ideas and did research on how to improve it and make it work, but time constraints prevented me from continuing.
+* optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/)
+
+* investigated the applicability of this abuse detection system to real-world threats
 
 **Skills:** PHP, Perl, MySQL
 
 ### Web Application Developer (student job), dotProjects
 
-**Period:** July 2008 - August 2008
+**Period:** July 2008 - August 2008 (1 month)
 
-For [dotProjects](http://dotprojects.be/), developed from scratch a web-based machine translation system aimed at making the translation of large documents easy, both manually and with the help of machine translation. This system is currently being used by customers such as ITV.
+* developed a web-based machine translation system for large documents, both manually and with the help of machine translation
 
 **Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
 ### Web Application Developer (student job), dotProjects
 
-**Period:** July 2007 - August 2007
+**Period:** July 2007 - August 2007 (1 month)
 
-For [dotProjects](http://dotprojects.be/), implemented several features, such as Flickr integration and advanced templating features, in a Ruby on Rails-driven CMS used by sites such as Cutting Edge and Auto55.be.
+* implemented several features, such as Flickr integration and advanced templating features
 
 **Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
@@ -63,15 +67,11 @@ Education
 
 **Period:** 2008 - 2010
 
-Achieved knowledge of advanced computer science subjects, such as formal systems, computer architecture and software architecture. Did an internship at Netlog (see Experience section above).
-
-I wrote a dissertation titled [Design of a recommendation system for offering services on social network sites](http://stoneship.org/pub/thesis.pdf) in co-operation with Netlog, a large social networking site with headquarters in Ghent, Belgium.
+Dissertation: [Design of a recommendation system for offering services on social network sites](http://stoneship.org/pub/thesis.pdf)
 
 ### Bachelor in Informatics, University of Ghent
 
 **Period:** 2005 - 2009
-
-Achieved profound knowledge on algorithms, data structures, computer architecture, mathematics and logics. Followed  courses on programming language design, compilers design and implementation.
 
 Personal Projects
 -----------------
@@ -80,9 +80,13 @@ Personal Projects
 
 **Period:** 2007 - now
 
-Since [nanoc](http://nanoc.ws/)’s inception early 2007, I have been the lead developer, and therefore also the one responsible for moving the project forward, giving support and handling community contributions.
+* led the development and implemented the vast majority of features
 
-nanoc has been downloaded tens of thousands of times and is being used by many web sites, including notable ones such as the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site.
+* handled support requests and community contributions
+
+* created a small but enthusiastic community
+
+nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, among others.
 
 **Skills:** Ruby, HTML, CSS, JavaScript, jQuery, git, Mercurial
 
@@ -90,11 +94,11 @@ nanoc has been downloaded tens of thousands of times and is being used by many w
 
 **Period:** 2009
 
-I revamped the existing [Myst Online web site](http://mystonline.com/) by removing uses of Flash, redoing the site in proper HTML, CSS and JavaScript, cleaning up the design, and making the site a lot easier to maintain.
+* removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
 
-I also made the site multilingual and co-ordinated a handful of translation teams that helped translate the site into Dutch, French, Spanish, Italian, Finnish and German.
+* made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
 
-The site was re-coded from scratch using nanoc. This was one of the first big nanoc projects and it proved that nanoc was quite capable of handling large and complex web sites.
+* re-coded from scratch using nanoc, thereby proving that nanoc was capable of handling large and complex web sites
 
 **Skills:** Ruby, HTML, CSS, JavaScript, jQuery
 

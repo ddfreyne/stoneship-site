@@ -45,6 +45,11 @@ $color-border-pre:              $color-x-text2;
 $color-border-footer:           $color-x-text2;
 $color-border-header:           $color-x-strong;
 
+$color-border-a-link:          $color-x-text1;
+$color-border-a-link-footer:   $color-x-text2;
+$color-border-a-hover:         $color-x-strong;
+$color-border-a-active:        $color-x-text1;
+
 $font-body:        "PT Sans", Helvetica, Arial, sans-serif;
 $font-header:      "Bree Serif", serif;
 $font-header-tiny: "PT Sans", Helvetica, Arial, sans-serif;
@@ -152,14 +157,17 @@ body {
 #nav a:link,
 #nav a:visited {
     color: $color-text-sidebar-link;
+    border-bottom: 1px solid $color-border-a-link;
 }
 
 #nav a:hover {
     color: $color-text-sidebar-hover;
+    border-bottom: 1px solid $color-border-a-hover;
 }
 
 #nav a:active {
     color: $color-text-sidebar-active;
+    border-bottom: 1px solid $color-border-a-active;
 }
 
 /** ========== CONTENT ========== */
@@ -371,14 +379,17 @@ body {
 #content a:link,
 #content a:visited {
     color: $color-text-link;
+    border-bottom: 1px solid $color-border-a-link;
 }
 
 #content a:hover {
     color: $color-text-link-hover;
+    border-bottom: 1px solid $color-border-a-hover;
 }
 
 #content a:active {
     color: $color-text-link-active;
+    border-bottom: 1px solid $color-border-a-active;
 }
 
 #content span.active {
@@ -546,12 +557,15 @@ body {
 #footer a:link,
 #footer a:visited {
     color: $color-text-footer-link;
+    border-bottom: 1px solid $color-border-a-link-footer;
 }
 
 #footer a:hover {
     color: $color-text-footer-link-hover;
+    border-bottom: 1px solid $color-border-a-hover;
 }
 
 #footer a:active {
     color: $color-text-footer-link-active;
+    border-bottom: 1px solid $color-border-a-active;
 }
