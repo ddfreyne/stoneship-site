@@ -4,6 +4,8 @@ $color-x-text2:      #999999;
 $color-x-strong:     #00ccff;
 
 $color-background:              $color-x-background;
+$color-background-distant:      #f0f0f0;
+$color-background-border:       #ccc;
 $color-site-name:               $color-x-strong;
 
 $color-text-h1:                 $color-x-background;
@@ -65,8 +67,14 @@ abbr {
     outline: 0;
 }
 
+html {
+  background: $color-background-distant;
+}
+
 body {
     background: $color-background;
+
+    border: 1px dashed $color-background-border;
 
     font-family: $font-body;
     font-size: 10px;
@@ -74,7 +82,7 @@ body {
     line-height: 20px;
 
     padding: 20px;
-    margin: 0 20px;
+    margin: 40px;
 
     max-width: 560px;
 }
