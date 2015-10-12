@@ -44,7 +44,7 @@ preprocess do
     parts = %w( screen print )
     parts.each do |part|
       stylesheet = @items["/assets/style/#{part}/"]
-      stylesheet[:cbid] = stylesheet.raw_content.checksum
+      stylesheet[:cbid] = stylesheet.raw_content.checksum.gsub(/[^a-zA-Z0-9]/, '_')
     end
   end
 

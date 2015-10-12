@@ -14,48 +14,54 @@ Experience
 
 ### Software Engineer, SoundCloud
 
-Period: June 2013 - …
+**Period:** June 2013 - …
 
-This description intentionally left blank.
+As a backend engineer, I built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program. For this project, I designed and implemented a flexible logic engine that proved to be quite capable in handling ever-changing business needs.
+
+At the technical side of things, I brought consistency to the team’s projects, benefiting both maintenance and operational aspects. I focused on the technical health of the team’s systems, and in doing so, improved stability and reduced the risk of changes causing outages.
+
+I pushed the team towards being fast to react to emergencies, and deliver results in a predictable way. I raised the bar for technical documentation by introducing design documents to the team and setting a standard for API documentation.
+
+**Skills:** (J)Ruby, JVM, MySQL, microservices
 
 ### Software Engineer, MediaGeniX NG
 
-Period: September 2010 - May 2013
+**Period:** September 2010 - May 2013
 
 Developed many features of [MediaGenix](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia. During this period, I also performed two major upgrades for these clients. I implemented the necessary developments for the introduction of WHATS’On to MTV Adria.
 
-Skills: Smalltalk, Scrum/kanban, TDD, OOP, Oracle RDBMS
+**Skills:** Smalltalk, Scrum/kanban, TDD, OOP, Oracle RDBMS
 
 ### Intern, Netlog
 
-Period: August 2009 - September 2009
+**Period:** August 2009 - September 2009
 
 Optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/). I also proved that the abuse detection system was fundamentally flawed and would not work in real-world situations. Gathered ideas and did research on how to improve it and make it work, but time constraints prevented me from continuing.
 
-Skills: PHP, Perl, MySQL
+**Skills:** PHP, Perl, MySQL
 
 ### Web Application Developer (student job), dotProjects
 
-Period: July 2008 - August 2008
+**Period:** July 2008 - August 2008
 
 For [dotProjects](http://dotprojects.be/), developed from scratch a web-based machine translation system aimed at making the translation of large documents easy, both manually and with the help of machine translation. This system is currently being used by customers such as ITV.
 
-Skills: Ruby, Rails, MySQL, HTML, CSS, JavaScript
+**Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
 ### Web Application Developer (student job), dotProjects
 
-Period: July 2007 - August 2007
+**Period:** July 2007 - August 2007
 
 For [dotProjects](http://dotprojects.be/), implemented several features, such as Flickr integration and advanced templating features, in a Ruby on Rails-driven CMS used by sites such as Cutting Edge and Auto55.be.
 
-Skills: Ruby, Rails, MySQL, HTML, CSS, JavaScript
+**Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
 Education
 ---------
 
 ### Master in Computer Science, option Software Engineering, University of Ghent
 
-Period: 2008 - 2010
+**Period:** 2008 - 2010
 
 Achieved knowledge of advanced computer science subjects, such as formal systems, computer architecture and software architecture. Did an internship at Netlog (see Experience section above).
 
@@ -63,7 +69,7 @@ I wrote a dissertation titled [Design of a recommendation system for offering se
 
 ### Bachelor in Informatics, University of Ghent
 
-Period: 2005 - 2009
+**Period:** 2005 - 2009
 
 Achieved profound knowledge on algorithms, data structures, computer architecture, mathematics and logics. Followed  courses on programming language design, compilers design and implementation.
 
@@ -72,17 +78,17 @@ Personal Projects
 
 ### nanoc
 
-Period: 2007 - now
+**Period:** 2007 - now
 
 Since [nanoc](http://nanoc.ws/)’s inception early 2007, I have been the lead developer, and therefore also the one responsible for moving the project forward, giving support and handling community contributions.
 
 nanoc has been downloaded tens of thousands of times and is being used by many web sites, including notable ones such as the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site.
 
-Skills: Ruby, HTML, CSS, JavaScript, jQuery, git, Mercurial
+**Skills:** Ruby, HTML, CSS, JavaScript, jQuery, git, Mercurial
 
 ### Myst Online: Uru Live web site
 
-Period: 2009
+**Period:** 2009
 
 I revamped the existing [Myst Online web site](http://mystonline.com/) by removing uses of Flash, redoing the site in proper HTML, CSS and JavaScript, cleaning up the design, and making the site a lot easier to maintain.
 
@@ -90,7 +96,7 @@ I also made the site multilingual and co-ordinated a handful of translation team
 
 The site was re-coded from scratch using nanoc. This was one of the first big nanoc projects and it proved that nanoc was quite capable of handling large and complex web sites.
 
-Skills: Ruby, HTML, CSS, JavaScript, jQuery
+**Skills:** Ruby, HTML, CSS, JavaScript, jQuery
 
 Skills
 ------
@@ -128,11 +134,26 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
-* February 2013 @ FOSDEM: Static site generation for the masses
-* November 2012 @ ULB: Extending a base product for multiple customers in Smalltalk
-* October 2012 @ VUB: Extending a base product for multiple customers in Smalltalk
-* August 2012 @ ESUG: Extending a base product for multiple customers in Smalltalk
-* July 2012 @ Fronteers: static sites with nanoc
-* March 2011 @ Zeus WPI: A Small Smalltalk Talk
-* December 2009 @ Barcamp: Make your web sites faster!
-* October 2009 @ Arrrrcamp: Metaprogramming and DSLs in Ruby
+* September 2015 @ SoundCloud HQ<br>[I wanted a computer, but all I got was a transistor](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor)
+
+* July 2015 @ [RUG::B](http://rug-b.de/)<br>[A Small Smalltalk talk](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition)
+
+* April 2015 @ [RUG::B](http://rug-b.de/)<br>[Simulating a CPU with Ruby](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby)
+
+* December 2014 @ [RUG::B](http://rug-b.de/)<br>[Creating games with entities and components](https://speakerdeck.com/ddfreyne/creating-games-with-entities-and-components)
+
+* February 2013 @ FOSDEM<br>Static site generation for the masses
+
+* November 2012 @ ULB<br>Extending a base product for multiple customers in Smalltalk
+
+* October 2012 @ VUB<br>Extending a base product for multiple customers in Smalltalk
+
+* August 2012 @ ESUG<br>Extending a base product for multiple customers in Smalltalk
+
+* July 2012 @ Fronteers<br>static sites with nanoc
+
+* March 2011 @ Zeus WPI<br>A Small Smalltalk Talk
+
+* December 2009 @ Barcamp<br>Make your web sites faster!
+
+* October 2009 @ Arrrrcamp<br>Metaprogramming and DSLs in Ruby

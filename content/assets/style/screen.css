@@ -1,12 +1,13 @@
-$color-x-background: lighten(#ecdebf, 10%);
-$color-x-text1:      #5d5350;
-$color-x-text2:      #999a8b;
-$color-x-strong:     #db793e;
+$color-x-background: #ffffff;
+$color-x-text1:      #000000;
+$color-x-text2:      #999999;
+$color-x-strong:     #00ccff;
 
 $color-background:              $color-x-background;
 $color-site-name:               $color-x-strong;
 
-$color-text-h1:                 $color-x-strong;
+$color-text-h1:                 $color-x-background;
+$color-text-h1-background:      $color-x-strong;
 $color-text-h2:                 $color-x-strong;
 $color-text-h3:                 $color-x-strong;
 
@@ -40,6 +41,7 @@ $color-border-note:             $color-x-strong;
 $color-border-blockquote:       $color-x-text2;
 $color-border-pre:              $color-x-text2;
 $color-border-footer:           $color-x-text2;
+$color-border-header:           $color-x-strong;
 
 $font-body:        "PT Sans", Helvetica, Arial, sans-serif;
 $font-header:      "Bree Serif", serif;
@@ -72,7 +74,7 @@ body {
     line-height: 20px;
 
     padding: 20px;
-    margin: 0 auto;
+    margin: 0 20px;
 
     max-width: 560px;
 }
@@ -85,12 +87,15 @@ body {
 
 #header h1 {
     color: $color-text-h1;
+    background-color: $color-text-h1-background;
 
     font-family: $font-header;
     font-weight: normal;
     font-size: 39px;
 
-    text-align: center;
+    text-align: right;
+
+    padding: 0 10px 0 0;
 
     line-height: 40px;
 }
@@ -98,7 +103,7 @@ body {
 /** ========== NAVIGATION ========== */
 
 #nav {
-    text-align: center;
+    text-align: right;
 
     padding: 0 0 40px 0;
 }
@@ -166,6 +171,9 @@ body {
 
     line-height: 40px;
 
+    border-top: 10px solid $color-border-header;
+    padding-top: 10px;
+
     margin: 30px 0 10px 0;
 }
 
@@ -173,6 +181,7 @@ body {
     color: $color-text-h3;
 
     font-family: $font-header;
+    font-weight: normal;
     font-size: 18px;
 
     line-height: 20px;
@@ -204,7 +213,7 @@ body {
 #content p.meta {
     color: $color-text-meta;
 
-    text-align: center;
+    text-align: left;
 }
 
 #content .note {
@@ -225,9 +234,7 @@ body {
 }
 
 #content strong {
-    color: $color-text-strong;
-
-    font-size: 12px;
+    font-size: 13px;
 
     text-transform: uppercase;
 }
@@ -444,7 +451,7 @@ body {
 #content kbd {
     font-family: "Bitstream Vera Sans Mono", Consolas, "Courier New", Courier, monospace;
     font-style: normal;
-    font-size: 12px;
+    font-size: inherit;
 
     padding-left: 2px;
     padding-right: 2px;
