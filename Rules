@@ -12,22 +12,6 @@ preprocess do
     end
   end
 
-  def generate_quick_reviews
-    groups = items['/reviews/'][:quick_reviews]
-    groups.each_pair do |subtype, quick_reviews|
-      quick_reviews.each_pair do |title, rating|
-        attributes = {
-          :title      => title.to_s,
-          :subtype    => subtype.to_s,
-          :rating     => rating,
-          :is_partial => true,
-        }
-        identifier = "/reviews/#{title.to_s.downcase.gsub(/[^a-z]+/, '-')}"
-        items << Nanoc3::Item.new('', attributes, identifier)
-      end
-    end
-  end
-
   def delete_drafts
     items.delete_if { |i| i[:is_draft] }
   end
@@ -49,7 +33,6 @@ preprocess do
   end
 
   hide_assets
-  generate_quick_reviews
   delete_drafts
   convert_dates
   assign_cachebuster_id
