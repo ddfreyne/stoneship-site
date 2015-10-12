@@ -113,7 +113,7 @@ body {
 #nav {
     text-align: right;
 
-    padding: 0 0 40px 0;
+    padding: 0 0 20px 0;
 }
 
 /* navigation */
@@ -182,7 +182,7 @@ body {
     border-top: 10px solid $color-border-header;
     padding-top: 10px;
 
-    margin: 30px 0 10px 0;
+    margin: 60px 0 20px 0;
 }
 
 #content h3 {
@@ -194,7 +194,7 @@ body {
 
     line-height: 20px;
 
-    margin: 30px 0 10px 0;
+    margin: 40px 0 20px 0;
 }
 
 #content h3.small {
