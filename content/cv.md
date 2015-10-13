@@ -1,5 +1,5 @@
 ---
-title:      Denis Defreyne’s Curriculum&nbsp;Vitae
+title:      Denis Defreyne’s CV
 markdown:   basic
 ---
 
@@ -8,17 +8,17 @@ Experience
 
 ### Software Engineer, SoundCloud
 
-**Period:** June 2013 - … (2+ years)
+**Period:** June 2013 - present (2+ years)
 
-* built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle ever-changing business needs
+* Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle ever-changing business needs
 
-* brought consistency to the team’s projects to improve maintenance and operations
+* Brought consistency to the team’s projects to improve maintenance and operations
 
-* improved stability and reduced the risk of changes causing outages
+* Improved stability and reduced the risk of changes causing outages
 
-* pushed the team towards being fast to react to emergencies, and deliver results in a predictable way
+* Pushed the team towards being fast to react to emergencies, and deliver results in a predictable way
 
-* introduced design documents and set a standard for API documentation
+* Introduced design documents and set a standard for API documentation
 
 **Skills:** (J)Ruby, JVM, MySQL, microservices
 
@@ -26,11 +26,11 @@ Experience
 
 **Period:** September 2010 - May 2013 (2 years, 8 months)
 
-* developed many features of [MediaGeniX](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia
+* Developed many features of [MediaGeniX](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia
 
-* performed two major _WHATS’On_ upgrades for aforementioned clients
+* Performed two major _WHATS’On_ upgrades for aforementioned clients
 
-* implemented the requirements for the introduction of WHATS’On to MTV Adria
+* Implemented the requirements for the introduction of WHATS’On to MTV Adria
 
 **Skills:** Smalltalk, Scrum/kanban, TDD, OOP, Oracle RDBMS
 
@@ -38,9 +38,9 @@ Experience
 
 **Period:** August 2009 - September 2009 (2 months)
 
-* optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/)
+* Optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/)
 
-* investigated the applicability of this abuse detection system to real-world threats
+* Investigated the applicability of this abuse detection system to real-world threats
 
 **Skills:** PHP, Perl, MySQL
 
@@ -48,7 +48,7 @@ Experience
 
 **Period:** July 2008 - August 2008 (1 month)
 
-* developed a web-based machine translation system for large documents, both manually and with the help of machine translation
+* Developed a web-based machine translation system for large documents, both manually and with the help of machine translation
 
 **Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
@@ -56,7 +56,7 @@ Experience
 
 **Period:** July 2007 - August 2007 (1 month)
 
-* implemented several features, such as Flickr integration and advanced templating features
+* Implemented several features, such as Flickr integration and advanced templating features
 
 **Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
@@ -76,29 +76,29 @@ Dissertation: [Design of a recommendation system for offering services on social
 Personal Projects
 -----------------
 
-### nanoc
+### Nanoc
 
 **Period:** 2007 - now
 
-* led the development and implemented the vast majority of features
+* Led the development and implemented the vast majority of features
 
-* handled support requests and community contributions
+* Handled support requests and community contributions
 
-* created a small but enthusiastic community
+* Created a small but enthusiastic community
 
-nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, among others.
+Nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, among others.
 
-**Skills:** Ruby, HTML, CSS, JavaScript, jQuery, git, Mercurial
+**Skills:** Ruby, HTML, CSS, JavaScript, jQuery, Git, Mercurial
 
 ### Myst Online: Uru Live web site
 
 **Period:** 2009
 
-* removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
+* Removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
 
-* made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
+* Made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
 
-* re-coded from scratch using nanoc, thereby proving that nanoc was capable of handling large and complex web sites
+* Re-coded from scratch using nanoc, thereby proving that nanoc was capable of handling large and complex web sites
 
 **Skills:** Ruby, HTML, CSS, JavaScript, jQuery
 
@@ -107,10 +107,10 @@ Skills
 
 ### Spoken languages
 
-* Dutch: fluent (native)
-* English: fluent
-* German: good
-* French: basic
+* Dutch: Fluent (native)
+* English: Fluent
+* German: Good
+* French: Basic
 
 ### Programming languages
 
@@ -129,7 +129,7 @@ Skills
 
 In no particular order:
 
-Ruby on Rails, Sinatra, MySQL, PostgreSQL, Oracle RDBMS, Subversion, git, Mercurial, HTTP, CSS, JavaScript, Microformats, Mac OS X, Windows, Linux, Unix, jQuery, Hadoop, …
+Ruby on Rails, Sinatra, MySQL, PostgreSQL, Oracle RDBMS, Subversion, Git, Mercurial, HTTP, CSS, JavaScript, Microformats, Mac OS X, Windows, Linux, Unix, jQuery, Hadoop, …
 
 Miscellaneous
 -------------
@@ -154,7 +154,7 @@ I enjoy giving talks and try to do it often. Here is a list of talks I have give
 
 * August 2012 @ ESUG<br>Extending a base product for multiple customers in Smalltalk
 
-* July 2012 @ Fronteers<br>static sites with nanoc
+* July 2012 @ Fronteers<br>Static sites with nanoc
 
 * March 2011 @ Zeus WPI<br>A Small Smalltalk Talk
 
