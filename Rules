@@ -25,11 +25,8 @@ preprocess do
   end
 
   def assign_cachebuster_id
-    parts = %w( screen print )
-    parts.each do |part|
-      stylesheet = @items["/assets/style/#{part}/"]
-      stylesheet[:cbid] = stylesheet.raw_content.checksum.gsub(/[^a-zA-Z0-9]/, '_')
-    end
+    stylesheet = @items["/assets/style/style/"]
+    stylesheet[:cbid] = stylesheet.raw_content.checksum.gsub(/[^a-zA-Z0-9]/, '_')
   end
 
   hide_assets

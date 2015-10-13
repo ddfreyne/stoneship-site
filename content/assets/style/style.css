@@ -76,12 +76,12 @@ abbr {
 }
 
 html {
-    background: $color-background-distant;
+    @media screen {
+        background: $color-background-distant;
+    }
 }
 
 body {
-    background: $color-background-outer;
-
     font-family: $font-body;
     font-size: 10px;
 
@@ -90,23 +90,29 @@ body {
     padding: 0;
     margin: 0;
 
-    box-shadow:
-      0 0 0  10px hsl(0, 0%, 95%),
-      0 0 0  20px hsl(0, 0%, 90%),
-      0 0 0  30px hsl(0, 0%, 85%),
-      0 0 0  40px hsl(0, 0%, 80%),
-      0 0 0  50px hsl(0, 0%, 85%),
-      0 0 0  60px hsl(0, 0%, 90%),
-      0 0 0  70px hsl(0, 0%, 95%);
+    @media screen {
+        background: $color-background-outer;
 
-    max-width: 600px;
+        box-shadow:
+          0 0 0  10px hsl(0, 0%, 95%),
+          0 0 0  20px hsl(0, 0%, 90%),
+          0 0 0  30px hsl(0, 0%, 85%),
+          0 0 0  40px hsl(0, 0%, 80%),
+          0 0 0  50px hsl(0, 0%, 85%),
+          0 0 0  60px hsl(0, 0%, 90%),
+          0 0 0  70px hsl(0, 0%, 95%);
+
+        max-width: 600px;
+    }
 }
 
 #wrapper {
     padding: 40px;
     margin-bottom: 200px;
 
-    background: $color-background-inner;
+    @media screen {
+        background: $color-background-inner;
+    }
 }
 
 /** ========== HEADER ========== */
@@ -116,8 +122,15 @@ body {
 }
 
 #header h1 {
-    color: $color-text-h1;
-    background-color: $color-text-h1-background;
+    @media screen {
+        color: $color-text-h1;
+        background-color: $color-text-h1-background;
+    }
+
+    @media print {
+        color: #000;
+        background-color: #fff;
+    }
 
     font-family: $font-header;
     font-weight: normal;
@@ -136,6 +149,10 @@ body {
     text-align: right;
 
     padding: 0 0 40px 0;
+
+    @media print {
+        display: none;
+    }
 }
 
 /* navigation */
@@ -196,22 +213,35 @@ body {
 /* headers */
 
 #content h2 {
-    color: $color-text-h2;
-
     font-family: $font-header;
     font-weight: normal;
     font-size: 26px;
 
     line-height: 40px;
 
-    border-top: 10px solid $color-border-header;
-    padding-top: 10px;
+    @media screen {
+        color: $color-text-h2;
+        border-top: 10px solid $color-border-header;
+        padding-top: 10px;
+    }
+
+    @media print {
+        color: #000;
+        border-top: 1px solid #000;
+        padding-top: 19px;
+    }
 
     margin: 60px 0 20px 0;
 }
 
 #content h3 {
-    color: $color-text-h3;
+    @media screen {
+        color: $color-text-h3;
+    }
+
+    @media print {
+        color: #000;
+    }
 
     font-family: $font-header;
     font-weight: normal;
@@ -549,6 +579,10 @@ body {
 
 #footer {
     margin-top: 60px;
+
+    @media print {
+        display: none;
+    }
 }
 
 /* text */
