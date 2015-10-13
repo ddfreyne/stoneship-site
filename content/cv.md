@@ -10,7 +10,7 @@ Experience
 
 **Period:** June 2013 - present (2+ years)
 
-* Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle ever-changing business needs
+* Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle frequently-changing business needs
 
 * Brought consistency to the team’s projects to improve maintenance and operations
 

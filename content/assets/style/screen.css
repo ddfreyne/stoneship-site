@@ -54,7 +54,7 @@ $color-border-a-hover:         $color-x-strong;
 $color-border-a-active:        $color-x-text1;
 
 $font-body:        "PT Sans", Helvetica, Arial, sans-serif;
-$font-header:      "Bree Serif", serif;
+$font-header:      "Playfair Display", serif;
 $font-header-tiny: "PT Sans", Helvetica, Arial, sans-serif;
 $font-nav:         "PT Sans", Helvetica, Arial, sans-serif;
 $font-nav-title:   "PT Sans", Helvetica, Arial, sans-serif;
@@ -121,11 +121,11 @@ body {
 
     font-family: $font-header;
     font-weight: normal;
-    font-size: 39px;
+    font-size: 40px;
 
     text-align: right;
 
-    padding: 0 10px 0 0;
+    padding: 14px 10px 6px 0;
 
     line-height: 40px;
 }
@@ -236,7 +236,7 @@ body {
 #content p {
     color: $color-text;
 
-    font-size: 14px;
+    font-size: 15px;
 
     line-height: 20px;
 
