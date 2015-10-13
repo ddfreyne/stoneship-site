@@ -3,8 +3,11 @@ $color-x-text1:      #000000;
 $color-x-text2:      #999999;
 $color-x-strong:     #00ccff;
 
+$color-background-inner:        #ffffff;
+$color-background-outer:        #000000;
+
 $color-background:              $color-x-background;
-$color-background-distant:      #f0f0f0;
+$color-background-distant:      $color-x-background;
 $color-background-border:       #ccc;
 $color-site-name:               $color-x-strong;
 
@@ -73,23 +76,37 @@ abbr {
 }
 
 html {
-  background: $color-background-distant;
+    background: $color-background-distant;
 }
 
 body {
-    background: $color-background;
-
-    border: 1px dashed $color-background-border;
+    background: $color-background-outer;
 
     font-family: $font-body;
     font-size: 10px;
 
     line-height: 20px;
 
-    padding: 20px;
-    margin: 40px;
+    padding: 0;
+    margin: 0;
 
-    max-width: 560px;
+    box-shadow:
+      0 0 0  10px hsl(0, 0%, 95%),
+      0 0 0  20px hsl(0, 0%, 90%),
+      0 0 0  30px hsl(0, 0%, 85%),
+      0 0 0  40px hsl(0, 0%, 80%),
+      0 0 0  50px hsl(0, 0%, 85%),
+      0 0 0  60px hsl(0, 0%, 90%),
+      0 0 0  70px hsl(0, 0%, 95%);
+
+    max-width: 600px;
+}
+
+#wrapper {
+    padding: 40px;
+    margin-bottom: 200px;
+
+    background: $color-background-inner;
 }
 
 /** ========== HEADER ========== */
@@ -118,7 +135,7 @@ body {
 #nav {
     text-align: right;
 
-    padding: 0 0 20px 0;
+    padding: 0 0 40px 0;
 }
 
 /* navigation */

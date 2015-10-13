@@ -78,7 +78,7 @@ Personal Projects
 
 ### Nanoc
 
-**Period:** 2007 - now
+**Period:** 2007 - present
 
 * Led the development and implemented the vast majority of features
 
