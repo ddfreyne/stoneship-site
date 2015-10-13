@@ -8,7 +8,7 @@ is_dynamic: true
 <% home_page = @items.find { |i| i.identifier == '/' } %>
 <ul>
 	<li><%= link_to(home_page[:short_title], home_page) %></li>
-<% home_page.children.reject { |i| i[:is_hidden] }.each do |item| %>
+<% home_page.children.select { |i| !i[:is_hidden] && !i.binary? && i.path }.each do |item| %>
 <%= html_sitemap_for(item) %>
 <% end %>
 </ul>

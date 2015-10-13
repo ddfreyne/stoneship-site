@@ -1,7 +1,7 @@
 module StoneshipSite::Helpers
-  
+
   module HTMLSitemap
-    
+
     def html_sitemap_for(item, indentation=0, sitemap_buffer='')
       # Skip non-written or hidden items
       return sitemap_buffer if item.path.nil? || item[:is_hidden]
@@ -13,7 +13,7 @@ module StoneshipSite::Helpers
       sitemap_buffer << link_to_unless_current(item[:title], item.path)
 
       # Add children to sitemap, recursively
-      visible_children = item.children.select { |child| !child[:is_hidden] && child.path }
+      visible_children = item.children.select { |child| !child[:is_hidden] && !child.binary? && child.path }
       visible_children = visible_children.sort_by { |item| (item[:title] || '').downcase }
       if visible_children.size > 0
         # Open list
