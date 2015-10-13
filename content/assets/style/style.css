@@ -59,6 +59,10 @@ $font-header-tiny: "PT Sans", Helvetica, Arial, sans-serif;
 $font-nav:         "PT Sans", Helvetica, Arial, sans-serif;
 $font-nav-title:   "PT Sans", Helvetica, Arial, sans-serif;
 
+@page {
+    margin: 2cm 4cm;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -107,10 +111,9 @@ body {
 }
 
 #wrapper {
-    padding: 40px;
-    margin-bottom: 200px;
-
     @media screen {
+        padding: 40px;
+        margin-bottom: 200px;
         background: $color-background-inner;
     }
 }
@@ -217,6 +220,9 @@ body {
     font-weight: normal;
     font-size: 26px;
 
+    page-break-before: avoid;
+    page-break-after: avoid;
+
     line-height: 40px;
 
     @media screen {
@@ -235,6 +241,8 @@ body {
 }
 
 #content h3 {
+    page-break-after: avoid;
+
     @media screen {
         color: $color-text-h3;
     }
@@ -270,11 +278,17 @@ body {
 
     line-height: 20px;
 
+    widows: 3;
+    orphans: 3;
+
     margin: 0 0 20px 0;
 }
 
 #content p.meta {
     color: $color-text-meta;
+
+    page-break-before: avoid;
+    page-break-after: avoid;
 
     text-align: left;
 }
@@ -342,6 +356,12 @@ body {
     font-size: 14px;
 
     line-height: 20px;
+}
+
+#content li p {
+    @media print {
+        margin: 0;
+    }
 }
 
 #content ul li {
