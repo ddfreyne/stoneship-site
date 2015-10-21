@@ -1,0 +1,21 @@
+= Stoneship site
+
+This is the source for http://stoneship.org/[Stoneship site], my personal web site.
+
+== Requirements
+
+You will need nanoc 4.0 or higher. See the _Gemfile_ for a list of other dependencies.
+
+== Legal
+
+All content on this site, unless otherwise specified, is copyright 2000–2012 Denis Defreyne and may not be copied without the express permission from Denis Defreyne.
+
+The content of this site is available exclusively under the terms of the Creative Commons Attribution-ShareAlike 3.0 license. Contact me to apply for exemptions.
+
+Content excluded from this licensing scheme includes:
+
+* Links to sites outside the scope of stoneship.org
+* Any other content explicitly marked as not part of the license
+* nanoc, the CMS used for Stoneship
+
+The source code located in the _lib/_ directory is public domain. The design of this web site should not be reused: it is not a template for you to take, so create your own design!
