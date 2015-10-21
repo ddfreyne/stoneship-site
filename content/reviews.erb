@@ -7,12 +7,14 @@ is_dynamic: true
 
 <p>The star ratings are superfluous, I suppose, given that they’re all five out of five stars, but I like them so I am keeping them.</p>
 
-<% @item.children.map { |c| c[:subtype] }.uniq.sort.each do |subtype| %>
+<% children = @items.find_all(@item.identifier.without_exts + '/*') %>
+
+<% children.map { |c| c[:subtype] }.uniq.sort.each do |subtype| %>
 
 <h2><%= subtype.gsub('-', ' ').capitalize %>s</h2>
 
 <ul class="ratings">
-<% @item.children.select { |c| c[:subtype] == subtype }.sort_by { |i| i[:title] }.each do |review| %>
+<% children.select { |c| c[:subtype] == subtype }.sort_by { |i| i[:title] }.each do |review| %>
     <li><%= rating_stars_for(review) %> <%= review.path ? link_to(review[:title], review) : h(review[:title]) %></li>
 <% end %>
 </ul>

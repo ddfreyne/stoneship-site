@@ -5,10 +5,11 @@ is_dynamic: true
 
 <p>Here's a complete site map for this web site, in case you get lost. Blog posts are included, and all pages are sorted by title.</p>
 
-<% home_page = @items.find { |i| i.identifier == '/' } %>
+<% home_page = @items['/index.*'] %>
+<% children = @items.find_all('/*').reject { |i| i.identifier =~ '/index.*' } %>
 <ul>
 	<li><%= link_to(home_page[:short_title], home_page) %></li>
-<% home_page.children.select { |i| !i[:is_hidden] && !i.binary? && i.path }.each do |item| %>
+<% children.select { |i| !i[:is_hidden] && !i.binary? && i.path }.each do |item| %>
 <%= html_sitemap_for(item) %>
 <% end %>
 </ul>

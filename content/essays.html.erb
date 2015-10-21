@@ -5,7 +5,8 @@ is_dynamic: true
 
 <p>Here’s a variety of essays that I’ve written on several subjects, ranging from programming in Ruby and C to my thoughts on games I like to play.</p>
 
-<% @item.children.sort_by { |i| i[:title].downcase }.each do |essay| %>
+<% children = @items.find_all(@item.identifier.without_exts + '/*') %>
+<% children.sort_by { |i| i[:title].downcase }.each do |essay| %>
 	<div class="section">
 		<h2><%= essay[:title] %></h2>
 		<p><%= essay[:excerpt] %> <a rel="bookmark" href="<%= essay.path %>" title="Permanent link to this essay">Read more</a>.</p>

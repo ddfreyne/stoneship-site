@@ -7,7 +7,6 @@ prune:
 
 data_sources:
   - type: filesystem_unified
-    identifier_type: legacy
 
 deploy:
   public:

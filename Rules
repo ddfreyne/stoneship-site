@@ -25,7 +25,7 @@ preprocess do
   end
 
   def assign_cachebuster_id
-    stylesheet = @items["/assets/style/style/"]
+    stylesheet = @items["/assets/style/style.*"]
     digest = Digest::SHA1.base64digest(stylesheet.raw_content)
     stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
   end
@@ -40,45 +40,45 @@ end
 
 # 404
 
-compile '/404/' do
-  layout 'page'
-  layout 'default'
+compile '/404.*' do
+  layout '/page.*'
+  layout '/default.*'
 end
 
-route '/404/' do
+route '/404.*' do
   '/404.html'
 end
 
 # sitemap
 
-compile '/sitemap_xml/' do
+compile '/sitemap_xml.*' do
   filter :erb
 end
 
-route '/sitemap_xml/' do
+route '/sitemap_xml.*' do
   '/sitemap.xml'
 end
 
 # favicon
 
-compile '/favicon/' do
+compile '/favicon.*' do
 end
 
-passthrough '/favicon/'
+passthrough '/favicon.*'
 
 # assets
 
-compile '/assets/style/*/' do
+compile '/assets/style/*' do
   filter :sass, :syntax => :scss, :style => :compressed
   filter :relativize_paths, :type => :css
 end
 
-compile '/assets/**/*/' do
+compile '/assets/**/*' do
 end
 
-route '/assets/**/*/' do
+route '/assets/**/*' do
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
-  item.identifier.chop + cbid_part + '.' + item[:extension]
+  item.identifier.without_ext + cbid_part + '.' + item[:extension]
 end
 
 # other
@@ -100,21 +100,23 @@ compile '/**/*' do
 
   case @item[:kind]
   when 'review'
-    layout '/review/'
+    layout '/review.*'
   else
-    layout '/page/'
+    layout '/page.*'
   end
-  layout '/default/'
+  layout '/default.*'
 
   filter :rubypants
   filter :relativize_paths, :type => :html
 end
 
 route '/**/*' do
-  if item[:is_partial]
+  if item.identifier =~ '/index.*'
+    '/index.html'
+  elsif item[:is_partial]
     nil
   else
-    item.identifier + 'index.html'
+    item.identifier.without_exts + '/index.html'
   end
 end
 
