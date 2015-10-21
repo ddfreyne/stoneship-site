@@ -73,17 +73,17 @@ compile '/assets/style/*/' do
   filter :relativize_paths, :type => :css
 end
 
-compile '/assets/*/' do
+compile '/assets/**/*/' do
 end
 
-route '/assets/*/' do
+route '/assets/**/*/' do
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
   item.identifier.chop + cbid_part + '.' + item[:extension]
 end
 
 # other
 
-compile '*' do
+compile '/**/*' do
   next if item[:is_partial]
 
   if item[:markdown]
@@ -100,17 +100,17 @@ compile '*' do
 
   case @item[:kind]
   when 'review'
-    layout 'review'
+    layout '/review/'
   else
-    layout 'page'
+    layout '/page/'
   end
-  layout 'default'
+  layout '/default/'
 
   filter :rubypants
   filter :relativize_paths, :type => :html
 end
 
-route '*' do
+route '/**/*' do
   if item[:is_partial]
     nil
   else
@@ -120,4 +120,4 @@ end
 
 ### Layouting rules ##########################################################
 
-layout '*', :erb
+layout '/**/*', :erb
