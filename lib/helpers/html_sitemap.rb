@@ -13,7 +13,8 @@ module StoneshipSite::Helpers
       sitemap_buffer << link_to_unless_current(item[:title], item.path)
 
       # Add children to sitemap, recursively
-      visible_children = item.children.select { |child| !child[:is_hidden] && !child.binary? && child.path }
+      children = @items.find_all(item.identifier.without_exts + '/*')
+      visible_children = children.select { |child| !child[:is_hidden] && !child.binary? && child.path }
       visible_children = visible_children.sort_by { |item| (item[:title] || '').downcase }
       if visible_children.size > 0
         # Open list
