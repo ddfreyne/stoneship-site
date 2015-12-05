@@ -83,10 +83,18 @@ end
 
 # other
 
+compile '/talks/**/*.png' do
+  filter :resize, width: 520
+end
+
+route '/talks/**/*.png' do
+  item.identifier.to_s
+end
+
 compile '/**/*' do
   next if item[:is_partial]
 
-  if item[:markdown]
+  if item[:markdown] || item.identifier.ext == 'md'
     filter :rdiscount
   end
 
