@@ -1,6 +1,18 @@
 ---
-title: "Taming Memory"
+title: "Talk: Taming Memory"
 ---
+
+I gave this talk, _Taming memory: performance-tuning a (Crystal) application_, at [RUG::B](http://rug-b.de/) on December 3rd, 2015.
+
+## Abstract
+
+When developing a game, you need to pay attention to performance. After all, a game needs to run fast, and have a predictable frame rate, and stuttering will throw people off.
+
+I’ve had performance issues even in Crystal, a fast, compiled, statically-typed language with a syntax inspired by Ruby. As it turns out, the way a program handles memory can have a huge impact on performance. Luckily, Crystal gives a great deal of control over how this can be done. It’s also possible to use familiar tools with Crystal to debug issues and identify bottlenecks.
+
+In this talk, I’ll share what I’ve learnt about memory and performance tuning, and give an introduction to several powerful tools for identifying performance issues.
+
+## Slides
 
 <img src="images/slide-001.png" style="width: 100%; height: auto;" alt="Slide 1">
 
