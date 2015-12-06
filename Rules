@@ -3,7 +3,6 @@
 ### Preprocessing rules ######################################################
 
 preprocess do
-
   def hide_assets
     items.each do |item|
       if item.identifier =~ /^\/assets/
@@ -38,35 +37,18 @@ end
 
 ### Compilation + routing rules ##############################################
 
-# 404
-
 compile '/404.*' do
   layout '/page.*'
   layout '/default.*'
+  write '/404.html'
 end
-
-route '/404.*' do
-  '/404.html'
-end
-
-# sitemap
 
 compile '/sitemap_xml.*' do
   filter :erb
-end
-
-route '/sitemap_xml.*' do
-  '/sitemap.xml'
-end
-
-# favicon
-
-compile '/favicon.*' do
+  write '/sitemap.xml'
 end
 
 passthrough '/favicon.*'
-
-# assets
 
 compile '/assets/style/*' do
   filter :sass, :syntax => :scss, :style => :compressed
@@ -81,14 +63,9 @@ route '/assets/**/*' do
   item.identifier.without_ext + cbid_part + '.' + item[:extension]
 end
 
-# other
-
 compile '/talks/**/*.png' do
   filter :resize, width: 520
-end
-
-route '/talks/**/*.png' do
-  item.identifier.to_s
+  write item.identifier.to_s
 end
 
 compile '/**/*' do
@@ -116,15 +93,11 @@ compile '/**/*' do
 
   filter :rubypants
   filter :relativize_paths, :type => :html
-end
 
-route '/**/*' do
   if item.identifier =~ '/index.*'
-    '/index.html'
-  elsif item[:is_partial]
-    nil
-  else
-    item.identifier.without_exts + '/index.html'
+    write '/index.html'
+  elsif !item[:is_partial]
+    write item.identifier.without_exts + '/index.html'
   end
 end
 
