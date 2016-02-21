@@ -1,6 +1,5 @@
 ---
 title:      Denis Defreyne’s CV
-markdown:   basic
 ---
 
 Experience

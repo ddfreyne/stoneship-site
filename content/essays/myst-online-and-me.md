@@ -1,5 +1,4 @@
 ---
-markdown:         true
 kind:             essay
 title:            "Myst Online and Me"
 excerpt:          "When I started playing Myst Online: Uru Live, I was very excited. After playing the game for over a year, my enthousiasm has mostly disappeared. Here's why I don’t like playing it much anymore."

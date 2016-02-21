@@ -71,13 +71,8 @@ end
 compile '/**/*' do
   next if item[:is_partial]
 
-  if item[:markdown] || item.identifier.ext == 'md'
-    filter :rdiscount
-  end
-
-  if item[:is_dynamic]
-    filter :erb
-  end
+  filter :rdiscount if item.identifier.ext == 'md'
+  filter :erb if item[:is_dynamic]
 
   if item[:has_code]
     filter :colorize_syntax, :default_colorizer => :pygmentsrb
