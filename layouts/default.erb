@@ -9,6 +9,7 @@
         <% if @item[:is_nav_page] %>
             <meta name="ROBOTS" content="NOINDEX, FOLLOW">
         <% end %>
+        <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 
         <!-- style -->
         <link rel="stylesheet" href="<%= @items['/assets/style/style.*'].path %>">
