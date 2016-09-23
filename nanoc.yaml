@@ -4,11 +4,14 @@ enable_output_diff: true
 
 prune:
   auto_prune: true
+  exclude: [ '.git' ]
 
 data_sources:
   - type: filesystem_unified
 
 deploy:
   public:
-    kind: rsync
-    dst:  "bhakti:/srv/http/stoneship.org"
+    kind: git
+    remote: git@bhakti:/srv/git/stoneship.org.git
+    branch: prod
+    forced: true
