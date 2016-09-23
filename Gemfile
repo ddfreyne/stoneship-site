@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+group 'nanoc' do
+  gem 'nanoc-git'
+end
+
 gem 'builder'
 gem 'nanoc', '~> 4.1'
 gem 'nokogiri'

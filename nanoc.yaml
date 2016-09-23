@@ -10,7 +10,7 @@ data_sources:
   - type: filesystem_unified
 
 deploy:
-  public:
+  default:
     kind: git
     remote: git@bhakti:/srv/git/stoneship.org.git
     branch: prod
