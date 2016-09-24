@@ -12,6 +12,6 @@ data_sources:
 deploy:
   default:
     kind: git
-    remote: git@bhakti:/srv/git/stoneship.org.git
+    remote: git@bhakti:/srv/http/stoneship.org.git
     branch: prod
     forced: true
