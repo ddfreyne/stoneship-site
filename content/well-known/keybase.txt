@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/ddfreyne
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://stoneship.org
+  * I am ddfreyne (https://keybase.io/ddfreyne) on keybase.
+  * I have a public key with fingerprint 02D7 06C2 7383 C9AE 5A6B  8942 A6EB 2130 80E7 63A7
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "02d706c27383c9ae5a6b8942a6eb213080e763a7",
+            "host": "keybase.io",
+            "key_id": "a6eb213080e763a7",
+            "uid": "b7ede1718cbaf56e2a7cdb730413f800",
+            "username": "ddfreyne"
+        },
+        "service": {
+            "hostname": "stoneship.org",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412798274,
+    "expire_in": 157680000,
+    "prev": "3f3b92c24fa0be960ea76993ca76a1a55fae8a6210f3b9fa2c9b27f069d7167c",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - http://gpgtools.org
+
+owFtkWtIFFEUx3dXLdOCEits02LoIaQyj925OwtBkKkFEUgWibDdO3Nnd3KdmWbH
+zQeaoKQiPnpQ0JNMU6PSPtRGmIUS1oaK+bEMkoIQy6K07IN0R+xbny73nN//f86f
+07Ymxuawnw/t7Z96E0i0v37+A9kOuy/lVFJIk8opbyVVjJceWVH92NANRTUpL0Wz
+EqB5kQWchxMFiN2QRx7BxUIeI5bhaA+NAc9BQGVQAS1kKYgNgiGcpWikRj4+RSLV
+//ClSw0EsIQZwHhEBGU3j1kIRAkBjnYxnOyhaQsMYUOFJZjQkiQbuFzFVFUGRaph
+RcTWztboZSJkaioOBRQ9SzP8RKwbmqmJWpC0Aqapey2lWa5b6CmMfMsmPqSoEglO
+BGFshBRNpbwMIUVTsVwZF8MCwcMCVwaFy3TFwD7FItyAJyvStDUGh4klJ3NIYEXW
+JUMaYYGnMQS8IHAieSAD3W4ZYg/kWYa2QBmyooBYINO8IAGGByJlxTqpapSXI2tC
+vxVI8avQLDVI5oRG++ZYm91hWxHnsG5nS1i19t9FWW7lYvqx+KmKy6uv9A3VXuvQ
+fh10NO2LNqb+7Gwdb9mpcqhiW/uJHQWvbvXxYzcW7kc+HXX9di4Y9d71YsQ5qBcO
+tNfXXMgM8j3d/ShnIO1lzdnW3vyqmIK42MmtLzK5+HcTe0KOnLxzu9/mBtD89W5H
+SWdSW3JRx/RiVkqDc06ZrHv0JTZ1/OsHNfrw6vCudKQWjYA/ziF1OKk60NQYHpqM
+jH4+NF3MdmVP9AcfbNIvvs+vuw2qBxMjc/4zZZHkA8efstlJp7c/sy2C2ZnowOyW
+lNqero0tN/e7a47kFo5876WDM082fHyc960ZN9zsax67q+O06DqzdXy+fvDendG/
+=Gb1H
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ddfreyne
+
+==================================================================
+

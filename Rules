@@ -3,9 +3,9 @@
 ### Preprocessing rules ######################################################
 
 preprocess do
-  def hide_assets
+  def hide_specials
     items.each do |item|
-      if item.identifier =~ /^\/assets/
+      if item.identifier =~ /^\/(assets|well-known|robots\.txt)/
         item[:is_hidden] = true
       end
     end
@@ -29,7 +29,7 @@ preprocess do
     stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
   end
 
-  hide_assets
+  hide_specials
   delete_drafts
   convert_dates
   assign_cachebuster_id
@@ -49,6 +49,11 @@ compile '/sitemap_xml.*' do
 end
 
 passthrough '/favicon.*'
+passthrough '/robots.*'
+
+compile '/well-known/**/*' do
+  write item.identifier.to_s.sub(/^\//, '/.')
+end
 
 compile '/assets/style/*' do
   filter :sass, :syntax => :scss, :style => :compressed
