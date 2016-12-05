@@ -15,3 +15,8 @@ deploy:
     remote: git@bhakti:/srv/http/stoneship.org.git
     branch: prod
     forced: true
+  archive:
+    kind: git
+    remote: git@bhakti:/srv/http/archive.stoneship.org.git
+    branch: prod
+    forced: true
