@@ -132,6 +132,7 @@ body {
 
     text-align: right;
 
+    margin-top: 40px;
     padding: 14px 10px 6px 0;
 
     line-height: 40px;
@@ -201,7 +202,6 @@ body {
 /** ========== CONTENT ========== */
 
 #content {
-    padding-top: 20px;
 }
 
 /* headers */
