@@ -58,15 +58,12 @@ end
 compile '/assets/style/*' do
   filter :sass, :syntax => :scss, :style => :compressed
   filter :relativize_paths, :type => :css
-end
 
-compile '/assets/**/*' do
-end
-
-route '/assets/**/*' do
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
-  item.identifier.without_ext + cbid_part + '.' + item[:extension]
+  write item.identifier.without_ext + cbid_part + '.css'
 end
+
+passthrough '/assets/**/*'
 
 compile '/talks/**/*.png' do
   filter :resize, width: 520
