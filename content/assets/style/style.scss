@@ -150,8 +150,8 @@ strong, em {
 
 /* lists */
 
-#content ul,
-#content ol {
+ul,
+ol {
   margin: 0 0 20px 0;
   padding: 0 0 0 20px;
 }
@@ -169,8 +169,18 @@ strong, em {
   }
 }
 
-#content ul li {
-  list-style-type: square;
+li {
+  position: relative;
+}
+
+li::before {
+  content: "-";
+  position: absolute;
+  left: -20px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* links */
