@@ -7,7 +7,7 @@ Experience
 
 ### Software Engineer, SoundCloud
 
-**Period:** June 2013 - present (2+ years)
+June 2013 - present (2+ years)
 
 * Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle frequently-changing business needs
 
@@ -23,7 +23,7 @@ Experience
 
 ### Software Engineer, MediaGeniX NG
 
-**Period:** September 2010 - May 2013 (2 years, 8 months)
+September 2010 - May 2013 (2 years, 8 months)
 
 * Developed many features of [MediaGeniX](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia
 
@@ -35,7 +35,7 @@ Experience
 
 ### Intern, Netlog
 
-**Period:** August 2009 - September 2009 (2 months)
+August 2009 - September 2009 (2 months)
 
 * Optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/)
 
@@ -45,7 +45,7 @@ Experience
 
 ### Web Application Developer (student job), dotProjects
 
-**Period:** July 2008 - August 2008 (1 month)
+July 2008 - August 2008 (1 month)
 
 * Developed a web-based machine translation system for large documents, both manually and with the help of machine translation
 
@@ -53,7 +53,7 @@ Experience
 
 ### Web Application Developer (student job), dotProjects
 
-**Period:** July 2007 - August 2007 (1 month)
+July 2007 - August 2007 (1 month)
 
 * Implemented several features, such as Flickr integration and advanced templating features
 
@@ -64,20 +64,20 @@ Education
 
 ### Master in Computer Science, option Software Engineering, University of Ghent
 
-**Period:** 2008 - 2010
+2008 - 2010
 
 Dissertation: [Design of a recommendation system for offering services on social network sites](http://stoneship.org/pub/thesis.pdf)
 
 ### Bachelor in Informatics, University of Ghent
 
-**Period:** 2005 - 2009
+2005 - 2009
 
 Personal Projects
 -----------------
 
 ### Nanoc
 
-**Period:** 2007 - present
+2007 - present
 
 * Led the development and implemented the vast majority of features
 
@@ -91,7 +91,7 @@ Nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API docu
 
 ### Myst Online: Uru Live web site
 
-**Period:** 2009
+2009
 
 * Removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
 
