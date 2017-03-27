@@ -32,6 +32,8 @@ $color-border-a-active:         #fff;
   font-family: "Liberation Mono", monospace;
   font-size: 15px;
   font-weight: normal;
+  font-style: normal;
+
   line-height: 20px;
 
   @media screen {
@@ -142,7 +144,7 @@ h2 + h3::before {
   margin: 0 0 20px 0;
 }
 
-#content strong {
+strong, em {
   text-transform: uppercase;
 }
 
