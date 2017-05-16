@@ -140,11 +140,11 @@ I enjoy giving talks and try to do it often. Here is a list of talks I have give
 
 #### Fibers
 
-* [March 2017, at RUG::B]((https://speakerdeck.com/ddfreyne/fibers)
+* [March 2017, at RUG::B](https://speakerdeck.com/ddfreyne/fibers)
 
 #### Let’s create a programming language!
 
-* [June 2016, at SoundCloud HQ]((https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
+* [June 2016, at SoundCloud HQ](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
 * [June 2016, at RUG::B](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-rug-b-edition)
 
 #### Let’s write a parser!
