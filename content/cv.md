@@ -138,6 +138,20 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
+* March 2017 @ RUG::B<br>[Fibers](https://speakerdeck.com/ddfreyne/fibers)
+
+* June 2016 @ SoundCloud HQ<br>[Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
+
+* June 2016 @ RUG::B<br>[Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-rug-b-edition)
+
+* May 2016 @ SoundCloud<br>[Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition)
+
+* May 2016 @ RUG::B<br>[Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-rug-b-edition)
+
+* December 2015 @ RUG::B<br>[Taming memory: performance-tuning a (Crystal) application](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition)
+
+* November 2015 @ SoundCloud HQ<br>[Taming memory: performance-tuning a (Crystal) application](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-soundcloud-hq-edition)
+
 * September 2015 @ SoundCloud HQ<br>[I wanted a computer, but all I got was a transistor](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor)
 
 * July 2015 @ [RUG::B](http://rug-b.de/)<br>[A Small Smalltalk talk](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition)
