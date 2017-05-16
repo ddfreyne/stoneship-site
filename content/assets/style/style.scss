@@ -96,23 +96,27 @@ h2 {
   page-break-before: avoid;
   page-break-after: avoid;
 
+  padding: 20px;
+  border: 1px solid #fff;
+
   @media screen {
     margin-top: 80px;
+    padding-top: 22.5px;
+
+    font-size: 15px;
+    line-height: 15px;
+
+    border-color: #fff;
   }
 
   @media print {
     margin-top: 40px;
+    font-size: 9pt;
+
+    line-height: 11pt;
+
+    border-color: #000;
   }
-}
-
-h2::before, h2::after {
-  display: block;
-
-  overflow: hidden;
-
-  height: 20px;
-
-  content: "-----------------------------------------------------------------------------";
 }
 
 h3 {
