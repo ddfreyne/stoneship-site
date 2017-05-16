@@ -19,8 +19,6 @@ June 2013 - present (2+ years)
 
 * Introduced design documents and set a standard for API documentation
 
-**Skills:** (J)Ruby, JVM, MySQL, microservices
-
 ### Software Engineer, MediaGeniX NG
 
 September 2010 - May 2013 (2 years, 8 months)
@@ -31,8 +29,6 @@ September 2010 - May 2013 (2 years, 8 months)
 
 * Implemented the requirements for the introduction of WHATS’On to MTV Adria
 
-**Skills:** Smalltalk, Scrum/kanban, TDD, OOP, Oracle RDBMS
-
 ### Intern, Netlog
 
 August 2009 - September 2009 (2 months)
@@ -41,23 +37,17 @@ August 2009 - September 2009 (2 months)
 
 * Investigated the applicability of this abuse detection system to real-world threats
 
-**Skills:** PHP, Perl, MySQL
-
 ### Web Application Developer (student job), dotProjects
 
 July 2008 - August 2008 (1 month)
 
 * Developed a web-based machine translation system for large documents, both manually and with the help of machine translation
 
-**Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
-
 ### Web Application Developer (student job), dotProjects
 
 July 2007 - August 2007 (1 month)
 
 * Implemented several features, such as Flickr integration and advanced templating features
-
-**Skills:** Ruby, Rails, MySQL, HTML, CSS, JavaScript
 
 Education
 ---------
@@ -87,8 +77,6 @@ Personal Projects
 
 Nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, among others.
 
-**Skills:** Ruby, HTML, CSS, JavaScript, jQuery, Git, Mercurial
-
 ### Myst Online: Uru Live web site
 
 2009
@@ -99,36 +87,49 @@ Nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API docu
 
 * Re-coded from scratch using nanoc, thereby proving that nanoc was capable of handling large and complex web sites
 
-**Skills:** Ruby, HTML, CSS, JavaScript, jQuery
-
 Skills
 ------
 
 ### Spoken languages
 
-* Dutch: Fluent (native)
+* Dutch: Fluent
 * English: Fluent
 * German: Good
 * French: Basic
 
-### Programming languages
+### Programming and markup languages
 
-* Ruby: Expert
-* C: Advanced
-* Smalltalk: Advanced
-* Lua: Intermediate
-* Clojure: Intermediate
-* Objective-C: Intermediate
-* Go: Intermediate
-* Java: Intermediate
-* JavaScript: Intermediate
-* Scala: Beginner
+<table>
+    <tr>
+        <td>★★★</td>
+        <td>(J)Ruby, JavaScript, HTML(5), CSS(3), JSON, Markdown, Crystal</td>
+    </tr>
+    <tr>
+        <td>★★☆</td>
+        <td>Scala, Go, Lua, Smalltalk</td>
+    </tr>
+    <tr>
+        <td>★☆☆</td>
+        <td>Swift, TypeScript, Objective-C, C, Rust, Clojure, Java, Python</td>
+    </tr>
+</table>
 
 ### Technologies
 
-In no particular order:
-
-Ruby on Rails, Sinatra, MySQL, PostgreSQL, Oracle RDBMS, Subversion, Git, Mercurial, HTTP, CSS, JavaScript, Microformats, Mac OS X, Windows, Linux, Unix, jQuery, Hadoop, …
+<table>
+    <tr>
+        <td>★★★</td>
+        <td>Sinatra, MySQL, Git, HTTP, Nanoc, macOS, Linux, Unix, jQuery</td>
+    </tr>
+    <tr>
+        <td>★★☆</td>
+        <td>Hadoop, HDFS, Redshift, Tableau</td>
+    </tr>
+    <tr>
+        <td>★☆☆</td>
+        <td>Windows, PostgreSQL</td>
+    </tr>
+</table>
 
 Miscellaneous
 -------------

@@ -196,6 +196,33 @@ ul {
   list-style-type: none;
 }
 
+/* tables */
+
+table {
+  padding: 3px 0;
+  border-collapse: collapse;
+}
+
+tr td {
+  vertical-align: text-top;
+}
+
+tr td:first-child {
+  letter-spacing: 5px;
+}
+
+tr:first-child td {
+  padding-top: 0;
+}
+
+tr:last-child td {
+  padding-bottom: 0;
+}
+
+td {
+  padding: 0 20px 0 0;
+}
+
 /* links */
 
 #content a {
