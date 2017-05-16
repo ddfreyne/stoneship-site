@@ -127,6 +127,8 @@ h3 {
 h3::before {
   display: block;
   content: "* * *";
+  letter-spacing: 10px;
+  text-align: center;
 
   @media screen {
     margin: 40px 0;
