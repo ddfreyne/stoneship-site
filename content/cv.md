@@ -138,40 +138,64 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
-* March 2017 @ RUG::B<br>[Fibers](https://speakerdeck.com/ddfreyne/fibers)
+#### Fibers
 
-* June 2016 @ SoundCloud HQ<br>[Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
+* [March 2017, at RUG::B]((https://speakerdeck.com/ddfreyne/fibers)
 
-* June 2016 @ RUG::B<br>[Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-rug-b-edition)
+#### Let’s create a programming language!
 
-* May 2016 @ SoundCloud<br>[Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition)
+* [June 2016, at SoundCloud HQ]((https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
+* [June 2016, at RUG::B](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-rug-b-edition)
 
-* May 2016 @ RUG::B<br>[Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-rug-b-edition)
+#### Let’s write a parser!
 
-* December 2015 @ RUG::B<br>[Taming memory: performance-tuning a (Crystal) application](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition)
+* [May 2016 at SoundCloud](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition)
+* [May 2016 at RUG::B](https://speakerdeck.com/ddfreyne/lets-write-a-parser-rug-b-edition)
 
-* November 2015 @ SoundCloud HQ<br>[Taming memory: performance-tuning a (Crystal) application](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-soundcloud-hq-edition)
+#### Taming memory: performance-tuning a (Crystal) application
 
-* September 2015 @ SoundCloud HQ<br>[I wanted a computer, but all I got was a transistor](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor)
+* [December 2015 at RUG::B](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition)
+* [November 2015 at SoundCloud HQ](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-soundcloud-hq-edition)
 
-* July 2015 @ [RUG::B](http://rug-b.de/)<br>[A Small Smalltalk talk](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition)
+#### I wanted a computer, but all I got was a transistor
 
-* April 2015 @ [RUG::B](http://rug-b.de/)<br>[Simulating a CPU with Ruby](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby)
+* October 2016 at CodeMotion Berlin
+* [September 2015 at SoundCloud HQ](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor)
 
-* December 2014 @ [RUG::B](http://rug-b.de/)<br>[Creating games with entities and components](https://speakerdeck.com/ddfreyne/creating-games-with-entities-and-components)
+#### A Small Smalltalk talk
 
-* February 2013 @ FOSDEM<br>Static site generation for the masses
+* [July 2015 at RUG::B](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition)
 
-* November 2012 @ ULB<br>Extending a base product for multiple customers in Smalltalk
+#### Simulating a CPU with Ruby
 
-* October 2012 @ VUB<br>Extending a base product for multiple customers in Smalltalk
+* [April 2015 at RUG::B](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby)
 
-* August 2012 @ ESUG<br>Extending a base product for multiple customers in Smalltalk
+#### Creating games with entities and components
 
-* July 2012 @ Fronteers<br>Static sites with nanoc
+* [December 2014 at RUG::B](https://speakerdeck.com/ddfreyne/creating-games-with-entities-and-components)
 
-* March 2011 @ Zeus WPI<br>A Small Smalltalk Talk
+#### Static site generation for the masses
 
-* December 2009 @ Barcamp<br>Make your web sites faster!
+* [February 2013 at FOSDEM](https://speakerdeck.com/ddfreyne/static-site-generation-for-the-masses)
 
-* October 2009 @ Arrrrcamp<br>Metaprogramming and DSLs in Ruby
+#### Extending a base product for multiple customers
+
+* November 2012 at ULB
+* October 2012 at VUB
+* [August 2012 at ESUG](https://speakerdeck.com/ddfreyne/extending-a-base-product-for-multiple-customers)
+
+#### Static sites with nanoc
+
+* July 2012 at Fronteers
+
+#### A Small Smalltalk Talk
+
+* March 2011 at Zeus WPI
+
+#### Make your web sites faster!
+
+* December 2009 at Barcamp
+
+#### Metaprogramming and DSLs in Ruby
+
+* October 2009 at Arrrrcamp
