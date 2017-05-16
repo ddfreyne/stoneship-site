@@ -87,11 +87,6 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
-h1 {
-  counter-increment: h1;
-  count-reset: h2;
-}
-
 h1::before {
   white-space: pre;
   content: "DOCUMENT:\A";
@@ -100,9 +95,6 @@ h1::before {
 h2 {
   page-break-before: avoid;
   page-break-after: avoid;
-
-  counter-increment: h1;
-  count-reset: h2;
 
   @media screen {
     margin-top: 80px;
