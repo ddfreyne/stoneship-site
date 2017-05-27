@@ -63,7 +63,7 @@ GEM
     ref (2.0.0)
     ruby_dep (1.5.0)
     rubypants (0.6.0)
-    sass (3.4.23)
+    sass (3.4.24)
     shellany (0.0.1)
     slop (3.6.0)
     systemu (2.6.5)
@@ -86,4 +86,4 @@ DEPENDENCIES
   systemu
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
