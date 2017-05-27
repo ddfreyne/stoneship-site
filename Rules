@@ -17,14 +17,12 @@ preprocess do
 
   def convert_dates
     items.each do |i|
-      if i[:published_on]
-        i[:published_on] = Date.parse(i[:published_on])
-      end
+      i[:published_on] = Date.parse(i[:published_on]) if i[:published_on]
     end
   end
 
   def assign_cachebuster_id
-    stylesheet = @items["/assets/style/style.*"]
+    stylesheet = @items['/assets/style/style.*']
     digest = Digest::SHA1.base64digest(stylesheet.raw_content)
     stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
   end
@@ -56,8 +54,8 @@ compile '/well-known/**/*' do
 end
 
 compile '/assets/style/*' do
-  filter :sass, :syntax => :scss, :style => :compressed
-  filter :relativize_paths, :type => :css
+  filter :sass, syntax: :scss, style: :compressed
+  filter :relativize_paths, type: :css
 
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
   write item.identifier.without_ext + cbid_part + '.css'
@@ -77,7 +75,7 @@ compile '/**/*' do
   filter :erb if item[:is_dynamic]
 
   if item[:has_code]
-    filter :colorize_syntax, syntax: :html5, :default_colorizer => :pygmentsrb
+    filter :colorize_syntax, syntax: :html5, default_colorizer: :pygmentsrb
   end
 
   case @item[:kind]
@@ -89,7 +87,7 @@ compile '/**/*' do
   layout '/default.*'
 
   filter :rubypants
-  filter :relativize_paths, :type => :html5
+  filter :relativize_paths, type: :html5
 
   if item.identifier =~ '/index.*'
     write '/index.html'

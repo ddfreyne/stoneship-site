@@ -1,17 +1,15 @@
 module StoneshipSite::Helpers
-  
   module Indenting
-
-    def indent(str, amount, string="\t")
+    def indent(str, amount, string = "\t")
       is_on = true
       str.split("\n").collect do |line|
         # indent line
-        result = is_on ? string*amount + line : line
+        result = is_on ? string * amount + line : line
 
         # turn indenting on or off for lines with preformatted text
-        if line =~ /<pre/ and line !~ /<\/pre>/
+        if line =~ /<pre/ && line !~ /<\/pre>/
           is_on = false
-        elsif line !~ /<pre/ and line =~ /<\/pre>/
+        elsif line !~ /<pre/ && line =~ /<\/pre>/
           is_on = true
         end
 
@@ -19,7 +17,5 @@ module StoneshipSite::Helpers
         result
       end.join("\n")
     end
-
   end
-
 end
