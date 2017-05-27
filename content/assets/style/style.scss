@@ -101,6 +101,7 @@ h2 {
 
   @media screen {
     margin-top: 80px;
+    margin-bottom: 40px;
     padding-top: 22.5px;
 
     font-size: 15px;
@@ -111,6 +112,7 @@ h2 {
 
   @media print {
     margin-top: 40px;
+    margin-bottom: 20px;
     font-size: 9pt;
 
     line-height: 11pt;
@@ -157,7 +159,7 @@ h2 + h3::before {
   widows: 3;
   orphans: 3;
 
-  margin: 0 0 20px 0;
+  margin: 20px 0;
 }
 
 strong, em {
@@ -192,6 +194,17 @@ li::before {
 
 ul {
   list-style-type: none;
+}
+
+/* dl */
+
+dl {
+  margin: 0 0 20px 0;
+}
+
+dd {
+  margin: 0 0 20px 0;
+  padding: 0 0 0 20px;
 }
 
 /* tables */
