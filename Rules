@@ -63,11 +63,6 @@ end
 
 passthrough '/assets/**/*'
 
-compile '/talks/**/*.png' do
-  filter :resize, width: 520
-  write item.identifier.to_s
-end
-
 compile '/**/*' do
   next if item[:is_partial]
 
@@ -78,12 +73,7 @@ compile '/**/*' do
     filter :colorize_syntax, syntax: :html5, default_colorizer: :pygmentsrb
   end
 
-  case @item[:kind]
-  when 'review'
-    layout '/review.*'
-  else
-    layout '/page.*'
-  end
+  layout '/page.*'
   layout '/default.*'
 
   filter :rubypants
