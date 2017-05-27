@@ -11,16 +11,6 @@ preprocess do
     end
   end
 
-  def delete_drafts
-    items.delete_if { |i| i[:is_draft] }
-  end
-
-  def convert_dates
-    items.each do |i|
-      i[:published_on] = Date.parse(i[:published_on]) if i[:published_on]
-    end
-  end
-
   def assign_cachebuster_id
     stylesheet = @items['/assets/style/style.*']
     digest = Digest::SHA1.base64digest(stylesheet.raw_content)
@@ -28,8 +18,6 @@ preprocess do
   end
 
   hide_specials
-  delete_drafts
-  convert_dates
   assign_cachebuster_id
 end
 
@@ -63,23 +51,16 @@ end
 passthrough '/assets/**/*'
 
 compile '/**/*' do
-  next if item[:is_partial]
-
   filter :rdiscount if item.identifier.ext == 'md'
   filter :erb if item[:is_dynamic]
 
-  if item[:has_code]
-    filter :colorize_syntax, syntax: :html5, default_colorizer: :pygmentsrb
-  end
-
   layout '/default.*'
 
-  filter :rubypants
   filter :relativize_paths, type: :html5
 
   if item.identifier =~ '/index.*'
     write '/index.html'
-  elsif !item[:is_partial]
+  else
     write item.identifier.without_exts + '/index.html'
   end
 end
