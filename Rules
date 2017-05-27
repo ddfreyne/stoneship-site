@@ -36,7 +36,6 @@ end
 ### Compilation + routing rules ##############################################
 
 compile '/404.*' do
-  layout '/page.*'
   layout '/default.*'
   write '/404.html'
 end
@@ -73,7 +72,6 @@ compile '/**/*' do
     filter :colorize_syntax, syntax: :html5, default_colorizer: :pygmentsrb
   end
 
-  layout '/page.*'
   layout '/default.*'
 
   filter :rubypants
