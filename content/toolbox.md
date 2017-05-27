@@ -45,10 +45,10 @@ This page collects the tools that I use on a daily basis. I’ve left out common
 ## Ruby gems
 
 [hamster](https://github.com/hamstergem/hamster)
-: Provides efficient immutable data structures (sometimes more efficient than built-in Ruby ones)
+: Provides efficient immutable data structures (sometimes more efficient than built-in Ruby ones).
 
 [m](https://github.com/qrush/m) (selective Test::Unit runner)
-: Useful when you want to only run specific Test::Unit test cases
+: Useful when you want to only run specific Test::Unit test cases.
 
 [ref](https://github.com/ruby-concurrency/ref)
 : Provides a soft ref implementation, which is indispensable for effective memoization.
