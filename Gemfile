@@ -6,7 +6,7 @@ end
 
 gem 'builder'
 gem 'nanoc', '~> 4.1'
-gem 'nokogiri'
+gem 'nokogumbo'
 gem 'pygments.rb'
 gem 'rdiscount'
 gem 'rubypants'
@@ -14,3 +14,4 @@ gem 'sass'
 gem 'systemu'
 gem 'guard-nanoc'
 gem 'adsf'
+gem 'w3c_validators'
