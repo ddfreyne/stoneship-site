@@ -75,7 +75,7 @@ Personal Projects
 
 * Created a small but enthusiastic community
 
-Nanoc is used for the [FOSDEM web site](http://fosdem.org), the [GitHub API documentation](http://developer.github.com/) and Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, among others.
+Nanoc is used for the [GitHub API documentation](http://developer.github.com/), the [GitLab API documentation](https://docs.gitlab.com/), the [Prometheus documentation](https://prometheus.io/), the [FOSDEM web site](http://fosdem.org), the [Atom Flight Manual](https://flight-manual.atom.io/), Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, and many more.
 
 ### Myst Online: Uru Live web site
 
