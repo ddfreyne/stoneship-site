@@ -63,3 +63,70 @@ View my publicly-auditable identity here: https://keybase.io/ddfreyne
 
 ==================================================================
 
+==================================================================
+https://keybase.io/ddfreyne
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://denis.ws
+  * I am ddfreyne (https://keybase.io/ddfreyne) on keybase.
+  * I have a public key with fingerprint 02D7 06C2 7383 C9AE 5A6B  8942 A6EB 2130 80E7 63A7
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101365aa8ecdc35a45edf99266093a68569d619c9cded9e53b0161cb4f1a58165320a",
+            "fingerprint": "02d706c27383c9ae5a6b8942a6eb213080e763a7",
+            "host": "keybase.io",
+            "key_id": "a6eb213080e763a7",
+            "kid": "0101365aa8ecdc35a45edf99266093a68569d619c9cded9e53b0161cb4f1a58165320a",
+            "uid": "b7ede1718cbaf56e2a7cdb730413f800",
+            "username": "ddfreyne"
+        },
+        "service": {
+            "hostname": "denis.ws",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1498152478,
+    "expire_in": 157680000,
+    "prev": "c7edb36bf44b0f2e5b34f9d926195a590a188a59d9b7cd74b1655a155802c348",
+    "seqno": 80,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - http://gpgtools.org
+
+owGtUllo1FAUnalr64ILrlTQ1ILodHwvyUtexiKoiKKoWEQRxfFtmcbaZJrE2loE
+FQQrblgXUKhaXOqHC6JitYIoomL7oYLiRq0bFFx+xAXs6EvRPz/9urzLOeedc7h7
+BvWK9Y83BLNaXz8sHxC/30Vjy+fnEnUK9XitkqpTKkTPEGu5CMJ0hcOVlAIggJqB
+CMGCcaYhoiPBbctSDQNYGjEwMixuQItZjAtuCaRRAA3IqG5DgjA0kKYCoiQU23Ez
+ws/6jhtGsio3gcFUU8Mas4hAxKDY0lViCKpCDWAgTEMjpiSWe0HEkOYoCUTS8eRO
+PtI99v6B/8++1/XIUVNwAU2IGSU2MoRKTMapqQEdajYGIAIGwndJpZBozm1f1LpC
+2ZhQ5LbaYSIqNkryFyFcJ0iuDyQv63uhx7y1clsehtlURAprsxFqvaDpP/w0dVwu
+K5SEauEHjucqKSiRLHQiQahbGCJVN3FCETVZxxdpJ0Ig05DuAIi+EdVSkskgVDOo
+ret0CbBVgaim2xaXxUALEWQBAjGWk1tURjR1KqtABCKEgco0HStRpCrXU1JYqoYk
+I0UDJ+OScJ0vAxfUxwt7x+L9Y3375EXXFSvIH/L35LpX9vu1qCS/eXzH6V3Dcs/b
+x/V+2bbhFp/a503LnWsT0dddQysOHCpo+LQPLPt848iOyV347K/UqmcjL8+u8V+d
+mFv/ePT2/Ys7moq6Dt5uO/btXGXRVc7OvJ1ZUncyb2FVTXLkJn7q3c76tstBdWZ5
+7hAc1X38xc7ckzFTLh7evezBjsFoRV5jZ9A6tayutb3t5ZITgyeMLZyyir732P4c
+ezQju2f8vdItzcnSbS3dA64c3fb289NBp+LXedGHztLU0qbzPxbjw40jPg3MfCkj
+e6s+fKzsNbzdntR4s/vR9Dd6ds7JeWfc1Rd+tmyddqk4v+FAZ0fnnJLieUVzE3eb
+ze9+Ys2wBckVhZv7/gY=
+=6znS
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ddfreyne
+
+==================================================================
