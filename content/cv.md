@@ -7,17 +7,17 @@ Experience
 
 ### Software Engineer, SoundCloud
 
-June 2013 - present (2+ years)
+June 2013 - present (4+ years)
 
 * Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle frequently-changing business needs
 
-* Brought consistency to the team’s projects to improve maintenance and operations
+* Brought consistency to projects to improve maintenance and operations
 
 * Improved stability and reduced the risk of changes causing outages
 
-* Pushed the team towards being fast to react to emergencies, and deliver results in a predictable way
+* Introduced design documents to the team, now adopted company-wide
 
-* Introduced design documents and set a standard for API documentation
+* Worked closely with the customer support team to improve their processes and tooling
 
 ### Software Engineer, MediaGeniX NG
 
