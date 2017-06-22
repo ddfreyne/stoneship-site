@@ -1,7 +1,3 @@
-#!/usr/bin/env ruby
-
-### Preprocessing rules ######################################################
-
 preprocess do
   def hide_specials
     items.each do |item|
@@ -20,8 +16,6 @@ preprocess do
   hide_specials
   assign_cachebuster_id
 end
-
-### Compilation + routing rules ##############################################
 
 compile '/404.*' do
   layout '/default.*'
@@ -64,7 +58,5 @@ compile '/**/*' do
     write item.identifier.without_exts + '/index.html'
   end
 end
-
-### Layouting rules ##########################################################
 
 layout '/**/*', :erb

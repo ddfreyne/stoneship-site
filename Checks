@@ -1,3 +1,1 @@
-#!/usr/bin/env ruby
-
 deploy_check :ilinks
