@@ -150,7 +150,7 @@ I enjoy giving talks and try to do it often. Here is a list of talks I have give
 * [Fibers](https://speakerdeck.com/ddfreyne/fibers) (2017)
 * [Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition) (2016)
 * [Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition) (2016)
-* [Taming memory: performance-tuning a Crystal application]((https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition) (2015)
+* [Taming memory: performance-tuning a Crystal application](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition) (2015)
 * [I wanted a computer, but all I got was a transistor](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor) (2015)
 * [A Small Smalltalk talk](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition) (2015)
 * [Simulating a CPU with Ruby](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby) (2015)
