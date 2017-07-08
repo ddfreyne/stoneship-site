@@ -12,13 +12,6 @@ $color-border-a-link-footer:    #fff;
 $color-border-a-hover:          #fff;
 $color-border-a-active:         #fff;
 
-@font-face {
-  font-family: 'Liberation Mono';
-  src: url('/assets/fonts/LiberationMono-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @page {
   margin: 2cm;
 }
@@ -29,9 +22,10 @@ $color-border-a-active:         #fff;
 
   box-sizing: border-box;
 
-  font-family: "Liberation Mono", monospace;
-  font-weight: normal;
+  font-family: "Overpass Mono", monospace;
+  font-weight: 300;
   font-style: normal;
+  letter-spacing: -0.5px;
 
   @media screen {
     color: $color-text;
@@ -77,7 +71,7 @@ body {
   margin: 0;
 
   @media screen {
-    max-width: 600px;
+    max-width: 650px;
   }
 }
 
@@ -87,13 +81,17 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+h2, h3 {
+  font-weight: bold;
+}
+
 h1 {
   @media screen {
     margin: 0 0 60px 0;
   }
 
   @media print {
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
   }
 }
 
@@ -106,12 +104,12 @@ h2 {
   page-break-before: avoid;
   page-break-after: avoid;
 
-  padding: 20px;
   border: 1px solid #fff;
 
   @media screen {
     margin-top: 80px;
     margin-bottom: 40px;
+    padding: 20px;
     padding-top: 22.5px;
 
     font-size: 15px;
@@ -121,6 +119,7 @@ h2 {
   }
 
   @media print {
+    padding: 10px;
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 9pt;
@@ -133,34 +132,30 @@ h2 {
 
 h3 {
   page-break-after: avoid;
-  margin: 20px 0;
-}
 
-h3::before {
-  display: block;
-  content: "* * *";
-  letter-spacing: 10px;
-  text-align: center;
+  margin: 60px 0 20px 0;
 
   @media screen {
-    margin: 40px 0;
+    margin-top: 60px;
   }
 
   @media print {
-    margin: 20px 0;
+    margin-top: 40px;
   }
 }
 
-h2 + h3::before {
+h2 + h3 {
   @media screen {
-    margin: 40px 0 0 0;
+    margin-top: 40px;
   }
 
   @media print {
-    margin: 20px 0 0 0;
+    margin-top: 20px;
   }
+}
 
-  content: "";
+.subtitle {
+  margin-top: -20px;
 }
 
 /* text */

@@ -7,7 +7,8 @@ Experience
 
 ### Software Engineer, SoundCloud
 
-June 2013 - present (4+ years)
+> %subtitle%
+> June 2013 - present (4+ years)
 
 * Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle frequently-changing business needs
 
@@ -21,7 +22,8 @@ June 2013 - present (4+ years)
 
 ### Software Engineer, MediaGeniX NG
 
-September 2010 - May 2013 (2 years, 8 months)
+> %subtitle%
+> September 2010 - May 2013 (2 years, 8 months)
 
 * Developed many features of [MediaGeniX](http://mediagenix.tv)’ _WHATS’On_ broadcasting solution for VIMN subsidiaries such as MTV, Comedy Central and Nickelodeon for divisions in both Europe and Southeast Asia
 
@@ -31,7 +33,8 @@ September 2010 - May 2013 (2 years, 8 months)
 
 ### Intern, Netlog
 
-August 2009 - September 2009 (2 months)
+> %subtitle%
+> August 2009 - September 2009 (2 months)
 
 * Optimised an existing social network abuse detection system for use with [Netlog](http://netlog.com/)
 
@@ -39,13 +42,15 @@ August 2009 - September 2009 (2 months)
 
 ### Web Application Developer (student job), dotProjects
 
-July 2008 - August 2008 (1 month)
+> %subtitle%
+> July 2008 - August 2008 (1 month)
 
 * Developed a web-based machine translation system for large documents, both manually and with the help of machine translation
 
 ### Web Application Developer (student job), dotProjects
 
-July 2007 - August 2007 (1 month)
+> %subtitle%
+> July 2007 - August 2007 (1 month)
 
 * Implemented several features, such as Flickr integration and advanced templating features
 
@@ -54,20 +59,23 @@ Education
 
 ### Master in Computer Science, option Software Engineering, University of Ghent
 
-2008 - 2010
+> %subtitle%
+> 2008 - 2010
 
 Dissertation: [Design of a recommendation system for offering services on social network sites](http://stoneship.org/pub/thesis.pdf)
 
 ### Bachelor in Informatics, University of Ghent
 
-2005 - 2009
+> %subtitle%
+> 2005 - 2009
 
 Personal Projects
 -----------------
 
 ### Nanoc
 
-2007 - present
+> %subtitle%
+> 2007 - present
 
 * Led the development and implemented the vast majority of features
 
@@ -79,13 +87,14 @@ Nanoc is used for the [GitHub developer documentation](http://developer.github.c
 
 ### Myst Online: Uru Live web site
 
-2009
+> %subtitle%
+> 2009
 
 * Removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
 
 * Made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
 
-* Re-coded from scratch using nanoc, thereby proving that nanoc was capable of handling large and complex web sites
+* Re-coded from scratch using Nanoc, thereby proving that Nanoc was capable of handling large and complex web sites
 
 Skills
 ------
@@ -138,64 +147,17 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
-#### Fibers
-
-* [March 2017, at RUG::B](https://speakerdeck.com/ddfreyne/fibers)
-
-#### Let’s create a programming language!
-
-* [June 2016, at SoundCloud HQ](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition)
-* [June 2016, at RUG::B](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-rug-b-edition)
-
-#### Let’s write a parser!
-
-* [May 2016 at SoundCloud](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition)
-* [May 2016 at RUG::B](https://speakerdeck.com/ddfreyne/lets-write-a-parser-rug-b-edition)
-
-#### Taming memory: performance-tuning a (Crystal) application
-
-* [December 2015 at RUG::B](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition)
-* [November 2015 at SoundCloud HQ](https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-soundcloud-hq-edition)
-
-#### I wanted a computer, but all I got was a transistor
-
-* October 2016 at CodeMotion Berlin
-* [September 2015 at SoundCloud HQ](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor)
-
-#### A Small Smalltalk talk
-
-* [July 2015 at RUG::B](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition)
-
-#### Simulating a CPU with Ruby
-
-* [April 2015 at RUG::B](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby)
-
-#### Creating games with entities and components
-
-* [December 2014 at RUG::B](https://speakerdeck.com/ddfreyne/creating-games-with-entities-and-components)
-
-#### Static site generation for the masses
-
-* [February 2013 at FOSDEM](https://speakerdeck.com/ddfreyne/static-site-generation-for-the-masses)
-
-#### Extending a base product for multiple customers
-
-* November 2012 at ULB
-* October 2012 at VUB
-* [August 2012 at ESUG](https://speakerdeck.com/ddfreyne/extending-a-base-product-for-multiple-customers)
-
-#### Static sites with nanoc
-
-* July 2012 at Fronteers
-
-#### A Small Smalltalk Talk
-
-* March 2011 at Zeus WPI
-
-#### Make your web sites faster!
-
-* December 2009 at Barcamp
-
-#### Metaprogramming and DSLs in Ruby
-
-* October 2009 at Arrrrcamp
+* [Fibers](https://speakerdeck.com/ddfreyne/fibers) (2017)
+* [Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition) (2016)
+* [Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition) (2016)
+* [Taming memory: performance-tuning a Crystal application]((https://speakerdeck.com/ddfreyne/taming-memory-performance-tuning-a-crystal-application-rug-b-edition) (2015)
+* [I wanted a computer, but all I got was a transistor](https://speakerdeck.com/ddfreyne/i-wanted-a-computer-but-all-i-got-was-a-transistor) (2015)
+* [A Small Smalltalk talk](https://speakerdeck.com/ddfreyne/a-small-smalltalk-talk-rug-b-edition) (2015)
+* [Simulating a CPU with Ruby](https://speakerdeck.com/ddfreyne/simulating-a-cpu-with-ruby) (2015)
+* [Creating games with entities and components](https://speakerdeck.com/ddfreyne/creating-games-with-entities-and-components) (2014)
+* [Static site generation for the masses](https://speakerdeck.com/ddfreyne/static-site-generation-for-the-masses) (2013)
+* [Extending a base product for multiple customers](https://speakerdeck.com/ddfreyne/extending-a-base-product-for-multiple-customers) (2012)
+* Static sites with nanoc (2012)
+* A Small Smalltalk Talk (2011)
+* Make your web sites faster! (2009)
+* Metaprogramming and DSLs in Ruby (2009)
