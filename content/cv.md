@@ -90,7 +90,7 @@ Personal projects
 > %subtitle%
 > 2007 - present
 
-Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is used for the [GitHub developer documentation](http://developer.github.com/), the [GitLab documentation](https://docs.gitlab.com/), the [Prometheus web site](https://prometheus.io/), the [FOSDEM web site](http://fosdem.org), the [Atom Flight Manual](https://flight-manual.atom.io/), Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, and many more.
+Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is used for the [GitHub developer documentation](http://developer.github.com/), the [PayPal developer documentation](https://developer.paypal.com/docs/), the [GitLab documentation](https://docs.gitlab.com/), the [Prometheus web site](https://prometheus.io/), the [FOSDEM web site](http://fosdem.org), the [Atom Flight Manual](https://flight-manual.atom.io/), Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, and many more.
 
 * Led the development and implemented the vast majority of features
 
