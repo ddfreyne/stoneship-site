@@ -158,6 +158,12 @@ h2 + h3 {
   margin-top: -20px;
 }
 
+a::after {
+  @media print {
+    content: " (" attr(href) ")"
+  }
+}
+
 /* text */
 
 #content p {
