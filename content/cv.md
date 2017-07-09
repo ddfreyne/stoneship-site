@@ -105,6 +105,16 @@ Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is use
 
 [Cri](https://github.com/ddfreyne/cri) is a framework for building command-line tools, written in Ruby. It was extracted from Nanoc, and is now used by many people outside of the context of Nanoc.
 
+### Miscellaneous
+
+* [D★Mark](https://github.com/ddfreyne/d-mark), a markup language
+* [Glove](https://github.com/ddfreyne/glove), a game engine written in Crystal
+* [adsf](https://github.com/ddfreyne/adsf), a local web server intended to speed up development
+* [D★Parse](https://github.com/ddfreyne/d-parse), an experimental Ruby parser combinator library
+* [rcpu](https://github.com/ddfreyne/rcpu), a VM emulator and assembler written in Crystal
+
+… and many others.
+
 Skills
 ------
 
