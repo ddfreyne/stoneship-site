@@ -31,6 +31,19 @@ Experience
 
 * Implemented the requirements for the introduction of WHATS’On to MTV Adria
 
+### Intern, Cyan Worlds
+
+> %subtitle%
+> 2009
+
+I worked with [Cyan Worlds](http://cyan.com/), to improve the [Myst Online: Uru Live web site](http://mystonline.com/en/).
+
+* Removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
+
+* Made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
+
+* Re-coded from scratch using Nanoc, thereby proving that Nanoc was capable of handling large and complex web sites
+
 ### Intern, Netlog
 
 > %subtitle%
@@ -77,24 +90,13 @@ Personal Projects
 > %subtitle%
 > 2007 - present
 
+Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is used for the [GitHub developer documentation](http://developer.github.com/), the [GitLab documentation](https://docs.gitlab.com/), the [Prometheus web site](https://prometheus.io/), the [FOSDEM web site](http://fosdem.org), the [Atom Flight Manual](https://flight-manual.atom.io/), Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, and many more.
+
 * Led the development and implemented the vast majority of features
 
 * Handled support requests and community contributions
 
 * Created a small but enthusiastic community
-
-Nanoc is used for the [GitHub developer documentation](http://developer.github.com/), the [GitLab documentation](https://docs.gitlab.com/), the [Prometheus web site](https://prometheus.io/), the [FOSDEM web site](http://fosdem.org), the [Atom Flight Manual](https://flight-manual.atom.io/), Disney’s [Ugly Betty](http://www.dadt.com/uglybetty/) web site, and many more.
-
-### Myst Online: Uru Live web site
-
-> %subtitle%
-> 2009
-
-* Removed uses of Flash, redid the site in proper HTML, CSS and JavaScript, cleaned up the design, and improved maintainability
-
-* Made the site multilingual and co-ordinated a handful of translation teams for Dutch, French, Spanish, Italian, Finnish and German
-
-* Re-coded from scratch using Nanoc, thereby proving that Nanoc was capable of handling large and complex web sites
 
 Skills
 ------
