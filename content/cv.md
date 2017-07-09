@@ -107,10 +107,11 @@ Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is use
 
 ### Miscellaneous
 
-* [D★Mark](https://github.com/ddfreyne/d-mark), a markup language
-* [Glove](https://github.com/ddfreyne/glove), a game engine written in Crystal
 * [adsf](https://github.com/ddfreyne/adsf), a local web server intended to speed up development
+* [D★Mark](https://github.com/ddfreyne/d-mark), a markup language
 * [D★Parse](https://github.com/ddfreyne/d-parse), an experimental Ruby parser combinator library
+* [ddplugin](https://github.com/ddfreyne/ddplugin), a Ruby library for managing plugins
+* [Glove](https://github.com/ddfreyne/glove), a game engine written in Crystal
 * [rcpu](https://github.com/ddfreyne/rcpu), a VM emulator and assembler written in Crystal
 
 … and many others.
