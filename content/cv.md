@@ -98,6 +98,13 @@ Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is use
 
 * Created a small but enthusiastic community
 
+### Cri
+
+> %subtitle%
+> 2009 - present
+
+[Cri](https://github.com/ddfreyne/cri) is a framework for building command-line tools, written in Ruby. It was extracted from Nanoc, and is now used by many people outside of the context of Nanoc.
+
 Skills
 ------
 
