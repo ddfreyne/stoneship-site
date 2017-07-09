@@ -82,7 +82,7 @@ Dissertation: [Design of a recommendation system for offering services on social
 > %subtitle%
 > 2005 - 2009
 
-Personal Projects
+Personal projects
 -----------------
 
 ### Nanoc
