@@ -30,12 +30,18 @@ $color-border-a-active:         #fff;
   @media screen {
     font-size: 15px;
     line-height: 20px;
+
+    text-transform: lowercase;
   }
 
   @media print {
     font-size: 9pt;
     line-height: 11pt;
   }
+}
+
+*:hover {
+  text-transform: none;
 }
 
 body {
@@ -122,6 +128,8 @@ h2 {
 h2 > span {
   font-family: "Space Mono", monospace;
   font-weight: bold;
+
+  text-transform: uppercase;
 
   display: inline-block;
 
