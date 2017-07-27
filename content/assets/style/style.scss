@@ -28,15 +28,23 @@ $color-border-a-active:         #fff;
   font-variant-ligatures: none;
 
   @media screen {
-    color: $color-text;
     font-size: 15px;
     line-height: 20px;
   }
 
   @media print {
-    color: $color-text-print;
     font-size: 9pt;
     line-height: 11pt;
+  }
+}
+
+body {
+  @media screen {
+    color: $color-text;
+  }
+
+  @media print {
+    color: $color-text-print;
   }
 }
 
@@ -76,11 +84,12 @@ h1, h2, h3 {
   text-transform: uppercase;
 
   font-family: "Space Mono", monospace;
-  font-weight: normal;
-  font-style: normal;
+  font-weight: bold;
 }
 
 h1 {
+  font-weight: normal;
+
   @media screen {
     margin: 0 0 60px 0;
   }
@@ -99,33 +108,36 @@ h2 {
   page-break-before: avoid;
   page-break-after: avoid;
 
+  @media screen {
+    margin-top: 85px;
+    margin-bottom: 40px;
+  }
+
+  @media print {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+h2 > span {
+  font-family: "Space Mono", monospace;
   font-weight: bold;
 
-  @media screen {
-    margin-top: 80px;
-    margin-bottom: 40px;
-    padding: 20px;
-    padding-top: 22.5px;
+  display: inline-block;
 
+  @media screen {
     font-size: 25px;
-    line-height: 30px;
+    line-height: 20px;
+
+    padding-right: 40px;
 
     background: #fff;
     color: #07f;
   }
 
   @media print {
-    border: 1px solid #fff;
-
-    padding: 10px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-
     font-size: 18pt;
-
     line-height: 22pt;
-
-    border-color: #000;
   }
 }
 
@@ -144,7 +156,7 @@ h3 {
   }
 
   @media print {
-    font-size: 14pt;
+    font-size: 13pt;
     line-height: 22pt;
 
     margin-top: 40px;

@@ -47,6 +47,7 @@ passthrough '/assets/**/*'
 compile '/**/*' do
   filter :rdiscount if item.identifier.ext == 'md'
   filter :erb if item[:is_dynamic]
+  filter :add_header_wrappers
 
   layout '/default.*'
 
