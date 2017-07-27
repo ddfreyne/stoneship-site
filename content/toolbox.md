@@ -39,6 +39,9 @@ This page collects the tools that I use on a daily basis. I’ve left out common
 [fish](https://fishshell.com/)
 : A fast, easy-to-use shell that has sensible defaults. I have barely customised it.
 
+[ripgrep](https://github.com/BurntSushi/ripgrep)
+: A fast search tool, similar to grep, ack. and ag.
+
 [xsv](https://github.com/BurntSushi/xsv)
 : A must-have tool if you deal with CSV files.
 
