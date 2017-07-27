@@ -90,7 +90,6 @@ h1, h2, h3 {
   text-transform: uppercase;
 
   font-family: "Space Mono", monospace;
-  font-weight: bold;
 }
 
 h1 {
@@ -127,7 +126,6 @@ h2 {
 
 h2 > span {
   font-family: "Space Mono", monospace;
-  font-weight: bold;
 
   text-transform: uppercase;
 
@@ -135,11 +133,11 @@ h2 > span {
 
   @media screen {
     font-size: 25px;
-    line-height: 20px;
+    line-height: 22px;
 
     padding-right: 40px;
 
-    background: #fff;
+    background: linear-gradient(90deg, transparent 3px, #fff 3px);
     color: #07f;
   }
 
@@ -153,8 +151,6 @@ h3 {
   page-break-after: avoid;
 
   margin: 60px 0 20px 0;
-
-  font-weight: bold;
 
   @media screen {
     font-size: 20px;
