@@ -22,10 +22,10 @@ $color-border-a-active:         #fff;
 
   box-sizing: border-box;
 
-  font-family: "Overpass Mono", monospace;
-  font-weight: 300;
+  font-family: "Karla", sans-serif;
+  font-weight: normal;
   font-style: normal;
-  letter-spacing: -0.5px;
+  font-variant-ligatures: none;
 
   @media screen {
     color: $color-text;
@@ -74,7 +74,10 @@ html {
 
 h1, h2, h3 {
   text-transform: uppercase;
-  font-weight: bold;
+
+  font-family: "Space Mono", monospace;
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
@@ -96,14 +99,16 @@ h2 {
   page-break-before: avoid;
   page-break-after: avoid;
 
+  font-weight: bold;
+
   @media screen {
     margin-top: 80px;
     margin-bottom: 40px;
     padding: 20px;
     padding-top: 22.5px;
 
-    font-size: 15px;
-    line-height: 15px;
+    font-size: 25px;
+    line-height: 30px;
 
     background: #fff;
     color: #07f;
@@ -116,9 +121,9 @@ h2 {
     margin-top: 40px;
     margin-bottom: 20px;
 
-    font-size: 9pt;
+    font-size: 18pt;
 
-    line-height: 11pt;
+    line-height: 22pt;
 
     border-color: #000;
   }
@@ -129,11 +134,19 @@ h3 {
 
   margin: 60px 0 20px 0;
 
+  font-weight: bold;
+
   @media screen {
+    font-size: 20px;
+    line-height: 20px;
+
     margin-top: 60px;
   }
 
   @media print {
+    font-size: 14pt;
+    line-height: 22pt;
+
     margin-top: 40px;
   }
 }
@@ -149,8 +162,9 @@ h2 + h3 {
 }
 
 .subtitle {
-  margin-top: -20px;
+  margin: -15px 0 25px 0;
 }
+
 
 a::after {
   @media print {
@@ -164,7 +178,7 @@ a::after {
   widows: 3;
   orphans: 3;
 
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 
 strong, em {
@@ -175,7 +189,7 @@ strong, em {
 
 ul,
 ol {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding: 0 0 0 20px;
   page-break-inside: avoid;
 }
