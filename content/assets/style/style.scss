@@ -125,26 +125,44 @@ h2 {
 }
 
 h2 > span {
+  display: inline-block;
+
+  @media screen {
+    padding-top: 10px;
+    padding-right: 40px;
+    margin-left: -4px;
+
+    background: #fff;
+    color: #07f;
+  }
+}
+
+h2 > span > span {
+  display: inline-block;
+
   font-family: "Space Mono", monospace;
 
   text-transform: uppercase;
-
-  display: inline-block;
 
   @media screen {
     font-size: 25px;
     line-height: 22px;
 
-    padding-right: 40px;
-    margin-left: -4px;
-
-    background: linear-gradient(90deg, transparent 3px, #fff 3px);
-    color: #07f;
+    position: relative;
+    left: -5px;
+    bottom: -5px;
   }
 
   @media print {
     font-size: 18pt;
     line-height: 22pt;
+  }
+}
+
+h2 > span > span:hover {
+  @media screen {
+    left: 0;
+    bottom: 0;
   }
 }
 
