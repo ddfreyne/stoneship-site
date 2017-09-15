@@ -14,7 +14,9 @@ Experience
 
 * Brought consistency to projects to improve maintenance and operations
 
-* Improved stability and reduced the risk of changes causing outages
+* Mentored interns
+
+* Improved stability and reduced the risk of changes causing outages, and ran workshops around stability and incident response
 
 * Introduced design documents to the team, now adopted company-wide
 
