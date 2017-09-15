@@ -12,12 +12,6 @@ $color-border-a-link-footer:    #fff;
 $color-border-a-hover:          #fff;
 $color-border-a-active:         #fff;
 
-// TODO: remove @media print
-
-@page {
-  margin: 2cm;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -29,38 +23,27 @@ $color-border-a-active:         #fff;
   font-style: normal;
   font-variant-ligatures: none;
 
-  @media screen {
-    font-size: 15px;
-    line-height: 18px;
+  font-size: 15px;
+  line-height: 18px;
 
-    text-transform: lowercase;
-  }
-
-  @media print {
-    font-size: 9pt;
-    line-height: 11pt;
-  }
+  text-transform: lowercase;
 }
 
 *:hover {
   text-transform: none;
 }
 
-body {
-  @media screen {
-    color: $color-text;
-  }
+html {
+  background: #07f;
+}
 
-  @media print {
-    color: $color-text-print;
-  }
+body {
+  color: $color-text;
 }
 
 *::selection {
-  @media screen {
-    color: $color-background;
-    background: $color-text;
-  }
+  color: $color-background;
+  background: $color-text;
 }
 
 a img {
@@ -72,18 +55,10 @@ abbr {
   outline: 0;
 }
 
-html {
-  @media screen {
-    background: #07f;
-  }
-}
-
 #wrapper {
-  @media screen {
-    padding: 40px;
-    margin: 0;
-    max-width: 650px;
-  }
+  padding: 40px;
+  margin: 0;
+  max-width: 650px;
 }
 
 /** ========== CONTENT ========== */
@@ -97,13 +72,7 @@ h1, h2, h3 {
 h1 {
   font-weight: normal;
 
-  @media screen {
-    margin: 0 0 60px 0;
-  }
-
-  @media print {
-    margin: 0 0 40px 0;
-  }
+  margin: 0 0 60px 0;
 }
 
 h1::before {
@@ -112,31 +81,20 @@ h1::before {
 }
 
 h2 {
-  page-break-before: avoid;
-  page-break-after: avoid;
 
-  @media screen {
-    margin-top: 85px;
-    margin-bottom: 40px;
-  }
-
-  @media print {
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
+  margin-top: 85px;
+  margin-bottom: 40px;
 }
 
 h2 > span {
   display: inline-block;
 
-  @media screen {
-    padding-top: 10px;
-    padding-right: 40px;
-    margin-left: -4px;
+  padding-top: 10px;
+  padding-right: 40px;
+  margin-left: -4px;
 
-    background: #fff;
-    color: #07f;
-  }
+  background: #fff;
+  color: #07f;
 }
 
 h2 > span > span {
@@ -146,75 +104,40 @@ h2 > span > span {
 
   text-transform: uppercase;
 
-  @media screen {
-    font-size: 25px;
-    line-height: 22px;
+  font-size: 25px;
+  line-height: 22px;
 
-    position: relative;
-    left: -5px;
-    bottom: -5px;
-  }
-
-  @media print {
-    font-size: 18pt;
-    line-height: 22pt;
-  }
+  position: relative;
+  left: -5px;
+  bottom: -5px;
 }
 
 h2 > span > span:hover {
-  @media screen {
-    left: 0;
-    bottom: 0;
-  }
+  left: 0;
+  bottom: 0;
 }
 
 h3 {
-  page-break-after: avoid;
 
   margin: 60px 0 20px 0;
 
-  @media screen {
-    font-size: 20px;
-    line-height: 20px;
+  font-size: 20px;
+  line-height: 20px;
 
-    margin-top: 60px;
-  }
-
-  @media print {
-    font-size: 13pt;
-    line-height: 22pt;
-
-    margin-top: 40px;
-  }
+  margin-top: 60px;
 }
 
 h2 + h3 {
-  @media screen {
-    margin-top: 40px;
-  }
-
-  @media print {
-    margin-top: 20px;
-  }
+  margin-top: 40px;
 }
 
 .subtitle {
   margin: -18px 0 25px 0;
 }
 
-
-a::after {
-  @media print {
-    content: " (" attr(href) ")"
-  }
-}
-
 /* text */
 
 #content p {
-  widows: 3;
-  orphans: 3;
-
   margin: 0 0 10px 0;
 }
 
@@ -228,7 +151,6 @@ ul,
 ol {
   margin: 0 0 10px 0;
   padding: 0 0 0 20px;
-  page-break-inside: avoid;
 }
 
 #content ul ul,
@@ -298,25 +220,19 @@ td {
 
 #content a:link,
 #content a:visited {
-  @media screen {
-    color: $color-text-link;
-  }
+  color: $color-text-link;
 
   border-bottom: 1px solid $color-border-a-link;
 }
 
 #content a:hover {
-  @media screen {
-    color: $color-text-link-hover;
-  }
+  color: $color-text-link-hover;
 
   border-bottom: 3px double $color-border-a-hover;
 }
 
 #content a:active {
-  @media screen {
-    color: $color-text-link-active;
-  }
+  color: $color-text-link-active;
 
   border-bottom: 1px solid $color-border-a-active;
 }
