@@ -9,7 +9,8 @@
         <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 
         <!-- style -->
-        <link rel="stylesheet" href="<%= @items['/assets/style/style.*'].path %>">
+        <link rel="stylesheet" href="<%= @items['/assets/style/screen.*'].path %>" media="screen">
+        <link rel="stylesheet" href="<%= @items['/assets/style/print.*'].path %>" media="print">
         <meta name="viewport" content="width=560">
 
         <!-- fonts -->

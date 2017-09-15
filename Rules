@@ -8,9 +8,10 @@ preprocess do
   end
 
   def assign_cachebuster_id
-    stylesheet = @items['/assets/style/style.*']
-    digest = Digest::SHA1.base64digest(stylesheet.raw_content)
-    stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
+    @items.find_all('/assets/style/*').each do |stylesheet|
+      digest = Digest::SHA1.base64digest(stylesheet.raw_content)
+      stylesheet[:cbid] = digest.gsub(/[^A-Za-z0-9]+/, '')
+    end
   end
 
   hide_specials

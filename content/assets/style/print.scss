@@ -1,0 +1,161 @@
+@page {
+  margin: 2cm;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: Gentium, Palatino, Georgia, serif;
+  font-size: 9pt;
+  line-height: 11pt;
+}
+
+a img {
+  border: 0;
+}
+
+abbr {
+  border: 0;
+  outline: 0;
+}
+
+/** ========== CONTENT ========== */
+
+h1, h2, h3 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  page-break-after: avoid;
+
+  margin: 0 0 22pt 0;
+
+  font-size: 24pt;
+
+  letter-spacing: -0.5pt;
+
+  line-height: 33pt;
+}
+
+h2 {
+  page-break-before: avoid;
+  page-break-after: avoid;
+
+  border-top: 2px solid #333;
+
+  margin: 55pt 0 -11pt 0;
+
+  font-size: 9pt;
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1pt;
+
+  line-height: 22pt;
+}
+
+h3 {
+  page-break-before: avoid;
+  page-break-after: avoid;
+
+  margin: 22pt 0 11pt 0;
+
+  font-size: 14pt;
+
+  letter-spacing: -0.5pt;
+
+  line-height: 20pt;
+}
+
+.subtitle {
+  margin-top: -40px;
+  float: right;
+}
+
+
+a::after {
+  content: " (" attr(href) ")"
+}
+
+/* text */
+
+p {
+  widows: 3;
+  orphans: 3;
+
+  margin: 0 0 5pt 0;
+}
+
+strong, em {
+  text-transform: uppercase;
+}
+
+/* lists */
+
+ul,
+ol {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 20px;
+  page-break-inside: avoid;
+  list-style-type: none;
+}
+
+#content ul ul,
+#content ul ol,
+#content ol ul,
+#content ol ol {
+  margin: 0;
+}
+
+li {
+  list-style-type: square;
+  margin: 5pt 0;
+}
+
+/* dl */
+
+dl {
+  margin: 0 0 20px 0;
+}
+
+dd {
+  margin: 0 0 20px 0;
+  padding: 0 0 0 20px;
+}
+
+/* tables */
+
+table {
+  padding: 3px 0;
+  border-collapse: collapse;
+}
+
+tr td:first-child {
+  letter-spacing: 5px;
+}
+
+tr:first-child td {
+  padding-top: 0;
+}
+
+tr:last-child td {
+  padding-bottom: 0;
+}
+
+td {
+  padding: 2pt 20px 2pt 0;
+  vertical-align: text-top;
+}
+
+/* links */
+
+#content a {
+  text-decoration: none;
+}

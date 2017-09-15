@@ -12,6 +12,8 @@ $color-border-a-link-footer:    #fff;
 $color-border-a-hover:          #fff;
 $color-border-a-active:         #fff;
 
+// TODO: remove @media print
+
 @page {
   margin: 2cm;
 }

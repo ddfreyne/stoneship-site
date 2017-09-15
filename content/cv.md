@@ -1,5 +1,5 @@
 ---
-title:      Denis Defreyne’s CV
+title: Denis Defreyne’s CV
 ---
 
 Experience
