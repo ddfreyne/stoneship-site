@@ -1,5 +1,5 @@
 @page {
-  margin: 2cm;
+  margin: 2cm 3cm;
 }
 
 * {
@@ -10,11 +10,9 @@
 }
 
 body {
-  font-family: Gentium, Palatino, Georgia, serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 9pt;
   line-height: 11pt;
-
-  padding: 0 40pt;
 }
 
 a img {
@@ -29,13 +27,13 @@ abbr {
 /** ========== CONTENT ========== */
 
 h1, h2, h3 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 h1 {
   page-break-after: avoid;
 
-  margin: 0 0 22pt 0;
+  margin: 0;
 
   font-size: 24pt;
 
@@ -48,7 +46,7 @@ h2 {
   page-break-before: avoid;
   page-break-after: avoid;
 
-  border-top: 2px solid #333;
+  border-top: 1pt solid #333;
 
   margin: 55pt 0 -11pt 0;
 
@@ -60,6 +58,10 @@ h2 {
   letter-spacing: 1pt;
 
   line-height: 22pt;
+}
+
+h2:first-child {
+  margin-top: 33pt;
 }
 
 h3 {
@@ -76,13 +78,9 @@ h3 {
 }
 
 .subtitle {
-  margin-top: -40px;
-  float: right;
-}
+  margin: -11pt 0 11pt 0;
 
-
-a::after {
-  content: " (" attr(href) ")"
+  font-style: italic;
 }
 
 /* text */
@@ -153,6 +151,13 @@ tr:last-child td {
 td {
   padding: 2pt 20px 2pt 0;
   vertical-align: text-top;
+}
+
+/* a */
+
+a:link,
+a:visited {
+  color: #000;
 }
 
 /* links */
