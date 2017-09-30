@@ -18,6 +18,8 @@ Experience
 
 * Improved stability and reduced the risk of changes causing outages, and ran workshops around stability and incident response
 
+* Set up a central repository for organisation-wide technical documentation
+
 * Introduced design documents to the team, now adopted company-wide
 
 * Worked closely with the customer support team to improve their processes and tooling
