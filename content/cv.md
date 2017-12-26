@@ -5,10 +5,17 @@ title: Denis Defreyne’s CV
 Experience
 ----------
 
+### Software Engineer, Movinga
+
+> %subtitle%
+> November 2017 – present
+
+This section intentionally left blank.
+
 ### Software Engineer, SoundCloud
 
 > %subtitle%
-> June 2013 - present (4+ years)
+> June 2013 - November 2017 (4 years, 5 months)
 
 * Built a large part of the infrastructure for the [On SoundCloud](https://on.soundcloud.com/) partner program, including a flexible logic engine to handle frequently-changing business needs
 
