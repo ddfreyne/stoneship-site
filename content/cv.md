@@ -160,11 +160,11 @@ Skills
         <td>(J)Ruby, JavaScript, HTML(5), CSS(3), JSON, Markdown, Crystal</td>
     </tr>
     <tr>
-        <td>★★☆</td>
+        <td>★★</td>
         <td>Scala, Go, Lua, Smalltalk</td>
     </tr>
     <tr>
-        <td>★☆☆</td>
+        <td>★</td>
         <td>Swift, TypeScript, Objective-C, C, Rust, Clojure, Java, Python</td>
     </tr>
 </table>
@@ -177,11 +177,11 @@ Skills
         <td>Sinatra, MySQL, Git, HTTP, Nanoc, macOS, Linux, Unix, jQuery</td>
     </tr>
     <tr>
-        <td>★★☆</td>
+        <td>★★</td>
         <td>Hadoop, HDFS, Redshift, Tableau</td>
     </tr>
     <tr>
-        <td>★☆☆</td>
+        <td>★</td>
         <td>Windows, PostgreSQL</td>
     </tr>
 </table>
