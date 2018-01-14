@@ -116,16 +116,31 @@ Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is use
 
 [Cri](https://github.com/ddfreyne/cri) is a framework for building command-line tools, written in Ruby. It was extracted from Nanoc, and is now used by many people outside of the context of Nanoc.
 
-### Miscellaneous
+### Miscellaneous (stable)
 
-* [adsf](https://github.com/ddfreyne/adsf), a local web server intended to speed up development
-* [D★Mark](https://github.com/ddfreyne/d-mark), a markup language
-* [D★Parse](https://github.com/ddfreyne/d-parse), an experimental Ruby parser combinator library
-* [ddplugin](https://github.com/ddfreyne/ddplugin), a Ruby library for managing plugins
-* [Glove](https://github.com/ddfreyne/glove), a game engine written in Crystal
-* [rcpu](https://github.com/ddfreyne/rcpu), a VM emulator and assembler written in Crystal
+[adsf](https://github.com/ddfreyne/adsf) is a web server that you can launch instantly in any directory.
 
-… and many others.
+[ddmemoize](https://github.com/ddfreyne/ddmemoize) implements memoization for Ruby.
+
+[ddmetrics](https://github.com/ddfreyne/ddmetrics) records and analyses runtime measurements for Ruby apps.
+
+[ddplugin](https://github.com/ddfreyne/ddplugin) is a Ruby library for handling plugins.
+
+[slow_enumerator_tools](https://github.com/ddfreyne/slow_enumerator_tools) supports merging, buffering, … Ruby enumerators.
+
+### Miscellaneous (experimental)
+
+[d★mark](https://github.com/ddfreyne/d-mark) is a semantically-rich markup language for prose
+
+[d★parse](https://github.com/ddfreyne/d-parse) is a parser combinator library for Ruby
+
+[d★stream](https://github.com/ddfreyne/d-stream) allows writing stream-processing code in Ruby
+
+[glove](https://github.com/ddfreyne/glove) is a game engine for Crystal
+
+[rcpu](https://github.com/ddfreyne/rcpu) is a VM emulator and assembler written in Crystal
+
+…
 
 Skills
 ------
