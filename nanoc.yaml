@@ -1,4 +1,4 @@
-base_url: "http://stoneship.org"
+base_url: "http://denis.ws"
 
 enable_output_diff: true
 
@@ -12,11 +12,11 @@ data_sources:
 deploy:
   default:
     kind: git
-    remote: git@cooper:/srv/http/stoneship.org.git
+    remote: git@cooper:/srv/http/denis.ws.git
     branch: prod
     forced: true
   archive:
     kind: git
-    remote: git@cooper:/srv/http/archive.stoneship.org.git
+    remote: git@cooper:/srv/http/archive.denis.ws.git
     branch: prod
     forced: true

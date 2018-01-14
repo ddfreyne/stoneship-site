@@ -86,7 +86,7 @@ Education
 > %subtitle%
 > 2008 - 2010
 
-Dissertation: [Design of a recommendation system for offering services on social network sites](http://stoneship.org/pub/thesis.pdf)
+Dissertation: [Design of a recommendation system for offering services on social network sites](http://denis.ws/pub/thesis.pdf)
 
 ### Bachelor in Informatics, University of Ghent
 
