@@ -4,9 +4,9 @@ title: Denis’ software
 
 I write software! Here’s an incomplete list of the stuff I made and am working on. All of it is freely available as open source under the MIT license.
 
-## Production-ready
+## Stable
 
-The following pieces of software have been around for a significant amount of time and are used in production environments. You can rely on them.
+The following pieces of software have been around for a significant amount of time, are battle-tested and considered stable. You can rely on them.
 
 [adsf](https://github.com/ddfreyne/adsf) is a web server that you can launch instantly in any directory.
 
