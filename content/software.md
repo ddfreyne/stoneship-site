@@ -33,3 +33,5 @@ The following pieces of software are work in progress. Their APIs are unstable, 
 [d★stream](https://github.com/ddfreyne/d-stream) allows writing stream-processing code in Ruby
 
 [glove](https://github.com/ddfreyne/glove) is a game engine for Crystal
+
+[rcpu](https://github.com/ddfreyne/rcpu) is a VM emulator and assembler written in Crystal
