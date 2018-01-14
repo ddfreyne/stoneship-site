@@ -2,7 +2,7 @@
 title: Denis’ software
 ---
 
-I write software! Here’s an incomplete list of the stuff I made and am working on.
+I write software! Here’s an incomplete list of the stuff I made and am working on. All of it is freely available as open source under the MIT license.
 
 ## Production-ready
 
