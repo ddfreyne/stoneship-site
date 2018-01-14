@@ -1,1 +1,1 @@
-Sitemap: http://stoneship.org/sitemap.xml
+Sitemap: http://denis.ws/sitemap.xml
