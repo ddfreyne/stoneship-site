@@ -130,15 +130,15 @@ Nanoc is a flexible and fast static-site generator written in Ruby. Nanoc is use
 
 ### Miscellaneous (experimental)
 
-[d★mark](https://github.com/ddfreyne/d-mark) is a semantically-rich markup language for prose
+[d★mark](https://github.com/ddfreyne/d-mark) is a semantically-rich markup language for prose.
 
-[d★parse](https://github.com/ddfreyne/d-parse) is a parser combinator library for Ruby
+[d★parse](https://github.com/ddfreyne/d-parse) is a parser combinator library for Ruby.
 
-[d★stream](https://github.com/ddfreyne/d-stream) allows writing stream-processing code in Ruby
+[d★stream](https://github.com/ddfreyne/d-stream) allows writing stream-processing code in Ruby.
 
-[glove](https://github.com/ddfreyne/glove) is a game engine for Crystal
+[glove](https://github.com/ddfreyne/glove) is a game engine for Crystal.
 
-[rcpu](https://github.com/ddfreyne/rcpu) is a VM emulator and assembler written in Crystal
+[rcpu](https://github.com/ddfreyne/rcpu) is a VM emulator and assembler written in Crystal.
 
 …
 
