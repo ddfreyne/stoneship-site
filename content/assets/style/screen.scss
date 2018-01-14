@@ -1,4 +1,4 @@
-$color-background:              #000;
+$color-background:              #07f;
 $color-background-print:        #fff;
 
 $color-text:                    #fff;
@@ -34,7 +34,7 @@ $color-border-a-active:         #fff;
 }
 
 html {
-  background: #07f;
+  background: $color-background;
 }
 
 body {
@@ -81,7 +81,6 @@ h1::before {
 }
 
 h2 {
-
   margin-top: 85px;
   margin-bottom: 40px;
 }
@@ -142,7 +141,8 @@ h2 + h3 {
 }
 
 strong, em {
-  text-transform: uppercase;
+  color: $color-background;
+  background: $color-text;
 }
 
 /* lists */
