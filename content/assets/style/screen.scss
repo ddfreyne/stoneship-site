@@ -141,8 +141,7 @@ h2 + h3 {
 }
 
 strong, em {
-  color: $color-background;
-  background: $color-text;
+  text-transform: uppercase;
 }
 
 /* lists */
