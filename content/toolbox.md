@@ -15,6 +15,9 @@ This page collects the tools that I use on a daily basis. I’ve left out common
 [OmniGraffle](https://www.omnigroup.com/omnigraffle/) (diagramming and drawing app)
 : It isn’t cheap, but I find the $100 price tag to be worth it. I use it to impress my coworkers.
 
+[Spectacle](https://www.spectacleapp.com/) (window management app)
+: This is how I keep my windows nicely tiled.
+
 [Vox](https://vox.rocks/mac-music-player) (music player)
 : A music player with a clean interface that isn’t resource-hungry.
 
