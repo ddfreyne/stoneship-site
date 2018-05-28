@@ -24,7 +24,7 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
-    eventmachine (1.2.5)
+    eventmachine (1.2.7)
     ffi (1.9.23)
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
@@ -61,7 +61,7 @@ GEM
     public_suffix (3.0.2)
     pygments.rb (1.2.1)
       multi_json (>= 1.0.0)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.10.3)
@@ -101,4 +101,4 @@ DEPENDENCIES
   w3c_validators
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
