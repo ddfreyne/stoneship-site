@@ -4,7 +4,9 @@ title: Denis’ toolbox
 
 This page collects the tools that I use on a daily basis. I’ve left out common tools (Git, macOS, Docker, …) in order to focus on perhaps lesser-known things.
 
-## macOS applications
+## Desktop apps
+
+### For macOS
 
 [Alfred](https://www.alfredapp.com/) (productivity app)
 : Alfred gives me the power to do all the things I want, right when I need them, without introducing clutter. I have a handful of custom workflows tuned for the way I work, which I imagine impresses my coworkers.
@@ -21,7 +23,7 @@ This page collects the tools that I use on a daily basis. I’ve left out common
 [Vox](https://vox.rocks/mac-music-player) (music player)
 : A music player with a clean interface that isn’t resource-hungry.
 
-## Cross-platform desktop apps
+### Cross-platform
 
 [SoundCleod](https://github.com/salomvary/soundcleod) (SoundCloud desktop app)
 : A dedicated app for SoundCloud with support for media keys (▶❚❚ etc).
@@ -37,7 +39,7 @@ This page collects the tools that I use on a daily basis. I’ve left out common
 [Iosevka](https://be5invis.github.io/Iosevka/)
 : It’s pretty, and has ligatures.
 
-## Command-line tools
+## CLI tools
 
 [fish](https://fishshell.com/)
 : A fast, easy-to-use shell that has sensible defaults. I have barely customised it.
