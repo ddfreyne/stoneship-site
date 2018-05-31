@@ -193,6 +193,8 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
+* [How to memoize](https://speakerdeck.com/ddfreyne/how-to-memoize) (2018)
+* [Clean & fast code with enumerators](https://speakerdeck.com/ddfreyne/clean-and-fast-code-with-enumerators) (2018)
 * [Fibers](https://speakerdeck.com/ddfreyne/fibers) (2017)
 * [Let’s create a programming language!](https://speakerdeck.com/ddfreyne/lets-create-a-programming-language-soundcloud-hq-edition) (2016)
 * [Let’s write a parser!](https://speakerdeck.com/ddfreyne/lets-write-a-parser-soundcloud-hq-edition) (2016)
