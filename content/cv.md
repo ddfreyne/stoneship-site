@@ -193,6 +193,7 @@ Miscellaneous
 
 I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
+* [Code as data](https://speakerdeck.com/ddfreyne/code-as-data) (2018)
 * [How to memoize](https://speakerdeck.com/ddfreyne/how-to-memoize) (2018)
 * [Clean & fast code with enumerators](https://speakerdeck.com/ddfreyne/clean-and-fast-code-with-enumerators) (2018)
 * [Fibers](https://speakerdeck.com/ddfreyne/fibers) (2017)
