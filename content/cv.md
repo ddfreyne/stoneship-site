@@ -16,9 +16,9 @@ Experience
 
 * Removed large parts of unused infrastructure and improved resource usage of overprovisioned infrastructure, resulting in a 25% decrease in infrastructure operating costs.
 
-* Defined (and partially automated) procedures for employee tech offboarding and security incident response.
-
 * Tightened security across the board, from setting up firewall rules to eliminating non-HTTPS traffic.
+
+* Defined (and partially automated) procedures for employee tech offboarding and security incident response.
 
 ### Software Engineer, SoundCloud
 
