@@ -10,7 +10,15 @@ Experience
 > %subtitle%
 > November 2017 – present
 
-This section intentionally left blank.
+* Migrated the infrastructure to an Infrastructure-as-Code setup, using Terraform and Ansible, making erroneous changes easy to roll back, and improving consistency between similar pieces of infrastructure.
+
+* Introduced monitoring and alerting to the entire tech department, using Prometheus, Alertmanager, and Grafana.
+
+* Removed large parts of unused infrastructure and improved resource usage of overprovisioned infrastructure, resulting in a 25% decrease in infrastructure operating costs.
+
+* Defined (and partially automated) procedures for employee tech offboarding and security incident response.
+
+* Tightened security across the board, from setting up firewall rules to eliminating non-HTTPS traffic.
 
 ### Software Engineer, SoundCloud
 
