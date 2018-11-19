@@ -30,6 +30,7 @@ end
 
 passthrough '/favicon.*'
 passthrough '/robots.*'
+passthrough '/_redirects'
 
 compile '/well-known/**/*' do
   write item.identifier.to_s.sub(/^\//, '/.')

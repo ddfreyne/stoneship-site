@@ -1,0 +1,4 @@
+http://stoneship.org/*      https://denis.ws/:splat 301!
+https://stoneship.org/*     https://denis.ws/:splat 301!
+http://www.stoneship.org/*  https://denis.ws/:splat 301!
+https://www.stoneship.org/* https://denis.ws/:splat 301!
