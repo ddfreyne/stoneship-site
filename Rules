@@ -47,7 +47,7 @@ end
 passthrough '/assets/**/*'
 
 compile '/**/*' do
-  filter :rdiscount if item.identifier.ext == 'md'
+  filter :dmark if item.identifier.ext == 'dmark'
   filter :erb if item[:is_dynamic]
   filter :add_header_wrappers
 

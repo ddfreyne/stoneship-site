@@ -7,10 +7,9 @@ end
 
 gem 'adsf'
 gem 'builder'
+gem 'd-mark', '~> 1.0.0b'
 gem 'nanoc', '~> 4.1'
 gem 'nokogumbo'
-gem 'pygments.rb'
-gem 'rdiscount'
 gem 'rubypants'
 gem 'sass'
 gem 'systemu'

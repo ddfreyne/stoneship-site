@@ -1,5 +1,12 @@
 base_url: "http://denis.ws"
 
+text_extensions:
+  - dmark
+  - md
+  - erb
+  - txt
+  - scss
+
 enable_output_diff: true
 
 prune:

@@ -16,6 +16,7 @@ GEM
     concurrent-ruby (1.1.4)
     cri (2.15.2)
       colored (~> 1.2)
+    d-mark (1.0.0b1)
     ddmemoize (1.0.0)
       ddmetrics (~> 1.0)
       ref (~> 2.0)
@@ -36,7 +37,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mini_portile2 (2.4.0)
-    multi_json (1.13.1)
     nanoc (4.11.0)
       addressable (~> 2.5)
       cri (~> 2.15)
@@ -62,15 +62,12 @@ GEM
       nokogiri (~> 1.8, >= 1.8.4)
     parallel (1.12.1)
     public_suffix (3.0.3)
-    pygments.rb (1.2.1)
-      multi_json (>= 1.0.0)
     rack (2.0.6)
     rack-livereload (0.3.17)
       rack
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rdiscount (2.2.0.1)
     ref (2.0.0)
     ruby_dep (1.5.0)
     rubypants (0.7.0)
@@ -92,12 +89,11 @@ PLATFORMS
 DEPENDENCIES
   adsf
   builder
+  d-mark (~> 1.0.0b)
   nanoc (~> 4.1)
   nanoc-git
   nanoc-live
   nokogumbo
-  pygments.rb
-  rdiscount
   rubypants
   sass
   systemu
