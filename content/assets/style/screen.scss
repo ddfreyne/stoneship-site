@@ -90,7 +90,7 @@ h1::before {
 
 h2 {
   margin: 0;
-  margin-left: -100px;
+  margin-left: -140px;
 
   writing-mode: vertical-lr;
 
@@ -109,7 +109,7 @@ h2:after {
 h2 > span {
   display: inline-block;
 
-  padding-right: 40px;
+  padding-right: 80px;
   padding-bottom: 60px;
   margin-top: -4px;
 
@@ -140,7 +140,7 @@ h2 > span > span:hover {
 h3 {
   margin: 0 0 20px 0;
 
-  font-size: 20px;
+  font-size: 24px;
   line-height: 20px;
 
   text-shadow: 40px 0 0 rgba(255, 255, 255, 0.2);
