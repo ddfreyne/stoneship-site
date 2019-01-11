@@ -110,7 +110,7 @@ title: Denis Defreyne’s CV
   #section %h{Master in Computer Science, option Software Engineering, University of Ghent}
     #subtitle 2008 - 2010
 
-    Dissertation: Design of a recommendation system for offering services on social network sites
+    #p Dissertation: Design of a recommendation system for offering services on social network sites
 
   #section %h{Bachelor in Informatics, University of Ghent}
     #subtitle 2005 - 2009
