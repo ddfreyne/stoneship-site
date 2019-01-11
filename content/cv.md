@@ -10,13 +10,17 @@ Experience
 > %subtitle%
 > November 2017 – present
 
-* Migrated the infrastructure to an Infrastructure-as-Code setup, using Terraform and Ansible, making erroneous changes easy to roll back, and improving consistency between similar pieces of infrastructure
+* Migrated the infrastructure to an Infrastructure-as-Code setup, using Terraform and Ansible, making it easier to roll back erroneous changes, and improving consistency between similar pieces of infrastructure
 
-* Introduced monitoring and alerting to the entire tech department, using Prometheus, Alertmanager, and Grafana
+* Introduced monitoring and alerting to the engineering department, using Prometheus, Alertmanager, and Grafana
 
-* Removed large parts of unused infrastructure and improved resource usage of overprovisioned infrastructure, resulting in a 25% decrease in infrastructure operating costs
+* Removed large parts of unused infrastructure and improved resource usage of overprovisioned infrastructure, resulting in a 40–50% decrease in infrastructure operating costs
 
-* Tightened security across the board, from setting up firewall rules to eliminating non-HTTPS traffic
+* Tightened security across the board: set up firewall rules, eliminated non-HTTPS traffic, removed outdated infrastructure, introduced offboarding procedures, replaced custom authentication protocols (work in progress), restricted infrastructure access, and more
+
+* Increased consistency and simplicity of deployment by consolidating all deployment onto the same container orchestration platform (AWS ECS)
+
+* Introduced RFCs (requests for comment) to the engineering department as a way to collect feedback about proposed changes as early as possible
 
 * Defined (and partially automated) procedures for employee tech offboarding and security incident response
 
