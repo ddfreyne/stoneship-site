@@ -195,7 +195,7 @@ title: Denis Defreyne’s CV
 
 #section %h{Miscellaneous}
   #section %h{Talks}
-    #p  enjoy giving talks and try to do it often. Here is a list of talks I have given:
+    #p I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
     #ul
       #li %ref[url=https://speakerdeck.com/ddfreyne/code-as-data]{Code as data} (2018)
