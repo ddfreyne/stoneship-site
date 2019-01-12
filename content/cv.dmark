@@ -17,16 +17,13 @@ title: Denis Defreyne’s CV
         #p Removed large parts of unused infrastructure and improved resource usage of overprovisioned infrastructure, resulting in a 40–50%% decrease in infrastructure operating costs
 
       #li
-        #p Tightened security across the board: set up firewall rules, eliminated non-HTTPS traffic, removed outdated infrastructure, introduced offboarding procedures, replaced custom authentication protocols (work in progress), restricted infrastructure access, and more
+        #p Tightened security across the board: set up firewall rules, eliminated non-HTTPS traffic, removed outdated infrastructure, introduced offboarding procedures and security incident response procedures, rereplaced custom authentication protocols (work in progress), restricted infrastructure access, and more
 
       #li
         #p Increased consistency and simplicity of deployment by consolidating all deployment onto the same container orchestration platform (AWS ECS)
 
       #li
         #p Introduced RFCs (requests for comment) to the engineering department as a way to collect feedback about proposed changes as early as possible
-
-      #li
-        #p Defined (and partially automated) procedures for employee tech offboarding and security incident response
 
   #section %h{Software Engineer, SoundCloud}
     #subtitle June 2013 - November 2017 (4 years, 5 months)
