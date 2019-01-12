@@ -40,8 +40,10 @@ class DMarkTranslator < DMark::Translator
   end
 
   def handle_element_section(element, context)
-    depth = context.fetch(:depth, 1) + 1
-    wrap('div', class: 'section') { handle_children(element, context.merge(depth: depth)) }
+    depth = context.fetch(:depth, 1)
+    wrap('div', class: "l#{depth} section") do
+      handle_children(element, context.merge(depth: depth + 1))
+    end
   end
 
   def handle_element_ref(element, context)
