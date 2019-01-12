@@ -26,6 +26,10 @@ abbr {
 
 /** ========== CONTENT ========== */
 
+.section.l1 {
+  margin: 0 0 0 3cm;
+}
+
 h1, h2, h3 {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
@@ -48,14 +52,14 @@ h2 {
 
   border-top: 1pt solid #333;
 
-  margin: 55pt 0 -11pt 0;
+  margin: 55pt 0 -11pt -3cm;
 
   font-size: 9pt;
   font-weight: bold;
 
   text-transform: uppercase;
 
-  letter-spacing: 1pt;
+  letter-spacing: 0.5pt;
 
   line-height: 22pt;
 }
@@ -72,9 +76,9 @@ h3 {
 
   font-size: 14pt;
 
-  letter-spacing: -0.5pt;
+  letter-spacing: -0.3pt;
 
-  line-height: 20pt;
+  line-height: 15pt;
 }
 
 .subtitle {
