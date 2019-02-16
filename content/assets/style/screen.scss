@@ -31,10 +31,6 @@ body {
   text-transform: lowercase;
 }
 
-*:hover {
-  text-transform: none;
-}
-
 html {
   background: $color-background;
 }
@@ -146,11 +142,6 @@ h2 > span > span {
   position: relative;
   top: -5px;
   left: -5px;
-}
-
-h2 > span > span:hover {
-  left: 0;
-  bottom: 0;
 }
 
 h3 {
