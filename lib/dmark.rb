@@ -17,6 +17,8 @@ class DMarkTranslator < DMark::Translator
       handle_element_subtitle(element, context)
     when 'section'
       handle_element_section(element, context)
+    when 'contact'
+      handle_element_contact(element, context)
     when 'ref'
       handle_element_ref(element, context)
     when 'em', 'ul', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td'
@@ -37,6 +39,10 @@ class DMarkTranslator < DMark::Translator
 
   def handle_element_subtitle(element, context)
     wrap('div', class: 'subtitle') { handle_children(element, context) }
+  end
+
+  def handle_element_contact(element, context)
+    wrap('div', class: 'contact') { ['<span class="icon">✒</span> '] + handle_children(element, context) }
   end
 
   def handle_element_section(element, context)

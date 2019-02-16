@@ -10,6 +10,7 @@ has_title: false
 #ul
   #li %ref[url=/software/]{My software}: sofware that I wrote
   #li %ref[url=/cv/]{My CV}
+  #li %ref[url=/talks/]{My talks}
   #li %ref[url=/toolbox/]{My toolbox}: a list of software that I like to use
 
 #p You can also find me %ref[url=https://github.com/ddfreyne]{on GitHub}, %ref[url=https://twitter.com/ddfreyne]{on Twitter}, %ref[url=https://keybase.io/ddfreyne]{on Keybase}, …

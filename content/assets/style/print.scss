@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 9pt;
   line-height: 12pt;
 }
@@ -30,8 +30,12 @@ abbr {
   margin: 0 0 0 3cm;
 }
 
+.section {
+  page-break-inside: avoid;
+}
+
 h1, h2, h3 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -52,31 +56,27 @@ h2 {
 
   border-top: 1pt solid #333;
 
-  margin: 55pt 0 -11pt -3cm;
+  margin: 18pt 0 -16pt -3cm;
 
   font-size: 9pt;
   font-weight: bold;
 
   text-transform: uppercase;
 
-  letter-spacing: 0.5pt;
+  letter-spacing: 0.7pt;
 
   line-height: 22pt;
-}
-
-h2:first-child {
-  margin-top: 33pt;
 }
 
 h3 {
   page-break-before: avoid;
   page-break-after: avoid;
 
-  margin: 22pt 0 11pt 0;
+  margin: 18pt 0 11pt 0;
 
   font-size: 14pt;
 
-  letter-spacing: -0.3pt;
+  letter-spacing: -0.1pt;
 
   line-height: 15pt;
 }
@@ -95,6 +95,18 @@ p {
 
   margin: 0 0 5pt 0;
 }
+
+.contact {
+  float: right;
+  margin: -40pt 0 0 0;
+}
+
+.contact .icon {
+  vertical-align: -3pt;
+  font-size: 250%;
+  margin-right: 4pt;
+}
+
 
 strong, em {
   text-transform: uppercase;
