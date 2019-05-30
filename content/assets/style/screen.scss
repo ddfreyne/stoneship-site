@@ -157,7 +157,7 @@ h3 {
 
 /* text */
 
-#content p {
+p {
   margin: 0 0 10px 0;
 }
 
@@ -179,10 +179,10 @@ ol {
   padding: 0 0 0 20px;
 }
 
-#content ul ul,
-#content ul ol,
-#content ol ul,
-#content ol ol {
+ul ul,
+ul ol,
+ol ul,
+ol ol {
   margin: 0;
 }
 
@@ -213,24 +213,24 @@ dd {
 
 /* links */
 
-#content a {
+a {
   text-decoration: none;
 }
 
-#content a:link,
-#content a:visited {
+a:link,
+a:visited {
   color: $color-text-link;
 
   border-bottom: 1px solid $color-border-a-link;
 }
 
-#content a:hover {
+a:hover {
   color: $color-text-link-hover;
 
   border-bottom: 3px double $color-border-a-hover;
 }
 
-#content a:active {
+a:active {
   color: $color-text-link-active;
 
   border-bottom: 1px solid $color-border-a-active;
