@@ -48,7 +48,7 @@ passthrough '/assets/**/*'
 
 compile '/**/*' do
   filter :dmark if item.identifier.ext == 'dmark'
-  filter :erb if item[:is_dynamic]
+  filter :erb if item.identifier.ext == 'erb'
 
   layout '/default.*'
 
