@@ -33,7 +33,11 @@ class DMarkTranslator < DMark::Translator
   def handle_element_h(element, context)
     depth = context.fetch(:depth, 1)
     wrap("h#{depth}", id: id_for(element)) do
-      handle_children(element, context)
+      wrap('span') do
+        wrap('span') do
+          handle_children(element, context)
+        end
+      end
     end
   end
 
