@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def handle_error(e, content)
   case e
   when DMark::Parser::ParserError

@@ -121,12 +121,10 @@ class DMarkTranslator < DMark::Translator
   end
 end
 
-Nanoc::Filter.define(:dmark) do |content, params = {}|
-  begin
-    nodes = DMark::Parser.new(content).parse
-    context = { items: @items, item: @item, config: @config, nodes: nodes }
-    DMarkTranslator.translate(nodes, context)
-  rescue => e
-    handle_error(e, content)
-  end
+Nanoc::Filter.define(:dmark) do |content, _params = {}|
+  nodes = DMark::Parser.new(content).parse
+  context = { items: @items, item: @item, config: @config, nodes: nodes }
+  DMarkTranslator.translate(nodes, context)
+rescue StandardError => e
+  handle_error(e, content)
 end
