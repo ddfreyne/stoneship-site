@@ -5,8 +5,15 @@ title: Denis Defreyne
 #contact denis@denis.ws
 
 #section %h{Experience}
+  #section %h{null}
+    #subtitle undefined – undefined
+
+    #ul
+      #li
+        #p null
+
   #section %h{Software Engineer, Movinga}
-    #subtitle November 2017 – present
+    #subtitle November 2017 – July 2019
 
     #ul
       #li
