@@ -15,7 +15,7 @@ GEM
     builder (3.2.3)
     colored (1.2)
     concurrent-ruby (1.1.5)
-    cri (2.15.7)
+    cri (2.15.9)
     d-mark (1.0.0b1)
     ddmemoize (1.0.0)
       ddmetrics (~> 1.0)
