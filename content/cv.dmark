@@ -5,12 +5,10 @@ title: Denis Defreyne
 #contact denis@denis.ws
 
 #section %h{Experience}
-  #section %h{null}
-    #subtitle undefined – undefined
+  #section %h{Software Engineer, BCG Digital Ventures}
+    #subtitle July 2019 – …
 
-    #ul
-      #li
-        #p null
+    #p This description intentionally left blank.
 
   #section %h{Software Engineer, Movinga}
     #subtitle November 2017 – June 2019
