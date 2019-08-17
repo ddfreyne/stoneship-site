@@ -18,6 +18,8 @@ preprocess do
   assign_cachebuster_id
 end
 
+passthrough '/tmp/**/*'
+
 compile '/404.*' do
   layout '/default.*'
   write '/404.html'

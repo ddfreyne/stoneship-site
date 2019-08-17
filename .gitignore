@@ -1,5 +1,5 @@
 .sass-cache/
-tmp/
+/tmp/
 output/
 crash.log
 output.diff
