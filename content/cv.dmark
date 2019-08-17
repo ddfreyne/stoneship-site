@@ -10,12 +10,12 @@ title: Denis Defreyne
 
     #p This description intentionally left blank.
 
-  #section %h{Software Engineer, Movinga}
+  #section %h{Software Engineer, unspecified startup}
     #subtitle November 2017 – June 2019
 
     #ul
       #li
-        #p Brought consistency to Movinga’s infrastructure using Terraform and Ansible
+        #p Brought consistency to the company’s infrastructure using Terraform and Ansible
 
       #li
         #p Reduced infrastructure operating costs by 40–50%%
