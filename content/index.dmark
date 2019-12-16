@@ -3,7 +3,7 @@ title: "Home"
 has_title: false
 ---
 
-#p Hi! I'm Denis. You might know me from %ref[url=http://nanoc.ws/]{Nanoc}.
+#p Hi! I'm Denis. You might know me from %ref[url=http://nanoc.ws/]{Nanoc}. My pronouns are %ref[url=https://pronoun.is/he/him]{he/him}.
 
 #p On this site, you’ll find:
 
