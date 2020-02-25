@@ -69,7 +69,7 @@ GEM
       cri (~> 2.13)
       listen (~> 3.0)
       nanoc (~> 4.11, >= 4.11.5)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
