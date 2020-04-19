@@ -1,16 +1,16 @@
-$color-background:              #07f;
-$color-background-print:        #fff;
+$color-background: #07f;
+$color-background-print: #fff;
 
-$color-text:                    #fff;
-$color-text-print:              #000;
-$color-text-link:               #fff;
-$color-text-link-hover:         #fff;
-$color-text-link-active:        #fff;
+$color-text: #fff;
+$color-text-print: #000;
+$color-text-link: #fff;
+$color-text-link-hover: #fff;
+$color-text-link-active: #fff;
 
-$color-border-a-link:           #fff;
-$color-border-a-link-footer:    #fff;
-$color-border-a-hover:          #fff;
-$color-border-a-active:         #fff;
+$color-border-a-link: #fff;
+$color-border-a-link-footer: #fff;
+$color-border-a-hover: #fff;
+$color-border-a-active: #fff;
 
 * {
   margin: 0;
@@ -59,7 +59,9 @@ abbr {
 
 /** ========== CONTENT ========== */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-transform: uppercase;
 
   font-family: "Space Mono", monospace;
@@ -167,7 +169,8 @@ p {
   margin-right: 6px;
 }
 
-strong, em {
+strong,
+em {
   text-transform: uppercase;
 }
 
