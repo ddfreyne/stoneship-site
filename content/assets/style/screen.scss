@@ -90,14 +90,15 @@ h1::before {
 }
 
 .section.l1:not(:last-child)::after {
+  padding: 100px 0 0 0;
   content: "v\av\av\av\av";
   display: block;
   white-space: pre;
   font-family: "Space Mono", monospace;
 }
 
-.section.l2 {
-  padding: 0 0 100px 0;
+.section.l2 + .section.l2 {
+  padding: 200px 0 0 0;
 }
 
 h2 {
