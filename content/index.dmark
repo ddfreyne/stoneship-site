@@ -8,7 +8,7 @@ has_title: false
 #p On this site, you’ll find:
 
 #ul
-  #li %ref[url=/software/]{My software}: sofware that I wrote
+  #li %ref[url=/software/]{My software}: software that I wrote
   #li %ref[url=/cv/]{My CV}
   #li %ref[url=/talks/]{My talks}
   #li %ref[url=/toolbox/]{My toolbox}: a list of software that I like to use
