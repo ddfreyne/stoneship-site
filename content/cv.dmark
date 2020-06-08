@@ -8,7 +8,15 @@ title: Denis Defreyne
   #section %h{Software Engineer, BCG Digital Ventures}
     #subtitle July 2019 – …
 
-    #p This description intentionally left blank.
+    #ul
+      #li
+        #p Established a team working on internal tools, with well-defined boundaries between related teams and stakeholders
+
+      #li
+        #p Defined the technical direction for the team, striking a balance between business needs and long-term maintenance
+
+      #li
+        #p Migrated a legacy system onto a modern frontend stack (React and TypeScript), boosting development speed and quality
 
   #section %h{Software Engineer, unspecified startup}
     #subtitle November 2017 – June 2019
