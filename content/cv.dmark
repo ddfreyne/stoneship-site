@@ -5,6 +5,11 @@ title: Denis Defreyne
 #contact denis@denis.ws
 
 #section %h{Experience}
+  #section %h{Software Engineer, closecontact}
+    #subtitle July 2020 – …
+
+    #p Architected and implemented a privacy-first contact-sharing solution for Berlin nightclubs
+
   #section %h{Software Engineer, BCG Digital Ventures}
     #subtitle July 2019 – …
 
