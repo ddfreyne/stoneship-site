@@ -1,0 +1,56 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@page {
+  size: auto;
+  margin: 20mm 20mm 20mm 20mm;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media print {
+  html {
+    font-size: 10pt;
+  }
+}
+
+a {
+  @apply cursor-pointer;
+}
+
+@media screen {
+  a:after {
+    content: "°";
+    @apply text-purple-600 font-bold pl-1;
+  }
+}
+
+a:hover {
+  @apply text-purple-600 underline;
+}
+
+h1 {
+  @apply text-blue-600 text-3xl;
+}
+
+h2 {
+  @apply text-blue-600 text-xl;
+}
+
+h3 {
+  @apply text-blue-600;
+}
+
+ul,
+ol {
+  @apply pl-4;
+}
+
+li {
+  @apply list-square;
+}

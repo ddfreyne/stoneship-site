@@ -2,7 +2,7 @@
 title: Denis’ toolbox
 ---
 
-#p This page collects the tools that I use on a daily basis. I’ve left out common tools (Git, macOS, Docker, …) in order to focus on perhaps lesser-known things.
+#p This page collects the tools that I use on a daily basis. I’ve left out common tools (Git, macOS, Docker, …) to highlight lesser-known things.
 
 #section %h{Desktop apps}
   #section %h{For macOS}

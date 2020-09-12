@@ -12,3 +12,15 @@ Nanoc::Check.define(:dashes) do
     end
   end
 end
+
+Nanoc::Check.define(:focus) do
+  @output_filenames.each do |filename|
+    next unless filename =~ /html$/
+
+    foci = File.read(filename)[/focus/] || []
+    if foci.size > 1
+      add_issue(
+        "don’t overuse focus", subject: filename)
+    end
+  end
+end
