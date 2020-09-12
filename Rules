@@ -30,6 +30,12 @@ compile '/sitemap_xml.*' do
   write '/sitemap.xml'
 end
 
+compile '/cv.*' do
+  layout '/bare.*'
+
+  write '/cv/index.html'
+end
+
 passthrough '/favicon.*'
 passthrough '/robots.*'
 
@@ -41,7 +47,15 @@ compile '/well-known/**/*' do
   write item.identifier.to_s.sub(/^\//, '/.')
 end
 
-compile '/assets/style/*' do
+compile '/assets/style/*.css' do
+  filter :tailwindcss
+  filter :relativize_paths, type: :css
+
+  cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
+  write item.identifier.without_ext + cbid_part + '.css'
+end
+
+compile '/assets/style/*.scss' do
   filter :sass, syntax: :scss, style: :compressed
   filter :relativize_paths, type: :css
 

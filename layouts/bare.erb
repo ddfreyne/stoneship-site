@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title><%= @item[:title] %></title>
+
+        <!-- metadata -->
+        <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
+
+        <!-- style -->
+        <link rel="stylesheet" href="<%= @items['/assets/style/bare.*'].path %>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Inter:400,700" rel="stylesheet">
+
+        <!-- google analytics -->
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    </head>
+    <body>
+        <%= yield %>
+    </body>
+</html>

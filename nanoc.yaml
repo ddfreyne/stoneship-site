@@ -6,17 +6,20 @@ text_extensions:
   - erb
   - txt
   - scss
+  - css
+  - html
 
 enable_output_diff: true
 
 prune:
   auto_prune: true
-  exclude: [ '.git' ]
+  exclude: [".git"]
 
 checking:
   enabled_checks:
     - ilinks
     - dashes
+    - focus
 
 data_sources:
   - type: filesystem_unified

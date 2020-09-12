@@ -146,6 +146,7 @@ DEPENDENCIES
   rubypants
   sass
   systemu
+  tty-command
   w3c_validators
 
 BUNDLED WITH
