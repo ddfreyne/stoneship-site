@@ -28,6 +28,12 @@
         </script>
     </head>
     <body>
-        <%= yield %>
+        <div class="bg-gray-100 print:bg-white">
+            <div class="md:w-a4width print:w-auto bg-white border-l-8 border-blue-500 print:border-l-0">
+                <div class="px-8 py-6 sm:px-16 sm:py-12 print:px-0 print:py-0">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

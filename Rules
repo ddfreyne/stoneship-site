@@ -30,12 +30,6 @@ compile '/sitemap_xml.*' do
   write '/sitemap.xml'
 end
 
-compile '/cv.*' do
-  layout '/bare.*'
-
-  write '/cv/index.html'
-end
-
 passthrough '/favicon.*'
 passthrough '/robots.*'
 
@@ -69,7 +63,11 @@ compile '/**/*' do
   filter :dmark if item.identifier.ext == 'dmark'
   filter :erb if item.identifier.ext == 'erb'
 
-  layout '/default.*'
+  if item[:layout] == 'bare'
+    layout '/bare.*'
+  else
+    layout '/default.*'
+  end
 
   filter :relativize_paths, type: :html5
 
