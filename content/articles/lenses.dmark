@@ -1,0 +1,334 @@
+---
+title: Using Lenses
+subtitle: Building complex React forms in a type-safe way
+type: article
+published_on: 2020-12-27
+keywords:
+  - React
+  - TypeScript
+  - lenses
+toc: true
+---
+
+#div[class=space-y-4 section] %h2[class=skip-toc]{Abstract}
+  #p %firstterm{Lenses} are bi-directional accessors for immutable objects, and can help in building forms with React.
+
+#div[class=space-y-4 section] %h2[class=skip-toc]{Table of contents}
+  ::TOC::
+
+#div[class=space-y-4 section] %h2{The context: Forms are hard}
+  #p At my employer, I work on an internal tool that has one page with a particularly complex form. Its implementation has gone through several revisions, but even the most advanced, React-powered version had issues.
+
+  #p We tested out the mainstream React libraries for form handling, but they left us hanging, because %highlight{none of them could cleanly deal with highly-complex nested data in a typesafe way}.
+
+  #p Type-safety in particular is useful because it significantly tightens the feedback loop: misspelled field nam will be flagged as an error immediately in the IDE, and the IDE will provide reliable and useful autocompletion with integrated documentation.
+
+  #p I looked to the functional programming community for answers, and found my answer in %em{lenses}. As an experiment, I reimplemented the form using lenses, which—it turns out—are able to handle highly-complex data in a typesafe way.
+
+#div[class=space-y-4 section] %h2{Lenses from the ground up}
+  #p Imagine a %code{Person} type, and an instance that represents myself:
+
+  #listing[lang=typescript]
+    type Person = {
+      firstName: string;
+      lastName: string;
+    %};
+
+    let denis: Person = {
+      firstName: "Denis",
+      lastName: "Defreyne"
+    %};
+
+  #p We can get the person’s first name:
+
+  #listing[lang=typescript]
+    denis.firstName
+      // -> "Denis"
+
+  #p We could also write some code to update the first name, which we’ll do in a purely-functional way, meaning that we won’t modify the object itself, but rather return a new object with the updated data:
+
+  #listing[lang=typescript]
+    { ...denis, firstName: "Dennis" %}
+      // -> {
+      //      firstName: "Dennis",
+      //      lastName: "Defreyne"
+      //    %}
+
+  #p Please note that calling me “Dennis” (rather than Denis, my proper name) will make me upset in real life, and I therefore suggest not doing that. Mmkay?
+
+  #p We can create functions for getting and updating the first name:
+
+  #listing[lang=typescript]
+    const getFirstName =
+      (person: Person) =>
+        person.firstName
+
+    const setFirstName =
+      (person: Person, firstName: string) =>
+        ({ ...person, firstName: firstName %})
+
+  #listing[lang=typescript]
+    getFirstName(denis)
+      // -> "Denis"
+
+    setFirstName(denis, "Dennis")
+      // -> {
+      //      firstName: "Dennis", /* upsetting, aah */
+      //      lastName: "Defreyne"
+      //    %}
+
+  #p We can combine the getter and the setter into a single object:
+
+  #listing[lang=typescript]
+    const firstName = {
+      get: (person: Person) =>
+        person.firstName
+
+      set: (person: Person, firstName: string) =>
+        ({ ...person, firstName: firstName %})
+    %}
+
+  #listing[lang=typescript]
+    firstName.get(denis)
+      // -> "Denis"
+
+    firstName.set(denis, "Dennis")
+      // -> {
+      //      firstName: "Dennis", /* upsetting, aah */
+      //      lastName: "Defreyne"
+      //    %}
+
+  #p Congratulations: %code{firstName} is your first lens!
+
+  #div[class=space-y-4 pt-8] %h3{Lenses, more formally}
+    #p The lens that we constructed above has the following type:
+
+    #listing[lang=typescript]
+      type PersonFirstNameLens = {
+        // Given a person,
+        // get a string (the first name)
+        get: (person: Person) => string;
+
+        // Given a person and a string (the first name),
+        // return a new person
+        set: (person: Person, firstName: string) => Person;
+      %};
+
+    #p This lens is for two specific types:
+
+    #ul[class=space-y-4]
+      #li The %code{Person} type is the %em{top} type: the type that contains the data that you want to extract (using %code{get}), or the data that you want to update (using %code{set}).
+
+      #li The %code{string} type is the %em{focused} type: the type of the extracted data.
+
+    #p With these two types in mind, we can construct a generic %code{Lens} type, with two type parameters (%code{T} for the top type, and %code{F} for the focused type):
+
+    #listing[lang=typescript]
+      type Lens<T, F> = {
+        get: (t: T) => F;
+        set: (t: T, f: F) => T;
+      %};
+
+    #p As you can see from its type definition, %highlight{a lens is the combination of a getter and a setter, for an immutable data structure}.
+
+  #div[class=space-y-4 pt-8] %h3{Conveniently creating lenses with %code{forProp()}}
+    #p It is convenient to have a function that can create a lens for a property automatically. This is where %code{forProp()} comes in:
+
+    #listing[lang=typescript]
+      let firstName = forProp<Person>()("firstName");
+
+    #p A lens returned by %code{forProp()} behaves exactly the same as a manually-constructed one:
+
+    #listing[lang=typescript]
+      let ed: Person = {
+        firstName: "Ed",
+        lastName: "X"
+      %};
+
+      firstName.get(ed);
+        // -> "Ed"
+      firstName.set(ed, "Edward");
+        // -> { firstName: "Edward", lastname: "X" %}
+
+    #p The %code{forProp()} function is type-safe, as it won’t accept non-existant properties:
+
+    #listing[lang=typescript]
+      // Type error! Person has no property middleName
+      let middleName = forProp<Person>()("middleName");
+
+    #details[class=space-y-4] %summary{Implementation}
+      #div[class=space-y-4 p-4 bg-gray-100 dark:bg-gray-100 rounded-lg]
+        #div[class=p-4 bg-orange-100 dark:bg-orange-900 shadow-md rounded-lg space-y-4]
+          #p %b{Note}: This section covers advanced details that can be skipped.
+
+        #p The implementation of %code{forProp()} is intimidating. Behold:
+
+        #listing[lang=typescript]
+          const forProp =
+            <T extends object>() =>
+              <P extends keyof T>(prop: P): Lens<T, T[P]> => ({
+                get: t => t[prop],
+                set: (t, f) => ({ ...t, [prop]: f %})
+              %});
+
+        #p The good news: to use lenses, you don’t need to understand this implementation.
+
+        #p Software engineering is often the art of moving complexity around, in a way that makes this complexity easier to deal with. The %code{forProp()} function has a complex implementation, but its behavior is straightforward. The %code{forProp()} function is complex, so that the rest of the code can be simple.
+
+        #p You might also be asking yourself: why the double function invocation? Why %code{forProp<Person>()("firstName")}, rather than %code{forProp<Person>("firstName")}?
+
+        #p The reason is that TypeScript doesn’t (yet) support partial type inference (see %ref[url=https://github.com/microsoft/TypeScript/issues/26242]{TypeScript issue #26242} for details). If %code{forProp()} only had a single function invocation, we’d have to specify both the top type as well as the focus type (%code{string} in this case). We’re working around this limitation by using two function invocations, each with one type parameter, and we let the second function’s type parameter be inferred.
+
+#div[class=space-y-4 section] %h2{Lenses for forms}
+  #p A lens-powered form field needs three properties:
+
+  #listing[lang=typescript]
+    interface BareTextFieldProps<T> {
+      lens: Lens<T, string>;
+      top: T;
+      setTop: (t: T) => void;
+    %}
+
+  #p A form field needs the lens (for getting and setting the data for this field), but also %code{top} and %code{setTop()}, which are used for getting and setting the top-level object. (Note the similarity between %code{top} and %code{setTop()} and what the React %code{useState} hook returns!)
+
+  #p This minimalist text field’s implementation is as follows:
+
+  #listing[lang=typescript]
+    export const BareTextField = <T extends any>({
+      lens,
+      top,
+      setTop
+    %}: BareTextFieldProps<T>) => {
+      // Read value through lens
+      let value = lens.get(top);
+
+      // Replace top with new instance updated through lens
+      let set = (newValue: string) => {
+        setTop(lens.set(top, newValue));
+      %};
+
+      return (
+        <input
+          type="text"
+          value={value%}
+          onChange={e => setTop(e.target.value)%}
+        />
+      );
+    %};
+
+  #div[class=space-y-4 pt-8] %h3{Minimal form example}
+    #p We’ll create a form for a new person. First, we’ll need our lenses:
+
+    #listing[lang=typescript]
+      const firstName = L.forProp<Person>()("firstName");
+      const lastName = L.forProp<Person>()("lastName");
+
+    #p We’ll also need a way to create a blank person object:
+
+    #listing[lang=typescript]
+      const newPerson = (): Person => ({
+        firstName: "",
+        lastName: ""
+      %});
+
+    #p The skeleton of our form will look like this:
+
+    #listing[lang=typescript]
+      const PersonForm = () => {
+        let [person, setPerson] = useState(newPerson);
+
+        return (
+          <>
+            {/* to do: add form fields here */%}
+
+            <pre>{JSON.stringify(person, null, 2)%}</pre>
+          </>
+        );
+      %};
+
+    #p When the form is created, the %code{person} variable is initialized to a new person.
+
+    #p At the end of the form, we show the pretty-printed representation of the person, so that you can see that it indeed is updating the person properly.
+
+    #p Let’s add the fields for the first name and last name:
+
+    #listing[lang=jsx]
+      <>
+        <BareTextField
+          top={person%}
+          setTop={setPerson%}
+          lens={firstName%}
+        />
+
+        <BareTextField
+          top={person%}
+          setTop={setPerson%}
+          lens={lastName%}
+        />
+
+        <pre>{JSON.stringify(person, null, 2)%}</pre>
+      </>
+
+    #p We can reduce the amount of boilerplate by creating an object %code{f} that contains %code{top} and %code{setTop()}, so that we can pass it to the text fields succinctly:
+
+    #listing[lang=typescript]
+      const PersonForm = () => {
+        let [person, setPerson] = useState(newPerson);
+        %highlight{let f = { top: person, setTop: setPerson %};}
+
+        return (
+          <>
+            %highlight{<BareTextField {...f%} lens={firstName%} />}
+            %highlight{<BareTextField {...f%} lens={lastName%} />}
+            <pre>{JSON.stringify(person, null, 2)%}</pre>
+          </>
+        );
+      %};
+
+    #p The magic happens in the two commented lines: in the first one, we get the value using %code{get}, and in the second one, we update the value using the lens’ %code{set} method followed by %code{setTop}.
+
+    #p With this approach, you can build forms with nested objects in a terse and type-safe way.
+
+  #div[class=space-y-4 pt-8] %h3{Prettier form example}
+    #p The text field we’ve created so far is nothing but a wrapper for an %code{input} element. We can build a more full-fledged text field by adding a label and some styling (I am partial to utility-first CSS):
+
+    #listing[lang=typescript]
+      interface TextFieldProps<T> extends BareTextFieldProps<T> {
+        label: string;
+      %}
+
+      const TextField = <T extends any>({
+        lens,
+        top,
+        setTop,
+        label
+      %}: TextFieldProps<T>) => (
+        <label class="block pb-6">
+          <div style="font-bold">{label%}</div>
+          <BareTextField lens={lens%} top={top%} setTop={setTop%} />
+        </label>
+      );
+
+    #p Once we replace our %code{BareTextField} usage in the form with %code{TextField} (now with label), we get a nicer form:
+
+    #listing[lang=jsx]
+      <>
+        <TextField {...f%} lens={firstName%} label="First name" />
+        <TextField {...f%} lens={lastName%} label="Last name" />
+        <pre>{JSON.stringify(person, null, 2)%}</pre>
+      </>
+
+#div[class=space-y-4 section] %h2{Composing lenses}
+  #p TODO
+
+#div[class=space-y-4 section] %h2{Lists}
+  #p TODO
+
+#div[class=space-y-4 section] %h2{References}
+  #p TODO
+
+#div[class=space-y-4 section] %h2{Data conversion}
+  #p TODO
+
+#div[class=space-y-4 section] %h2{Open questions}
+  #p TODO: validation

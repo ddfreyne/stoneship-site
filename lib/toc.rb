@@ -8,10 +8,11 @@ Class.new(Nanoc::Filter) do
       # Find all top-level sections
       doc = Nokogiri::HTML(content)
       headers = doc.css('h2, h3').map do |header|
-        p header
+        next if (header['class'] || '') =~ /skip-toc/
+
         title = header['data-nav-title'] || header.inner_html
         { title: title, id: header['id'], level: header.name[/\d/].to_i }
-      end
+      end.compact
 
       next '' if headers.empty?
 

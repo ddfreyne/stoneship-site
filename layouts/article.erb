@@ -1,0 +1,15 @@
+<div class="space-y-16">
+  <div class="space-y-4 section">
+    <div>
+      <h1><%= @item[:title] %></h1>
+      <div class="text-blue-600 dark:text-blue-400 text-xl"><%= @item[:subtitle] %></div>
+    </div>
+
+    <div>
+      <div>Denis Defreyne, <%= @item[:published_on].year %></div>
+      <div>Keywords: <%= @item[:keywords].sort.join(', ') %></div>
+    </div>
+  </div>
+
+  <%= yield %>
+</div>
