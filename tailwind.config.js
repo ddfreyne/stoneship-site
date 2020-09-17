@@ -1,5 +1,8 @@
 module.exports = {
   purge: [],
+  experimental: {
+    darkModeVariant: true,
+  },
   theme: {
     listStyleType: {
       none: "none",
