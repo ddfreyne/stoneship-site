@@ -7,7 +7,7 @@ module.exports = {
     listStyleType: {
       none: "none",
       square: "square",
-      roman: "upper-roman",
+      decimal: "decimal",
     },
     extend: {
       spacing: {

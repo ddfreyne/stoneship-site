@@ -69,6 +69,8 @@ compile '/**/*' do
     layout '/default.*'
   end
 
+  filter :add_ids_to_headers
+  filter :toc if item[:toc]
   filter :relativize_paths, type: :html5
 
   if item.identifier =~ '/index.*'

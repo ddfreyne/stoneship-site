@@ -15,13 +15,19 @@ class DMarkTranslator < DMark::Translator
       handle_element_h(element, context)
     when 'subtitle'
       handle_element_subtitle(element, context)
+    when 'highlight'
+      handle_element_highlight(element, context)
+    when 'firstterm'
+      handle_element_firstterm(element, context)
+    when 'listing'
+      handle_element_listing(element, context)
     when 'section'
       handle_element_section(element, context)
     when 'contact'
       handle_element_contact(element, context)
     when 'ref'
       handle_element_ref(element, context)
-    when 'em', 'ul', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td'
+    when 'em', 'ul', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'h1', 'h2', 'h3', 'code', 'b'
       handle_generic_element(element, context)
     else
       raise "Cannot translate #{element.name}"
@@ -45,6 +51,24 @@ class DMarkTranslator < DMark::Translator
     wrap('div', class: 'subtitle') { handle_children(element, context) }
   end
 
+  def handle_element_highlight(element, context)
+    wrap('span', class: 'bg-green-200 dark:bg-green-800 -mx-1 px-1 rounded') { handle_children(element, context) }
+  end
+
+  def handle_element_firstterm(element, context)
+    wrap('i') { handle_children(element, context) }
+  end
+
+  def handle_element_listing(element, context)
+    lang = element.attributes['lang']
+    code_attributes = lang ? { class: "language-#{lang}" } : {}
+    wrap('pre', class: 'px-4 py-3 bg-blue-100 dark:bg-blue-900 rounded-md') do
+      wrap('code', code_attributes) do
+        handle_children(element, context)
+      end
+    end
+  end
+
   def handle_element_contact(element, context)
     wrap('div', class: 'contact') { ['<span class="icon">✒</span> '] + handle_children(element, context) }
   end
@@ -64,7 +88,7 @@ class DMarkTranslator < DMark::Translator
   ###
 
   def handle_generic_element(element, context)
-    wrap(element.name) do
+    wrap(element.name, element.attributes) do
       handle_children(element, context)
     end
   end

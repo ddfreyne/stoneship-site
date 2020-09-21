@@ -43,7 +43,7 @@ h2 {
 }
 
 h3 {
-  @apply text-blue-600;
+  @apply text-blue-600 text-lg;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -66,11 +66,78 @@ h3 {
   }
 }
 
-ul,
-ol {
+ul {
   @apply pl-4;
 }
 
-li {
+ol {
+  @apply pl-5;
+}
+
+ul > li {
   @apply list-square;
+}
+
+ol > li {
+  @apply list-decimal;
+}
+
+.hljs-comment {
+  @apply text-gray-500;
+}
+
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  @apply font-bold;
+}
+
+.hljs-deletion,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  @apply text-red-500;
+}
+
+.hljs-section,
+.hljs-title {
+  @apply font-bold;
+}
+
+.hljs-link,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  @apply text-blue-500;
+}
+
+.hljs-literal {
+  @apply text-green-500;
+}
+
+.hljs-addition,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-meta,
+.hljs-meta-string {
+  @apply text-purple-500;
+}
+
+.hljs-emphasis {
+  @apply italic;
+}
+
+.hljs-strong {
+  @apply font-bold;
 }
