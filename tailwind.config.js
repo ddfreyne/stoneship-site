@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ["output/**/*.html"],
   experimental: {
     darkModeVariant: true,
   },

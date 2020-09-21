@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 Nanoc::Filter.define(:tailwindcss) do |content, _params = {}|
+  # Set up dependencies for purgecss
+  ENV['NODE_ENV'] = 'production'
+  @items.find_all('/**/*.{html,dmark}').each do |item|
+    item.compiled_content
+  end
+
   Tempfile.create(['src', '.css']) do |src_file|
     File.write(src_file, content)
 
