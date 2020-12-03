@@ -1,8 +1,6 @@
 module.exports = {
   purge: ["output/**/*.html"],
-  experimental: {
-    darkModeVariant: true,
-  },
+  darkMode: "media",
   theme: {
     listStyleType: {
       none: "none",
