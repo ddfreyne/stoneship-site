@@ -1,16 +1,17 @@
 ---
 title: "Home"
-has_title: false
+layout: bare
 ---
 
-#p Hi! I'm Denis. You might know me from %ref[url=http://nanoc.ws/]{Nanoc}. My pronouns are %ref[url=https://pronoun.is/he/him]{he/him}.
+#div[class=space-y-10 sm:space-y-6]
+  #p Hi! I'm Denis. You might know me from %ref[url=http://nanoc.ws/]{Nanoc}. My pronouns are %ref[url=https://pronoun.is/he/him]{he/him}.
 
-#p On this site, you’ll find:
+  #p On this site, you’ll find:
 
-#ul
-  #li %ref[url=/software/]{My software}: software that I wrote
-  #li %ref[url=/cv/]{My CV}
-  #li %ref[url=/talks/]{My talks}
-  #li %ref[url=/toolbox/]{My toolbox}: a list of software that I like to use
+  #ul
+    #li %ref[url=/software/]{My software}: software that I wrote
+    #li %ref[url=/cv/]{My CV}
+    #li %ref[url=/talks/]{My talks}
+    #li %ref[url=/toolbox/]{My toolbox}: a list of software that I like to use
 
-#p You can also find me %ref[url=https://github.com/ddfreyne]{on GitHub}, %ref[url=https://twitter.com/ddfreyne]{on Twitter}, %ref[url=https://keybase.io/ddfreyne]{on Keybase}, …
+  #p You can also find me %ref[url=https://github.com/ddfreyne]{on GitHub}, %ref[url=https://twitter.com/ddfreyne]{on Twitter}, %ref[url=https://keybase.io/ddfreyne]{on Keybase}, …
