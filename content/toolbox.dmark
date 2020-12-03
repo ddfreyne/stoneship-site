@@ -1,58 +1,64 @@
 ---
 title: Denis’ toolbox
+layout: bare
 ---
 
-#p This page collects the tools that I use on a daily basis. I’ve left out common tools (Git, macOS, Docker, …) to highlight lesser-known things.
+#div[class=pb-8]
+  #h1 Toolbox
 
-#section %h{Desktop apps}
-  #section %h{For macOS}
+#div[class=space-y-10 sm:space-y-6]
+  #p This page collects the tools that I use on a daily basis. I’ve left out common tools (Git, macOS, Docker, …) to highlight lesser-known things.
+
+  #div
+    #h2[class=pb-2] Desktop apps
     #dl
       #dt %ref[url=https://www.alfredapp.com/]{Alfred} (productivity app)
-      #dd Alfred gives me the power to do all the things I want, right when I need them, without introducing clutter. I have a handful of custom workflows tuned for the way I work, which I imagine impresses my coworkers.
+      #dd[class=pb-4 last:pb-0] Alfred gives me the power to do all the things I want, right when I need them, without introducing clutter. I have a handful of custom workflows tuned for the way I work, which I imagine impresses my coworkers.
 
       #dt %ref[url=https://www.omnigroup.com/omnigraffle/]{OmniGraffle} (diagramming and drawing app)
-      #dd It isn’t cheap, but I find the $100 price tag to be worth it. I use it to impress my coworkers.
+      #dd[class=pb-4 last:pb-0] It isn’t cheap, but I find the $100 price tag to be worth it. I use it to impress my coworkers.
 
       #dt %ref[url=https://www.spectacleapp.com/]{Spectacle} (window management app)
-      #dd This is how I keep my windows nicely tiled.
+      #dd[class=pb-4 last:pb-0] This is how I keep my windows nicely tiled.
 
-  #section %h{Cross-platform}
-    #dl
       #dt %ref[url=https://code.visualstudio.com/]{Visual Studio Code} (code editor)
-      #dd I switched from %ref[url=https://atom.io/]{Atom}, which by itself is already an amazing piece of software, to Visual Studio Code, which is at the same level of awesomenes.
+      #dd[class=pb-4 last:pb-0] I switched from %ref[url=https://atom.io/]{Atom}, which by itself is already an amazing piece of software, to Visual Studio Code, which is at the same level of awesomenes.
 
-#section %h{Fonts}
-  #dl
-    #dt %ref[url=http://input.fontbureau.com/]{Input}
-    #dd It’s pretty.
+  #div
+    #h2[class=pb-2] Fonts
+    #dl
+      #dt %ref[url=http://input.fontbureau.com/]{Input}
+      #dd[class=pb-4 last:pb-0] It’s pretty.
 
-    #dt %ref[url=https://be5invis.github.io/Iosevka/]{Iosevka}
-    #dd It’s pretty, and has ligatures.
+      #dt %ref[url=https://be5invis.github.io/Iosevka/]{Iosevka}
+      #dd[class=pb-4 last:pb-0] It’s pretty, and has ligatures.
 
-#section %h{CLI tools}
-  #dl
-    #dt %ref[url=https://fishshell.com/]{fish}
-    #dd A fast, easy-to-use shell that has sensible defaults. I have barely customised it.
+  #div
+    #h2[class=pb-2] CLI tools
+    #dl
+      #dt %ref[url=https://fishshell.com/]{fish}
+      #dd[class=pb-4 last:pb-0] A fast, easy-to-use shell that has sensible defaults. I have barely customised it.
 
-    #dt %ref[url=https://github.com/BurntSushi/ripgrep]{ripgrep}
-    #dd A fast search tool, similar to grep, ack. and ag.
+      #dt %ref[url=https://github.com/BurntSushi/ripgrep]{ripgrep}
+      #dd[class=pb-4 last:pb-0] A fast search tool, similar to grep, ack. and ag.
 
-    #dt %ref[url=https://github.com/BurntSushi/xsv]{xsv}
-    #dd A must-have tool if you deal with CSV files.
+      #dt %ref[url=https://github.com/BurntSushi/xsv]{xsv}
+      #dd[class=pb-4 last:pb-0] A must-have tool if you deal with CSV files.
 
-#section %h{Ruby gems}
-  #dl
-    #dt %ref[url=https://github.com/hamstergem/hamster]{hamster}
-    #dd Provides efficient immutable data structures (sometimes more efficient than built-in Ruby ones).
+  #div
+    #h2[class=pb-2] Ruby gems
+    #dl
+      #dt %ref[url=https://github.com/hamstergem/hamster]{hamster}
+      #dd[class=pb-4 last:pb-0] Provides efficient immutable data structures (sometimes more efficient than built-in Ruby ones).
 
-    #dt %ref[url=https://github.com/qrush/m]{m} (selective Test::Unit runner)
-    #dd Useful when you want to only run specific Test::Unit test cases.
+      #dt %ref[url=https://github.com/qrush/m]{m} (selective Test::Unit runner)
+      #dd[class=pb-4 last:pb-0] Useful when you want to only run specific Test::Unit test cases.
 
-    #dt %ref[url=https://github.com/ruby-concurrency/ref]{ref}
-    #dd Provides a soft ref implementation, which is indispensable for effective memoization.
+      #dt %ref[url=https://github.com/ruby-concurrency/ref]{ref}
+      #dd[class=pb-4 last:pb-0] Provides a soft ref implementation, which is indispensable for effective memoization.
 
-    #dt %ref[url=http://rspec.info/]{rspec}
-    #dd I feel lost without it.
+      #dt %ref[url=http://rspec.info/]{rspec}
+      #dd[class=pb-4 last:pb-0] I feel lost without it.
 
-    #dt %ref[url=http://rubocop.readthedocs.io/]{rubocop}
-    #dd Indispensable when writing Ruby code. It pretty much eliminates all discussions about style.
+      #dt %ref[url=http://rubocop.readthedocs.io/]{rubocop}
+      #dd[class=pb-4 last:pb-0] Indispensable when writing Ruby code. It pretty much eliminates all discussions about style.

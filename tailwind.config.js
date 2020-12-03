@@ -19,6 +19,10 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      padding: ["last"],
+    },
+  },
   plugins: [],
 };
