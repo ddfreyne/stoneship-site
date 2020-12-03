@@ -10,23 +10,14 @@ title: Denis’ toolbox
       #dt %ref[url=https://www.alfredapp.com/]{Alfred} (productivity app)
       #dd Alfred gives me the power to do all the things I want, right when I need them, without introducing clutter. I have a handful of custom workflows tuned for the way I work, which I imagine impresses my coworkers.
 
-      #dt %ref[url=https://anvilformac.com/]{Anvil} (local web server for static sites)
-      #dd I use Anvil in combination with %ref[url=https://nanoc.ws/]{Nanoc} to preview local static sites that I’m working on.
-
       #dt %ref[url=https://www.omnigroup.com/omnigraffle/]{OmniGraffle} (diagramming and drawing app)
       #dd It isn’t cheap, but I find the $100 price tag to be worth it. I use it to impress my coworkers.
 
       #dt %ref[url=https://www.spectacleapp.com/]{Spectacle} (window management app)
       #dd This is how I keep my windows nicely tiled.
 
-      #dt %ref[url=https://vox.rocks/mac-music-player]{Vox} (music player)
-      #dd A music player with a clean interface that isn’t resource-hungry.
-
   #section %h{Cross-platform}
     #dl
-      #dt %ref[url=https://github.com/salomvary/soundcleod]{SoundCleod} (SoundCloud desktop app)
-      #dd A dedicated app for SoundCloud with support for media keys (▶❚❚ etc).
-
       #dt %ref[url=https://code.visualstudio.com/]{Visual Studio Code} (code editor)
       #dd I switched from %ref[url=https://atom.io/]{Atom}, which by itself is already an amazing piece of software, to Visual Studio Code, which is at the same level of awesomenes.
 
