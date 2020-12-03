@@ -24,14 +24,13 @@ a {
 }
 
 @media screen {
-  a:after {
-    content: "°";
-    @apply text-purple-600 font-bold pl-1;
+  a {
+    @apply text-purple-500 underline;
   }
 }
 
 a:hover {
-  @apply text-purple-600 underline;
+  @apply text-purple-600;
 }
 
 h1 {
