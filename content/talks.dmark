@@ -1,8 +1,12 @@
 ---
 title: Denis’ talks
+layout: bare
 ---
 
-#section %h{Talks}
+#div[class=pb-8]
+  #h1 Talks
+
+#div[class=space-y-10 sm:space-y-6]
   #p I enjoy giving talks and try to do it often. Here is a list of talks I have given:
 
   #ul
