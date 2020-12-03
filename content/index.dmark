@@ -1,6 +1,5 @@
 ---
 title: "Home"
-layout: bare
 ---
 
 #div[class=space-y-10 sm:space-y-6]

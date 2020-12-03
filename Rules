@@ -63,11 +63,7 @@ compile '/**/*' do
   filter :dmark if item.identifier.ext == 'dmark'
   filter :erb if item.identifier.ext == 'erb'
 
-  if item[:layout] == 'bare'
-    layout '/bare.*'
-  else
-    layout '/default.*'
-  end
+  layout '/default.*'
 
   filter :add_ids_to_headers
   filter :toc if item[:toc]
