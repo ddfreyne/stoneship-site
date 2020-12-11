@@ -13,7 +13,7 @@ Nanoc::Filter.define(:tailwindcss) do |content, _params = {}|
     Tempfile.create(['dst', '.css']) do |dst_file|
       cmd = [
         'npx',
-        'tailwindcss',
+        'tailwindcss-cli@latest',
         'build',
         src_file.path,
         '-o',
