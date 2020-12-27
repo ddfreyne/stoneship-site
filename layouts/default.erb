@@ -6,7 +6,25 @@
         <title><%= @item[:title] %></title>
 
         <!-- metadata -->
+
         <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
+
+        <meta property="og:site_name" content="denis.ws">
+
+        <meta property="og:url" content="https://denis.ws<%= @item_rep.path %>">
+
+        <meta property="og:title" content="<%= @item[:title] %><%= @item[:subtitle] ? ': ' + @item[:subtitle] : '' %>">
+        <meta property="dc.title" content="<%= @item[:title] %>">
+        <% if @item[:subtitle] %>
+            <meta property="dc.alternate" content="<%= @item[:subtitle] %>">
+        <% end %>
+
+        <meta property="og:type" content="<%= @item.fetch(:type, 'website') %>">
+
+        <% if @item.fetch(:type, 'website') == 'profile' %>
+            <meta property="profile:first_name" content="Denis">
+            <meta property="profile:last_name" content="Defreyne">
+        <% end %>
 
         <!-- style -->
         <link rel="stylesheet" href="<%= @items['/assets/style/bare.*'].path %>">
