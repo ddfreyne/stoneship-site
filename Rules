@@ -14,8 +14,25 @@ preprocess do
     end
   end
 
+  def find_backlinks
+    is_linked_from = {}
+
+    @items.find_all('/notes/*').each do |note|
+      linked_titles = note.raw_content.scan(/\[\[[^\]]+\]\]/).map { |m| m[2..-3] }
+      linked_titles.each do |linked_title|
+        is_linked_from[linked_title] ||= []
+        is_linked_from[linked_title] << note
+      end
+    end
+
+    @items.find_all('/notes/*').each do |note|
+      note[:is_linked_from] = is_linked_from.fetch(note[:title], []).map(&:identifier).map(&:to_s)
+    end
+  end
+
   hide_specials
   assign_cachebuster_id
+  find_backlinks
 end
 
 passthrough '/tmp/**/*'
@@ -58,6 +75,18 @@ compile '/assets/style/*.scss' do
 end
 
 passthrough '/assets/**/*'
+
+compile '/notes/*' do
+  filter :bear
+  filter :kramdown
+
+  layout '/bear.*'
+  layout '/default.*'
+
+  filter :relativize_paths, type: :html5
+
+  write item.identifier.without_exts + '/index.html'
+end
 
 compile '/**/*' do
   filter :dmark if item.identifier.ext == 'dmark'

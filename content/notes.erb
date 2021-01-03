@@ -1,0 +1,13 @@
+---
+title:     "Notes"
+---
+
+<div class="space-y-4">
+  <h1>Notes</h1>
+
+  <ul>
+    <% @items.find_all('/notes/*').sort_by { |i| i[:title] }.each do |note| %>
+      <li><%= link_to note[:title], note %></li>
+    <% end %>
+  </ul>
+</div>
