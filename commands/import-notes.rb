@@ -10,7 +10,7 @@ flag   :h, :help,  'show help for this command' do |value, cmd|
 end
 
 db_path = "#{Dir.home}/Library/Group Containers/9K33E3U3T4.net.shinyfrog.bear/Application Data/database.sqlite"
-tag_regex = /^#[a-zA-Z\/]+(\s+#[a-zA-Z\/]+)*/
+tag_regex = /^#[a-zA-Z\/]+(\s+#[a-zA-Z\/]+)*\s*/
 files_path = File.expand_path(File.join(__dir__, '..', 'content', 'notes'))
 
 run do |opts, args, cmd|
@@ -28,11 +28,13 @@ run do |opts, args, cmd|
     }
   end
 
+  notes.each { |n| puts n[:text]; puts '-' * 80 }
+
   public_notes =
     notes.select do |note|
-      note[:text].match?(/^#public\s*$/)
+      note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#public\s*$/)
     end.map do |note|
-      note.merge(text: note[:text].gsub(/^#public\s*$/, ''))
+      note.merge(text: note[:text].gsub(tag_regex, ''))
     end
 
   public_notes.each do |note|
