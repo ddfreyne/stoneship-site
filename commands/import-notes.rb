@@ -28,8 +28,6 @@ run do |opts, args, cmd|
     }
   end
 
-  notes.each { |n| puts n[:text]; puts '-' * 80 }
-
   public_notes =
     notes.select do |note|
       note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#public\s*$/)
