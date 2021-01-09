@@ -85,6 +85,10 @@ ol > li {
   @apply list-decimal;
 }
 
+blockquote {
+  @apply pl-4 border-l-2 border-blue-500;
+}
+
 .hljs-comment {
   @apply text-gray-500;
 }
