@@ -10,7 +10,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media print {
@@ -37,8 +37,16 @@ h1 {
   @apply text-blue-500 text-3xl;
 }
 
+.notes h1 {
+  @apply pb-4;
+}
+
 h2 {
   @apply text-blue-500 text-xl;
+}
+
+.notes h2 {
+  @apply pt-4;
 }
 
 h3 {

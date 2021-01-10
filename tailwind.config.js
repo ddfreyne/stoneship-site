@@ -7,6 +7,9 @@ module.exports = {
       square: "square",
       decimal: "decimal",
     },
+    fontFamily: {
+      serif: ["PT Serif", "Georgia", "serif"],
+    },
     extend: {
       spacing: {
         a4width: "794px",
