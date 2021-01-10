@@ -17,9 +17,6 @@ module.exports = {
       screens: {
         print: { raw: "print" },
       },
-      colors: {
-        cyan: "#9cdbff",
-      },
     },
   },
   variants: {
