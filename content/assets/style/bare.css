@@ -25,16 +25,20 @@ a {
 
 @media screen {
   a {
-    @apply text-purple-500 underline;
+    @apply text-blue-500 underline;
+  }
+
+  a:visited {
+    @apply text-purple-500;
   }
 }
 
 a:hover {
-  @apply text-purple-700;
+  @apply text-blue-700;
 }
 
 h1 {
-  @apply text-blue-500 text-3xl;
+  @apply text-3xl;
 }
 
 .notes h1 {
@@ -42,7 +46,7 @@ h1 {
 }
 
 h2 {
-  @apply text-blue-500 text-xl;
+  @apply font-bold text-xl;
 }
 
 .notes h2 {
@@ -50,30 +54,22 @@ h2 {
 }
 
 h3 {
-  @apply text-blue-500 text-lg;
+  @apply font-bold text-lg;
 }
 
 @media (prefers-color-scheme: dark) {
   @media screen {
     a {
+      @apply text-blue-400;
+    }
+
+    a:visited {
       @apply text-purple-400;
     }
   }
 
   a:hover {
-    @apply text-purple-200;
-  }
-
-  h1 {
-    @apply text-blue-400;
-  }
-
-  h2 {
-    @apply text-blue-400;
-  }
-
-  h3 {
-    @apply text-blue-400;
+    @apply text-blue-200;
   }
 }
 
