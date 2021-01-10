@@ -1,4 +1,8 @@
 preprocess do
+  unless File.directory?('node_modules')
+    system('npm install')
+  end
+
   def hide_specials
     items.each do |item|
       if item.identifier =~ /^\/(assets|well-known|robots\.txt)/

@@ -1,7 +1,17 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   purge: ["output/**/*.html"],
   darkMode: "media",
   theme: {
+    colors: {
+      white: colors.white,
+      gray: colors.blueGray,
+      blue: colors.blue,
+      purple: colors.purple,
+      red: colors.red,
+      green: colors.green,
+    },
     listStyleType: {
       none: "none",
       square: "square",
