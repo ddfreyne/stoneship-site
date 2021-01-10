@@ -23,6 +23,7 @@ checking:
 
 data_sources:
   - type: filesystem_unified
+  - type: tailwind_config
 
 deploy:
   default:

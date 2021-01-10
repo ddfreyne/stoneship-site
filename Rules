@@ -37,6 +37,8 @@ end
 
 passthrough '/tmp/**/*'
 
+ignore '/ignore/**/*'
+
 compile '/404.*' do
   layout '/default.*'
   write '/404.html'
