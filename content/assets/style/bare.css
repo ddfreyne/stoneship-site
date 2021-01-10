@@ -58,7 +58,7 @@ h2 {
 }
 
 h3 {
-  @apply font-bold text-lg;
+  @apply font-bold text-base;
 }
 
 @media (prefers-color-scheme: dark) {
