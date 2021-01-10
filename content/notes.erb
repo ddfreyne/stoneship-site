@@ -6,7 +6,7 @@ title:     "Notes"
   <h1>Notes</h1>
 
   <ul>
-    <% @items.find_all('/notes/*').sort_by { |i| i[:title] }.each do |note| %>
+    <% @items.find_all('/notes/*').sort_by { |i| i[:title].downcase }.each do |note| %>
       <li><%= link_to note[:title], note %></li>
     <% end %>
   </ul>
