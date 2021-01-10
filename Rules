@@ -91,7 +91,12 @@ compile '/notes/*' do
 
   filter :relativize_paths, type: :html5
 
-  write item.identifier.without_exts + '/index.html'
+  digest =
+    Digest::SHA256.hexdigest(item.identifier.to_s)
+    .tr('0123456789abcdef', '79cfhklmnprtvwxy')
+    .scan(/.{5}/).take(3).join('-')
+
+  write "/notes/#{digest}/index.html"
 end
 
 compile '/**/*' do
