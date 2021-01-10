@@ -28,13 +28,17 @@ a {
     @apply text-blue-500 underline;
   }
 
+  a:hover {
+    @apply text-blue-700;
+  }
+
   a:visited {
     @apply text-purple-500;
   }
-}
 
-a:hover {
-  @apply text-blue-700;
+  a:visited:hover {
+    @apply text-purple-700;
+  }
 }
 
 h1 {
@@ -63,13 +67,17 @@ h3 {
       @apply text-blue-400;
     }
 
+    a:hover {
+      @apply text-blue-200;
+    }
+
     a:visited {
       @apply text-purple-400;
     }
-  }
 
-  a:hover {
-    @apply text-blue-200;
+    a:visited:hover {
+      @apply text-purple-200;
+    }
   }
 }
 
