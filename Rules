@@ -1,3 +1,6 @@
+require 'kramdown'
+require 'kramdown-parser-gfm'
+
 preprocess do
   unless File.directory?('node_modules')
     system('npm install')
@@ -84,7 +87,7 @@ passthrough '/assets/**/*'
 
 compile '/notes/*' do
   filter :bear
-  filter :kramdown
+  filter :kramdown, input: 'GFM'
 
   layout '/bear.*'
   layout '/default.*'

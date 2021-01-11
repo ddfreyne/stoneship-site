@@ -35,6 +35,8 @@ GEM
     json_schema (0.20.9)
     kramdown (2.3.0)
       rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -145,6 +147,7 @@ DEPENDENCIES
   builder
   d-mark (~> 1.0.0b)
   kramdown (~> 2.3)
+  kramdown-parser-gfm (~> 1.1)
   nanoc (~> 4.11, >= 4.11.6)
   nanoc-git
   nanoc-live
