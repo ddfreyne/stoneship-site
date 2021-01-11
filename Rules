@@ -93,7 +93,7 @@ compile '/notes/*' do
 
   digest =
     Digest::SHA256.hexdigest(item.identifier.to_s)
-    .tr('0123456789abcdef', '79cfhklmnprtvwxy')
+    .tr('0123456789abcdef', '79cfhklmnprtvwxz')
     .scan(/.{5}/).take(3).join('-')
 
   write "/notes/#{digest}/index.html"
