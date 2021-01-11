@@ -88,6 +88,7 @@ passthrough '/assets/**/*'
 compile '/notes/*' do
   filter :bear
   filter :kramdown, input: 'GFM'
+  filter :autolink
 
   layout '/bear.*'
   layout '/default.*'
