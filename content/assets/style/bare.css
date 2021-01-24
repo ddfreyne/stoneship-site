@@ -29,6 +29,10 @@ a {
   @apply cursor-pointer;
 }
 
+pre {
+  white-space: pre-wrap;
+}
+
 @media screen {
   a {
     @apply text-blue-500 underline;
