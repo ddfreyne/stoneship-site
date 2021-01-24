@@ -47,6 +47,17 @@ a {
   }
 }
 
+h1,
+h2,
+h3 {
+  @apply font-sans;
+}
+
+h2,
+h3 {
+  @apply font-bold;
+}
+
 h1 {
   @apply text-3xl;
 }
@@ -56,7 +67,7 @@ h1 {
 }
 
 h2 {
-  @apply font-bold text-xl;
+  @apply text-xl;
 }
 
 .notes h2 {
@@ -64,7 +75,7 @@ h2 {
 }
 
 h3 {
-  @apply font-bold text-base;
+  @apply text-base;
 }
 
 @media (prefers-color-scheme: dark) {

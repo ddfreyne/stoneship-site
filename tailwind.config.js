@@ -18,6 +18,7 @@ module.exports = {
       decimal: "decimal",
     },
     fontFamily: {
+      sans: ["PT Sans", "Helvetica", "Arial", "sans-serif"],
       serif: ["PT Serif", "Georgia", "serif"],
     },
     extend: {
