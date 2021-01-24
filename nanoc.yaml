@@ -28,4 +28,4 @@ data_sources:
 deploy:
   default:
     kind: rclone
-    dst: "fastmail:web/denis.ws"
+    dst: "fastmail:web/denisdefreyne.com"
