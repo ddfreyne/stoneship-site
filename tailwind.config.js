@@ -18,7 +18,7 @@ module.exports = {
       decimal: "decimal",
     },
     fontFamily: {
-      sans: ["Lato", "Helvetica", "Arial", "sans-serif"],
+      sans: ["Arimo", "Helvetica", "Arial", "sans-serif"],
       serif: ["PT Serif", "Georgia", "serif"],
     },
     extend: {
