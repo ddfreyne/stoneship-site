@@ -71,7 +71,7 @@ h1 {
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-lg;
 }
 
 .notes h2 {
