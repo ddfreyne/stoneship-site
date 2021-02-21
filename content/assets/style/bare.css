@@ -103,7 +103,7 @@ h3 {
 }
 
 ul {
-  @apply pl-4;
+  @apply pl-5;
 }
 
 ol {
@@ -111,7 +111,13 @@ ol {
 }
 
 ul > li {
-  @apply list-square;
+  @apply list-none;
+}
+
+ul > li:before {
+  content: "\2014";
+  position: absolute;
+  @apply -ml-5;
 }
 
 ol > li {
