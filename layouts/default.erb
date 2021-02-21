@@ -52,9 +52,23 @@
         </script>
     </head>
     <body class="font-serif bg-gray-100 print:bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-        <div class="min-h-screen md:w-a4width print:w-auto bg-white dark:bg-gray-900 border-l-8 border-blue-500 print:border-l-0">
-            <div class="px-8 py-6 sm:px-16 sm:py-12 print:px-0 print:py-0">
-                <%= yield %>
+        <div class="sm:flex sm:p-10 print:p-0">
+            <div class="sm:flex-none pl-4 sm:pt-8 sm:pr-10 pb-8 sm:pl-0 font-sans space-y-4 text-sm sm:w-48 print:hidden">
+                <div class="sm:block hidden"><img class="rounded-full w-full" src="/assets/images/denis-defreyne-face.jpg"></div>
+                <p>This is the web site of <b>Denis Defreyne</b>, a software engineer living in Berlin.</p>
+                <nav class="pt-3">
+                    <div><%= link_to_unless_current "Home", "/" %></div>
+                    <div><%= link_to_unless_current "CV", "/cv/" %></div>
+                    <div><%= link_to_unless_current "Software", "/software/" %></div>
+                    <div><%= link_to_unless_current "Talks", "/talks/" %></div>
+                    <div><%= link_to_unless_current "Toolbox", "/toolbox/" %></div>
+                    <div><%= link_to_unless_current "Notes", "/notes/" %></div>
+                </nav>
+            </div>
+            <div class="sm:flex-shrink min-h-screen md:w-a4width print:w-auto bg-white dark:bg-gray-900">
+                <div class="px-8 py-6 sm:px-10 sm:py-8 print:px-0 print:py-0">
+                    <%= yield %>
+                </div>
             </div>
         </div>
     </body>
