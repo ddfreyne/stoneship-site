@@ -140,7 +140,7 @@ summary {
   display: list-item;
 }
 
-/* rest */
+/* ----- fonts ----- */
 
 @font-face {
   font-family: "Compita";
@@ -228,6 +228,36 @@ summary {
   src: url("/assets/fonts/Compita-BoldItalic.woff") format("woff");
 }
 
+/* ----- print (common) */
+
+@page {
+  size: auto;
+  margin: 20mm 35mm 20mm 35mm;
+}
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: smaller;
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+    font-size: smaller;
+  }
+}
+
+/* ----- */
+
 :root {
   --white: hsl(15, 5%, 95%);
   --red: hsl(15, 70%, 50%);
@@ -244,18 +274,30 @@ body {
   font-weight: 500;
   line-height: 1.4;
 
-  padding: 0 20px;
-
   text-rendering: optimizeLegibility;
 }
 
-article {
-  padding-bottom: 60px;
+@media screen {
+  body {
+    padding: 0 20px;
+  }
 }
 
-article > * {
-  max-width: 560px;
-  margin: 0 auto;
+@media print {
+  body {
+    font-size: 11pt;
+  }
+}
+
+@media screen {
+  article {
+    padding-bottom: 60px;
+  }
+
+  article > * {
+    max-width: 560px;
+    margin: 0 auto;
+  }
 }
 
 .hero {
@@ -267,9 +309,20 @@ article > * {
   letter-spacing: -0.05ch;
 
   font-weight: 300;
+}
 
-  margin-top: 60px;
-  margin-bottom: 40px;
+@media screen {
+  .hero {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+@media print {
+  .hero {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -297,27 +350,35 @@ a:hover {
   border-color: var(--red);
 }
 
-.nav {
-  margin-top: 40px;
-}
-
-@media (max-width: 640px) {
+@media screen {
   .nav {
-    margin-top: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      margin-top: 20px;
+    }
+  }
+
+  .nav .sep,
+  .nav a {
+    margin-right: 6px;
+  }
+
+  .nav a {
+    text-transform: uppercase;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2ch;
   }
 }
 
-.nav .sep,
-.nav a {
-  margin-right: 6px;
-}
-
-.nav a {
-  text-transform: uppercase;
-
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.2ch;
+@media print {
+  .nav {
+    display: none;
+  }
 }
 
 p,
@@ -378,6 +439,7 @@ h1,
 h2,
 h3 {
   padding: 0;
+  margin-top: 0;
   margin-bottom: 10px;
 
   color: var(--red);
@@ -391,8 +453,13 @@ h1 {
 
   font-weight: 400;
 
-  margin-top: 60px;
   margin-bottom: 20px;
+}
+
+@media screen {
+  h1 {
+    margin-top: 60px;
+  }
 }
 
 h2 {
@@ -415,41 +482,3 @@ h3 {
 
   letter-spacing: 0.1ch;
 }
-
-/*
-body {
-  counter-reset: h2;
-}
-
-h1 {
-  counter-reset: h2;
-}
-
-h2,
-h3 {
-  position: relative;
-}
-
-h2:before {
-  position: absolute;
-  width: 50px;
-  left: -70px;
-
-  text-align: right;
-
-  content: counter(h2) ".";
-  counter-increment: h2;
-  counter-reset: h3;
-}
-
-h3:before {
-  position: absolute;
-  width: 50px;
-  left: -70px;
-
-  text-align: right;
-
-  content: counter(h2) "." counter(h3) ".";
-  counter-increment: h3;
-}
-*/
