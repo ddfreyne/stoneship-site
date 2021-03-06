@@ -367,6 +367,10 @@ a:hover {
     }
   }
 
+  .nav .sep {
+    font-size: 80%;
+  }
+
   .nav .sep,
   .nav a {
     margin-right: 6px;
