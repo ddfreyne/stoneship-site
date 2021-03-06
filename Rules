@@ -47,7 +47,7 @@ passthrough '/tmp/**/*'
 ignore '/ignore/**/*'
 
 compile '/404.*' do
-  layout '/default.*'
+  layout '/new.*'
   write '/404.html'
 end
 
@@ -68,15 +68,6 @@ compile '/well-known/**/*' do
 end
 
 compile '/assets/style/*.css' do
-  filter :tailwindcss
-  filter :relativize_paths, type: :css
-
-  cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
-  write item.identifier.without_ext + cbid_part + '.css'
-end
-
-compile '/assets/style/*.scss' do
-  filter :sass, syntax: :scss, style: :compressed
   filter :relativize_paths, type: :css
 
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
@@ -91,7 +82,7 @@ compile '/notes/*' do
   filter :autolink
 
   layout '/bear.*'
-  layout '/default.*'
+  layout '/new.*'
 
   filter :relativize_paths, type: :html5
 
@@ -110,7 +101,11 @@ compile '/**/*' do
   filter :add_ids_to_headers
   filter :toc if item[:toc]
 
-  layout '/default.*'
+  if item.identifier.match?('/cv.*')
+    layout '/cv.*'
+  else
+    layout '/new.*'
+  end
 
   filter :relativize_paths, type: :html5
 

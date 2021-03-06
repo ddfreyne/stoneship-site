@@ -1,19 +1,18 @@
 ---
 title: "Denis Defreyne"
 type: profile
+skip_nav: true
 ---
 
-#div[class=space-y-10 sm:space-y-6]
-  #h1 Hello! I am Denis Defreyne.
+#div[class=hero]
+  #div Denis
+  #div Defreyne
+  #div .com
 
-  #p You might know me from %ref[url=http://nanoc.ws/]{Nanoc}. My pronouns are %ref[url=https://pronoun.is/he/him]{he/him}.
+#p[class=lead] This is the personal web site of me — Denis Defreyne. I am a software engineer based in Berlin, Germany, and my pronouns are %ref[url=https://pronoun.is/he/him]{he/him}.
 
-  #p On this site, you’ll find:
+#p In the past, I’ve worked for %ref[url=https://soundcloud.com]{SoundCloud} and %ref[url=https://bcgdv.com]{BCG Digital Ventures} (among others), and I am currently working for %ref[url=https://pitch.com]{Pitch}.
 
-  #ul
-    #li %ref[url=/software/]{My software}: software that I wrote
-    #li %ref[url=/cv/]{My CV}
-    #li %ref[url=/talks/]{My talks}
-    #li %ref[url=/toolbox/]{My toolbox}: a list of software that I like to use
+#p You might be here because you’re interested in the %ref[url=/software/]{software I’ve written}, the %ref[url=/talks/]{talks I’ve given}, the %ref[url=/notes/]{notes I’ve taken}, or the %ref[url=/toolbox/]{software that’s in my toolbox}. Or perhaps you want %ref[url=/cv/]{my CV}.
 
-  #p You can also find me %ref[url=https://gitlab.com/ddfreyne]{on GitLab}, %ref[url=https://github.com/ddfreyne]{on GitHub}, %ref[url=https://twitter.com/ddfreyne]{on Twitter}, %ref[url=https://keybase.io/ddfreyne]{on Keybase}, …
+#p The best way to get in touch with me is %ref[url=https://twitter.com/ddfreyne]{on Twitter}.
