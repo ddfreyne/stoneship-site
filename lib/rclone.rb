@@ -27,7 +27,7 @@ module Nanoc
           # Run
           if dry_run
             warn 'Performing a dry-run; no actions will actually be performed'
-            run_shell_cmd(['echo', 'rclone', 'sync', options, src, dst].flatten)
+            run_shell_cmd(['rclone', 'sync', '--dry-run', options, src, dst].flatten)
           else
             run_shell_cmd(['rclone', 'sync', options, src, dst].flatten)
           end
