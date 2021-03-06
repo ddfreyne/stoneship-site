@@ -247,12 +247,12 @@ summary {
 
   a[href]:after {
     content: " (" attr(href) ")";
-    font-size: smaller;
+    font-style: italic;
   }
 
   abbr[title]:after {
     content: " (" attr(title) ")";
-    font-size: smaller;
+    font-style: italic;
   }
 }
 
@@ -297,6 +297,12 @@ body {
   article > * {
     max-width: 560px;
     margin: 0 auto;
+  }
+}
+
+@media print {
+  article > * {
+    margin: 0;
   }
 }
 
