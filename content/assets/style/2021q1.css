@@ -295,12 +295,22 @@ summary {
   :root {
     --white: hsl(15, 5%, 15%);
     --red: hsl(15, 70%, 55%);
-    --red-800: hsl(15, 50%, 90%);
+    --red-800: hsl(15, 50%, 92%);
     --red-900: hsl(15, 50%, 95%);
 
     --mark: hsl(15, 5%, 0%);
     --mark-fg: hsl(50, 100%, 50%);
   }
+}
+
+::-moz-selection {
+  background: var(--red-800);
+  color: var(--white);
+}
+
+::selection {
+  background: var(--red-800);
+  color: var(--white);
 }
 
 body {
