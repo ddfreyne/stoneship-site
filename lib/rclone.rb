@@ -11,8 +11,11 @@ module Nanoc
           '.git/**/*',
           '--exclude',
           '.git/*',
-          '--auto-confirm'
+          '--auto-confirm',
+          '--delete-after'
         ].freeze
+
+        # NOTE: can use --ignore-times for safety
 
         def run
           # Get params
