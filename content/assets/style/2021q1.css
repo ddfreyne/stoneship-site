@@ -471,6 +471,11 @@ samp {
   strong {
     color: var(--red-900);
   }
+
+  mark b,
+  mark strong {
+    color: var(--mark-fg);
+  }
 }
 
 p.lead {
