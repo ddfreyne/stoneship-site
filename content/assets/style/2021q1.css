@@ -509,6 +509,11 @@ blockquote {
   font-style: italic;
 }
 
+blockquote i,
+blockquote em {
+  font-style: normal;
+}
+
 dd {
   margin-left: 0;
   padding-left: 2rem;
