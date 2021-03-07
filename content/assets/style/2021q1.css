@@ -286,6 +286,21 @@ summary {
   --white: hsl(15, 5%, 95%);
   --red: hsl(15, 70%, 50%);
   --red-800: hsl(15, 70%, 15%);
+
+  --mark: hsl(50, 100%, 50%);
+  --mark-fg: hsl(15, 5%, 0%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: hsl(15, 5%, 15%);
+    --red: hsl(15, 70%, 55%);
+    --red-800: hsl(15, 50%, 90%);
+    --red-900: hsl(15, 50%, 95%);
+
+    --mark: hsl(15, 5%, 0%);
+    --mark-fg: hsl(50, 100%, 50%);
+  }
 }
 
 body {
@@ -441,6 +456,13 @@ samp {
   font-size: 0.95em;
 }
 
+@media (prefers-color-scheme: dark) {
+  b,
+  strong {
+    color: var(--red-900);
+  }
+}
+
 p.lead {
   font-size: 24px;
 
@@ -480,6 +502,16 @@ blockquote {
 dd {
   margin-left: 0;
   padding-left: 2rem;
+}
+
+mark {
+  background-color: var(--mark);
+  color: var(--mark-fg);
+
+  padding: 0 5px;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 h1,
