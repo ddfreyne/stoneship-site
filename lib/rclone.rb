@@ -12,7 +12,7 @@ module Nanoc
           '--exclude',
           '.git/*',
           '--auto-confirm',
-          '--delete-after'
+          '--verbose',
         ].freeze
 
         # NOTE: can use --ignore-times for safety
@@ -27,12 +27,19 @@ module Nanoc
           raise 'No dst found in deployment configuration' if dst.nil?
           raise 'dst requires no trailing slash' if dst[-1, 1] == '/'
 
-          # Run
+          # Copy stylesheets
+          filter = ['--filter', '+ *.css', '--filter', '- *']
           if dry_run
-            warn 'Performing a dry-run; no actions will actually be performed'
-            run_shell_cmd(['rclone', 'sync', '--dry-run', options, src, dst].flatten)
+            run_shell_cmd(['rclone', 'copy', '--dry-run', filter, options, src, dst].flatten)
           else
-            run_shell_cmd(['rclone', 'sync', options, src, dst].flatten)
+            run_shell_cmd(['rclone', 'copy', filter, options, src, dst].flatten)
+          end
+
+          # Sync
+          if dry_run
+            run_shell_cmd(['rclone', 'sync', '--dry-run', '--delete-after', options, src, dst].flatten)
+          else
+            run_shell_cmd(['rclone', 'sync', '--delete-after', options, src, dst].flatten)
           end
         end
 
