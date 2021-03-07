@@ -19,6 +19,7 @@ Nanoc::Filter.define(:bear) do |content, _params = {}|
       match.split(/\s+/).map { |m| '<span class="text-xs leading-none font-bold uppercase px-2 py-1 bg-gray-200 text-gray-700 rounded-full">' + m + '</span>' }.join(' ')
     end.gsub(mark_regex) do |match|
       # Replace ::marks::
-      '<mark>' + match[2..-3] + '</mark>'
+      marked_content = match[2..-3]
+      '<mark>' + ::Kramdown::Document.new(marked_content).to_html.gsub(%r{</?p>}, '') + '</mark>'
     end
 end
