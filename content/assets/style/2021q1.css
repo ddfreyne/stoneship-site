@@ -341,11 +341,16 @@ body {
 @media screen {
   article {
     padding-bottom: 60px;
+
+    display: grid;
+    grid-template-columns:
+      [full-start] 1fr
+      [main-start] minmax(0, 560px) [main-end]
+      1fr [full-end];
   }
 
   article > * {
-    max-width: 560px;
-    margin: 0 auto;
+    grid-column: main;
   }
 }
 
@@ -446,7 +451,7 @@ ol,
 blockquote,
 pre,
 dd {
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 pre {
@@ -567,7 +572,7 @@ h2 {
 
   font-weight: 500;
 
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 h3 {
@@ -576,7 +581,7 @@ h3 {
 
   font-weight: 600;
 
-  margin-top: 40px;
+  margin-top: 20px;
   text-transform: uppercase;
 
   letter-spacing: 0.1ch;
