@@ -449,6 +449,11 @@ body {
     font-size: smaller;
     color: var(--red-700);
   }
+
+  .sidenote__content a {
+    color: var(--red-700);
+    border-color: var(--red-700);
+  }
 }
 
 .hero {
