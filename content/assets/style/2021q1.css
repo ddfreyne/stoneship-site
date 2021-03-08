@@ -332,6 +332,11 @@ body {
   line-height: 1.4;
 
   text-rendering: optimizeLegibility;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
 }
 
 @media screen {
