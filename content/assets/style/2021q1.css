@@ -555,6 +555,14 @@ li:last-child {
   margin-bottom: 0;
 }
 
+li > p:last-child {
+  margin-bottom: 20px;
+}
+
+li:last-child > p:last-child {
+  margin-bottom: 0;
+}
+
 pre {
   white-space: pre-wrap;
 
