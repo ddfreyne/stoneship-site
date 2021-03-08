@@ -32,17 +32,17 @@ Nanoc::Filter.define(:footnotes) do |content, _params = {}|
         ><input
           aria-label="Show sidenote"
           type="checkbox"
-          id="sidenote__checkbox--1"
+          id="sidenote__checkbox--#{footnote_id}"
           class="sidenote__checkbox"
         ><label
           tabindex="0"
           title=""
-          aria-describedby="sidenote-1"
-          for="sidenote__checkbox--1"
+          aria-describedby="sidenote-#{footnote_id}"
+          for="sidenote__checkbox--#{footnote_id}"
           class="sidenote__label"
         >&lowast;</label
         ><small
-          id="sidenote-1"
+          id="sidenote-#{footnote_id}"
           class="sidenote__content"
         >#{sidenote_content}</small
       ></span>
