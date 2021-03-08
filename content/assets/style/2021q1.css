@@ -425,6 +425,8 @@ body {
 
     float: left;
 
+    width: 100%;
+
     display: block;
     padding: 0.5rem 2rem;
   }
