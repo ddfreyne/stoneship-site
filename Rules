@@ -37,9 +37,16 @@ preprocess do
     end
   end
 
+  def mark_prose
+    @items.find_all('/notes/*').each do |i|
+      i[:prose] = true
+    end
+  end
+
   hide_specials
   assign_cachebuster_id
   find_backlinks
+  mark_prose
 end
 
 passthrough '/tmp/**/*'
@@ -79,6 +86,7 @@ passthrough '/assets/**/*'
 compile '/notes/*' do
   filter :bear
   filter :kramdown, input: 'GFM'
+  filter :footnotes
   filter :autolink
 
   layout '/bear.*'
