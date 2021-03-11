@@ -293,14 +293,21 @@ summary {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 1281px) {
+  :root {
+    --size-base: 20px;
+    --size-scale: 1.35;
+  }
+}
+
+@media screen and (max-width: 860px) {
   :root {
     --size-base: 18px;
     --size-scale: 1.3;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
   :root {
     --size-base: 17px;
     --size-scale: 1.25;
@@ -318,6 +325,13 @@ summary {
   --size-l6: calc(var(--size-l5) * var(--size-scale));
   --size-l7: calc(var(--size-l6) * var(--size-scale));
   --size-l8: calc(var(--size-l7) * var(--size-scale));
+  --size-l9: calc(var(--size-l8) * var(--size-scale));
+  --size-l10: calc(var(--size-l9) * var(--size-scale));
+  --size-l11: calc(var(--size-l10) * var(--size-scale));
+  --size-l12: calc(var(--size-l11) * var(--size-scale));
+  --size-l13: calc(var(--size-l12) * var(--size-scale));
+  --size-l14: calc(var(--size-l13) * var(--size-scale));
+  --size-l15: calc(var(--size-l14) * var(--size-scale));
 }
 
 :root {
@@ -411,15 +425,15 @@ body {
 
     grid-template-columns:
       [full-start] 1fr
-      [wide-start thin-start] 560px [thin-end]
-      300px [wide-end]
+      [wide-start thin-start] var(--size-l12) [thin-end]
+      var(--size-l9) [wide-end]
       1fr [full-end];
   }
 
   article.solo {
     grid-template-columns:
       [full-start] 1fr
-      [wide-start thin-start] minmax(0, 560px) [thin-end wide-end]
+      [wide-start thin-start] minmax(0, var(--size-l12)) [thin-end wide-end]
       1fr [full-end];
   }
 
@@ -435,17 +449,25 @@ body {
   }
 }
 
-@media screen and (max-width: 900px) {
-  article {
+@media screen and (max-width: 860px) {
+  article,
+  article.solo {
     grid-template-columns:
       [full-start] 1fr
-      [wide-start thin-start] minmax(0, 560px) [thin-end wide-end]
+      [wide-start thin-start] minmax(0, var(--size-l13)) [thin-end wide-end]
       1fr [full-end];
   }
 }
 
+@media screen and (max-width: 600px) {
+  article,
+  article.solo {
+    grid-template-columns: [full-start wide-start thin-start] 1fr [thin-end wide-end full-end];
+  }
+}
+
 :root {
-  --sidenote-width: 270px;
+  --sidenote-width: var(--size-l9);
   --text-size: 18px;
 }
 
@@ -453,7 +475,7 @@ body {
   display: inline;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 860px) {
   .sidenote__checkbox {
     display: none;
   }
@@ -500,6 +522,7 @@ body {
 
     position: absolute;
     left: 590px; /* 560px + 30px gutter */
+    left: calc(var(--size-l12) + var(--size-l2));
 
     margin-top: calc(-1.3 * var(--text-size));
     margin-right: 0;
@@ -553,33 +576,31 @@ a:hover {
   border-color: var(--red);
 }
 
-@media screen {
+.nav {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
   .nav {
-    padding-top: 20px;
+    padding-top: 0;
   }
+}
 
-  @media (max-width: 640px) {
-    .nav {
-      padding-top: 0;
-    }
-  }
+.nav .sep {
+  font-size: var(--size-s1);
+}
 
-  .nav .sep {
-    font-size: var(--size-s1);
-  }
+.nav .sep,
+.nav a {
+  margin-right: 6px;
+}
 
-  .nav .sep,
-  .nav a {
-    margin-right: 6px;
-  }
+.nav a {
+  text-transform: uppercase;
 
-  .nav a {
-    text-transform: uppercase;
-
-    font-size: var(--size-s1);
-    font-weight: 600;
-    letter-spacing: 0.2ch;
-  }
+  font-size: var(--size-s1);
+  font-weight: 600;
+  letter-spacing: 0.2ch;
 }
 
 @media print {
