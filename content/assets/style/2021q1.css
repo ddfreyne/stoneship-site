@@ -293,7 +293,7 @@ summary {
   }
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1281px) and (min-height: 861px) {
   :root {
     --size-base: 20px;
     --size-scale: 1.35;
