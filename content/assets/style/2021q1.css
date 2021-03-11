@@ -283,40 +283,41 @@ summary {
 /* ----- */
 
 :root {
-  --font-size-base: 18px;
-  --font-size-scale: 1.3333;
+  --size-base: 18px;
+  --size-scale: 1.3333;
 }
 
 @media print {
   :root {
-    --font-size-base: 11pt;
+    --size-base: 11pt;
   }
 }
 
 @media screen and (max-width: 900px) {
   :root {
-    --font-size-base: 18px;
-    --font-size-scale: 1.3;
+    --size-base: 18px;
+    --size-scale: 1.3;
   }
 }
 
 @media screen and (max-width: 640px) {
   :root {
-    --font-size-base: 18px;
-    --font-size-scale: 1.25;
+    --size-base: 17px;
+    --size-scale: 1.25;
   }
 }
 
 :root {
-  --font-size-s1: calc(var(--font-size-base) / var(--font-size-scale));
-  --font-size-l1: calc(var(--font-size-base) * var(--font-size-scale));
-  --font-size-l2: calc(var(--font-size-l1) * var(--font-size-scale));
-  --font-size-l3: calc(var(--font-size-l2) * var(--font-size-scale));
-  --font-size-l4: calc(var(--font-size-l3) * var(--font-size-scale));
-  --font-size-l5: calc(var(--font-size-l4) * var(--font-size-scale));
-  --font-size-l6: calc(var(--font-size-l5) * var(--font-size-scale));
-  --font-size-l7: calc(var(--font-size-l6) * var(--font-size-scale));
-  --font-size-l8: calc(var(--font-size-l7) * var(--font-size-scale));
+  --size-s1: calc(var(--size-base) / var(--size-scale));
+  --size-s2: calc(var(--size-s1) / var(--size-scale));
+  --size-l1: calc(var(--size-base) * var(--size-scale));
+  --size-l2: calc(var(--size-l1) * var(--size-scale));
+  --size-l3: calc(var(--size-l2) * var(--size-scale));
+  --size-l4: calc(var(--size-l3) * var(--size-scale));
+  --size-l5: calc(var(--size-l4) * var(--size-scale));
+  --size-l6: calc(var(--size-l5) * var(--size-scale));
+  --size-l7: calc(var(--size-l6) * var(--size-scale));
+  --size-l8: calc(var(--size-l7) * var(--size-scale));
 }
 
 :root {
@@ -364,7 +365,7 @@ body {
 
   font-family: Compita, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  font-size: var(--font-size-base);
+  font-size: var(--size-base);
   font-weight: 500;
 
   text-rendering: optimizeLegibility;
@@ -504,7 +505,7 @@ body {
     margin-right: 0;
 
     width: var(--sidenote-width);
-    font-size: var(--font-size-s1);
+    font-size: var(--size-s1);
     color: var(--red-700);
   }
 
@@ -515,7 +516,7 @@ body {
 }
 
 .hero {
-  font-size: var(--font-size-l7);
+  font-size: var(--size-l7);
   line-height: 0.85;
 
   color: var(--red);
@@ -527,24 +528,15 @@ body {
 
 @media screen {
   .hero {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin-top: var(--size-l3);
+    margin-bottom: var(--size-l3);
   }
 }
 
 @media print {
   .hero {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    margin-top: 20px;
-    margin-bottom: 40px;
-
-    font-size: var(--font-size-l6);
+    margin-top: var(--size-l2);
+    margin-bottom: var(--size-l2);
   }
 }
 
@@ -573,7 +565,7 @@ a:hover {
   }
 
   .nav .sep {
-    font-size: var(--font-size-s1);
+    font-size: var(--size-s1);
   }
 
   .nav .sep,
@@ -584,7 +576,7 @@ a:hover {
   .nav a {
     text-transform: uppercase;
 
-    font-size: var(--font-size-s1);
+    font-size: var(--size-s1);
     font-weight: 600;
     letter-spacing: 0.2ch;
   }
@@ -604,7 +596,8 @@ pre,
 dd {
   line-height: 1.4;
 
-  margin: 0 0 20px 0;
+  margin: 0;
+  margin-bottom: var(--size-base);
 }
 
 p:last-child,
@@ -650,10 +643,10 @@ samp {
 }
 
 p.lead {
-  font-size: var(--font-size-l1);
+  font-size: var(--size-l1);
   line-height: 1.3;
 
-  margin-bottom: 40px;
+  margin-bottom: var(--size-l2);
 }
 
 ul,
@@ -676,7 +669,7 @@ ol > li {
 }
 
 ul.spacious > li {
-  margin-bottom: 10px;
+  margin-bottom: var(--size-s2);
 }
 
 blockquote {
@@ -708,7 +701,7 @@ h1,
 h2,
 h3 {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 0 var(--size-s2) 0;
 
   grid-column: wide;
 
@@ -716,38 +709,38 @@ h3 {
 }
 
 h1 {
-  font-size: var(--font-size-l4);
+  font-size: var(--size-l4);
   line-height: 1;
 
   letter-spacing: -0.03ch;
 
   font-weight: 400;
 
-  margin-bottom: 20px;
+  margin-bottom: var(--size-l1);
 }
 
 @media screen {
   h1 {
-    margin-top: 60px;
+    margin-top: var(--size-l4);
   }
 }
 
 h2 {
-  font-size: var(--font-size-l2);
+  font-size: var(--size-l2);
   line-height: 1.2;
 
   font-weight: 500;
 
-  margin-top: 40px;
+  margin-top: var(--size-l1);
 }
 
 h3 {
-  font-size: var(--font-size-base);
+  font-size: var(--size-base);
   line-height: 1.3;
 
   font-weight: 600;
 
-  margin-top: 20px;
+  margin-top: var(--size-l1);
   text-transform: uppercase;
 
   letter-spacing: 0.1ch;
