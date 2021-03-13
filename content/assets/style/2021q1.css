@@ -576,7 +576,7 @@ a {
   background-image: linear-gradient(var(--red-800), var(--red-800));
   background-size: 1px 1px;
   background-repeat: repeat-x;
-  background-position: 0% calc(100% - 0.1ch);
+  background-position: 0% calc(100% - 0.15ch);
 
   text-shadow: 0 -0.1ch var(--red-100), 0 -0.2ch var(--red-100),
     0.1ch 0 var(--red-100), 0.1ch -0.1ch var(--red-100),
