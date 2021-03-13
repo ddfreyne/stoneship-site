@@ -13,9 +13,8 @@ module Nanoc
           '.git/*',
           '--auto-confirm',
           '--verbose',
+          '--ignore-times'
         ].freeze
-
-        # NOTE: can use --ignore-times for safety
 
         def run
           # Get params
@@ -37,9 +36,9 @@ module Nanoc
 
           # Sync
           if dry_run
-            run_shell_cmd(['rclone', 'sync', '--dry-run', '--delete-after', options, src, dst].flatten)
+            run_shell_cmd(['rclone', 'copy', '--dry-run', '--delete-after', options, src, dst].flatten)
           else
-            run_shell_cmd(['rclone', 'sync', '--delete-after', options, src, dst].flatten)
+            run_shell_cmd(['rclone', 'copy', '--delete-after', options, src, dst].flatten)
           end
         end
 
