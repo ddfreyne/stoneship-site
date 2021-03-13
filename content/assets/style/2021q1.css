@@ -573,12 +573,28 @@ a {
 
   text-decoration: none;
 
-  border-bottom: 1px solid var(--red-800);
+  background-image: linear-gradient(var(--red-800), var(--red-800));
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0% calc(100% - 0.1em);
+
+  text-shadow: 0 -0.1ch var(--red-100), 0 -0.2ch var(--red-100),
+    0.1ch 0 var(--red-100), 0.1ch -0.1ch var(--red-100),
+    0.1ch -0.2ch var(--red-100), 0.2ch 0 var(--red-100),
+    0.2ch -0.1ch var(--red-100), 0.2ch -0.2ch var(--red-100),
+    -0.1ch 0 var(--red-100), -0.1ch -0.1ch var(--red-100),
+    -0.1ch -0.2ch var(--red-100), -0.2ch 0 var(--red-100),
+    -0.2ch -0.1ch var(--red-100), -0.2ch -0.2ch var(--red-100);
+}
+
+a::selection {
+  text-shadow: none;
 }
 
 a:hover {
   color: var(--red);
-  border-color: var(--red);
+
+  background-image: linear-gradient(var(--red), var(--red));
 }
 
 .nav {
