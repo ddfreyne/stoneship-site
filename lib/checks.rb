@@ -17,8 +17,9 @@ Nanoc::Check.define(:focus) do
   @output_filenames.each do |filename|
     next unless filename =~ /html$/
 
-    foci = File.read(filename)[/focus/] || []
-    if foci.size > 1
+    contents = File.read(filename)
+    num_foci = (contents[/focus/] || []).size
+    if num_foci / contents.size.to_f > 0.005
       add_issue(
         "don’t overuse focus", subject: filename)
     end
