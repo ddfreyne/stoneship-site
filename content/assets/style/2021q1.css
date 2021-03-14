@@ -586,26 +586,12 @@ a {
     -0.2ch -0.1ch var(--red-100), -0.2ch -0.2ch var(--red-100);
 }
 
-a[href*="//"]:not([href*="denisdefreyne.com"])
-{
-  background-image: linear-gradient(
-    90deg,
-    var(--red-800),
-    var(--red-800) 60%,
-    transparent 60%,
-    transparent 100%
-  );
-  background-size: 5px 1px;
-}
-
 mark a,
 a::selection {
   text-shadow: none;
 }
 
-a:hover,
-a[href*="//"]:not([href*="denisdefreyne.com"]):hover
-{
+a:hover {
   color: var(--red);
 
   background-image: linear-gradient(var(--red), var(--red));
