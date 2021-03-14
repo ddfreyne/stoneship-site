@@ -303,14 +303,14 @@ summary {
 @media screen and (max-width: 880px) {
   :root {
     --size-base: 18px;
-    --size-scale: 1.3;
+    --size-scale: 1.25;
   }
 }
 
 @media screen and (max-width: 600px) {
   :root {
     --size-base: 17px;
-    --size-scale: 1.25;
+    --size-scale: 1.2;
   }
 }
 
