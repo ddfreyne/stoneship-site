@@ -598,6 +598,7 @@ a[href*="//"]:not([href*="denisdefreyne.com"])
   background-size: 5px 1px;
 }
 
+mark a,
 a::selection {
   text-shadow: none;
 }
@@ -682,7 +683,13 @@ kbd,
 pre,
 samp {
   font-family: "Iosevka SS08", monospace;
-  font-size: 0.95em;
+  font-size: 0.9em;
+}
+
+code a,
+kbd a,
+samp a {
+  background-position: 0% calc(100% - 0.05ch);
 }
 
 @media (prefers-color-scheme: dark) {
