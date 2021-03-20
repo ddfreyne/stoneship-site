@@ -88,6 +88,7 @@ compile '/notes/*' do
   filter :kramdown, input: 'GFM'
   filter :footnotes
   filter :autolink
+  filter :typography
 
   layout '/bear.*'
   layout '/new.*'

@@ -694,6 +694,15 @@ samp a {
   background-position: 0% calc(100% - 0.05ch);
 }
 
+.path {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  font-style: italic;
+}
+
 @media (prefers-color-scheme: dark) {
   b,
   strong {
