@@ -586,6 +586,14 @@ a {
     -0.2ch -0.1ch var(--red-100), -0.2ch -0.2ch var(--red-100);
 }
 
+mark a {
+  text-shadow: 0 -0.1ch var(--mark), 0 -0.2ch var(--mark), 0.1ch 0 var(--mark),
+    0.1ch -0.1ch var(--mark), 0.1ch -0.2ch var(--mark), 0.2ch 0 var(--mark),
+    0.2ch -0.1ch var(--mark), 0.2ch -0.2ch var(--mark), -0.1ch 0 var(--mark),
+    -0.1ch -0.1ch var(--mark), -0.1ch -0.2ch var(--mark), -0.2ch 0 var(--mark),
+    -0.2ch -0.1ch var(--mark), -0.2ch -0.2ch var(--mark);
+}
+
 a[href*="//"]:not([href*="denisdefreyne.com"]):after
 {
   content: "→";
@@ -595,7 +603,6 @@ a[href*="//"]:not([href*="denisdefreyne.com"]):after
   color: var(--red);
 }
 
-mark a,
 a::selection {
   text-shadow: none;
 }
