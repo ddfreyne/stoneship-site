@@ -721,6 +721,12 @@ ul > li:before {
   margin-left: -2rem;
 }
 
+ul ul > li:before {
+  content: "•";
+  position: absolute;
+  margin-left: -1.5rem;
+}
+
 ol > li {
   list-style-type: decimal;
 }
