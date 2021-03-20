@@ -4,6 +4,8 @@ title: "Notes"
 
 <h1>Notes</h1>
 
+<p>This is my <i>digital garden</i>. You can read more <a href="/notes/twh9n-rcmkk-hr7kk/">about this collection of notes</a>.</p>
+
 <ul class="spacious">
   <% @items.find_all('/notes/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |note| %>
     <li><%= link_to note[:title], note %></li>
