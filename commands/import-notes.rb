@@ -20,11 +20,22 @@ run do |opts, args, cmd|
 
   db = Sequel.connect(adapter: :sqlite, database: db_path, readonly: true)
 
-  notes = db[:ZSFNOTE].where(ZTRASHED: 0, ZARCHIVED: 0).map do |row|
+  # Core Data timestamps are stored as seconds offset from beginning of 2001.
+  query = <<~QUERY
+    SELECT
+      *,
+      datetime(zmodificationdate, 'unixepoch', '31 years') AS zmodificationdate2
+    FROM
+      zsfnote
+    WHERE
+      ztrashed == 0 AND zarchived == 0
+  QUERY
+  notes = db[query].map do |row|
     {
       id: row[:ZUNIQUEIDENTIFIER],
       title: row[:ZTITLE],
       text: row[:ZTEXT],
+      mtime: row[:zmodificationdate2]
     }
   end
 
@@ -38,7 +49,10 @@ run do |opts, args, cmd|
   public_notes.each do |note|
     $stderr.puts "  - #{note[:title].inspect}"
 
-    meta = { 'title' => note[:title] }
+    meta = {
+      'title' => note[:title],
+      'updated_at' => note[:mtime]
+    }
     content = YAML.dump(meta) + "---\n\n" + note[:text]
 
     note_path = File.join(files_path, note[:id] + '.md')
