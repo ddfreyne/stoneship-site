@@ -2,6 +2,9 @@
 
 <%= yield %>
 
+<h2>Meta</h2>
+<p>Last revised: <%= fmt_date(@item[:updated_at]) %></p>
+
 <% if @item[:is_linked_from].any? %>
   <h2>Links to this note</h2>
   <ul>

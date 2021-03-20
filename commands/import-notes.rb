@@ -51,7 +51,7 @@ run do |opts, args, cmd|
 
     meta = {
       'title' => note[:title],
-      'updated_at' => note[:mtime]
+      'updated_at' => Time.parse(note[:mtime])
     }
     content = note[:text].sub(/^# .*/, '')
 
