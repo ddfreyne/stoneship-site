@@ -586,6 +586,15 @@ a {
     -0.2ch -0.1ch var(--red-100), -0.2ch -0.2ch var(--red-100);
 }
 
+a[href*="//"]:not([href*="denisdefreyne.com"]):after
+{
+  content: "→";
+
+  padding-left: 3px;
+
+  color: var(--red);
+}
+
 mark a,
 a::selection {
   text-shadow: none;
