@@ -53,10 +53,12 @@ run do |opts, args, cmd|
       'title' => note[:title],
       'updated_at' => note[:mtime]
     }
-    content = YAML.dump(meta) + "---\n\n" + note[:text]
+    content = note[:text].sub(/^# .*/, '')
+
+    full_content = YAML.dump(meta) + "---\n\n" + content
 
     note_path = File.join(files_path, note[:id] + '.md')
-    File.write(note_path, content)
+    File.write(note_path, full_content)
   end
 
   $stderr.puts "Done"
