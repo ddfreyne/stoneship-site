@@ -24,7 +24,7 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
         path.add_child(Nokogiri::XML::Text.new('/', doc))
       end
 
-      path.add_child(Nokogiri::XML::Text.new(part, doc))
+      path.add_child(Nokogiri::XML::Text.new(part.sub(/\s+/, ' '), doc))
     end
   end
 
