@@ -13,18 +13,24 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
   end
 
   doc.css('.path').each do |path|
-    parts = path.content.split('/')
-    parts << '' if path.content.end_with?('/')
+    parts = path.content.scan(%r{[/.]|[^/.]+})
+
+    parts.unshift(nil) if parts.first.match?(%r{[/.]})
+    parts << nil if parts.last.match?(%r{[/.]})
+    # parts now has the format comp-sep-comp-...-comp-sep-comp
+    # comp = component; sep = separator
 
     path.content = ''
 
-    parts.each.with_index do |part, idx|
-      unless idx.zero?
+    parts.each_slice(2) do |(comp, sep)|
+      if comp
+        path.add_child(Nokogiri::XML::Text.new(comp.gsub(/\s+/, ' '), doc))
         path.add_child(Nokogiri::XML::Node.new('wbr', doc))
-        path.add_child(Nokogiri::XML::Text.new('/', doc))
       end
 
-      path.add_child(Nokogiri::XML::Text.new(part.sub(/\s+/, ' '), doc))
+      if sep
+        path.add_child(Nokogiri::XML::Text.new(sep, doc))
+      end
     end
   end
 
