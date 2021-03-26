@@ -13,7 +13,19 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
   end
 
   doc.css('.path').each do |path|
-    path.content = path.content.gsub(/ /, ' ').gsub('/', "\u200B/")
+    parts = path.content.split('/')
+    parts << '' if path.content.end_with?('/')
+
+    path.content = ''
+
+    parts.each.with_index do |part, idx|
+      unless idx.zero?
+        path.add_child(Nokogiri::XML::Node.new('wbr', doc))
+        path.add_child(Nokogiri::XML::Text.new('/', doc))
+      end
+
+      path.add_child(Nokogiri::XML::Text.new(part, doc))
+    end
   end
 
   doc.traverse do |elem|
