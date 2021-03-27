@@ -30,7 +30,7 @@
 
         <!-- style -->
 
-        <% stylesheet = @item[:layout] == 'cv' ? 'cv' : '2021q1' %>
+        <% stylesheet = @item[:layout] == 'cv' ? 'cv' : @item.identifier.match?('/fiction/*') ? 'fiction' : '2021q1' %>
         <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -1,0 +1,9 @@
+<% render '/_wrapper.*' do %>
+    <body>
+        <article>
+            <h1><%= @item[:title] %></h1>
+
+            <%= yield %>
+        </article>
+    </body>
+<% end %>

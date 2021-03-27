@@ -11,12 +11,14 @@ end
 
 db_path = "#{Dir.home}/Library/Group Containers/9K33E3U3T4.net.shinyfrog.bear/Application Data/database.sqlite"
 tag_regex = /^#[a-zA-Z\/]+(\s+#[a-zA-Z\/]+)*\s*/
-files_path = File.expand_path(File.join(__dir__, '..', 'content', 'notes'))
+notes_files_path = File.expand_path(File.join(__dir__, '..', 'content', 'notes'))
+fiction_files_path = File.expand_path(File.join(__dir__, '..', 'content', 'fiction'))
 
 run do |opts, args, cmd|
   $stderr.puts "Importing…"
 
-  FileUtils.mkdir_p(files_path)
+  FileUtils.mkdir_p(notes_files_path)
+  FileUtils.mkdir_p(fiction_files_path)
 
   db = Sequel.connect(adapter: :sqlite, database: db_path, readonly: true)
 
@@ -41,24 +43,27 @@ run do |opts, args, cmd|
 
   public_notes =
     notes.select do |note|
-      note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#public\s*$/)
-    end.map do |note|
-      note.merge(text: note[:text].gsub(tag_regex, ''))
+      note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#public(\s+#[a-zA-Z\/]+)*$/)
     end
 
   public_notes.each do |note|
     $stderr.puts "  - #{note[:title].inspect}"
 
+    tagless_text = note[:text].gsub(tag_regex, '')
+    is_fiction = note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#fiction(\s+#[a-zA-Z\/]+)*$/)
+
     meta = {
       'title' => note[:title],
       'updated_at' => Time.parse(note[:mtime])
     }
-    content = note[:text].sub(/^# .*/, '')
+    content = tagless_text.sub(/^# .*/, '') # remove first heading
 
     full_content = YAML.dump(meta) + "---\n\n" + content
 
-    note_path = File.join(files_path, note[:id] + '.md')
-    File.write(note_path, full_content)
+    base_path = is_fiction ? fiction_files_path : notes_files_path
+    path = File.join(base_path, note[:id] + '.md')
+
+    File.write(path, full_content)
   end
 
   $stderr.puts "Done"
