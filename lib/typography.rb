@@ -32,7 +32,6 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
       end
 
       if sep
-        p sep
         sep = non_breaking_hyphen if sep == '-'
         path.add_child(Nokogiri::XML::Text.new(sep, doc))
       end
