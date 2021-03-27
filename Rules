@@ -27,13 +27,13 @@ preprocess do
     @items.find_all('/notes/*').each do |note|
       linked_titles = note.raw_content.scan(/\[\[[^\]]+\]\]/).map { |m| m[2..-3] }
       linked_titles.each do |linked_title|
-        is_linked_from[linked_title] ||= []
+        is_linked_from[linked_title] ||= Set.new
         is_linked_from[linked_title] << note
       end
     end
 
     @items.find_all('/notes/*').each do |note|
-      note[:is_linked_from] = is_linked_from.fetch(note[:title], []).map(&:identifier).map(&:to_s)
+      note[:is_linked_from] = is_linked_from.fetch(note[:title], Set.new).map(&:identifier).map(&:to_s).sort
     end
   end
 
