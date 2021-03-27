@@ -8,6 +8,8 @@ Nanoc::Filter.define(:bear) do |content, _params = {}|
     .gsub(/\[\[[^\]]+\]\]/) do |match|
       # Replace [[wikilinks]]
       title = match[2..-3]
+      next if title.strip.empty?
+
       link_target = @items.find_all('/notes/*').find { |i| i[:title] == title }
       if link_target
         "[#{title}](#{link_target.reps[:default].path})"
