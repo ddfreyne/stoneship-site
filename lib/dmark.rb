@@ -13,8 +13,6 @@ class DMarkTranslator < DMark::Translator
     case element.name
     when 'h'
       handle_element_h(element, context)
-    when 'subtitle'
-      handle_element_subtitle(element, context)
     when 'highlight'
       handle_element_highlight(element, context)
     when 'firstterm'
@@ -45,10 +43,6 @@ class DMarkTranslator < DMark::Translator
         end
       end
     end
-  end
-
-  def handle_element_subtitle(element, context)
-    wrap('div', class: 'subtitle') { handle_children(element, context) }
   end
 
   def handle_element_highlight(element, context)

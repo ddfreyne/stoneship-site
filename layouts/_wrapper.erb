@@ -13,11 +13,8 @@
 
         <meta property="og:url" content="https://denisdefreyne.com<%= @item_rep.path %>">
 
-        <meta property="og:title" content="<%= @item[:title] %><%= @item[:subtitle] ? ': ' + @item[:subtitle] : '' %>">
+        <meta property="og:title" content="<%= @item[:title] %>">
         <meta property="dc.title" content="<%= @item[:title] %>">
-        <% if @item[:subtitle] %>
-            <meta property="dc.alternate" content="<%= @item[:subtitle] %>">
-        <% end %>
 
         <meta property="og:type" content="<%= @item.fetch(:type, 'website') %>">
 

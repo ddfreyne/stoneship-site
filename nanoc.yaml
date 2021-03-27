@@ -18,7 +18,6 @@ prune:
 checking:
   enabled_checks:
     - ilinks
-    - dashes
     - focus
 
 data_sources:
