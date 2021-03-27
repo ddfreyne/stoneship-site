@@ -21,6 +21,11 @@
         <% if @item.fetch(:type, 'website') == 'profile' %>
             <meta property="profile:first_name" content="Denis">
             <meta property="profile:last_name" content="Defreyne">
+            <meta property="og:description" content="The personal web site of Denis Defreyne, a software engineer based in Berlin, Germany (pronouns he/him).">
+        <% end %>
+
+        <% if @item.identifier.match?('/notes/**/*') %>
+            <meta property="og:description" content="A note in Denis’ digital garden.">
         <% end %>
 
         <!-- style -->
