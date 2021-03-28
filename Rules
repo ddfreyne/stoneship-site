@@ -83,7 +83,19 @@ end
 
 passthrough '/assets/**/*'
 
-compile '/{notes,fiction}/*' do
+compile '/fiction/*' do
+  filter :kramdown
+  filter :typography
+
+  layout '/fiction.*'
+
+  filter :relativize_paths, type: :html5
+
+  slug = item[:title].downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
+  write "/fiction/#{slug}/index.html"
+end
+
+compile '/notes/*' do
   filter :wikilinks
   filter :mark
   filter :kramdown, input: 'GFM'
@@ -104,9 +116,7 @@ compile '/{notes,fiction}/*' do
     Digest::SHA256.hexdigest(item.identifier.to_s)
     .tr('0123456789abcdef', '79cfhklmnprtvwxz')
     .scan(/.{5}/).take(3).join('-')
-
-  base_path = item.identifier.match?('/notes/*') ? 'notes' : 'fiction'
-  write "/#{base_path}/#{digest}/index.html"
+  write "/notes/#{digest}/index.html"
 end
 
 compile '/**/*' do
