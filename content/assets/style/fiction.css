@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 600px) {
   :root {
-    --size-base: 17px;
+    --size-base: 18px;
     --size-scale: 1.2;
   }
 }
@@ -145,6 +145,12 @@ body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+}
+
 article {
   max-width: var(--main-width);
 
@@ -153,6 +159,12 @@ article {
   padding: 20px;
 
   margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    max-width: none;
+  }
 }
 
 p {
