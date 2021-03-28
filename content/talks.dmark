@@ -4,9 +4,9 @@ title: Denis’ talks
 
 #h1 Talks
 
-#p I enjoy giving talks and try to do it often. Here is a list of talks I have given:
+#p[class=col-left-sm] I’ve given a handful of talks over the past few years. The pandemic has taken some of the joy (and possibility) out of it, but I’m hoping to pick it back up in the near future. Here is a list of talks I have given.
 
-#ul[class=spacious]
+#ul[class=spacious col-right-md]
   #li An introduction to fibers (%ref[url=https://speakerdeck.com/ddfreyne/fibers]{RUG::B edition (2017)}; %ref[url=https://speakerdeck.com/ddfreyne/an-introduction-to-fibers]{RubyWine 2019 edition})
   #li Code as data (%ref[url=https://speakerdeck.com/ddfreyne/code-as-data]{RUG::B edition (2018)}; %ref[url=https://speakerdeck.com/ddfreyne/code-as-data-rubyconfby-2019-edition]{RubyConfBY 2019 edition})
   #li %ref[url=https://speakerdeck.com/ddfreyne/how-to-memoize]{How to memoize} (2018)
