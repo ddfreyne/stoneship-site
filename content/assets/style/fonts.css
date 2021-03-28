@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap");
+
+@font-face {
+  font-family: "Iosevka SS08";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/fonts/iosevka-ss08-regular.woff2") format("woff2"),
+    url("/assets/fonts/iosevka-ss08-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Iosevka SS08";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/assets/fonts/iosevka-ss08-italic.woff2") format("woff2"),
+    url("/assets/fonts/iosevka-ss08-italic.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Iosevka SS08";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/assets/fonts/iosevka-ss08-bold.woff2") format("woff2"),
+    url("/assets/fonts/iosevka-ss08-bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 200;
+  /* FIXME: 100? */
+  font-style: normal;
+  src: url("/assets/fonts/Compita-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 200;
+  /* FIXME: 100? */
+  font-style: italic;
+  src: url("/assets/fonts/Compita-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/assets/fonts/Compita-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 300;
+  font-style: italic;
+  src: url("/assets/fonts/Compita-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/fonts/Compita-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/assets/fonts/Compita-RegularItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/assets/fonts/Compita-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/assets/fonts/Compita-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 600;
+  font-style: normal;
+  src: url("/assets/fonts/Compita-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 600;
+  font-style: italic;
+  src: url("/assets/fonts/Compita-SemiBoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/assets/fonts/Compita-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/assets/fonts/Compita-BoldItalic.woff") format("woff");
+}

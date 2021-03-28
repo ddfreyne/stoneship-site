@@ -32,6 +32,7 @@
 
         <% unless @item[:layout] == 'cv' %>
             <link rel="stylesheet" href="<%= @items["/assets/style/reset.*"].path %>">
+            <link rel="stylesheet" href="<%= @items["/assets/style/fonts.*"].path %>">
         <% end %>
         <% stylesheet = @item[:layout] == 'cv' ? 'cv' : @item.identifier.match?('/fiction/*') ? 'fiction' : '2021q1' %>
         <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
