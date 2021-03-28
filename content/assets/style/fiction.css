@@ -175,7 +175,10 @@ p.meta {
     Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 0.95em;
+}
 
+p.meta,
+p.meta + p {
   text-indent: 0;
 }
 
