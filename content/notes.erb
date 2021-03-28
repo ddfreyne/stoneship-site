@@ -1,12 +1,13 @@
 ---
 title: "Notes"
+prose: true
 ---
 
 <h1>Notes</h1>
 
-<p>This is my <i>digital garden</i>. You can read more <a href="/notes/twh9n-rcmkk-hr7kk/">about this collection of notes</a>. You might be interested in <a href="/notes/tkmpf-zvrwt-l9vz9/">What’s top of mind</a> for me now.</p>
+<p class="col-left-sm">This is my <i>digital garden</i>. You can read more <a href="/notes/twh9n-rcmkk-hr7kk/">about this collection of notes</a>. You might be interested in <a href="/notes/tkmpf-zvrwt-l9vz9/">What’s top of mind</a> for me now.</p>
 
-<ul class="spacious">
+<ul class="spacious col-right-md">
   <% @items.find_all('/notes/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |note| %>
     <li><%= link_to note[:title], note %></li>
   <% end %>

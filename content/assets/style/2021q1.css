@@ -168,52 +168,62 @@ body {
 
     grid-template-columns:
       1fr
-      [thin-start wide-start]
+      [lg-start left-sm-start left-md-start]
       var(--column-width)
+      [left-sm-end right-md-start]
       var(--column-width)
-      [thin-end]
+      [left-md-end right-sm-start]
       var(--column-width)
-      [wide-end]
+      [lg-end right-sm-end right-md-end]
       1fr;
 
     column-gap: var(--gutter-width);
   }
 
-  .container.solo {
-    grid-template-columns:
-      1fr
-      [thin-start wide-start]
-      var(--column-width)
-      var(--column-width)
-      [thin-end wide-end]
-      1fr;
-  }
-
   .container > * {
-    grid-column: thin;
+    grid-column: left-md;
 
     position: relative; /* needed for sidenote placement */
+  }
+
+  .container > h1,
+  .container > h2,
+  .container > h3 {
+    grid-column: lg;
   }
 }
 
 @media screen and (max-width: 880px) {
-  .container,
-  .container.solo {
+  .container {
     grid-template-columns:
       1fr
-      [thin-start wide-start]
+      [lg-start left-sm-start left-md-start right-md-start right-sm-start]
       var(--column-width)
       var(--column-width)
-      [thin-end wide-end]
+      [lg-end left-sm-end left-md-end right-md-end right-sm-end]
       1fr;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .container,
-  .container.solo {
-    grid-template-columns: [thin-start wide-start] 1fr [thin-end wide-end];
+  .container {
+    grid-template-columns:
+      [lg-start left-sm-start left-md-start right-sm-start right-md-start]
+      1fr
+      [lg-end right-md-end right-sm-end left-sm-end left-md-end];
   }
+}
+
+.col-left-sm {
+  grid-column: left-sm;
+}
+
+.col-right-md {
+  grid-column: right-md;
+}
+
+.col-lg {
+  grid-column: lg;
 }
 
 :root {
@@ -293,14 +303,18 @@ body {
 }
 
 .hero {
-  font-size: var(--size-l7);
-  line-height: 0.85;
-
-  color: var(--red);
+  font-size: var(--size-l4);
+  line-height: 1;
 
   letter-spacing: -0.05ch;
 
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.hero em {
+  color: var(--red);
+
+  font-style: normal;
 }
 
 @media screen {
@@ -526,19 +540,11 @@ mark {
   box-decoration-break: clone;
 }
 
-.container h1,
-.container h2,
-.container h3 {
-  grid-column: wide;
-}
-
 h1,
 h2,
 h3 {
   padding: 0;
   margin: 0 0 var(--size-s2) 0;
-
-  grid-column: wide;
 
   color: var(--red);
 }
