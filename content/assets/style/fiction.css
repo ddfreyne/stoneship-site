@@ -425,9 +425,12 @@ p + p {
   text-indent: 1.5rem;
 }
 
-p.meta {
+p + p.meta,
+p.meta + p {
   margin-top: calc(1 * var(--size-base));
+}
 
+p.meta {
   font-family: Compita, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   font-style: italic;
