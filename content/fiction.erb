@@ -1,0 +1,13 @@
+---
+title: "Fiction"
+---
+
+<h1>Fiction</h1>
+
+<p class="col-left-sm">This is a collection of fiction stories I’ve written. Most of them are work in progress.</p>
+
+<ul class="spacious col-right-md">
+  <% @items.find_all('/fiction/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
+    <li><%= link_to piece[:title], piece %><%= piece.fetch(:tags, []).include?('#wip') ? ' (work in progress)' : '' %></li>
+  <% end %>
+</ul>

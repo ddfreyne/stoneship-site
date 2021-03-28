@@ -33,11 +33,15 @@ run do |opts, args, cmd|
       ztrashed == 0 AND zarchived == 0
   QUERY
   notes = db[query].map do |row|
+    raw_tags = row[:ZTEXT][/^(#[a-zA-Z\/]+\s+)*#public(\s+#[a-zA-Z\/]+)*$/] || ''
+    tags = raw_tags.split(/\s+/)
+
     {
       id: row[:ZUNIQUEIDENTIFIER],
       title: row[:ZTITLE],
       text: row[:ZTEXT],
-      mtime: row[:zmodificationdate2]
+      mtime: row[:zmodificationdate2],
+      tags: tags
     }
   end
 
@@ -54,7 +58,8 @@ run do |opts, args, cmd|
 
     meta = {
       'title' => note[:title],
-      'updated_at' => Time.parse(note[:mtime])
+      'updated_at' => Time.parse(note[:mtime]),
+      'tags' => note[:tags]
     }
     content = tagless_text.sub(/^# .*/, '') # remove first heading
 
