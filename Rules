@@ -37,16 +37,9 @@ preprocess do
     end
   end
 
-  def mark_prose
-    @items.find_all('/notes/*').each do |i|
-      i[:prose] = true
-    end
-  end
-
   hide_specials
   assign_cachebuster_id
   find_backlinks
-  mark_prose
 end
 
 passthrough '/tmp/**/*'

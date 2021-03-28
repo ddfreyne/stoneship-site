@@ -37,14 +37,14 @@
   }
 }
 
-@media screen and (min-width: 1281px) and (min-height: 881px) {
+@media screen and (min-width: 1281px) and (min-height: 921px) {
   :root {
     --size-base: 20px;
     --size-scale: 1.35;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 920px) {
   :root {
     --size-base: 18px;
     --size-scale: 1.25;
@@ -193,7 +193,7 @@ body {
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 920px) {
   .container {
     grid-template-columns:
       1fr
@@ -226,6 +226,20 @@ body {
   grid-column: lg;
 }
 
+.pb-l4 {
+  padding-bottom: var(--size-l4);
+}
+
+.sm\:order-later {
+  order: initial;
+}
+
+@media screen and (max-width: 920px) {
+  .sm\:order-later {
+    order: 999;
+  }
+}
+
 :root {
   --text-size: 18px;
 }
@@ -240,7 +254,7 @@ body {
   display: inline;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 920px) {
   .sidenote__checkbox {
     display: none;
   }
@@ -276,7 +290,7 @@ body {
   }
 }
 
-@media screen and (min-width: 881px) {
+@media screen and (min-width: 921px) {
   .sidenote__checkbox,
   .sidenote__label {
     display: none;
@@ -304,7 +318,7 @@ body {
 
 .hero {
   font-size: var(--size-l4);
-  line-height: 1;
+  line-height: 1.05;
 
   letter-spacing: -0.05ch;
 
@@ -321,6 +335,14 @@ body {
   .hero {
     margin-top: var(--size-l3);
     margin-bottom: var(--size-l3);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    line-height: 1.15;
+
+    margin-top: 0;
   }
 }
 
@@ -387,16 +409,16 @@ a:hover {
   }
 }
 
-.nav .sep {
+.nav-sep {
   font-size: var(--size-s1);
 }
 
-.nav .sep,
+.nav-sep,
 .nav a {
   margin-right: 6px;
 }
 
-.nav a {
+.nav-link {
   text-transform: uppercase;
 
   font-size: var(--size-s1);
