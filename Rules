@@ -84,7 +84,8 @@ end
 passthrough '/assets/**/*'
 
 compile '/{notes,fiction}/*' do
-  filter :bear
+  filter :wikilinks
+  filter :mark
   filter :kramdown, input: 'GFM'
   filter :footnotes
   filter :autolink
