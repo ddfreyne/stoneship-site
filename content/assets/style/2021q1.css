@@ -77,9 +77,8 @@
   --size-l14: calc(var(--size-l13) * var(--size-scale));
   --size-l15: calc(var(--size-l14) * var(--size-scale));
 
-  --main-width: calc(30 * var(--size-base));
-  --side-width: calc(15 * var(--size-base));
-  --gutter-width: calc(2 * var(--size-base));
+  --column-width: calc(15 * var(--size-base));
+  --gutter-width: var(--size-base);
 }
 
 :root {
@@ -163,61 +162,68 @@ body {
   body {
     padding: 20px;
   }
-}
 
-@media screen {
-  article {
-    padding-bottom: 60px;
-
+  .container {
     display: grid;
 
     grid-template-columns:
-      [full-start] 1fr
-      [wide-start thin-start] var(--main-width) [thin-end]
-      var(--side-width) [wide-end]
-      1fr [full-end];
+      1fr
+      [thin-start wide-start]
+      var(--column-width)
+      var(--column-width)
+      [thin-end]
+      var(--column-width)
+      [wide-end]
+      1fr;
+
+    column-gap: var(--gutter-width);
   }
 
-  article.solo {
+  .container.solo {
     grid-template-columns:
-      [full-start] 1fr
-      [wide-start thin-start] minmax(0, var(--main-width))
+      1fr
+      [thin-start wide-start]
+      var(--column-width)
+      var(--column-width)
       [thin-end wide-end]
-      1fr [full-end];
+      1fr;
   }
 
-  article > * {
+  .container > * {
     grid-column: thin;
-    position: relative;
-  }
 
-  article > h1,
-  article > h2,
-  article > h3 {
-    padding-right: 0;
+    position: relative; /* needed for sidenote placement */
   }
 }
 
 @media screen and (max-width: 880px) {
-  article,
-  article.solo {
+  .container,
+  .container.solo {
     grid-template-columns:
-      [full-start] 1fr
-      [wide-start thin-start] minmax(0, var(--main-width))
+      1fr
+      [thin-start wide-start]
+      var(--column-width)
+      var(--column-width)
       [thin-end wide-end]
-      1fr [full-end];
+      1fr;
   }
 }
 
 @media screen and (max-width: 600px) {
-  article,
-  article.solo {
-    grid-template-columns: [full-start wide-start thin-start] 1fr [thin-end wide-end full-end];
+  .container,
+  .container.solo {
+    grid-template-columns: [thin-start wide-start] 1fr [thin-end wide-end];
   }
 }
 
 :root {
   --text-size: 18px;
+}
+
+@media screen {
+  article {
+    padding-bottom: 60px;
+  }
 }
 
 .sidenote {
@@ -270,8 +276,8 @@ body {
     display: block;
 
     position: absolute;
-    left: calc(var(--main-width) + var(--gutter-width));
-    width: calc(var(--side-width) - var(--gutter-width));
+    left: calc(2 * var(--column-width) + 2 * var(--gutter-width));
+    width: var(--column-width);
 
     margin-top: calc(-1.3 * var(--text-size));
     margin-right: 0;
@@ -518,6 +524,12 @@ mark {
 
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+.container h1,
+.container h2,
+.container h3 {
+  grid-column: wide;
 }
 
 h1,
