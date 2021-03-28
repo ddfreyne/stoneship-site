@@ -37,14 +37,14 @@
   }
 }
 
-@media screen and (min-width: 1281px) and (min-height: 921px) {
+@media screen and (min-width: 1281px) and (min-height: 901px) {
   :root {
     --size-base: 20px;
     --size-scale: 1.35;
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 900px) {
   :root {
     --size-base: 18px;
     --size-scale: 1.25;
@@ -159,10 +159,6 @@ body {
 }
 
 @media screen {
-  body {
-    padding: 20px;
-  }
-
   .container {
     display: grid;
 
@@ -193,7 +189,7 @@ body {
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 900px) {
   .container {
     grid-template-columns:
       1fr
@@ -208,9 +204,11 @@ body {
 @media screen and (max-width: 600px) {
   .container {
     grid-template-columns:
+      0
       [lg-start left-sm-start left-md-start right-sm-start right-md-start]
       1fr
-      [lg-end right-md-end right-sm-end left-sm-end left-md-end];
+      [lg-end right-md-end right-sm-end left-sm-end left-md-end]
+      0;
   }
 }
 
@@ -234,7 +232,7 @@ body {
   order: initial;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 900px) {
   .sm\:order-later {
     order: 999;
   }
@@ -246,7 +244,7 @@ body {
 
 @media screen {
   article {
-    padding-bottom: 60px;
+    padding: 1rem 0 3rem;
   }
 }
 
@@ -254,7 +252,7 @@ body {
   display: inline;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 900px) {
   .sidenote__checkbox {
     display: none;
   }
@@ -290,7 +288,7 @@ body {
   }
 }
 
-@media screen and (min-width: 921px) {
+@media screen and (min-width: 901px) {
   .sidenote__checkbox,
   .sidenote__label {
     display: none;
