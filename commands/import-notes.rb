@@ -45,16 +45,13 @@ run do |opts, args, cmd|
     }
   end
 
-  public_notes =
-    notes.select do |note|
-      note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#public(\s+#[a-zA-Z\/]+)*$/)
-    end
+  public_notes = notes.select { |n| n.fetch(:tags, []).include?('#public') }
 
   public_notes.each do |note|
     $stderr.puts "  - #{note[:title].inspect}"
 
     tagless_text = note[:text].gsub(tag_regex, '')
-    is_fiction = note[:text].match?(/^(#[a-zA-Z\/]+\s+)*#fiction(\s+#[a-zA-Z\/]+)*$/)
+    is_fiction = note.fetch(:tags, []).include?('#fiction')
 
     meta = {
       'title' => note[:title],
