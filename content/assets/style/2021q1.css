@@ -84,28 +84,29 @@
 :root {
   --pure-white: #fff;
 
-  --red-100: hsl(15, 5%, 95%);
-  --red-200: hsl(15, 50%, 90%);
-  --red: hsl(15, 70%, 50%);
-  --red-700: hsl(15, 70%, 25%);
-  --red-800: hsl(15, 70%, 15%);
+  --red-100: hsl(8, 3%, 96%);
+  --red-200: hsl(8, 50%, 90%);
+  --red: hsl(8, 80%, 55%);
+  --red-700: hsl(8, 70%, 25%);
+  --red-800: hsl(8, 70%, 15%);
 
   --mark: hsl(50, 100%, 60%);
-  --mark-fg: hsl(15, 5%, 0%);
+  --mark-700: hsl(50, 100%, 45%);
+  --mark-fg: hsl(8, 5%, 0%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --pure-white: #000;
 
-    --red-100: hsl(15, 5%, 15%);
-    --red-200: hsl(15, 20%, 30%);
-    --red: hsl(15, 70%, 55%);
-    --red-700: hsl(15, 50%, 87%);
-    --red-800: hsl(15, 50%, 92%);
-    --red-900: hsl(15, 50%, 95%);
+    --red-100: hsl(8, 3%, 12%);
+    --red-200: hsl(8, 55%, 22%);
+    --red: hsl(8, 80%, 55%);
+    --red-700: hsl(8, 50%, 87%);
+    --red-800: hsl(8, 50%, 92%);
+    --red-900: hsl(8, 50%, 95%);
 
-    --mark: hsl(15, 5%, 0%);
+    --mark: hsl(8, 5%, 0%);
     --mark-fg: hsl(50, 100%, 60%);
   }
 }
@@ -356,61 +357,14 @@ a {
 
   text-decoration: none;
 
-  background-image: linear-gradient(var(--red-800), var(--red-800));
-  background-size: 1px 1px;
+  background-image: linear-gradient(var(--red-200), var(--red-200));
+  background-size: 1px 35%;
   background-repeat: repeat-x;
-  background-position: 0% calc(100% - 0.15ch);
-
-  text-shadow:
-    0 -0.1ch var(--red-100),
-    0 -0.2ch var(--red-100),
-    0.06ch 0 var(--red-100),
-    0.06ch -0.1ch var(--red-100),
-    0.06ch -0.2ch var(--red-100),
-    0.12ch 0 var(--red-100),
-    0.12ch -0.1ch var(--red-100),
-    0.12ch -0.2ch var(--red-100),
-    0.18ch 0 var(--red-100),
-    0.18ch -0.1ch var(--red-100),
-    0.18ch -0.2ch var(--red-100),
-    -0.06ch 0 var(--red-100),
-    -0.06ch -0.1ch var(--red-100),
-    -0.06ch -0.2ch var(--red-100),
-    -0.12ch 0 var(--red-100),
-    -0.12ch -0.1ch var(--red-100),
-    -0.12ch -0.2ch var(--red-100),
-    -0.18ch 0 var(--red-100),
-    -0.18ch -0.1ch var(--red-100),
-    -0.18ch -0.2ch var(--red-100);
-}
-
-.hero a {
-  background-size: 2px 2px;
-  background-position: 0% calc(100% - 0.25ch);
+  background-position: 0% calc(100% - 0.1ch);
 }
 
 mark a {
-  text-shadow:
-    0 -0.1ch var(--mark),
-    0 -0.2ch var(--mark),
-    0.06ch 0 var(--mark),
-    0.06ch -0.1ch var(--mark),
-    0.06ch -0.2ch var(--mark),
-    0.12ch 0 var(--mark),
-    0.12ch -0.1ch var(--mark),
-    0.12ch -0.2ch var(--mark),
-    0.18ch 0 var(--mark),
-    0.18ch -0.1ch var(--mark),
-    0.18ch -0.2ch var(--mark),
-    -0.06ch 0 var(--mark),
-    -0.06ch -0.1ch var(--mark),
-    -0.06ch -0.2ch var(--mark),
-    -0.12ch 0 var(--mark),
-    -0.12ch -0.1ch var(--mark),
-    -0.12ch -0.2ch var(--mark),
-    -0.18ch 0 var(--mark),
-    -0.18ch -0.1ch var(--mark),
-    -0.18ch -0.2ch var(--mark);
+  background-image: linear-gradient(var(--mark-700), var(--mark-700));
 }
 
 a[href*="//"]:not([href*="denisdefreyne.com"]):after
@@ -428,8 +382,6 @@ a::selection {
 
 a:hover {
   color: var(--red);
-
-  background-image: linear-gradient(var(--red), var(--red));
 }
 
 .nav {
