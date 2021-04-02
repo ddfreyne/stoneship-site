@@ -1,6 +1,6 @@
 <% render '/_wrapper.*' do %>
     <body>
-        <article class="container">
+        <article class="container primary">
             <% unless item[:skip_nav] %>
                 <div class="nav"><span class="nav-sep">//</span><%= breadcrumbs_trail[0..-2].map { |i| link_to(i[:nav_title] || i[:title], i, class: 'nav-link') }.join('<span class="nav-sep">/</span>') %></div>
             <% end %>
