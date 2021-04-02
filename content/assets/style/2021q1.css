@@ -214,6 +214,14 @@ columns are used for the main content, and the remaining one for side notes.
     grid-column: left-sm;
   }
 
+  .col-left-md {
+    grid-column: left-md;
+  }
+
+  .col-right-sm {
+    grid-column: right-sm;
+  }
+
   .col-right-md {
     grid-column: right-md;
   }
@@ -292,6 +300,22 @@ columns are used for the main content, and the remaining one for side notes.
 }
 
 /*** UTILITIES ****************************************************************/
+
+.pb-base {
+  padding-bottom: var(--size-base);
+}
+
+.pb-l1 {
+  padding-bottom: var(--size-l1);
+}
+
+.pb-l2 {
+  padding-bottom: var(--size-l2);
+}
+
+.pb-l3 {
+  padding-bottom: var(--size-l3);
+}
 
 .pb-l4 {
   padding-bottom: var(--size-l4);
@@ -516,7 +540,7 @@ samp {
 
 /*** HERO *********************************************************************/
 
-.hero {
+.primary .hero {
   font-size: var(--size-l4);
   line-height: 1.05;
 
@@ -525,21 +549,21 @@ samp {
   font-weight: 400;
 }
 
-.hero em {
+.primary .hero em {
   color: var(--red);
 
   font-style: normal;
 }
 
 @media screen {
-  .hero {
+  .primary .hero {
     margin-top: var(--size-l3);
     margin-bottom: var(--size-l3);
   }
 }
 
 @media screen and (max-width: 600px) {
-  .hero {
+  .primary .hero {
     line-height: 1.15;
 
     margin-top: 0;
@@ -547,7 +571,7 @@ samp {
 }
 
 @media print {
-  .hero {
+  .primary .hero {
     margin-top: var(--size-l2);
     margin-bottom: var(--size-l2);
   }
@@ -555,26 +579,55 @@ samp {
 
 /*** NAV **********************************************************************/
 
-.nav {
-  padding-top: 20px;
-}
-
-@media screen and (max-width: 600px) {
+@media print {
   .nav {
-    padding-top: 0;
+    display: none;
   }
 }
 
-.nav-sep {
+.nav {
+  padding: var(--size-base);
+
   font-size: var(--size-s1);
+
+  text-transform: uppercase;
+
+  justify-content: space-between;
 }
 
-.nav-sep,
-.nav a {
-  margin-right: 6px;
+@media screen and (min-width: 601px) {
+  .nav {
+    padding: var(--size-l1);
+  }
 }
 
-.nav-link {
+.nav ul {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.nav li {
+  padding: 0 var(--size-s1) var(--size-s2) 0;
+
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.nav li:first-child {
+  flex-grow: 1;
+}
+
+.nav li:last-child {
+  padding-right: 0;
+}
+
+.nav a,
+.nav .active {
   text-transform: uppercase;
 
   font-size: var(--size-s1);
@@ -582,17 +635,15 @@ samp {
   letter-spacing: 0.2ch;
 }
 
-@media print {
-  .nav {
-    display: none;
-  }
+.nav .active {
+  color: var(--red);
 }
 
 /*** OTHER ********************************************************************/
 
 @media screen {
   article {
-    padding: 1rem 0 3rem;
+    padding: 0 0 3rem;
   }
 }
 
