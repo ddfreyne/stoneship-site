@@ -37,7 +37,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    listen (3.4.1)
+    listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mini_portile2 (2.5.0)
@@ -121,7 +121,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sequel (5.42.0)
+    sequel (5.43.0)
     slow_enumerator_tools (1.1.0)
     sqlite3 (1.4.2)
     systemu (2.6.5)
@@ -163,4 +163,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.14
+   2.2.15
