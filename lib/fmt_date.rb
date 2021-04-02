@@ -12,5 +12,5 @@ def ordinalize_num(num)
 end
 
 def fmt_date(date)
-  date.strftime("%B #{ordinalize_num(date.day)}, %Y")
+  date.strftime("%B %Y")
 end
