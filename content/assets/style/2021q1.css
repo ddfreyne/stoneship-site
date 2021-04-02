@@ -591,8 +591,6 @@ samp {
   font-size: var(--size-s1);
 
   text-transform: uppercase;
-
-  justify-content: space-between;
 }
 
 @media screen and (min-width: 601px) {
@@ -639,13 +637,36 @@ samp {
   color: var(--red);
 }
 
-/*** OTHER ********************************************************************/
+/*** FOOTER *******************************************************************/
 
-@media screen {
-  article {
-    padding: 0 0 3rem;
-  }
+body,
+.above-footer {
+  min-height: 100vh;
 }
+
+.above-footer {
+  padding-bottom: var(--size-l10);
+}
+
+.footer {
+  position: relative;
+  height: calc(3 * var(--size-s1) + 2 * var(--size-base));
+  margin-top: calc(-1 * (3 * var(--size-s1) + 2 * var(--size-base)));
+  /* for top+bottom padding, text, and optional line break */
+
+  padding: var(--size-base);
+
+  font-size: var(--size-s1);
+
+  color: var(--red-700);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/*** OTHER ********************************************************************/
 
 @media (prefers-color-scheme: dark) {
   b,
