@@ -6,15 +6,17 @@
 
 <div class="col-left-md main-footer">
   <h2>Links to this note</h2>
-  <% if @item[:is_linked_from].any? %>
-    <ul>
-      <% @item[:is_linked_from].map { |id| @items[id] }.sort_by { |i| i[:title] }.each do |note| %>
-        <li><%= link_to note[:title], note %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    (none)
-  <% end %>
+  <div class="mb-l1">
+    <% if @item[:is_linked_from].any? %>
+      <ul>
+        <% @item[:is_linked_from].map { |id| @items[id] }.sort_by { |i| i[:title] }.each do |note| %>
+          <li><%= link_to note[:title], note %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      (none)
+    <% end %>
+  </div>
 </div>
 
 <div class="col-right-sm main-footer">
