@@ -503,9 +503,9 @@ a {
   text-decoration: none;
 
   background-image: linear-gradient(var(--red-100), var(--red-100));
-  background-size: 1px 35%;
+  background-size: 1px 45%;
   background-repeat: repeat-x;
-  background-position: 0% calc(100% - 0.1ch);
+  background-position: 0% 100%;
 }
 
 mark a {
