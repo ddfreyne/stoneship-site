@@ -621,6 +621,9 @@ samp {
 
   font-weight: 400;
 
+  border-top: 2px solid var(--red-500);
+
+  padding-top: var(--size-base);
   margin-bottom: var(--size-l1);
 }
 
@@ -683,6 +686,27 @@ samp {
 
   border-top: 1px solid var(--red-500);
   border-bottom: 1px solid var(--red-500);
+}
+
+/*** HERO *********************************************************************/
+
+hr {
+  margin: var(--size-l1) 0;
+
+  border-top: 1px solid var(--red-500);
+}
+
+.primary .main-footer {
+  font-size: 0.9em;
+}
+
+.primary .main-footer h2 {
+  font-size: var(--size-base);
+  line-height: 1;
+
+  font-weight: 500;
+
+  margin-top: 0;
 }
 
 /*** HERO *********************************************************************/
