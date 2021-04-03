@@ -76,35 +76,35 @@
   --gray-000: #fff;
   --gray-999: #000;
 
-  --gray-100: hsl(8, 2%, 96%);
-  --gray-200: hsl(8, 3%, 85%);
-  --gray-300: hsl(8, 5%, 73%);
-  --gray-400: hsl(8, 6%, 61%);
-  --gray-500: hsl(8, 7%, 50%);
-  --gray-600: hsl(8, 6%, 40%);
-  --gray-700: hsl(8, 5%, 30%);
-  --gray-800: hsl(8, 3%, 20%);
-  --gray-900: hsl(8, 2%, 10%);
+  --red-100: hsl(7.89, 79.17%, 90.59%);
+  --red-200: hsl(8.76, 98.14%, 82.48%);
+  --red-300: hsl(9.34, 95.16%, 73.01%);
+  --red-400: hsl(9.36, 87.89%, 62.35%);
+  --red-500: hsl(8.2, 80.39%, 50%);
+  --red-600: hsl(7.84, 79.46%, 42.5%);
+  --red-700: hsl(7.61, 78.74%, 35.11%);
+  --red-800: hsl(7.52, 78.33%, 27.88%);
+  --red-900: hsl(8.47, 80.95%, 20.59%);
 
-  --red-100: hsl(12, 49%, 90%);
-  --red-200: hsl(11, 85%, 80%);
-  --red-300: hsl(10, 94%, 70%);
-  --red-400: hsl(9, 94%, 60%);
-  --red-500: hsl(8, 80%, 50%);
-  --red-600: hsl(7, 82%, 40%);
-  --red-700: hsl(6, 86%, 30%);
-  --red-800: hsl(5, 90%, 20%);
-  --red-900: hsl(4, 94%, 10%);
+  --gray-100: hsl(0, 5.88%, 93.33%);
+  --gray-200: hsl(1.89, 6.52%, 82.14%);
+  --gray-300: hsl(3.69, 6.68%, 71.18%);
+  --gray-400: hsl(5.4, 6.71%, 60.45%);
+  --gray-500: hsl(7.06, 6.67%, 50%);
+  --gray-600: hsl(9.18, 6.86%, 39.13%);
+  --gray-700: hsl(11.21, 7.06%, 28.81%);
+  --gray-800: hsl(13.15, 7.28%, 19.12%);
+  --gray-900: hsl(15, 7.69%, 10.2%);
 
-  --yellow-100: hsl(60, 80%, 95%);
-  --yellow-200: hsl(58, 90%, 86%);
-  --yellow-300: hsl(55, 100%, 78%);
-  --yellow-400: hsl(52, 100%, 69%);
-  --yellow-500: hsl(48, 100%, 60%);
-  --yellow-600: hsl(45, 100%, 48%);
-  --yellow-700: hsl(40, 100%, 35%);
-  --yellow-800: hsl(35, 90%, 22%);
-  --yellow-900: hsl(30, 80%, 10%);
+  --yellow-100: hsl(48.89, 100%, 94.71%);
+  --yellow-200: hsl(48.35, 99.96%, 86.78%);
+  --yellow-300: hsl(47.95, 99.99%, 78.73%);
+  --yellow-400: hsl(47.7, 99.97%, 70.27%);
+  --yellow-500: hsl(47.94, 100%, 60%);
+  --yellow-600: hsl(42.51, 67.66%, 48.54%);
+  --yellow-700: hsl(37.34, 67.74%, 36.51%);
+  --yellow-800: hsl(32.25, 68.81%, 23.9%);
+  --yellow-900: hsl(30.59, 100%, 10%);
 
   --mark-bg: var(--yellow-500);
   --mark-bg-plus: var(--yellow-600);
@@ -116,35 +116,35 @@
     --gray-000: #000;
     --gray-999: #fff;
 
-    --gray-900: hsl(8, 2%, 96%);
-    --gray-800: hsl(8, 3%, 85%);
-    --gray-700: hsl(8, 5%, 73%);
-    --gray-600: hsl(8, 6%, 62%);
-    --gray-500: hsl(8, 7%, 51%);
-    --gray-400: hsl(8, 6%, 40%);
-    --gray-300: hsl(8, 5%, 31%);
-    --gray-200: hsl(8, 3%, 22%);
-    --gray-100: hsl(8, 2%, 13%);
+    --red-100: hsl(10.53, 57.23%, 23.95%);
+    --red-200: hsl(10.64, 56.69%, 30.43%);
+    --red-300: hsl(10.78, 56.45%, 37.14%);
+    --red-400: hsl(10.95, 56.37%, 44.02%);
+    --red-500: hsl(11.14, 58.87%, 51.08%);
+    --red-600: hsl(10.71, 63.08%, 61.83%);
+    --red-700: hsl(9.94, 66.25%, 71.91%);
+    --red-800: hsl(9, 65.97%, 81.28%);
+    --red-900: hsl(7.95, 52.03%, 89.85%);
 
-    --red-900: hsl(12, 34%, 90%);
-    --red-800: hsl(11, 70%, 80%);
-    --red-700: hsl(10, 79%, 70%);
-    --red-600: hsl(9, 79%, 60%);
-    --red-500: hsl(8, 75%, 54%);
-    --red-400: hsl(7, 70%, 46%);
-    --red-300: hsl(6, 65%, 38%);
-    --red-200: hsl(5, 60%, 31%);
-    --red-100: hsl(4, 55%, 24%);
+    --gray-100: hsl(11.98, 4.48%, 15.41%);
+    --gray-200: hsl(10.82, 4.67%, 23.31%);
+    --gray-300: hsl(9.62, 4.74%, 31.69%);
+    --gray-400: hsl(8.39, 4.76%, 40.48%);
+    --gray-500: hsl(7.11, 4.75%, 49.64%);
+    --gray-600: hsl(5.45, 4.69%, 60.12%);
+    --gray-700: hsl(3.73, 4.65%, 70.91%);
+    --gray-800: hsl(1.92, 4.53%, 81.96%);
+    --gray-900: hsl(0.01, 4.08%, 93.27%);
 
-    --yellow-900: hsl(60, 80%, 95%);
-    --yellow-800: hsl(58, 90%, 86%);
-    --yellow-700: hsl(55, 100%, 78%);
-    --yellow-600: hsl(52, 100%, 69%);
-    --yellow-500: hsl(48, 100%, 60%);
-    --yellow-400: hsl(45, 100%, 48%);
-    --yellow-300: hsl(40, 100%, 35%);
-    --yellow-200: hsl(35, 90%, 22%);
-    --yellow-100: hsl(30, 80%, 10%);
+    --yellow-100: hsl(30.59, 100%, 10%);
+    --yellow-200: hsl(32.25, 68.81%, 23.9%);
+    --yellow-300: hsl(37.34, 67.74%, 36.51%);
+    --yellow-400: hsl(42.51, 67.66%, 48.54%);
+    --yellow-500: hsl(47.94, 100%, 60%);
+    --yellow-600: hsl(47.7, 99.97%, 70.27%);
+    --yellow-700: hsl(47.95, 99.99%, 78.73%);
+    --yellow-800: hsl(48.35, 99.96%, 86.78%);
+    --yellow-900: hsl(48.89, 100%, 94.71%);
 
     --mark-bg: var(--gray-000);
     --mark-bg-plus: var(--gray-200);
@@ -269,7 +269,9 @@
 }
 
 .swatch {
-  padding: 0.5em;
+  padding: 0.4em 0.6em;
+
+  font-size: 0.9em;
 }
 
 .swatch-big {
@@ -326,9 +328,9 @@ columns are used for the main content, and the remaining one for side notes.
       1fr
       [lg-start left-sm-start left-md-start]
       var(--column-width)
-      [left-sm-end right-md-start]
+      [left-sm-end center-sm-start right-md-start]
       var(--column-width)
-      [left-md-end right-sm-start]
+      [left-md-end center-sm-end right-sm-start]
       var(--column-width)
       [lg-end right-sm-end right-md-end]
       1fr;
@@ -341,10 +343,10 @@ columns are used for the main content, and the remaining one for side notes.
   .container {
     grid-template-columns:
       1fr
-      [lg-start left-sm-start left-md-start right-md-start right-sm-start]
+      [lg-start left-sm-start left-md-start center-sm-start right-md-start right-sm-start]
       var(--column-width)
       var(--column-width)
-      [lg-end left-sm-end left-md-end right-md-end right-sm-end]
+      [lg-end left-sm-end left-md-end center-sm-end right-md-end right-sm-end]
       1fr;
   }
 }
@@ -353,9 +355,9 @@ columns are used for the main content, and the remaining one for side notes.
   .container {
     grid-template-columns:
       0
-      [lg-start left-sm-start left-md-start right-sm-start right-md-start]
+      [lg-start left-sm-start left-md-start center-sm-start right-sm-start right-md-start]
       1fr
-      [lg-end right-md-end right-sm-end left-sm-end left-md-end]
+      [lg-end center-sm-end right-md-end right-sm-end left-sm-end left-md-end]
       0;
   }
 }
@@ -379,6 +381,10 @@ columns are used for the main content, and the remaining one for side notes.
 
   .col-left-md {
     grid-column: left-md;
+  }
+
+  .col-center-sm {
+    grid-column: center-sm;
   }
 
   .col-right-sm {
