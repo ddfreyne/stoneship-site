@@ -849,11 +849,6 @@ body,
 
 .footer {
   position: relative;
-  height: calc(2 * var(--size-s1) + 1 * var(--size-base));
-  margin-top: calc(-1 * (2 * var(--size-s1) + 1 * var(--size-base)));
-  /* for top+bottom padding and text */
-
-  padding: var(--size-base);
 
   font-size: var(--size-s1);
 
@@ -863,6 +858,24 @@ body,
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.footer {
+  padding: var(--size-base);
+
+  height: calc(var(--size-s1) + 2 * var(--size-base));
+  margin-top: calc(-1 * (var(--size-s1) + 2 * var(--size-base)));
+  /* for top+bottom padding and text */
+}
+
+@media screen and (min-width: 601px) {
+  .footer {
+    padding: var(--size-l1);
+
+    height: calc(var(--size-s1) + 2 * var(--size-l1));
+    margin-top: calc(-1 * (var(--size-s1) + 2 * var(--size-l1)));
+    /* for top+bottom padding and text */
+  }
 }
 
 .footer a {
