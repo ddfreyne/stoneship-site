@@ -617,9 +617,16 @@ samp {
   color: var(--red-500);
 }
 
+.primary h2,
+.primary h3 {
+  color: var(--gray-900);
+}
+
 .primary h1 {
   font-size: var(--size-l4);
   line-height: 1;
+
+  color: var(--red-500);
 
   letter-spacing: -0.03ch;
 
@@ -691,10 +698,10 @@ samp {
 
 /*** PRIMARY FOOTER ************************************************************/
 
-hr {
+.hr {
   margin: calc(3 * var(--size-base)) 0 var(--size-base) 0;
 
-  border-top: 1px solid var(--red-500);
+  border-top: 1px solid var(--gray-600);
 }
 
 .primary .main-footer {
@@ -708,6 +715,19 @@ hr {
   font-weight: 600;
 
   margin-top: 0;
+}
+
+.primary .main-footer ul {
+  padding-left: 0;
+}
+
+.primary .main-footer ul > li {
+  list-style-type: none;
+}
+
+.primary .main-footer ul > li:before {
+  content: "";
+  margin-left: 0;
 }
 
 /*** HERO *********************************************************************/
