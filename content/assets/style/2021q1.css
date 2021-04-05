@@ -674,6 +674,10 @@ samp {
   margin-bottom: var(--size-base);
 }
 
+.primary p.lead {
+  font-size: var(--size-l1);
+}
+
 .primary p:last-child,
 .primary li:last-child {
   margin-bottom: 0;
