@@ -503,13 +503,14 @@ body {
 
 a {
   color: var(--gray-900);
+  color: var(--red-500);
 
   text-decoration: none;
 
-  background-image: linear-gradient(var(--red-100), var(--red-100));
-  background-size: 1px 45%;
+  background-image: linear-gradient(var(--gray-200), var(--gray-200));
+  background-size: 1px 1px;
   background-repeat: repeat-x;
-  background-position: 0% 100%;
+  background-position: 0% 98%;
 }
 
 mark a {
@@ -532,7 +533,8 @@ a::selection {
 }
 
 a:hover {
-  color: var(--red-500);
+  color: var(--red-700);
+  background-image: linear-gradient(var(--gray-300), var(--gray-300));
 }
 
 code,
@@ -614,19 +616,12 @@ samp {
   padding: 0;
   margin: 0 0 var(--size-s2) 0;
 
-  color: var(--red-500);
-}
-
-.primary h2,
-.primary h3 {
   color: var(--gray-900);
 }
 
 .primary h1 {
   font-size: var(--size-l4);
   line-height: 1;
-
-  color: var(--red-500);
 
   letter-spacing: -0.03ch;
 
@@ -740,15 +735,20 @@ samp {
   font-size: var(--size-l4);
   line-height: 1.05;
 
-  letter-spacing: -0.05ch;
+  letter-spacing: -0.04ch;
 
   font-weight: 400;
 }
 
 .primary .hero em {
-  color: var(--red-500);
-
   font-style: normal;
+  font-weight: 800;
+
+  letter-spacing: -0.01ch;
+}
+
+.primary .hero a {
+  background-size: 1px 3px;
 }
 
 @media screen {
@@ -832,7 +832,7 @@ samp {
 }
 
 .nav .active {
-  color: var(--red-500);
+  color: var(--gray-900);
 }
 
 /*** FOOTER *******************************************************************/
