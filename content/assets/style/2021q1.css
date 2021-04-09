@@ -30,7 +30,7 @@
 
 :root {
   --size-base: 18px;
-  --size-scale: 1.3333;
+  --size-scale: 1.25;
 }
 
 @media print {
@@ -42,14 +42,6 @@
 @media screen and (min-width: 1281px) and (min-height: 901px) {
   :root {
     --size-base: 20px;
-    --size-scale: 1.35;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  :root {
-    --size-base: 18px;
-    --size-scale: 1.25;
   }
 }
 
@@ -68,6 +60,7 @@
   --size-l2: calc(var(--size-l1) * var(--size-scale));
   --size-l3: calc(var(--size-l2) * var(--size-scale));
   --size-l4: calc(var(--size-l3) * var(--size-scale));
+  --size-l5: calc(var(--size-l4) * var(--size-scale));
 }
 
 /*** COLOR ********************************************************************/
@@ -732,7 +725,7 @@ samp {
 /*** HERO *********************************************************************/
 
 .primary .hero {
-  font-size: var(--size-l4);
+  font-size: var(--size-l5);
   line-height: 1.05;
 
   letter-spacing: -0.04ch;
