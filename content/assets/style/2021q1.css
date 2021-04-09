@@ -703,9 +703,9 @@ samp {
 /*** PRIMARY FOOTER ************************************************************/
 
 .hr {
-  margin: calc(3 * var(--size-base)) 0 var(--size-base) 0;
+  margin: calc(3 * var(--size-base)) 0 var(--size-s1) 0;
 
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid var(--gray-500);
 }
 
 .primary .main-footer {
@@ -813,18 +813,13 @@ samp {
   flex-grow: 0;
 }
 
+.nav li:first-child {
+  flex-grow: 1;
+}
+
 .nav li:first-child,
 .nav li:last-child {
   padding-right: 0;
-}
-
-.nav .separator {
-  flex-grow: 1;
-
-  border-bottom: 1px solid var(--gray-400);
-
-  margin: 0 var(--size-base) var(--size-s2) var(--size-base);
-  padding: 0;
 }
 
 .nav a,
@@ -888,13 +883,6 @@ body,
 
 .footer a:hover {
   color: var(--red-900);
-}
-
-.footer .separator {
-  flex-grow: 1;
-
-  border-bottom: 1px solid var(--gray-400);
-  margin: 0 var(--size-s1);
 }
 
 /*** OTHER ********************************************************************/

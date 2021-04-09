@@ -5,21 +5,16 @@
 <div class="hr col-lg"></div>
 
 <div class="col-left-md main-footer">
-  <h2>Links to this note</h2>
-  <div class="mb-l1">
-    <% if @item[:is_linked_from].any? %>
-      <ul>
-        <% @item[:is_linked_from].map { |id| @items[id] }.sort_by { |i| i[:title] }.each do |note| %>
-          <li><%= link_to note[:title], note %></li>
-        <% end %>
-      </ul>
-    <% else %>
-      (none)
-    <% end %>
-  </div>
+  <div>Last revised <%= fmt_date(@item[:updated_at]) %></div>
 </div>
 
 <div class="col-right-sm main-footer">
-  <h2>Meta</h2>
-  <p>Last revised: <%= fmt_date(@item[:updated_at]) %></p>
+  <% if @item[:is_linked_from].any? %>
+    <div>Backlinks:</div>
+    <ul>
+      <% @item[:is_linked_from].map { |id| @items[id] }.sort_by { |i| i[:title] }.each do |note| %>
+        <li><%= link_to note[:title], note %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
