@@ -8,6 +8,6 @@ title: "Notes"
 
 <ul class="spacious col-right-md">
   <% @items.find_all('/notes/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |note| %>
-    <li><%= link_to note[:title], note %></li>
+    <li class="<%= classes_for_note_li(note) %>"><%= link_to note[:title], note %></li>
   <% end %>
 </ul>

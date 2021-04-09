@@ -574,6 +574,11 @@ samp {
   margin-left: -2rem;
 }
 
+.primary ul > li.list-icon-star:before {
+  content: "★";
+  margin-left: -2.1rem;
+}
+
 .primary ul ul > li:before {
   content: "•";
   position: absolute;
