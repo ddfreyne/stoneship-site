@@ -389,7 +389,9 @@ a {
   color: var(--link-fg);
 
   text-decoration: none;
+}
 
+.primary a {
   background-image: linear-gradient(var(--gray-200), var(--gray-200));
   background-size: 1px 1px;
   background-repeat: repeat-x;
@@ -398,7 +400,9 @@ a {
 
 mark a {
   color: var(--mark-fg);
+}
 
+.primary mark a {
   background-image: linear-gradient(var(--mark-bg-plus), var(--mark-bg-plus));
 }
 
@@ -417,6 +421,9 @@ a::selection {
 
 a:hover {
   color: var(--link-fg-hover);
+}
+
+.primary a:hover {
   background-image: linear-gradient(var(--gray-300), var(--gray-300));
 }
 
@@ -689,6 +696,13 @@ samp {
   flex-wrap: wrap;
   align-items: center;
 
+  font-family: "Iosevka SS08", monospace;
+  font-weight: 300;
+  font-size: var(--size-s1);
+
+  letter-spacing: 0.07ch;
+  text-transform: uppercase;
+
   list-style: none;
 }
 
@@ -706,15 +720,6 @@ samp {
 .nav li:first-child,
 .nav li:last-child {
   padding-right: 0;
-}
-
-.nav a,
-.nav .active {
-  text-transform: uppercase;
-
-  font-size: var(--size-s1);
-  font-weight: 600;
-  letter-spacing: 0.2ch;
 }
 
 .nav .active {
@@ -736,6 +741,8 @@ body,
   position: relative;
 
   font-size: var(--size-s1);
+  font-family: "Iosevka SS08", monospace;
+  font-weight: 300;
 
   color: var(--gray-600);
 
