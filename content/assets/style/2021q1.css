@@ -744,8 +744,6 @@ body,
   font-family: "Iosevka SS08", monospace;
   font-weight: 300;
 
-  color: var(--gray-600);
-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -760,14 +758,6 @@ body,
   .footer {
     padding: var(--size-l1);
   }
-}
-
-.footer a {
-  color: var(--gray-600);
-}
-
-.footer a:hover {
-  color: var(--red-900);
 }
 
 /*** OTHER ********************************************************************/
