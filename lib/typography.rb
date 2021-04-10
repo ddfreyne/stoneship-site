@@ -7,12 +7,11 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
   doc = Nokogiri::HTML.fragment(content)
 
   doc.css('p').each do |para|
-    para.children.each do |child|
-      next unless child.text?
+    last_text_child = para.children.select(&:text?).last
+    next unless last_text_child
 
-      # Replace non-breaking space
-      child.content = child.content.sub(/ ([^ ]+)\z/, ' \1')
-    end
+    # Replace non-breaking space
+    last_text_child.content = last_text_child.content.sub(/ ([^ ]+)\z/, ' \1')
   end
 
   doc.css('.path').each do |path|
