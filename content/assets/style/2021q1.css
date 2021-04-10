@@ -99,8 +99,8 @@
   --yellow-800: hsl(41.63, 96.08%, 20%);
   --yellow-900: hsl(41.63, 96.08%, 10%);
 
-  --mark-bg: var(--yellow-500);
-  --mark-bg-plus: var(--yellow-600);
+  --mark-bg: var(--yellow-400);
+  --mark-bg-plus: var(--yellow-500);
   --mark-fg: var(--gray-900);
 
   --text-fg: var(--gray-900);
@@ -147,9 +147,9 @@
     --yellow-800: hsl(40.92, 86.36%, 81.99%);
     --yellow-900: hsl(41.27, 85.03%, 90.9%);
 
-    --mark-bg: var(--gray-000);
-    --mark-bg-plus: var(--gray-200);
-    --mark-fg: var(--yellow-500);
+    --mark-bg: var(--yellow-500);
+    --mark-bg-plus: var(--yellow-600);
+    --mark-fg: var(--gray-100);
 
     --link-fg: var(--red-600);
     --link-fg-hover: var(--red-900);
