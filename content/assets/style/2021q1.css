@@ -701,9 +701,9 @@ samp {
 /*** PRIMARY FOOTER ************************************************************/
 
 .hr {
-  margin: calc(3 * var(--size-base)) 0 var(--size-s1) 0;
+  margin: calc(3 * var(--size-base)) 0 var(--size-base) 0;
 
-  border-top: 1px solid var(--gray-500);
+  border-top: 1px solid var(--gray-300);
 }
 
 .primary .main-footer {
