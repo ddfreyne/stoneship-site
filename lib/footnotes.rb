@@ -43,7 +43,7 @@ Nanoc::Filter.define(:footnotes) do |content, _params = {}|
         >&lowast;</label
         ><small
           id="sidenote-#{footnote_id}"
-          class="sidenote__content"
+          class="sidenote__content muted"
         >#{sidenote_content}</small
       ></span>
     SIDENOTE_MARKUP
