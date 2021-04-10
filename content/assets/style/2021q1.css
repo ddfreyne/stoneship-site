@@ -734,7 +734,7 @@ body,
 }
 
 .above-footer {
-  padding-bottom: calc(8 * var(--size-base));
+  padding-bottom: calc(6 * var(--size-base));
 }
 
 .footer {
@@ -752,11 +752,19 @@ body,
 
 .footer {
   padding: var(--size-base);
+
+  height: calc(var(--size-s1) + 2 * var(--size-base));
+  margin-top: calc(-1 * (var(--size-s1) + 2 * var(--size-base)));
+  /* for top+bottom padding and text */
 }
 
 @media screen and (min-width: 601px) {
   .footer {
     padding: var(--size-l1);
+
+    height: calc(var(--size-s1) + 2 * var(--size-l1));
+    margin-top: calc(-1 * (var(--size-s1) + 2 * var(--size-l1)));
+    /* for top+bottom padding and text */
   }
 }
 
