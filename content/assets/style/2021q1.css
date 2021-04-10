@@ -304,7 +304,7 @@ columns are used for the main content, and the remaining one for side notes.
     display: inline;
     outline: none;
 
-    color: var(--gray-100);
+    color: var(--text-fg-muted);
 
     padding: 2px 4px;
 
