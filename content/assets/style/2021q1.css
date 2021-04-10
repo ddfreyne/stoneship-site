@@ -197,6 +197,22 @@ body {
   hyphenate-limit-zone: 8%;
 }
 
+/*** HLJS *********************************************************************/
+
+.hljs-keyword {
+  font-weight: bold;
+}
+
+.hljs-string {
+  font-style: italic;
+  color: var(--gray-500);
+}
+
+.hljs-string .hljs-subst {
+  color: var(--gray-900);
+  font-style: normal;
+}
+
 /*** GRID ********************************************************************/
 
 /*
