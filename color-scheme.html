@@ -62,7 +62,7 @@
         let colors = chroma.scale([white, base, black]).mode('hsl').padding(0.1).colors(9).map(c => chroma(c));
 
         if (darkMode) {
-          colors = colors.map((c) => c.set("lch.c", "*0.8")).reverse();
+          colors = colors.map((c) => c.set("lch.c", "*0.8").set("hsl.h", "+10")).reverse();
         }
 
         return Swatches('red', colors);
