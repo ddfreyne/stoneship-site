@@ -40,7 +40,7 @@ GEM
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mini_portile2 (2.5.0)
+    mini_portile2 (2.5.1)
     nanoc (4.12.1)
       addressable (~> 2.5)
       colored (~> 1.2)
