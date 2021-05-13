@@ -14,3 +14,15 @@ Nanoc::Check.define(:focus) do
     end
   end
 end
+
+Nanoc::Check.define(:footnotes) do
+  @output_filenames.each do |filename|
+    next unless filename =~ /html$/
+
+    contents = File.read(filename)
+    if contents =~ /\[\^/
+      add_issue(
+        "broken footnote reference", subject: filename)
+    end
+  end
+end

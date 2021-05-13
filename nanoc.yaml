@@ -19,6 +19,7 @@ checking:
   enabled_checks:
     - ilinks
     - focus
+    - footnotes
 
 data_sources:
   - type: filesystem_unified
