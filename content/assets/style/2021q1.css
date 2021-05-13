@@ -598,10 +598,7 @@ samp {
 .primary pre {
   white-space: pre-wrap;
 
-  padding: 5px 0;
-
-  border-top: 1px solid var(--red-500);
-  border-bottom: 1px solid var(--red-500);
+  padding-left: 2rem;
 }
 
 /*** PRIMARY FOOTER ***********************************************************/
