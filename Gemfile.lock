@@ -3,9 +3,9 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    adsf (1.4.5)
+    adsf (1.4.6)
       rack (>= 1.0.0, < 3.0.0)
-    adsf-live (1.4.5)
+    adsf-live (1.4.6)
       adsf (~> 1.3)
       em-websocket (~> 0.5)
       eventmachine (~> 1.2)
