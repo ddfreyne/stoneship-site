@@ -200,7 +200,7 @@ body {
 /*** HLJS *********************************************************************/
 
 .hljs-keyword {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .hljs-string {
@@ -396,7 +396,7 @@ body {
   font-family: Compita, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   font-size: var(--size-base);
-  font-weight: 500;
+  font-weight: 400;
 
   text-rendering: optimizeLegibility;
 }
@@ -441,6 +441,11 @@ a:hover {
 
 .primary a:hover {
   background-image: linear-gradient(var(--gray-300), var(--gray-300));
+}
+
+b,
+strong {
+  font-weight: 600;
 }
 
 code,
@@ -525,7 +530,6 @@ samp {
 .primary h2,
 .primary h3 {
   padding: 0;
-  margin: 0 0 var(--size-s2) 0;
 }
 
 .primary h1 {
@@ -534,9 +538,9 @@ samp {
 
   letter-spacing: -0.03ch;
 
-  font-weight: 400;
+  font-weight: 600;
 
-  margin-bottom: var(--size-l1);
+  margin: 0 0 var(--size-l1) 0;
 }
 
 @media screen {
@@ -549,9 +553,9 @@ samp {
   font-size: var(--size-l2);
   line-height: 1.2;
 
-  font-weight: 500;
+  font-weight: 600;
 
-  margin-top: var(--size-l1);
+  margin: var(--size-l1) 0 var(--size-s2) 0;
 }
 
 .primary h3 {
@@ -560,10 +564,7 @@ samp {
 
   font-weight: 600;
 
-  margin-top: var(--size-l1);
-  text-transform: uppercase;
-
-  letter-spacing: 0.1ch;
+  margin: var(--size-l1) 0 var(--size-s1) 0;
 }
 
 .primary p,
@@ -575,11 +576,14 @@ samp {
   line-height: 1.4;
 
   margin: 0;
-  margin-bottom: var(--size-base);
+  margin-bottom: var(--size-l1);
 }
 
 .primary p.lead {
   font-size: var(--size-l1);
+  font-weight: 400;
+  line-height: 1.25;
+  font-style: italic;
 }
 
 .primary p:last-child,
