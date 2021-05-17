@@ -581,9 +581,12 @@ samp {
 
 .primary p.lead {
   font-size: var(--size-l1);
-  font-weight: 400;
   line-height: 1.25;
+
+  font-weight: 400;
   font-style: italic;
+
+  margin-bottom: var(--size-l2);
 }
 
 .primary p:last-child,
