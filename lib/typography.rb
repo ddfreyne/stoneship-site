@@ -6,12 +6,12 @@ Nanoc::Filter.define(:typography) do |content, _params = {}|
 
   doc = Nokogiri::HTML.fragment(content)
 
-  doc.css('p').each do |para|
-    last_text_child = para.children.select(&:text?).last
+  doc.css('p, h1, h2, h3').each do |elem|
+    last_text_child = elem.children.select(&:text?).last
     next unless last_text_child
 
     # Replace non-breaking space
-    last_text_child.content = last_text_child.content.sub(/ ([^ ]+)\z/, ' \1')
+    last_text_child.content = last_text_child.content.sub(/\s+([^\s]+)\z/, non_breaking_space + '\1')
   end
 
   doc.css('.path').each do |path|
