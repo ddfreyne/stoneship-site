@@ -603,6 +603,39 @@ samp {
   padding: 0.5rem 1rem;
 }
 
+/*** BLOCKS *******************************************************************/
+
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--size-base);
+}
+
+@media screen and (max-width: 900px) {
+  .blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.block {
+  display: block;
+
+  border: 1px solid var(--gray-200);
+  line-height: 1.3;
+  padding: var(--size-base);
+
+  min-height: calc(6 * var(--size-base));
+}
+
+a.block:hover {
+  border-color: var(--gray-300);
+}
+
+.primary a.block,
+.primary a.block:hover {
+  background: none;
+}
+
 /*** PRIMARY FOOTER ***********************************************************/
 
 .hr {
