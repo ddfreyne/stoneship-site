@@ -12,7 +12,6 @@
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;
-    text-shadow: none !important;
   }
 
   a[href]:after {
@@ -408,10 +407,9 @@ a {
 }
 
 .primary a {
-  background-image: linear-gradient(var(--gray-200), var(--gray-200));
-  background-size: 1px 1px;
-  background-repeat: repeat-x;
-  background-position: 0% 98%;
+  text-decoration: underline;
+  text-decoration-color: var(--gray-200);
+  text-underline-offset: 0.15em;
 }
 
 mark a {
@@ -419,7 +417,7 @@ mark a {
 }
 
 .primary mark a {
-  background-image: linear-gradient(var(--mark-bg-plus), var(--mark-bg-plus));
+  text-decoration-color: var(--mark-bg-plus);
 }
 
 a[href*="//"]:not([href*="denisdefreyne.com"]):after
@@ -431,16 +429,12 @@ a[href*="//"]:not([href*="denisdefreyne.com"]):after
   color: var(--link-fg);
 }
 
-a::selection {
-  text-shadow: none;
-}
-
 a:hover {
   color: var(--link-fg-hover);
 }
 
 .primary a:hover {
-  background-image: linear-gradient(var(--gray-300), var(--gray-300));
+  text-decoration-color: var(--gray-300);
 }
 
 b,
