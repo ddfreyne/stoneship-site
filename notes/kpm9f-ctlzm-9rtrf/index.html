@@ -1,0 +1,111 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>stderr is for all diagnostic output</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/kpm9f-ctlzm-9rtrf/">
+
+        <meta property="og:title" content="stderr is for all diagnostic output">
+        <meta property="dc.title" content="stderr is for all diagnostic output">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>stderr is for all diagnostic&nbsp;output</h1>
+
+
+<p>For command-line program, stdout is used to output the result that the program produces. Anything else, i.e., diagnostic output, needs to be on&nbsp;stderr.</p>
+
+<p>stderr is not for writing errors, confusingly. <em>All</em> log messages (not just errors, but also warnings, and even debug messages) belong on&nbsp;stderr.</p>
+
+<p>If a command-line program takes a <code>-q</code> or <code>--quiet</code> option, then this would silence stderr, but not stdout — the output is the primary product, after&nbsp;all.</p>
+
+<p>If the program doesn’t produce output, then the difference between stdout and stderr is&nbsp;irrelevant.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../wtp7l-fkhpz-xvxpn/">UX matters for developer tools</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,110 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>It is hard in Nanoc to use reusable view components</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/c9nfc-77kz7-tvzvp/">
+
+        <meta property="og:title" content="It is hard in Nanoc to use reusable view components">
+        <meta property="dc.title" content="It is hard in Nanoc to use reusable view components">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>It is hard in Nanoc to use reusable view&nbsp;components</h1>
+
+
+<p>The rise of React made it clear that (reusable) components are an effective way of building a large web site (or web application) in a scalable way. Nanoc has support for partials, but they’re not a good&nbsp;alternative:</p>
+
+<ul>
+  <li>
+    <p>Partials are syntax-heavy (<code>&lt;%= render '/stuff', … %&gt;</code>, compared to React’s <code>&lt;Stuff /&gt;</code>).</p>
+  </li>
+  <li>
+    <p>In Nanoc, Partials exist as layouts, which is&nbsp;confusing.</p>
+  </li>
+  <li>
+    <p>The implementation of partials depends on Nanoc internals, despite being implemented as a helper (while helpers usually only rely on Nanoc’s public&nbsp;API).</p>
+  </li>
+</ul>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

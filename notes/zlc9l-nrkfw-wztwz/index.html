@@ -1,0 +1,240 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Module systems in programming languages</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/zlc9l-nrkfw-wztwz/">
+
+        <meta property="og:title" content="Module systems in programming languages">
+        <meta property="dc.title" content="Module systems in programming languages">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Module systems in programming&nbsp;languages</h1>
+
+
+<p>Modern programming languages have module systems and package managers, for easy structuring of large applications and reusing source code. There are plenty different ways in which such module systems can work, though, and this note attempts to describe some of the&nbsp;ideas.</p>
+
+<p>Some definitions<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--definitions" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-definitions" for="sidenote__checkbox--definitions" class="sidenote__label">∗</label><small id="sidenote-definitions" class="sidenote__content muted">The terms “module” and “package” are not always used this way. For example, Java (with its new module system) has swapped the two.&nbsp;</small></span>:</p>
+
+<ul>
+  <li>
+    <p>A <strong>module</strong> is the smallest collection of independent units (functions, constants, structs, classes, and more). It often corresponds to a file, but not always. For example, a <code>math</code> module could contain all basic math functions and&nbsp;constants.</p>
+  </li>
+  <li>
+    <p>A <strong>package</strong> is a collection of related modules. It is independently distributable. For example, a <code>stdlib</code> module could contain all basic modules that would be expected from a programming language (IO, string manipulation, math, and&nbsp;more).</p>
+  </li>
+  <li>
+    <p>An <strong>import statement</strong> is a source code construct that makes the code in a module available in the current file, module, or&nbsp;scope.</p>
+  </li>
+</ul>
+
+<h2 id="locations">Locations</h2>
+<p>A nontrivial module will load reusable source code from three&nbsp;places:</p>
+
+<ul>
+  <li>The standard library</li>
+  <li>Installed packages</li>
+  <li>The local package</li>
+</ul>
+
+<p>The local package refers to the product that’s being developed, and that contains the module that does the&nbsp;importing.</p>
+
+<p>In my opinion, it is important to be clear where an import statement loads modules&nbsp;from:</p>
+
+<ul>
+  <li>
+    <p>C (despite its archaic approach modularity) distinguishes between imports in the local package (<code>#include "mymodule.h"</code>) and standard library or installed packages (<code>#include &lt;stdbool.h&gt;</code>).</p>
+  </li>
+  <li>
+    <p>Ruby’s <code>#require</code> can load from anywhere, depending on the load path (a search path, set as an environment variable). It does have <code>#require_relative</code>, which indicates an import from the local&nbsp;package.</p>
+  </li>
+  <li>
+    <p>Dart distinguishes between all three by having <code>import 'dart:async'</code> (prefix <code>dart:</code>) for standard library imports, <code>import 'package:something'</code> (prefix <code>package:</code>) for package imports, and <code>import 'myfile'</code> for local&nbsp;imports.</p>
+  </li>
+</ul>
+
+<h2 id="what-are-modules">What are&nbsp;modules?</h2>
+<p>Modules can correspond one-to-one to <strong>files</strong>. This is the approach used in Python, Ruby, JavaScript, and others. Modules can correspond one-to-one to <strong>directories</strong>. This is the approach that Go uses. Modules can correspond to a combination of files and directories as well; this is the case with Rust, Java, and&nbsp;others.</p>
+
+<p>A module name can be implicitly derived from the filename (usually when modules correspond to files, e.g. in Python or JavaScript), explicitly given (e.g. with a <code>package mypkgname</code> declaration, like in Java or&nbsp;Go).</p>
+
+<p>If modules and files correspond one-to-one, then it is useful to have a main module (file) that re-exports declarations from other modules inside the package. For example, a <code>math</code> package might have dozens of modules, but its main module would export some constants and functions defined in submodules: <code>math.trig.sin</code> might be re-exported as <code>math.sin</code> for&nbsp;convenience.</p>
+
+<p>A main module could be a regular module (file), or it could have a special filename such as <code>__init__</code> (which is what Python uses), which the interpreter/compiler looks for. This is useful for simplifying the directory structure. Compare with <code>__init__</code>:</p>
+
+<pre><code>src/
+  math/
+    __init__.xx
+    trig.xx
+    vec.xx
+</code></pre>
+
+<p>… and without <code>__init__</code>:</p>
+
+<pre><code>src/
+  math.xx
+  math/
+    trig.xx
+    vec.xx
+</code></pre>
+
+<p><mark><strong>Open question</strong>: If modules correspond to directories rather than files, are re-exports still useful?
+</mark></p>
+
+<h2 id="visibility">Visibility</h2>
+<p>Visibility determines whether a symbol is accessible to other modules. Typically there is private (not accessible to other module), and public (accessible to other modules). More granular options are possible, e.g. package-private (visible to modules in the current&nbsp;package).</p>
+
+<p><mark><strong>To do</strong>: Private by default, with export keyword? Go-style public/private? Underscore for private?
+</mark></p>
+
+<p><mark><strong>To do</strong>: Re-exports: how do those work?
+</mark></p>
+
+<h3 id="visibility-is-not-a-property-of-the-symbol">Visibility is not a property of the&nbsp;symbol</h3>
+<p>The visibility of a symbol is a property of the symbol’s <em>relationship to the module</em>, rather than a property of the symbol itself. This is relevant in languages that determine visibility based on the symbol name. For&nbsp;example:</p>
+
+<pre><code class="language-plaintext">import math
+
+println(math.Cos(3.14))
+</code></pre>
+
+<p>In the example above, <code>Cos</code> is exported from <code>math</code> and is public, because it uses the Go-style convention of public symbols starting with an uppercase letter. There is no issue in this&nbsp;case.</p>
+
+<p>It gets complicated when importing symbols&nbsp;directly:</p>
+
+<pre><code class="language-plaintext">import Cos from math
+
+println(Cos(3.14))
+</code></pre>
+
+<p>In this case, the <code>Cos</code> symbol is imported from the <code>math</code> module, where <code>Cos</code> is public. However, in the example above, <code>Cos</code> appears to be public with regard to the current module too, which might not be intentional or&nbsp;desired.</p>
+
+<p>In other words, if visibility is determined by the symbol name (e.g. through the use of an initial uppercase letter, or the presence of a leading underscore), then importing symbols directly can lead to confusion of what visibility rules&nbsp;apply.</p>
+
+<h2 id="non-source-imports">Non-source&nbsp;imports</h2>
+<p>JavaScript (or at least Webpack) allows importing non-source files, such as CSS&nbsp;files.</p>
+
+<p>This is interesting, because it provides a mechanism to bundle resources into a single output file, which makes distribution&nbsp;easier.</p>
+
+<p>With compile-time function execution, it would even be possible to import a non-source file and process it ahead of time. For example, it would allow converting Sass to CSS ahead of time<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--sass" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-sass" for="sidenote__checkbox--sass" class="sidenote__label">∗</label><small id="sidenote-sass" class="sidenote__content muted">Perhaps not directly: Sass can include other files, which means that a non-source import would need to be able to access other files as well.&nbsp;</small></span>.</p>
+
+<p>Within the JavaScript ecosystem, usually the non-source imports are handled by Webpack. Unfortunately, the Webpack configuration to make that work is too opaque; a language with built-in support for this (with zero configuration) would be nice to&nbsp;have.</p>
+
+<p>Non-source imports only work when modules map one-to-one to files. It might be necessary to have an alternative import-file instruction apart from the regular import-module&nbsp;instruction.</p>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+<ul>
+  <li>
+    <p>An import statement should not modify the global namespace. This is what Ruby does and leads to weird effects: if I import a package that imports the <code>yaml</code> package, I can use the functionality from the <code>yaml</code> package without having imported&nbsp;it.</p>
+  </li>
+  <li>
+    <p>The import syntax for a package needs to follow the package name. Python does not do this, so you can install a package with one name and then import it with the other — very&nbsp;confusing.</p>
+  </li>
+  <li>
+    <p><mark><strong>To do</strong>: Aliasing (import x as y), partial imports (from x import xyz, import x for xyz). Full imports (Python-like star imports) are bad!
+</mark></p>
+  </li>
+  <li>
+    <p><mark><strong>To do</strong>: Needs a package manager, with checksums. Perhaps with vendoring/caching support. Probably needs a way to bundle all dependencies together.
+</mark></p>
+  </li>
+  <li>
+    <p><mark><strong>To do</strong>: If a package is imported, it’s nice to be able to have multiple versions of it. JavaScript’s npm ecosystem allows this.
+</mark></p>
+  </li>
+  <li>
+    <p><mark><strong>To do</strong>: Inline package manager
+</mark></p>
+  </li>
+</ul>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">May 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../htf7w-pvffc-7kmch/">Programming language design</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

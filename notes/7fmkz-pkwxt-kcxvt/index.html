@@ -1,0 +1,131 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Good human-usable tokens are not random strings</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/7fmkz-pkwxt-kcxvt/">
+
+        <meta property="og:title" content="Good human-usable tokens are not random strings">
+        <meta property="dc.title" content="Good human-usable tokens are not random strings">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Good human-usable tokens are not random&nbsp;strings</h1>
+
+
+<p>A token generated for human consumption must have the following&nbsp;characteristics:</p>
+
+<ul>
+  <li>It must not contain words that can have (negative) meaning</li>
+  <li>It is must to read</li>
+  <li>It must not have potentially ambiguous characters</li>
+</ul>
+
+<p>For example, this is not a good human-usable&nbsp;token:</p>
+
+<pre><code>PY5FAGNNHTCYTAAG
+</code></pre>
+
+<p>This token is,&nbsp;however:</p>
+
+<pre><code>H4NL-N3PW-9RFJ-4TPX
+</code></pre>
+
+<p>To turn a random token into a human-readable&nbsp;token:</p>
+
+<ul>
+  <li>Exclude vowels (A E I O U)</li>
+  <li>Exclude ambiguous characters (B D G Q S Z and 0 1 2 5 6 8)</li>
+  <li>Group characters in chunks of 4 or 5 characters, separated by dashes</li>
+</ul>
+
+<p>This reduces the entropy in the generated token, but because tokens are easier to read and copy, they can be made&nbsp;longer.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../r7hwx-kzkcc-lwmwk/">Avoid naughty words in hex digest strings by changing the set of characters</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

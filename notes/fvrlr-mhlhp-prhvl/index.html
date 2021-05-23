@@ -1,0 +1,188 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Minimal language with arrays in Ruby</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/fvrlr-mhlhp-prhvl/">
+
+        <meta property="og:title" content="Minimal language with arrays in Ruby">
+        <meta property="dc.title" content="Minimal language with arrays in Ruby">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Minimal language with arrays in&nbsp;Ruby</h1>
+
+
+<p>For a (presumably) fully-functional language, all we need is the&nbsp;following:</p>
+
+<ul>
+  <li>Arrays</li>
+  <li><code>Array#each</code></li>
+  <li>Function definitions and calls</li>
+</ul>
+
+<h2 id="boolean-logic">Boolean&nbsp;logic</h2>
+<p>We can define the two boolean constants <code>YES</code> and <code>NO</code> like&nbsp;this:</p>
+
+<pre><code class="language-ruby">NO = []
+YES = [ [] ]
+</code></pre>
+
+<p>An <code>IF</code> function can be defined with <code>lambda</code>, and uses <code>#each</code> (which will only yield for <code>YES</code>) to call the right&nbsp;branch:</p>
+
+<pre><code class="language-ruby">IF =
+  lambda do |val, if_yes, if_no|
+    val.each { return if_yes.call }
+    if_no.call
+  end
+</code></pre>
+
+<p>With <code>IF</code>, we can implement dyadic (“binary”) operations, such as <code>OR</code> and <code>AND</code>:</p>
+
+<pre><code class="language-ruby">OR =
+  lambda do |val_a, val_b|
+    IF[val_a, -&gt; { YES }, -&gt; { IF[val_b, -&gt; { YES }, -&gt; { NO }] }]
+  end
+</code></pre>
+
+<p>This now works as&nbsp;expected:</p>
+
+<pre><code class="language-ruby">p OR[YES, YES]
+p OR[YES, NO]
+p OR[NO, YES]
+p OR[NO, NO]
+</code></pre>
+
+<h2 id="integer-arithmetic">Integer&nbsp;arithmetic</h2>
+<p>We can define <code>ZERO</code> and <code>ONE</code> in the same way <code>NO</code> and <code>YES</code>:</p>
+
+<pre><code class="language-ruby">ZERO = NO
+ONE = YES
+</code></pre>
+
+<p>We can define successor function, which returns 1 more than the&nbsp;input:</p>
+
+<pre><code class="language-ruby">SUCC =
+  lambda do |val|
+    [val]
+  end
+</code></pre>
+
+<p>We can define <code>TWO</code> this&nbsp;way:</p>
+
+<pre><code class="language-ruby">TWO = SUCC[ONE]
+</code></pre>
+
+<p>We can also define <code>PRED</code>, which returns the previous integer in&nbsp;sequence:</p>
+
+<pre><code class="language-ruby">PRED =
+  lambda do |val|
+    val.each { |e| return e }
+    return ZERO
+  end
+</code></pre>
+
+<p>With <code>PRED</code> and <code>SUCC</code>, we can define <code>SUM</code>:</p>
+
+<pre><code class="language-ruby">SUM =
+  lambda do |val_a, val_b|
+    IF[val_a, -&gt; { SUM[PRED[val_a], SUCC[val_b]]}, -&gt; { val_b }]
+  end
+</code></pre>
+
+<p>Now this&nbsp;works:</p>
+
+<pre><code class="language-ruby">p SUM[ZERO, ZERO]
+p SUM[ZERO, ONE]
+p SUM[ZERO, TWO]
+p SUM[TWO, TWO]
+</code></pre>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">May 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../7ft7c-7twnk-ftn9v/">An enum with two choices is different from a boolean</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

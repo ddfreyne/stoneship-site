@@ -1,0 +1,167 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>UX matters for developer tools</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/wtp7l-fkhpz-xvxpn/">
+
+        <meta property="og:title" content="UX matters for developer tools">
+        <meta property="dc.title" content="UX matters for developer tools">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>UX matters for developer&nbsp;tools</h1>
+
+
+<p>UX matters for tools created for developers for the same reason as it does for other&nbsp;tools.</p>
+
+<p>Individual&nbsp;notes:</p>
+
+<ul>
+  <li><a href="../cwt7l-twt9p-h7mwc/">Auto-expanding CLI command invocations hinders forward compatibility</a></li>
+  <li><a href="../kpm9f-ctlzm-9rtrf/">stderr is for all diagnostic output</a></li>
+  <li><a href="../zkmck-npfml-tpnpm/">Use stdin and stdout, but allow overriding</a></li>
+  <li><a href="../x7w9n-htkwk-hxknz/">Standard exit codes</a></li>
+</ul>
+
+<h2 id="consistency-in-command-line-options">Consistency in command-line&nbsp;options</h2>
+<p>The following is a list of command-line options that I’ve noticed are in common usage. In <strong>bold</strong> are the uses that I believe must be the&nbsp;default.</p>
+
+<ul>
+  <li>
+<code>-f</code>
+    <ul>
+      <li>force</li>
+      <li>file (either input or output )</li>
+      <li>from type (combined with <code>-t</code> as “to type”, e.g. <code>-f svg -t png</code> to convert form SVG to PNG)</li>
+    </ul>
+  </li>
+  <li>
+<code>-h</code>
+    <ul>
+      <li><strong>help</strong></li>
+      <li>hostname (perhaps prefer <code>-H</code> instead)</li>
+    </ul>
+  </li>
+  <li>
+<code>-i</code>
+    <ul>
+      <li>input file (combined with <code>-o</code> as “output file”)</li>
+      <li>interactive</li>
+    </ul>
+  </li>
+  <li>
+<code>-o</code>
+    <ul>
+      <li>output file (combined with <code>-i</code> as “input file”)</li>
+    </ul>
+  </li>
+  <li>
+<code>-q</code>
+    <ul>
+      <li>quiet (which silences stdout, but not stderr, because <a href="../kpm9f-ctlzm-9rtrf/">stderr is for all diagnostic output</a>)</li>
+    </ul>
+  </li>
+  <li>
+<code>-t</code>
+    <ul>
+      <li>to type (combined with <code>-f</code> as “from type” e.g. <code>-f svg -t png</code> to convert form SVG to PNG)</li>
+    </ul>
+  </li>
+  <li>
+<code>-v</code>
+    <ul>
+      <li>version</li>
+      <li>verbose</li>
+    </ul>
+  </li>
+</ul>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../../now/">What’s top of mind</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

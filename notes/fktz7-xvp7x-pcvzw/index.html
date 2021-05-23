@@ -1,0 +1,375 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Syntax styles in programming languages</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/fktz7-xvp7x-pcvzw/">
+
+        <meta property="og:title" content="Syntax styles in programming languages">
+        <meta property="dc.title" content="Syntax styles in programming languages">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Syntax styles in programming&nbsp;languages</h1>
+
+
+<p>This is a collection of different syntactical styles in programming languages. It’s woefully&nbsp;incomplete.</p>
+
+<h2 id="comments">Comments</h2>
+<p>Single line&nbsp;comments:</p>
+
+<ul>
+  <li>
+<code>// abc</code> (C, Java, …)</li>
+  <li>
+<code># abc</code> (Ruby, bash, …)</li>
+  <li>
+<code>; abc</code> (Lisp family, …)</li>
+  <li>
+<code>% abc</code> (TeX)</li>
+  <li>
+<code>-- abc</code> (Lua)</li>
+</ul>
+
+<p>Multi-line&nbsp;comments:</p>
+
+<ul>
+  <li>
+<code>/* abc */</code> (C, Java, …)</li>
+  <li>
+<code>(* abc *)</code> (Pascal)</li>
+  <li>
+<code>"abc"</code> (Smalltalk)</li>
+</ul>
+
+<p>Multi-line comments might not really be that&nbsp;useful.</p>
+
+<h2 id="indentation-and-bracing">Indentation and&nbsp;bracing</h2>
+<p>Braces (C, Java, …&nbsp;style):</p>
+
+<pre><code class="language-plaintext">stuff {
+  thing
+}
+</code></pre>
+
+<p><code>do</code>–<code>end</code> (Ruby&nbsp;style):</p>
+
+<pre><code class="language-plaintext">stuff do
+  thing
+end
+</code></pre>
+
+<p>Explicitly naming the thing to&nbsp;end:</p>
+
+<pre><code class="language-plaintext">stuff
+  thing
+end stuff
+</code></pre>
+
+<p>There’s also bash’s bizarre way of ending statements, with reverse keywords like <code>elihw</code> and <code>esac</code>, but that’s just&nbsp;silly.</p>
+
+<h2 id="calls">Calls</h2>
+<p>Regular math-style or C-style function&nbsp;calls:</p>
+
+<pre><code class="language-plaintext">cos(pi)
+plus(2, 3)
+</code></pre>
+
+<p>Haskell-style calls (without&nbsp;parentheses):</p>
+
+<pre><code class="language-plaintext">cos pi
+plus 2 3
+</code></pre>
+
+<p>OO-style calls (Smalltalk&nbsp;style):</p>
+
+<pre><code class="language-plaintext">pi cos
+2 plus: 3
+</code></pre>
+
+<p>OO-style calls (Ruby style, i.e. no parentheses&nbsp;needed):</p>
+
+<pre><code class="language-plaintext">pi.cos
+2.plus(3)
+</code></pre>
+
+<p>This approach makes it non-trivial to get hold of the method as an&nbsp;object.</p>
+
+<p>OO-style calls (JavaScript&nbsp;style):</p>
+
+<pre><code class="language-plaintext">pi.cos()
+2.plus(3)
+</code></pre>
+
+<p>Getting hold of the method itself is simple in this&nbsp;case.<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--bound" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-bound" for="sidenote__checkbox--bound" class="sidenote__label">∗</label><small id="sidenote-bound" class="sidenote__content muted">The question of how the method is bound remains. If you get the method, is it still bound to the original object, or not? If not, how do you call it? Do you pass <code>self</code> as the first argument, perhaps?&nbsp;</small></span></p>
+
+<p>Concatenative style (like Forth and&nbsp;Factor):</p>
+
+<pre><code class="language-plaintext">pi cos
+2 3 plus
+</code></pre>
+
+<p><mark><strong>To do</strong>: Describe named parameters
+</mark></p>
+
+<h2 id="function-definitions">Function&nbsp;definitions</h2>
+<p>No braces, implicit&nbsp;return:</p>
+
+<pre><code class="language-plaintext">fun greeting()
+  "Hello!"
+end
+</code></pre>
+
+<p>The parentheses, if no parameters are available, could be left&nbsp;out:</p>
+
+<pre><code class="language-plaintext">fun greeting
+  "Hello!"
+end
+</code></pre>
+
+<p>Braces, explicit&nbsp;return:</p>
+
+<pre><code class="language-plaintext">fun greet() {
+  return "Hello!"
+}
+</code></pre>
+
+<p>Braces, shorthand, implicit&nbsp;return:</p>
+
+<pre><code class="language-plaintext">fun greet() = "Hello!"
+</code></pre>
+
+<p>With positional&nbsp;parameters:</p>
+
+<pre><code class="language-plaintext">fun greet(name)
+  return "Hello, ${name}"
+end
+</code></pre>
+
+<p>With default value, assigned using <code>=</code> (Python&nbsp;style):</p>
+
+<pre><code class="language-plaintext">fun greet(name = "stranger")
+  return "Hello, ${name}"
+end
+</code></pre>
+
+<p>With default value, assigned using <code>:</code> (Ruby&nbsp;style):</p>
+
+<pre><code class="language-plaintext">fun greet(name: "stranger")
+  return "Hello, ${name}"
+end
+</code></pre>
+
+<p>Using <code>:</code> can conflict with type&nbsp;declarations.</p>
+
+<p><mark><strong>To do</strong>: Describe variable-argument definitions
+</mark></p>
+
+<h2 id="method-definitions">Method&nbsp;definitions</h2>
+<p><mark><strong>To do</strong>: associated functions
+</mark></p>
+
+<p><mark><strong>To do</strong>: instance variables
+</mark></p>
+
+<p><mark><strong>To do</strong>: self (this instance), e.g. <code>this.doSomething()</code>
+</mark></p>
+
+<p><mark><strong>To do</strong>: self (this type), e.g. <code>new thisClass</code>
+</mark></p>
+
+<h2 id="strings">Strings</h2>
+<p>Double-quoted:</p>
+
+<pre><code class="language-plaintext">"Hello"
+</code></pre>
+
+<p>With interpolation, Ruby&nbsp;style:</p>
+
+<pre><code class="language-plaintext">"Hello, #{name}"
+</code></pre>
+
+<p>With interpolation, Python&nbsp;style:</p>
+
+<pre><code class="language-plaintext">f"Hello, {name}"
+</code></pre>
+
+<p>With interpolation, JavaScript&nbsp;style:</p>
+
+<pre><code class="language-plaintext">`Hello, ${name}`
+</code></pre>
+
+<p><mark><strong>To do</strong>: Characters
+</mark></p>
+
+<h2 id="iteration">Iteration</h2>
+<p>I’m leaving out old-school C-style for loop iteration because I think it’s too&nbsp;old-school.</p>
+
+<p>Dedicated <code>for</code>&nbsp;construct:</p>
+
+<pre><code class="language-plaintext">for elem in iterable {
+    // …
+}
+</code></pre>
+
+<p>Function:</p>
+
+<pre><code class="language-plaintext">iterable.each(func (elem) {
+    // …
+})
+</code></pre>
+
+<p>Note that the above can’t use <code>return</code> to break out of the loop. Smalltalk-style non-local returns would allow that, but it’d return from the function&nbsp;entirely:</p>
+
+<pre><code class="language-plaintext">"a strange way to get the first element of an iterable"
+iterable do: [:elem | ^elem]
+</code></pre>
+
+<p>Ruby has blocks and functions, and thus has nonlocal returns and can break out of blocks. Ruby also has a ton of custom iterators, like <code>#times</code>:</p>
+
+<pre><code class="language-plaintext">12.times do
+  # …
+end
+</code></pre>
+
+<h2 id="ranges">Ranges</h2>
+<ul>
+  <li>
+<code>1..100</code>
+    <ul>
+      <li>In Ruby, is an inclusive range (contains 100)</li>
+      <li>In Rust, is an exclusive range (does not contain 100)</li>
+    </ul>
+  </li>
+  <li>
+<code>1..=100</code>
+    <ul>
+      <li>In Rust, is an inclusive range (contains 100)</li>
+    </ul>
+  </li>
+  <li>
+<code>1...100</code>
+    <ul>
+      <li>In Ruby, is an exclusive range (does not contain 100)</li>
+    </ul>
+  </li>
+  <li>
+<code>range(1, 100)</code>
+    <ul>
+      <li>In Python, is an exclusive range (does not contain 100)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="equality">Equality</h2>
+<p>Ugh! This one is complicated. Common ways to check for equality&nbsp;are:</p>
+
+<ul>
+  <li><code>==</code></li>
+  <li><code>===</code></li>
+  <li><code>====</code></li>
+  <li>
+<code>equals()</code> (Java) or <code>eql?()</code> (Ruby)</li>
+  <li>
+<code>equal?()</code> (in Ruby: identity, i.e. same object)</li>
+</ul>
+
+<p>Different types of equality to take into&nbsp;account:</p>
+
+<ul>
+  <li>Is this identical, i.e. same object?</li>
+  <li>Are the types equal, and the values equal?</li>
+  <li>Are the types different, but the values equal? (e.g. <code>1.0</code> and <code>1</code>)</li>
+</ul>
+
+<p>Ruby’s <code>===</code> is confusing (“case equality” is ambiguous and hard to&nbsp;explain).</p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">May 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../htf7w-pvffc-7kmch/">Programming language design</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

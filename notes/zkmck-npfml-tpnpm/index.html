@@ -1,0 +1,142 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Use stdin and stdout, but allow overriding</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/zkmck-npfml-tpnpm/">
+
+        <meta property="og:title" content="Use stdin and stdout, but allow overriding">
+        <meta property="dc.title" content="Use stdin and stdout, but allow overriding">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Use stdin and stdout, but allow&nbsp;overriding</h1>
+
+
+<p>For command-line tools that take one input file and/or one output file, use stdin and/or stdout, respectively. This fits into <a href="https://en.wikipedia.org/wiki/Unix_philosophy">the Unix philosophy</a> of writing small, modular&nbsp;programs.</p>
+
+<p>Allow overriding the input file using <code>-i</code>/<code>--in</code> (e.g. <code>-i raw.txt</code>) and overriding the output file using <code>-o</code>/<code>--out</code> (e.g. <code>-o baked.txt</code>). This is in addition to shell redirection (using <code>&lt;</code> and <code>&gt;</code>), for&nbsp;convenience.</p>
+
+<p>For output, use stdout by default if the output is textual. If the output is non-textual, refuse to write to stdout if stdout is a TTY, or if <code>-o</code>/<code>--out</code> is not explicitly set to <code>-</code>. For&nbsp;example:</p>
+
+<pre><code>% my-data-gen --text
+Bla bla bla
+Ok
+
+% my-data-gen --text &gt; stuff.txt
+Ok
+
+% my-data-gen --binary
+Error: Refusing to write binary data to implicit stdout (is a TTY)
+
+% my-data-gen --binary &gt; stuff.dat
+Ok
+
+% my-data-gen --binary --out -
+[garbled data omitted]
+Ok
+</code></pre>
+
+<p>For input, don’t use stdin if stdin is a TTY, or if <code>-i</code>/<code>--in</code> is not explicitly set to <code>-</code>. For&nbsp;example:</p>
+
+<pre><code>% my-read-tool
+Error: Refusing to read from implicit stdin (is a TTY)
+
+% my-read-tool &lt; stuff.xt
+Ok
+
+% my-read-tool --in -
+Ok
+</code></pre>
+
+<p><mark><strong>To do</strong>: What about multiple inputs? Multiple outputs?
+</mark></p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../wtp7l-fkhpz-xvxpn/">UX matters for developer tools</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

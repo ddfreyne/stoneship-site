@@ -1,0 +1,149 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Auto-expanding CLI command invocations hinders forward compatibility</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/cwt7l-twt9p-h7mwc/">
+
+        <meta property="og:title" content="Auto-expanding CLI command invocations hinders forward compatibility">
+        <meta property="dc.title" content="Auto-expanding CLI command invocations hinders forward compatibility">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Auto-expanding CLI command invocations hinders forward&nbsp;compatibility</h1>
+
+
+<p>When typing <kbd>nanoc co</kbd>, Nanoc will infer that to mean the same as <kbd>nanoc compile</kbd>. While this looks convenient, it prevents adding a command that <kbd>nanoc co</kbd> could complete&nbsp;to.</p>
+
+<p>For example: <kbd>nanoc co</kbd> works properly out of the&nbsp;box:</p>
+
+<pre><code>% nanoc co
+Loading site… done
+Compiling site…
+
+Site compiled in 0.37s.
+
+%
+</code></pre>
+
+<p>However, if I were to add a new command called <i>correct</i> (which I can do because Nanoc loads <span class="path">commands<wbr>/</span> subdirectory), then <kbd>nanoc co</kbd> stops&nbsp;working:</p>
+
+<pre><code>% nanoc co
+nanoc: 'c' is ambiguous:
+  compile correct
+
+%
+</code></pre>
+
+<p>To keep forwards compatibility, don’t auto-expand CLI command invocations, and instead exit with a “did you mean” error. For&nbsp;example:</p>
+
+<pre><code>% nanoc co
+nanoc: 'co' is not a known command.
+  did you mean:
+    compile
+
+%
+</code></pre>
+
+<p>It’s worth hardcoding common shorthands: for example, <kbd>co</kbd> could always be short for <kbd>compile</kbd>, even if a <i>correct</i> command is added&nbsp;afterwards:</p>
+
+<pre><code>% nanoc co
+Loading site… done
+Compiling site…
+
+Site compiled in 0.37s.
+
+% nanoc correct
+Correcting all the things… ok
+
+% 
+</code></pre>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../wtp7l-fkhpz-xvxpn/">UX matters for developer tools</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

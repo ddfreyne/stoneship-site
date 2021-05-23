@@ -1,0 +1,113 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>A good markup language is resilient against failure</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/vnlcp-wvnc9-hnrt9/">
+
+        <meta property="og:title" content="A good markup language is resilient against failure">
+        <meta property="dc.title" content="A good markup language is resilient against failure">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>A good markup language is resilient against&nbsp;failure</h1>
+
+
+<p><a href="https://ddfreyne.github.io/d-mark/">D★Mark</a> is strict in its input, and the chance of accidentally having unprocessed D★Mark in generated output is very&nbsp;low.</p>
+
+<p>This is unlike Markdown, where most implementations either silently ignore markup they don’t recognise, or print a warning that is easy to miss. Badly formatted links are commonplace, and I’ve spotted broken Markdown links such as <code>(some link target)[//example.com]</code> in the wild, multiple&nbsp;times.</p>
+
+<p>Markdown (with its dozen variations) is bound to have this issue, because its syntax is&nbsp;complex.</p>
+
+<p>On the other hand, D★Mark’s syntax is simple, and it’s always unambiguous whether some piece of markup is intended to be markup or not. D★Mark spits out no warnings, and errors out instead. If there is ambiguity, it will print out a helpful error message and refuse to continue. Consider the&nbsp;following:</p>
+
+<pre><code>31%% of all statistics are made up.
+</code></pre>
+
+<p>The double percentage sign is needed here as an escape sequence.  The <code>%</code> symbol is typically used to start an element in inline form (e.g. <code>%code{bloop}</code>), and to get a literal percentage sign, the <code>%</code> needs to be escaped as <code>%%</code>.</p>
+
+<p>D★Mark <em>could</em> have guessed the intention of the writer, but this introduces some level of ambiguity. It also introduces unexpected behavior: if <code>31% of all statistics</code> were allowed markup, it would make sense for <code>31%ish of all statistics</code> to be allowed as well. <code>%ish</code> would be very similar to the inline form of an <code>ish</code> element though. Should D★Mark error on this? Should it output a literal <code>31%ish</code>?</p>
+
+<p>The ambiguity prevents a clear answer to these questions, and so D★Mark is strict and does not allow&nbsp;ambiguity.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

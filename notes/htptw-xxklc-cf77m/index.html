@@ -1,0 +1,130 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Factorio teaches you about tech debt</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/htptw-xxklc-cf77m/">
+
+        <meta property="og:title" content="Factorio teaches you about tech debt">
+        <meta property="dc.title" content="Factorio teaches you about tech debt">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Factorio teaches you about tech&nbsp;debt</h1>
+
+
+<p>In my <a href="https://www.factorio.com">Factorio</a> and <a href="https://www.satisfactorygame.com">Satisfactory</a> play-throughs, I almost always end up building factories that are a spaghetti of conveyor belts, with no overarching clear structure. I get better at it every single play-through though, but there nonetheless will be a point where everything breaks&nbsp;down.</p>
+
+<p>I have a good strategy for early- to mid-game. The factories I build there are clean, neat, organized, efficient, modular, extensible. At the late-game stage, however, I don’t have a good strategy, and the factories I’ve built aren’t sufficient anymore, and I start hacking around to fit new production lines&nbsp;in.</p>
+
+<p>This is <em>eerily</em> similar to how tech debt in software development is&nbsp;created.</p>
+
+<p>There are two reasons why good Factorio intentions can lead to a chaotic factory&nbsp;nonethless:</p>
+
+<ul>
+  <li>
+    <p>There is a resource (power, or a constructed part) that you need <em>right now</em> before you can continue. You’ll end up creating a small quick-and-dirty factory setup, somewhere off the side, that creates that&nbsp;resource.</p>
+  </li>
+  <li>
+    <p>An existing factory setup isn’t able to produce resources to keep up with the demand. You’ll shoe-horn in more assemblers and belts, and in the process you’ll make the layout of that existing factory setup worse. This happens because space is limited and belts have limited&nbsp;throughput.</p>
+  </li>
+</ul>
+
+<p>Once the chaos is too big, you have two&nbsp;choices:</p>
+
+<ul>
+  <li>
+    <p><strong>You can start a new game</strong>. This doesn’t solve the problem in the current game, however, and chances are that you will run into the same problem again in your new&nbsp;game.</p>
+  </li>
+  <li>
+    <p><strong>You can refactor.</strong></p>
+  </li>
+</ul>
+
+<p>Refactoring is the only sustainable choice. If you start a new game every time you have created a mess, you’ll likely end up abandoning Factorio&nbsp;altogether.</p>
+
+<p>Refactoring in Factorio is generally easy. There usually is little preventing you from wiping out an entire part of a factory and starting over. The only exception is the infrastructure that keeps the hostile alien lifeforms at bay — you’ll have to be more careful to keep that&nbsp;running.</p>
+
+<p>As for <em>how</em> to refactor… that’s another&nbsp;story.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,115 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Code in a good programming language does not reveal its author</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/k9xhp-p7vct-wltw7/">
+
+        <meta property="og:title" content="Code in a good programming language does not reveal its author">
+        <meta property="dc.title" content="Code in a good programming language does not reveal its author">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Code in a good programming language does not reveal its&nbsp;author</h1>
+
+
+<p>A good programming language limits choices, and provides a One True Way. In a good programming language, two pieces of code written by two developers should look&nbsp;alike.</p>
+
+<h2 id="syntax">Syntax</h2>
+<p>A good programming language should either be strict in the syntax it accepts, or provide a built-in source code formatter (with little or no configuration&nbsp;options).</p>
+
+<p>Go has a built-in source code formatter, and all Go source code looks&nbsp;alike.</p>
+
+<p>Ruby has <a href="https://github.com/rubocop-hq/rubocop">Rubocop</a>, which has created a great deal of consistency in modern Ruby projects. Even though it is an unofficial tool, it has become a de-facto&nbsp;standard.</p>
+
+<h2 id="aliases">Aliases</h2>
+<p>A good programming language should either provide no aliases for functions and methods, or make it clear which variant is the canonical&nbsp;one.</p>
+
+<p>A source code formatter could help to ensure source code only uses the canonical names, though this might only be realistic in a statically-typed&nbsp;language.</p>
+
+<p>Ruby fails at this. Many methods have alternative names. For example, there are the identical methods <code>#select</code>, <code>#find_all</code>, and <code>#filter</code>, and there is no canonical one. The unofficial <a href="https://github.com/rubocop-hq/ruby-style-guide">Ruby style guide</a> has <a href="https://github.com/rubocop-hq/ruby-style-guide#map-find-select-reduce-include-size">guidance on the canonical name for the map/find/select/reduce/include?/size methods</a> , but it remains an unofficial style&nbsp;guide.</p>
+
+<h2 id="references">References</h2>
+<p>Batsov, Bozhidar. (2011) 2021. “Ruby Style Guide.” <a href="https://github.com/rubocop-hq/ruby-style-guide">https://github.com/rubocop-hq/ruby-style-guide</a>.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

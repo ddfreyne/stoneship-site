@@ -1,0 +1,130 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>An enum with two choices is different from a boolean</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/7ft7c-7twnk-ftn9v/">
+
+        <meta property="og:title" content="An enum with two choices is different from a boolean">
+        <meta property="dc.title" content="An enum with two choices is different from a boolean">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>An enum with two choices is different from a&nbsp;boolean</h1>
+
+
+<p>While an enum with two choices might be encoded as a boolean, the semantics differ, and they need to be used in a different&nbsp;way.</p>
+
+<p>Consider a <code>Target</code>&nbsp;enum:</p>
+
+<pre><code>enum Target {
+  staging,
+  production,
+}
+</code></pre>
+
+<p>This could be encoded as a boolean (false is staging, true is production), but this limits&nbsp;extensibility.</p>
+
+<p>Consider a function that returns the <em>other</em>&nbsp;target:</p>
+
+<pre><code>fun otherTarget(t: Target): Target
+</code></pre>
+
+<p>Adding a third option for target would break this function. It would be better to write it to return an&nbsp;array:</p>
+
+<pre><code>fun otherTargets(t: Target): [Target]
+</code></pre>
+
+<p>If there are only two options for Target, this would be a little strange: it would only ever return an array with one element in it. However, adding a third Target is now&nbsp;easy.</p>
+
+<h3 id="option-types-and-lists">Option types and&nbsp;lists</h3>
+<p>There is an interesting parallel between option types and lists. Consider an <code>otherTarget</code> function that could return a target or&nbsp;nothing:</p>
+
+<pre><code>fun otherTarget(t: Target): Option&lt;Target&gt;
+</code></pre>
+
+<p>The analogue for the <code>otherTargets</code> function (returning a list) is that this function could return a list of one element (if there is a target) or an empty list (if there is no&nbsp;target).</p>
+
+<p>See also <a href="../fvrlr-mhlhp-prhvl/">Minimal language with arrays in Ruby</a>, where false and true are encoded as an empty and a non-empty list,&nbsp;respectively.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

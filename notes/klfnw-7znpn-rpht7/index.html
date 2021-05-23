@@ -1,0 +1,117 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>A globally-available filesystem prevents access tracing</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/klfnw-7znpn-rpht7/">
+
+        <meta property="og:title" content="A globally-available filesystem prevents access tracing">
+        <meta property="dc.title" content="A globally-available filesystem prevents access tracing">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>A globally-available filesystem prevents access&nbsp;tracing</h1>
+
+
+<p>Tracing filesystem access is useful to figure out what a certain part of a program does, and taking actions based on that, such as creating a file dependency&nbsp;graph.</p>
+
+<p>Tracing filesystem access can only be done when the filesystem is not globally available. Otherwise, filesystem access tracing cannot be done reliably when multiple parts of a program access the filesystem in&nbsp;parallel.</p>
+
+<p>Making the filesystem not globally available, and instead passing in the filesystem as a reference, would make this&nbsp;possible.</p>
+
+<h2 id="impact-on-nanoc">Impact on&nbsp;Nanoc</h2>
+<p>For Nanoc, this is problematic because some filters do their own filesystem access, which Nanoc cannot trace, and therefore Nanoc cannot build the right&nbsp;dependencies.</p>
+
+<h2 id="how-other-tools-handle-this-issue">How other tools handle this&nbsp;issue</h2>
+<p>The <a href="http://gittup.org/tup/">tup build system</a> uses FUSE to spin up a filesystem, which is globally available, but allows tracing because tup is fully responsible for the&nbsp;filesystem.</p>
+
+<p><a href="https://www.bazel.build">Bazel</a> requires dependencies to be stated explicitly (thus eliminating the need for access tracing) and supports <a href="https://docs.bazel.build/versions/master/sandboxing.html">sandboxing</a> to enforce correctness of these dependency&nbsp;declarations.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../wtc9r-khvlc-rxfc9/">The filesystem is global mutable state</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

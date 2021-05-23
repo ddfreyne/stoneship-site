@@ -1,0 +1,122 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>A microservices architecture is object-orientation with big objects</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/fltrt-mvxln-x9zfl/">
+
+        <meta property="og:title" content="A microservices architecture is object-orientation with big objects">
+        <meta property="dc.title" content="A microservices architecture is object-orientation with big objects">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>A microservices architecture is object-orientation with big&nbsp;objects</h1>
+
+
+<p><a href="http://www.purl.org/stefan_ram/pub/doc_kay_oop_en">Dr. Alan Kay on the Meaning of “Object-Oriented Programming”</a>:</p>
+
+<blockquote>
+  <p>OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all&nbsp;things.</p>
+</blockquote>
+
+<p>This applies to microservices as&nbsp;well:</p>
+
+<ul>
+  <li>
+    <p><strong>messaging:</strong> Microservices talk to each other over HTTP (or at least some kind of network&nbsp;protocol).</p>
+  </li>
+  <li>
+    <p><strong>local retention:</strong> Each microservice has its own state. (I’m treating a microservice as a collection of running&nbsp;instances.)</p>
+  </li>
+  <li>
+    <p><strong>protection and hiding of state-process</strong>: A microservice’s internal state can only be changed through&nbsp;messages.</p>
+  </li>
+  <li>
+    <p><strong>extreme late-binding of all things</strong>: Parts of a microservices architecture can (and are) deployed independently, changing their APIs and the way they communicate at&nbsp;runtime.</p>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+<p>Stefan L. Ram, Berlin. “Dr. Alan Kay on the Meaning of ‘Object-Oriented Programming,’” July 23, 2003. <a href="http://www.purl.org/stefan_ram/pub/doc_kay_oop_en">http://www.purl.org/stefan_ram/pub/doc_kay_oop_en</a>.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

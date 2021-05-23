@@ -1,0 +1,122 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Short-lived branches are indispensable for refactoring</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/vtxxn-fk9fm-lwckv/">
+
+        <meta property="og:title" content="Short-lived branches are indispensable for refactoring">
+        <meta property="dc.title" content="Short-lived branches are indispensable for refactoring">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Short-lived branches are indispensable for&nbsp;refactoring</h1>
+
+
+<p>In any codebase, regardless of its size or number of contributors, branching is at odds with&nbsp;refactoring.</p>
+
+<p>A refactoring, using its strict definition<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--1" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-1" for="sidenote__checkbox--1" class="sidenote__label">∗</label><small id="sidenote-1" class="sidenote__content muted">Fowler, 2019: “Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.”&nbsp;</small></span>, can create changes across the entire codebase, including moving and renaming files, replacing ubiquitous constant names, and even modifying indentation. While any kind of change runs the risk of creating merge conflicts, refactorings are even more likely to cause conflicts, as they often aren’t as&nbsp;localized.</p>
+
+<p>This problem is not limited to environments with multiple collaborators. It can become an issue for personal projects as well. For example, <a href="https://nanoc.ws">Nanoc</a>, my arguably most popular personal project, used to follow a branching strategy with feature branches and long-term release branches. This created plenty of merge conflicts, especially when I was preparing for Nanoc 4.0: the merge conflicts were so enormous that I had to abandon the&nbsp;effort.</p>
+
+<p><mark><strong>To elaborate:</strong> The risk of merge conflicts (either immediate or semantic) will make people avoid refactoring, which decreases code quality further.
+</mark></p>
+
+<p><mark><strong>To elaborate:</strong> Bad code quality increases the risk of breakage, and makes people avoid risky changes (including refactorings), which makes code worse. The spiral of death has begun.
+</mark></p>
+
+<p><mark><strong>To elaborate:</strong> Brittle code will drive people towards apparent safety. Isolated branches provide the appearance of safety. This apparent safety is <strong>a total lie</strong>, as branches will need to be integrated at some point or another. Furthermore, the longer it has been since a change has been integrated, the different the merge will be from the code in the branch, which means that code has been integrated that hasn’t been properly tested.
+</mark></p>
+
+<h2 id="references">References</h2>
+<p>Fowler, Martin. 2019. <em>Refactoring: Improving the Design of Existing Code</em>. Second edition. Addison-Wesley Signature Series. Boston:&nbsp;Addison-Wesley.</p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../crfhf-79rvk-r7hlp/">The format of a note</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,115 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Artificial slowdown as a way to guide deprecation</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/wpltt-fxvcn-9kml7/">
+
+        <meta property="og:title" content="Artificial slowdown as a way to guide deprecation">
+        <meta property="dc.title" content="Artificial slowdown as a way to guide deprecation">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Artificial slowdown as a way to guide&nbsp;deprecation</h1>
+
+
+<p>On Twitter, <a href="https://twitter.com/ddfreyne/status/1348336048686985219">I suggested a new way of handling deprecation</a>:</p>
+
+<blockquote>
+  <p>Suggestion for handling deprecation: When deprecating a function, add a “sleep 0.1” to it, and double that interval every&nbsp;month.</p>
+</blockquote>
+
+<p>While certainly not intended as a fully serious suggestion, it might have merit in some&nbsp;situations.</p>
+
+<p>In particular, invoking deprecated commands on a command line could benefit from an artificial&nbsp;slowdown.</p>
+
+<p>Artificial slowdown as a deprecation method in libraries is likely to be counterproductive, as library calls might invoke deprecated functions frequently, and even a tiny artificial slowdown could thus make applications unacceptably&nbsp;slow.</p>
+
+<p>Perhaps a method to cap this artificial slowdown using a rate-limiting approach could work, but perhaps then we’re overthinking&nbsp;things.</p>
+
+<p>In any case, any artificial slowdown as a deprecation method should make it absolutely clear where it comes from, e.g. with a warning message printed to&nbsp;stderr.</p>
+
+<h2 id="references">References</h2>
+<p>Defreyne, Denis. “@Argorak Suggestion for Handling Deprecation: When Deprecating a Function, Add a ‘Sleep 0.1’ to It, and Double That Interval Every Month.” Tweet. @ddfreyne, January 10, 2021. <a href="https://twitter.com/ddfreyne/status/1348336048686985219">https://twitter.com/ddfreyne/status/1348336048686985219</a>.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

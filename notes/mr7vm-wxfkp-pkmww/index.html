@@ -1,0 +1,132 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Importing notes from Bear</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/mr7vm-wxfkp-pkmww/">
+
+        <meta property="og:title" content="Importing notes from Bear">
+        <meta property="dc.title" content="Importing notes from Bear">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Importing notes from&nbsp;Bear</h1>
+
+
+<p><a href="https://bear.app">Bear</a>, my note-taking app of choice, stores its notes in a SQLite database at <span class="path">~<wbr>/Library<wbr>/Group&nbsp;Containers<wbr>/9K33E3U3T4<wbr>.net<wbr>.shinyfrog<wbr>.bear<wbr>/Application&nbsp;Data<wbr>/database<wbr>.sqlite<wbr></span>. I use the following query to get the content&nbsp;out:</p>
+
+<pre><code class="language-sql">SELECT
+  *,
+  datetime(zmodificationdate, 'unixepoch', '31 years')
+    AS zmodificationdate2
+FROM
+  zsfnote
+WHERE
+  ztrashed == 0 AND zarchived == 0
+</code></pre>
+
+<p>The <code>zmodificationdate2</code> derived column takes care of the way timestamps are stored in Bear: these are Core Data timestamps, which are the number of seconds elapsed since January 1st,&nbsp;2001.<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--unix" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-unix" for="sidenote__checkbox--unix" class="sidenote__label">∗</label><small id="sidenote-unix" class="sidenote__content muted">It’s unclear to me why they wouldn’t use regular Unix time.&nbsp;</small></span></p>
+
+<p>Once I have the query, I can load the notes from the&nbsp;database:</p>
+
+<pre><code class="language-ruby">notes = db[query].map do |row|
+  {
+    id: row[:ZUNIQUEIDENTIFIER],
+    title: row[:ZTITLE],
+    text: row[:ZTEXT],
+    modification_date: row[:zmodificationdate2]
+  }
+end
+</code></pre>
+
+<p>I don’t use the note ID directly. The IDs of Bear notes are quite long (longer than UUIDs). I hash the UUIDs, then <a href="../r7hwx-kzkcc-lwmwk/">Avoid naughty words in hex digest strings by changing the set of characters</a>, and finally take the first 15 characters, dash-separated in groups of 5 characters, as the new ID, e.g. <code>7fmkz-pkwxt-kcxvt</code>, which I use in note&nbsp;URLs.</p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../crfhf-79rvk-r7hlp/">The format of a note</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,126 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Standard exit codes</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/x7w9n-htkwk-hxknz/">
+
+        <meta property="og:title" content="Standard exit codes">
+        <meta property="dc.title" content="Standard exit codes">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Standard exit&nbsp;codes</h1>
+
+
+<p><span class="path">sysexits<wbr>.h<wbr></span> defines standard exit&nbsp;codes:</p>
+
+<pre><code class="language-plaintext">EX_OK           0       /* successful termination */
+EX__BASE        64      /* base value for error messages */
+EX_USAGE        64      /* command line usage error */
+EX_DATAERR      65      /* data format error */
+EX_NOINPUT      66      /* cannot open input */    
+EX_NOUSER       67      /* addressee unknown */    
+EX_NOHOST       68      /* host name unknown */
+EX_UNAVAILABLE  69      /* service unavailable */
+EX_SOFTWARE     70      /* internal software error */
+EX_OSERR        71      /* system error (e.g., can't fork) */
+EX_OSFILE       72      /* critical OS file missing */
+EX_CANTCREAT    73      /* can't create (user) output file */
+EX_IOERR        74      /* input/output error */
+EX_TEMPFAIL     75      /* temp failure; user is invited to retry */
+EX_PROTOCOL     76      /* remote error in protocol */
+EX_NOPERM       77      /* permission denied */
+EX_CONFIG       78      /* configuration error */
+</code></pre>
+
+<p>Whether or not it is useful to stick to this convention is&nbsp;unclear.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">May 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../wtp7l-fkhpz-xvxpn/">UX matters for developer tools</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

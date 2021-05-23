@@ -1,0 +1,151 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Tooling for a good programming language</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/vttk7-v9zlv-h7rzh/">
+
+        <meta property="og:title" content="Tooling for a good programming language">
+        <meta property="dc.title" content="Tooling for a good programming language">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Tooling for a good programming&nbsp;language</h1>
+
+
+<p>A good programming language comes with tooling that makes it easy to use and hard to&nbsp;mis-use.</p>
+
+<h2 id="code-quality-analyser">Code quality&nbsp;analyser</h2>
+<p>Code quality tooling comes in various&nbsp;forms:</p>
+
+<ul>
+  <li>
+    <p><strong>Formatters</strong>: There ideally is only one canonical style guide for the programming language, and a formatter is available to verify adherence to the style guide. Ideally, the formatter has an auto-correct option as well. See <code>gofmt</code>, <code>rustfmt</code>, <code>rubocop --auto-correct</code>, <code>prettier</code>, and&nbsp;others.</p>
+  </li>
+  <li>
+    <p><strong>Static code analysis tooling</strong>: This includes detecting common bugs, but also performing security&nbsp;analysis.</p>
+  </li>
+  <li>
+    <p><strong>Upgrader</strong>: A programming language that is still in active development will change, and having a tool that can automatically upgrade to newer syntax will be&nbsp;helpful.</p>
+  </li>
+</ul>
+
+<h2 id="package-management">Package&nbsp;management</h2>
+<p><mark><strong>To do</strong>: everything about this
+</mark></p>
+
+<p><mark><strong>To do</strong>: security analyser for dependencies. e.g. bundle audit, yarn audit, etc. Ideally also an auto-fixer.
+</mark></p>
+
+<h2 id="testing-framework">Testing&nbsp;framework</h2>
+<p>A good programming language comes with a testing framework&nbsp;built-in.</p>
+
+<p><mark><strong>To do</strong>: Rely on convention to find a place to store specs, or integrate it into the language? For example, Go’s approach to putting tests in-line, with the <code>_test</code> file name suffix, is integrated into the language
+</mark></p>
+
+<h2 id="documentation">Documentation</h2>
+<p>A good programming language needs the ability to generate and consume&nbsp;documentation:</p>
+
+<ul>
+  <li>
+    <p>Be able to document code, with documentation being a first-class concept. See Python’s docstrings for&nbsp;example.</p>
+  </li>
+  <li>
+    <p>Integrate with IDEs, perhaps through the Language Server Protocol (LSP). This would enable traversing code, across modules and across packages, and provide inline documentation where and when it is&nbsp;needed.</p>
+  </li>
+  <li>
+    <p>Be able to generate documentation as&nbsp;HTML.</p>
+  </li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+<p>Possibly not related to tooling around the programming language itself, but being able to install it easily, without having to deal with dependencies manually, would be ideal. A simple <code>brew install</code> would be perfect, even if a <code>brew tap</code> is needed (and similar for other&nbsp;OSes).</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">May 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../htf7w-pvffc-7kmch/">Programming language design</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

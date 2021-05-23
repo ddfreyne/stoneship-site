@@ -1,0 +1,157 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Use Docker tags to document the lifecycle of an image</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/vnwtz-hwhfm-fwxlc/">
+
+        <meta property="og:title" content="Use Docker tags to document the lifecycle of an image">
+        <meta property="dc.title" content="Use Docker tags to document the lifecycle of an image">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Use Docker tags to document the lifecycle of an&nbsp;image</h1>
+
+
+<p>A Docker image typically goes through a&nbsp;lifecycle:</p>
+
+<ol>
+  <li>
+<strong>built</strong>: the image is successfully built</li>
+  <li>
+<strong>tested</strong>: the image has successfully passed tests (e.g. integration tests, security tests)</li>
+  <li>
+<strong>deployed to staging</strong>: the image is deployed into the staging environment</li>
+  <li>
+<strong>deployed to production</strong>: the image is deployed into the production environment</li>
+</ol>
+
+<p>It’s advantageous to add a new tag when the image progresses to a new stage in the&nbsp;lifecycle.</p>
+
+<p>As an example, take the Git commit SHA  <code>0b3da7f</code>:</p>
+<ol>
+  <li>If an image is built from this Git commit, the Docker image can be tagged as <code>built-0b3da7f</code>.</li>
+  <li>Once tests have passed, it can be tagged additionally as <code>tested-0b3da7f</code> (note that previously added tags are kept).</li>
+  <li>Once deployed to staging, it can be tagged as <code>deployed-staging-0b3da7f</code>.</li>
+  <li>Once deployed to production, it can be tagged as <code>deployed-production-0b3da7f</code>.</li>
+</ol>
+
+<h2 id="advantages-to-cleanup">Advantages to&nbsp;cleanup</h2>
+<p>The list of tags can be used to be clean up stale Docker images. For each Docker image, the following can be&nbsp;checked:</p>
+
+<ul>
+  <li>Does the image have a tag like <code>deployed-production-…</code>, and is it one of the 10 most recent images tagged like <code>deployed-production-…</code>? If so, keep it.</li>
+  <li>Does the image have a tag like <code>deployed-staging-…</code>, and is it one of the 20 most recent images tagged like <code>deployed-staging-…</code>? If so, keep it.</li>
+  <li>Does the image have a tag like <code>tested-…</code>, and is it less than 30 days old? If so, keep it.</li>
+  <li>Is the image younger than 5 days? If so, keep it.</li>
+  <li>Otherwise, delete it.</li>
+</ul>
+
+<h2 id="advantages-to-safety">Advantages to&nbsp;safety</h2>
+<p>When deploying a Git commit, the deploy script can construct the appropriate Docker tag to deploy. For example, to perform a staging deploy, concatenate <code>tested-</code> with the (short) Git SHA, e.g. <code>tested-0b3da7f</code>. Pull the Docker image with that tag and deploy&nbsp;it.</p>
+
+<p>The deployment will fail if no Docker image with such a tag exists. In other words, the deployment will fail if the Docker image did not pass&nbsp;tests.</p>
+
+<p>Some cautionary&nbsp;notes:</p>
+
+<ul>
+  <li>Such a deploy script should probably use the full Git SHA, rather than an abbreviated one as used in the examples.</li>
+  <li>Hotfixes might need to be taken into account. While this added safety is nice, it can slow down the process and make hotfixes too slow to deploy.</li>
+</ul>
+
+<h2 id="use-outside-of-docker">Use outside of&nbsp;Docker</h2>
+<p>This approach is not limited to Docker. While I have not done so myself, I imagine it could work for publishing builds on an S3 bucket or&nbsp;similar.</p>
+
+<p>How it could work (assuming <code>0b3da7f</code> is the Git commit SHA of the build, which itself is a <code>.tar.gz</code>&nbsp;file):</p>
+
+<ol>
+  <li>Create a bucket with directories <code>builds</code> and <code>tags</code>.</li>
+  <li>When a build is published, store it in <code>builds/0b3da7f.tar.gz</code>. Create the file <code>tags/built-0b3da7f</code> and store in it the string <code>builds/0b3da7f.tar.gz</code>.</li>
+  <li>When a build is tested, create the file <code>tags/tested-0b3da7f</code> and store in it the string <code>builds/0b3da7f.tar.gz</code>.</li>
+  <li>When a build is deployed to staging, create the file <code>tags/deployed-staging-0b3da7f</code> and store in it the string <code>builds/0b3da7f.tar.gz</code>.</li>
+  <li>When a build is deployed to production, create the file <code>tags/deployed-production-0b3da7f</code> and store in it the string <code>builds/0b3da7f.tar.gz</code>.</li>
+</ol>
+
+<p>To facilitate cleanup, it might be necessary to add the date to each tag, e.g. <code>tags/deployed-production-20210222-0b3da7f</code>, with <code>20210222</code> being the current date (February 22nd, 2021). With the date in the tag name, it becomes possible to parse out the date and delete stale&nbsp;builds.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

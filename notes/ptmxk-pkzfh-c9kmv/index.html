@@ -1,0 +1,106 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Backwards compatibility (for behavior) is tough to get right</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/ptmxk-pkzfh-c9kmv/">
+
+        <meta property="og:title" content="Backwards compatibility (for behavior) is tough to get right">
+        <meta property="dc.title" content="Backwards compatibility (for behavior) is tough to get right">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Backwards compatibility (for behavior) is tough to get&nbsp;right</h1>
+
+
+<p class="lead">How does a bug fix differ from any other change in behavior? Why are bug fixes backwards compatible, but other changes are&nbsp;not?</p>
+
+<p>Bug fixes are backwards compatible because the actual behavior differs from the expected behavior. Some bugs are obviously bugs (crashes, data loss, etc) while others are not obvious (e.g. relative path when it should have been an absolute&nbsp;path).</p>
+
+<p>A bug could be subtly incorrect behavior that someone relies on. (e.g. expecting a relative path, and switching on first path component of that relative path). If that bug is fixed, then the behavior changes, which might create a bug for someone&nbsp;else.</p>
+
+<p>The underlying issue is that the expected behavior is not&nbsp;clear.</p>
+
+<p>Could statically typed languages help with this? This could help in minimizing expectations (and therefore wrong&nbsp;expectations).</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,122 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Logging and caching are (usually) acceptable side effects</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/h9thn-79km7-tzhpr/">
+
+        <meta property="og:title" content="Logging and caching are (usually) acceptable side effects">
+        <meta property="dc.title" content="Logging and caching are (usually) acceptable side effects">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Logging and caching are (usually) acceptable side&nbsp;effects</h1>
+
+
+<p>Good software development practice includes the elimination of side effects. Side effects make it hard to reason about the&nbsp;implementation.</p>
+
+<p>While eliminating side effects is a worthy goal, two types of side effects are  commonplace, and often&nbsp;expected:</p>
+
+<ul>
+  <li>
+    <p><strong>Logging.</strong> For example, HTTP  GET requests are expected to be idempotent, i.e., two requests should the same outcome as one. However, two requests (as opposed to one request) will yield two log lines, rather than just&nbsp;one.</p>
+  </li>
+  <li>
+    <p><strong>Caching.</strong> For example, a HTTP GET request could modify the cache, causing subsequent requests to be considerably&nbsp;faster.</p>
+  </li>
+</ul>
+
+<p>These two types of side effects are so commonplace that they might not be called side effects, but rather intended primary&nbsp;effects.</p>
+
+<p>Exceptions exist for both types of side effects, however. A (very small) list of&nbsp;examples:</p>
+
+<ul>
+  <li>
+    <p>In garbage-collected languages, <strong>logging</strong> can allocate a potentially large number of extra log messages, increasing GC strain, increasing memory usage (which can lead to OOM situations), and increasing swap usage, leading to measurable changes in performance and&nbsp;availability.</p>
+  </li>
+  <li>
+    <p><strong>Caching</strong> as a side effect enables side-channel&nbsp;attacks.</p>
+  </li>
+</ul>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

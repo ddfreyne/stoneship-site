@@ -1,0 +1,232 @@
+@page {
+  size: auto;
+  margin: 20mm 35mm 20mm 35mm;
+}
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+:root {
+  --size-base: 20px;
+  --size-scale: 1.35;
+}
+
+@media print {
+  :root {
+    --size-base: 11pt;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --size-base: 18px;
+    --size-scale: 1.3;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --size-base: 18px;
+    --size-scale: 1.2;
+  }
+}
+
+:root {
+  --size-s1: calc(var(--size-base) / var(--size-scale));
+  --size-s2: calc(var(--size-s1) / var(--size-scale));
+  --size-l1: calc(var(--size-base) * var(--size-scale));
+  --size-l2: calc(var(--size-l1) * var(--size-scale));
+  --size-l3: calc(var(--size-l2) * var(--size-scale));
+  --size-l4: calc(var(--size-l3) * var(--size-scale));
+  --size-l5: calc(var(--size-l4) * var(--size-scale));
+  --size-l6: calc(var(--size-l5) * var(--size-scale));
+  --size-l7: calc(var(--size-l6) * var(--size-scale));
+  --size-l8: calc(var(--size-l7) * var(--size-scale));
+  --size-l9: calc(var(--size-l8) * var(--size-scale));
+  --size-l10: calc(var(--size-l9) * var(--size-scale));
+  --size-l11: calc(var(--size-l10) * var(--size-scale));
+  --size-l12: calc(var(--size-l11) * var(--size-scale));
+  --size-l13: calc(var(--size-l12) * var(--size-scale));
+  --size-l14: calc(var(--size-l13) * var(--size-scale));
+  --size-l15: calc(var(--size-l14) * var(--size-scale));
+
+  --main-width: calc(30 * var(--size-base));
+  --side-width: calc(15 * var(--size-base));
+  --gutter-width: calc(2 * var(--size-base));
+}
+
+:root {
+  --pure-white: #fff;
+
+  --basec-050: hsl(195, 5%, 98%);
+  --basec-100: hsl(195, 5%, 95%);
+  --basec-200: hsl(195, 50%, 90%);
+  --basec: hsl(195, 70%, 50%);
+  --basec-700: hsl(195, 70%, 25%);
+  --basec-800: hsl(195, 20%, 15%);
+}
+
+:root {
+  --text-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pure-white: #000;
+
+    --basec-050: hsl(195, 5%, 9%);
+    --basec-100: hsl(195, 5%, 15%);
+    --basec-200: hsl(195, 20%, 30%);
+    --basec: hsl(195, 70%, 55%);
+    --basec-700: hsl(195, 50%, 87%);
+    --basec-800: hsl(195, 20%, 92%);
+    --basec-900: hsl(195, 15%, 95%);
+  }
+}
+
+::-moz-selection {
+  background: var(--basec-800);
+  color: var(--basec-100);
+}
+
+::selection {
+  background: var(--basec-800);
+  color: var(--basec-100);
+}
+
+body {
+  background: var(--basec-050);
+  color: var(--basec-800);
+
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: var(--size-base);
+  font-weight: 400;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+
+  -moz-hyphens: auto;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -moz-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-zone: 8%;
+
+  -ms-hyphens: auto;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-last: always;
+  -ms-hyphenate-limit-zone: 8%;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+@media screen {
+  body {
+    padding: calc(2 * var(--size-base)) calc(1 * var(--size-base));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+}
+
+article {
+  max-width: var(--main-width);
+
+  background: var(--basec-100);
+
+  padding: 20px;
+
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    max-width: none;
+  }
+}
+
+p {
+  line-height: 1.4;
+
+  margin: 0;
+}
+
+p + p {
+  text-indent: 1.5rem;
+}
+
+p + p.meta,
+p.meta + p {
+  margin-top: calc(1 * var(--size-base));
+}
+
+p.meta {
+  font-family: Compita, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+p.meta,
+p.meta + p {
+  text-indent: 0;
+}
+
+p.meta::before {
+  content: "[";
+
+  font-style: normal;
+}
+
+p.meta::after {
+  content: "]";
+
+  font-style: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+  b,
+  strong {
+    color: var(--red-900);
+  }
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: var(--size-base);
+
+  grid-column: wide;
+
+  font-family: Compita, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: calc(0.9 * var(--size-base));
+  font-weight: 700;
+  text-transform: uppercase;
+
+  line-height: 1;
+
+  letter-spacing: 0.06ch;
+}

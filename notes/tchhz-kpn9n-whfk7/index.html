@@ -1,0 +1,306 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>You might not need React</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/tchhz-kpn9n-whfk7/">
+
+        <meta property="og:title" content="You might not need React">
+        <meta property="dc.title" content="You might not need React">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>You might not need&nbsp;React</h1>
+
+
+<p class="lead">For me, React’s biggest impact is the ability to create components that are independent and composable. However, this approach is feasible in modern JavaScript as&nbsp;well.</p>
+
+<p>Components can be defined as functions returning strings. ES2015’s template literals (using backticks) are particularly useful for&nbsp;this:</p>
+
+<pre><code class="language-javascript">const Swatch = (color) =&gt;
+  `
+    &lt;div style="background: ${color}; padding: 10px"&gt;
+      ${color}
+    &lt;/div&gt;
+  `;
+
+const App = () =&gt;
+  `
+    ${Swatch('red')}
+    ${Swatch('blue')}
+    ${Swatch('gray')}
+  `;
+
+document.body.innerHTML = App();
+</code></pre>
+
+<p>The example above isn’t particularly useful — it’d be quicker in plain old HTML. However, defining these components in JavaScript, rather than resorting to HTML, is useful if you want to instantiate many components, each with their own parameters. Consider the following, which creates a bunch of color swatches all at&nbsp;once:</p>
+
+<pre><code class="language-javascript">const Swatch = (hue, lightness) =&gt; {
+  let color = `hsl(${hue}, 100%, ${lightness}%)`;
+
+  return (
+    `
+      &lt;span style="
+        display: inline-block;
+        background: ${color};
+        padding: 5px
+      "&gt;
+        ${color}
+      &lt;/span&gt;
+    `
+  )
+};
+
+const Swatches = (hue) =&gt;
+  `
+    &lt;div style="padding: 20px"&gt;
+      ${Swatch(hue, 10)}
+      ${Swatch(hue, 20)}
+      ${Swatch(hue, 30)}
+      ${Swatch(hue, 40)}
+      ${Swatch(hue, 50)}
+      ${Swatch(hue, 60)}
+      ${Swatch(hue, 70)}
+      ${Swatch(hue, 80)}
+      ${Swatch(hue, 90)}
+    &lt;/div&gt;
+  `;
+
+const App = () =&gt;
+  `
+    ${Swatches(0)}
+    ${Swatches(90)}
+    ${Swatches(180)}
+  `;
+
+document.body.innerHTML = App();
+</code></pre>
+
+<p>As with React (or rather, ReactDOM), it might be best to render into a pre-defined element, such as one with the ID <code>app</code>:</p>
+
+<pre><code class="language-html">&lt;div id="app"&gt;&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-javascript">const render = () =&gt; {
+  let app = document.querySelector("#app");
+  app.innerHTML = App();
+};
+
+render();
+</code></pre>
+
+<h2 id="handling-state-changes">Handling state&nbsp;changes</h2>
+
+<p>Consider the following code, which renders three tabs<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--ugly" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-ugly" for="sidenote__checkbox--ugly" class="sidenote__label">∗</label><small id="sidenote-ugly" class="sidenote__content muted">Very ugly ones — they barely look like tabs!&nbsp;</small></span> but has no interactivity&nbsp;whatsoever:</p>
+
+<pre><code class="language-javascript">let data = {
+  curTab: "Home",
+  tabs: [
+    {
+      name: 'Home',
+      content: 'Here is the content for the Home tab'
+    },
+    {
+      name: 'About',
+      content: 'Here is the content for the About tab'
+    },
+    {
+      name: 'Skills',
+      content: 'Here my list of skills'
+    }
+  ]
+};
+
+const app = document.querySelector("#app");
+
+const render = () =&gt; {
+  app.innerHTML = App();
+};
+
+const Tab = (tab) =&gt;
+  `
+    &lt;li style="display: inline; margin: 0"&gt;
+      &lt;a href="#"&gt;
+        ${tab.name}
+      &lt;/a&gt;
+    &lt;/li&gt;
+  `;
+
+const TabList = () =&gt;
+  `
+    &lt;ul style="margin: 0; padding: 0"&gt;
+      ${data.tabs.map(t =&gt; Tab(t)).join('')}
+    &lt;/ul&gt;
+  `;
+
+const App = () =&gt;
+  `
+    ${TabList()}
+    ${data.tabs.find(t =&gt; t.name === data.curTab).content}
+  `;
+
+render();
+</code></pre>
+
+<p>Note the <code>data</code> variable near the top, which stores all the application&nbsp;state.</p>
+
+<p>To make the app switch to a different tab, the tab links need to be updated to describe the action that needs to be&nbsp;taken:</p>
+
+<pre><code class="language-javascript">const Tab = (tab) =&gt;
+  `
+    &lt;li style="display: inline; margin: 0"&gt;
+      &lt;a
+        style="${tab.name == data.curTab ? "font-weight: bold" : ""}"
+        data-action="select-tab"
+        data-tab-name="${tab.name}"
+        href="#"
+      &gt;
+        ${tab.name}
+      &lt;/a&gt;
+    &lt;/li&gt;
+  `;
+</code></pre>
+
+<p>There are three bits of interest in this new <code>Tab()</code>&nbsp;component:</p>
+
+<ol>
+  <li>
+    <p>The <code>a</code> element is bolded when it corresponds to the current tab. It compares the name of the tab to be rendered with the name of the active&nbsp;tab.</p>
+  </li>
+  <li>
+    <p>The <code>data-action</code> attribute describes what needs to happen when this <code>a</code> element is acted upon. In this case, it will trigger the (as-yet-undefined) <code>select-tab</code>&nbsp;action.</p>
+  </li>
+  <li>
+    <p>The <code>data-tab-name</code> attribute contains extra information that will be used by the <code>select-tab</code>&nbsp;action.</p>
+  </li>
+</ol>
+
+<p>There are some improvements that you could take into account. Rather using the global <code>data.curTab</code>, it might be better to pass it to the <code>Tab()</code>. Also, rather than <code>data-action</code>, it might make more sense to have <code>data-onclick</code>.</p>
+
+<p>To handle the click, we need to attach an event handler to the application DOM&nbsp;element:</p>
+
+<pre><code class="language-javascript">const init = () =&gt; {
+  app.addEventListener('click', handleClick);
+  render();
+};
+</code></pre>
+
+<p>The <code>handleClick()</code> function needs to be&nbsp;defined:</p>
+
+<pre><code class="language-javascript">const handleClick = (e) =&gt; {
+  let actionName = e.target.dataset.action;
+
+  if (actionName === "select-tab") {
+    data.curTab = e.target.dataset.tabName;
+    render();
+  }
+};
+</code></pre>
+
+<p>This is where the <code>select-tab</code> action is handled. You can see that it uses <code>dataset.tabName</code>, which corresponds with the <code>data-tab-name</code> attribute (the translation between kebab-case and camelCase happens&nbsp;automatically).</p>
+
+<p>After every change, we need to call <code>render()</code> so that the app is re-rendered. This isn’t particularly performant, but if you need good performance, then you’d probably be using a proper framework like React&nbsp;anyway.</p>
+
+<p>Lastly, rather than calling <code>render()</code> at the end of the script, we need to call <code>init()</code>, so that it both sets up the event handling, and renders the app for the first&nbsp;time:</p>
+
+<pre><code class="language-javascript">// used to be render()
+init();
+</code></pre>
+
+<h2 id="limitations">Limitations</h2>
+<p>This approach works fairly well for simple apps that need a bit of interactivity, but for which React (and the toolchain that comes with it, with Babel and WebPack and whatnot) is&nbsp;overkill.</p>
+
+<ul>
+  <li>
+    <p>It’s not very performant, as it re-renders the entire app every time. React is smarter; it doesn’t re-render components that don’t need to be&nbsp;re-rendered.</p>
+  </li>
+  <li>
+    <p>Storing state within components, rather than at the top level in the <code>data</code> variable, is not&nbsp;possible.</p>
+  </li>
+</ul>
+
+<p>There are likely other limitations, though for building simple web apps, this approach is both fast to get started with, and has no dependencies — it’s plain-old&nbsp;JavaScript.</p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

@@ -1,0 +1,109 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Why can’t I git-push to a remote filesystem?</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/mhfvm-zlnm7-lkxk7/">
+
+        <meta property="og:title" content="Why can’t I git-push to a remote filesystem?">
+        <meta property="dc.title" content="Why can’t I git-push to a remote filesystem?">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Why can’t I git-push to a remote&nbsp;filesystem?</h1>
+
+
+<p>I’d like to not be tied to central hosting platform. I’m using GitHub and GitLab at the moment, but I’d love to host my own Git&nbsp;repos.</p>
+
+<p>I can already host my own web site without running my own web server. I’d like to be able to host my Git repos (read-only) without needing to run a server&nbsp;either.</p>
+
+<p>Because a Git repo is just a bunch of files structured in a certain way, it’d be feasible to write a frontend app that presents the contents of a Git repository in a nice way. It might be necessary to pre-calculate and store derived data for performance&nbsp;reasons.<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--precalculate" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-precalculate" for="sidenote__checkbox--precalculate" class="sidenote__label">∗</label><small id="sidenote-precalculate" class="sidenote__content muted">What about an alternative Git repository format that is optimized for consumption by a frontend-only web UI?&nbsp;</small></span></p>
+
+<p>Making changes to a Git repo (pushing changes) would be more difficult. The filesystem protocols for it exist though; WebDAV is a thing. Git even supported it at some point in the past, but seemingly not&nbsp;anymore.</p>
+
+<p>I want to self-host as little as I can. Self-hosting comes with a security risk (especially if I run things inside my own network) and it comes with additional&nbsp;maintenance.</p>
+
+<p>In general, it feels like the world is dominated by APIs built on top of HTTP yet no common language. Each API needs its own implementation, often per-language. APIs are not discoverable. This is in contrast to filesystems and protocols like HTTP and&nbsp;WebDAV.</p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

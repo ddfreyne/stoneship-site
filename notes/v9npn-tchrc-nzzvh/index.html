@@ -1,0 +1,213 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Lightweight markup languages are inadequate for technical writing</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/v9npn-tchrc-nzzvh/">
+
+        <meta property="og:title" content="Lightweight markup languages are inadequate for technical writing">
+        <meta property="dc.title" content="Lightweight markup languages are inadequate for technical writing">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Lightweight markup languages are inadequate for technical&nbsp;writing</h1>
+
+
+<p>The family of <i>lightweight markup languages</i> includes <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, <a href="https://asciidoc.org">AsciiDoc</a>, <a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>, and more. These are all simple textual formats that can be transformed into HTML, thereby avoiding the need to write verbose HTML in the first place. All these lightweight markup languages have their own unique issues, but they share the same fundamental problem of having a lack of&nbsp;expressivity.</p>
+
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> is <em>the</em> ubiquitous writing format of the 21st century. Many dedicated writing apps now default to, or support only Markdown. Even software that isn’t aimed at writing itself, such as Slack, have adopted a variation of&nbsp;it.</p>
+
+<p>As a shorthand for HTML, these markup languages achieve their goals splendidly. They are far more compact than HTML, and easier to both write and read. Their syntax stays out of the way when writing, so that one can focus on what to write rather than how to mark it&nbsp;up.</p>
+
+<p>While Markdown has shortcomings (which I’m describing in this note), there still is nothing better than Markdown out there for any kind of writing. Even this web site is primarily written in Markdown, purely because it is so&nbsp;convenient.</p>
+
+<p>That said, I regularly find myself using Markdown’s HTML fallback to mark up things outside of Markdown’s formatting toolkit. As the creator of <a href="https://nanoc.ws">a static-site generator</a> and a <a href="https://ddfreyne.github.io/d-mark/">markup language</a>, it might not come as a surprise that I’m always thinking about ways to improve the writing&nbsp;experience.</p>
+
+<p><mark><strong>To elaborate</strong>: What am I trying to achieve, exactly? Good typography is probably a good chunk of the answer here. Document/content management is also related (I believe that a piece of writing rarely lives in isolation).
+</mark></p>
+
+<h2 id="alternatives">Alternatives</h2>
+<p><mark><strong>To do</strong>: Write about plain old HTML.
+</mark></p>
+
+<p>On the XML side of things, there is <a href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part0-overview/dita-v1.3-errata02-os-part0-overview-complete.html#ditaspec">DITA</a> (Darwin Information Typing Architecture) and <a href="https://docbook.org">DocBook</a>. DITA, despite being a standard and having been around since 2005, has no web site, and no official resources to help anyone ease into it. DocBook has been around since the early 90s, and is primarily used in conjunction with DocBook XSL, a set of XSLT stylesheets that is so monstrous that I have not found any custom styling for it, and the default HTML output looks like it comes straight from the&nbsp;90s.</p>
+
+<p><a href="https://www.latex-project.org">LaTeX</a> is a document preparation system that is great for creating beautiful-looking documents. It is primarily used for generating PDF documents (for printing) and is not usable for the&nbsp;web.</p>
+
+<p><mark><strong>To do</strong>: Write about roff/nroff/groff etc.
+</mark></p>
+
+<p><mark><strong>To do</strong>: Write about <a href="https://ddfreyne.github.io/d-mark/">D★Mark</a> and <a href="https://docs.racket-lang.org/pollen/">Pollen</a>. What about the idea of reusing some D★Mark-like markup inside Markdown — how problematic would this be?
+</mark></p>
+
+<h2 id="shortcomings">Shortcomings</h2>
+<p><mark><strong>To do</strong>: This section talks about Markdown specifically, but most of these are applicable to other lightweight markup languages too.
+</mark></p>
+
+<p><mark><strong>To elaborate</strong>: Markdown is still the best tool for getting thoughts into writing. It is easy to use, well-supported by tons of software, and does 95% of what is needed. Still, it helps to think about ways in which it is flawed so that we can improve on it and build something better.
+</mark></p>
+
+<p>Markdown achieves what it needs to achieve. It is not intended as a tool for technical writing. It is a shorthand for HTML. <mark><strong>To do</strong>: While HTML itself is also rather inadequate for technical writing, it at least provides extensibility, e.g. with classes and appropriate amounts of CSS.
+</mark></p>
+
+<p><mark><strong>To elaborate</strong>: Markdown has a very useful HTML fallback, though Markdown inside HTML is not supported.
+</mark></p>
+
+<p>In the last few years, the <a href="https://commonmark.org">CommonMark</a> project has emerged as a de-facto standard for Markdown. It has helped in improving consistency across Markdown implementations<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--commonmark" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-commonmark" for="sidenote__checkbox--commonmark" class="sidenote__label">∗</label><small id="sidenote-commonmark" class="sidenote__content muted">Interestingly, Markdown’s original author, John Gruber, is not involved in CommonMark.&nbsp;</small></span>. Having a standard is beneficial, but it does not solve the shortcomings listed in this section: the issues are shortcomings of the language itself, not of the lack of a&nbsp;standard.</p>
+
+<h3 id="emphasis-and-italics">Emphasis and&nbsp;italics</h3>
+<p>Markdown provides markup for emphasis (<code>*bleep*</code> becomes <code>&lt;em&gt;bleep&lt;/em&gt;</code>) and strong emphasis (<code>**bloop**</code> becomes <code>&lt;strong&gt;bloop&lt;/strong&gt;</code>). It does not provide markup for italic (<code>&lt;i&gt;</code>) nor bold (<code>&lt;b&gt;</code>). While this is a good design choice, Markdown doesn’t provide markup options where italic would otherwise be&nbsp;used.</p>
+
+<p>When to use italic depends on the style guide you follow. Commonly, italic is used when introducing a new term, or when referencing a word in a foreign language, among other uses. For example, <a href="https://www.youtube.com/channel/UCakAg8hC_RFJm4RI3DlD7SA">Brian David Gilbert</a> describes <i>zjierbness</i> as <q>that feeling when you bite into a pickle and it’s a little squishier than you expected</q>.</p>
+
+<p>Don’t use <code>&lt;em&gt;</code> when no emphasis is intended. This matters to search engines, any natural-language processing tooling (e.g. text summarization), and especially screen readers. A screen reader might prefer to pause slightly before and after introducing a new term, and not give it undue&nbsp;emphasis.</p>
+
+<p>In Markdown, this requires a fallback to&nbsp;HTML.</p>
+
+<h3 id="urls-and-paths">URLs and&nbsp;paths</h3>
+<p>Markdown does not provide a way to mark up URLS or file paths. A common alternative approach is to mark up URLs or file paths as code, using backticks: <code>/home/denis/archive/2021/notes/markdown.md</code>.</p>
+
+<p>While it can be aesthetically pleasing to use the formatting for the <code>code</code> element, using <code>code</code> for URLs is problematic because it either hyphenates incorrectly (if hyphenation is enabled), or does not hyphenate at all, creating an awkward space on the previous line, or making the text overflow, running past the right edge of its container<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--1" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-1" for="sidenote__checkbox--1" class="sidenote__label">∗</label><small id="sidenote-1" class="sidenote__content muted">I escaped LaTeX, but I did not escape overfull hbox, badness 10000.&nbsp;</small></span>.</p>
+
+<p>Marking up URLs and paths explicitly is a good idea, because <a href="../f79fn-fpfnp-lrcht/">URLs and paths require special word-breaking rules</a>. Markdown does not provide appropriate markup for this use case, but a fallback to HTML is&nbsp;possible.</p>
+
+<h3 id="cross-references">Cross-references</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<p><mark><strong>To do</strong>:  Describe that this is part of a larger topic of documents being part of a whole. A Markdown file can be standalone, but often it is part of a larger entity, such as a web site or a book.
+</mark></p>
+
+<p><mark><strong>To do</strong>: Describe that cross-references look different in print (e.g. physical page numbers). Though, even online, cross-references can look different, depending on whether a reference refers to the currently-open page, or a different one. It’ll also be interesting to see this evolves as the web moves away from the concept of a “page” (or does it?).
+</mark></p>
+
+<h3 id="admonitions">Admonitions</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="citations-and-bibliographies">Citations and&nbsp;bibliographies</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="footnotes-endnotes-sidenotes">Footnotes, endnotes,&nbsp;sidenotes</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="definition-lists">Definition&nbsp;lists</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="glossaries">Glossaries</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="figures">Figures</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="callouts">Callouts</h3>
+
+<p><mark><strong>To do</strong>
+</mark></p>
+
+<h3 id="composability">Composability</h3>
+
+<p><mark><strong>To do</strong>: You can’t embed a HTML document inside a HTML document directly (because you’d end up duplicating  <code>&lt;html&gt;</code> + <code>&lt;head&gt;</code> + <code>body</code>). You can’t easily do that with Markdown either, because a Markdown document always translates to at least one top-level element such as <code>p</code>.
+</mark></p>
+
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">March 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../crfhf-79rvk-r7hlp/">The format of a note</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

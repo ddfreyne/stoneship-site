@@ -1,0 +1,149 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Avoid naughty words in hex digest strings by changing the set of characters</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/r7hwx-kzkcc-lwmwk/">
+
+        <meta property="og:title" content="Avoid naughty words in hex digest strings by changing the set of characters">
+        <meta property="dc.title" content="Avoid naughty words in hex digest strings by changing the set of characters">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Avoid naughty words in hex digest strings by changing the set of&nbsp;characters</h1>
+
+
+<p>Hexadecimal strings typically contain 0–9 and a–f, which gives plenty of opportunity for (naughty) words to form (Batchelder, 2007), e.g.&nbsp;“deadbabe”.</p>
+
+<p>If we also accept “9” as a substitute for “g,” then even more (naughty) words can be built, e.g. “defacedfa9”. Your imagination is the&nbsp;limit.</p>
+
+<h2 id="remove-vowels">Remove&nbsp;vowels</h2>
+<p>To avoid accidentally generating words, we can remove vowels (A E I O U, and arguably Y) from the list of possible characters, and additionally remove characters that can stand in for vowels (0 1 3&nbsp;4).</p>
+
+<p>The set of characters we use for representing hexadecimal strings therefore becomes shifted: instead of <code>0123456789abcdef</code>, we now have <code>256789bcdfghjklm</code>.</p>
+
+<p>Performing this replacement is trivial with <code>tr</code> on the command&nbsp;line:</p>
+
+<pre><code>% echo 1337cafebabe | tr 0123456789abcdef 256789bcdfghjklm
+577cjgmlhghl
+</code></pre>
+
+<p>Ruby’s <code>String#tr</code> does the&nbsp;same:</p>
+
+<pre><code>'1337cafebabe'.tr('0123456789abcdef', '256789bcdfghjklm')
+# =&gt; "577cjgmlhghl"
+</code></pre>
+
+<h2 id="remove-ambiguous-characters">Remove ambiguous&nbsp;characters</h2>
+<p>We can go further and remove ambiguous characters as well. While not necessary, it is helpful when writing down hexadecimal strings (especially when using non-conventional characters, like we&nbsp;do).</p>
+
+<p>Ambiguous characters include B D G J Q S Z and 0 1 2 5 6 8 (with 0 and 1 already removed because they can substitute a vowel). The set of characters we use for representing hexadecimal strings has shifted again: instead of <code>256789bcdfghjklm</code> (which replaced <code>0123456789abcdef</code>), we now have <code>79cfhklmnprtvwxz</code>.</p>
+
+<p>We can use it the same way. Command&nbsp;line:</p>
+
+<pre><code>% echo 1337cafebabe | tr 0123456789abcdef 79cfhklmnprtvwxz
+9ffmvrzxtrtx
+</code></pre>
+
+<p>Ruby:</p>
+
+<pre><code>'1337cafebabe'.tr('0123456789abcdef', '79cfhklmnprtvwxz')
+# =&gt; "9ffmvrzxtrtx"
+</code></pre>
+
+<p>Note how <code>79cfhklmnprtvwxz</code> is exactly 16 characters and ends with <code>z</code>. A wonderful&nbsp;coincidence.</p>
+
+<h2 id="see-also">See&nbsp;also</h2>
+<p><a href="../7fmkz-pkwxt-kcxvt/">Good human-usable tokens are not random strings</a></p>
+
+<h2 id="references">References</h2>
+<p>Batchelder, Ned. “Hex Words,” March 20, 2007. <a href="https://nedbatchelder.com/text/hexwords.html">https://nedbatchelder.com/text/hexwords.html</a>.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../mr7vm-wxfkp-pkmww/">Importing notes from Bear</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

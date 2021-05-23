@@ -1,0 +1,128 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>URLs and paths require special word-breaking rules</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.1">
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/f79fn-fpfnp-lrcht/">
+
+        <meta property="og:title" content="URLs and paths require special word-breaking rules">
+        <meta property="dc.title" content="URLs and paths require special word-breaking rules">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/style/fonts-5jztFEOuR7ip8nFIXTZBpvsEI38.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-9AMGNX4Hu13p4xVeiqcaM5Kpfh4.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>URLs and paths require special word-breaking&nbsp;rules</h1>
+
+
+<p>Hyphenation can introduce hyphens into a URL or file path when breaking it across multiple lines. It will be unclear, however, whether or not the hyphen is meant to be part of the URL or file path. The guidelines I follow are primarily inspired by the ones in the <a href="https://web.archive.org/web/20121105171040/http://styleguide.yahoo.com/editing/treat-abbreviations-capitalization-and-titles-consistently/website-names-and-addresses">Yahoo! Style Guide</a> (now&nbsp;archived):</p>
+
+<ul>
+  <li>
+    <p><strong>Do not add hyphens when breaking.</strong> It is unclear whether or not a hyphen at the end of the line is part of the URL or file&nbsp;path.</p>
+  </li>
+  <li>
+    <p><strong>Do not break after hyphens.</strong> A hyphen at the end of a line is problematic, for aforementioned reasons, but a hyphen before the end of a line is unambiguously part of the URL or file path. Break <em>before</em> hyphens, and move the hyphen to the beginning of the&nbsp;line.</p>
+  </li>
+  <li>
+    <p><strong>Break <em>before</em> punctuation that can be interpreted as the end of a URL.</strong> This includes slashes and periods. Breaking before such punctuation gives a clearer indication that the URL continues onto the next&nbsp;line.</p>
+  </li>
+  <li>
+    <p><strong>Break after other kinds of punctuation.</strong></p>
+  </li>
+</ul>
+
+<p>In HTML and CSS, set URLs and file paths to never break, with <code>hyphens: never</code>. Convert hyphens to non-breaking hyphens, and spaces to non-breaking spaces. Manually insert the empty <code>&lt;wbr&gt;</code> (word break) element at word-break opportunities, i.e., before slashes, periods, and hyphens. <code>&lt;wbr&gt;</code> creates word breaks without hyphens, which is ideal for URLs and file paths. For more details, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens">hyphens</a> CSS property reference on MDN, or the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr"><code>wbr</code></a> HTML element reference on&nbsp;MDN.</p>
+
+<p>This web site follows these guidelines. For example: <span class="path">~<wbr>/Library<wbr>/Application&nbsp;Support<wbr>/My&nbsp;app<wbr>/ws<wbr>.denis<wbr>.something<wbr>.a<wbr>.very<wbr>.long<wbr>.period<wbr>.separated<wbr>.string<wbr>/more<wbr>/and<wbr>/more<wbr>/slashes<wbr>/infinite<wbr>/slashes<wbr>/some&nbsp;text&nbsp;that&nbsp;should&nbsp;not&nbsp;be&nbsp;broken<wbr>/hyphenated<wbr>‑text<wbr>‑that<wbr>‑should<wbr>‑not<wbr>‑be<wbr>‑broken<wbr>/lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet<wbr>/lorem&nbsp;ipsum&nbsp;indeed<wbr></span>.</p>
+
+<p>This might look weird, and be at odds with grammar rules, but <a href="../cctpz-xhf7m-vczmm/">Grammar must serve communication</a>.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">April 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../cctpz-xhf7m-vczmm/">Grammar must serve communication</a></li>
+      
+        <li><a href="../v9npn-tchrc-nzzvh/">Lightweight markup languages are inadequate for technical writing</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+
