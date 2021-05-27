@@ -84,6 +84,20 @@ compile '/fiction/*' do
   write "/fiction/#{slug}/index.html"
 end
 
+compile '/articles/*' do
+  # filter :mark
+  # filter :kramdown, input: 'GFM'
+  # filter :footnotes
+  # filter :autolink
+
+  layout '/article.*'
+
+  # filter :typography
+  filter :relativize_paths, type: :html5
+
+  write item.identifier.without_ext + '/index.html'
+end
+
 compile '/notes/*' do
   filter :wikilinks
   filter :mark

@@ -34,7 +34,18 @@
             <link rel="stylesheet" href="<%= @items["/assets/style/reset.*"].path %>">
             <link rel="stylesheet" href="<%= @items["/assets/style/fonts.*"].path %>">
         <% end %>
-        <% stylesheet = @item[:layout] == 'cv' ? 'cv' : @item.identifier.match?('/fiction/*') ? 'fiction' : '2021q1' %>
+        <%
+            stylesheet =
+                if @item[:layout] == 'cv'
+                    'cv'
+                elsif @item.identifier.match?('/fiction/*')
+                    'fiction'
+                elsif @item.identifier.match?('/articles/*')
+                    'article'
+                else
+                    '2021q1'
+                end
+        %>
         <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

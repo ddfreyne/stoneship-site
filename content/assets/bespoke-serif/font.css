@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Light.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Light.woff") format("woff"),
+    url("fonts/BespokeSerif-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-LightItalic.woff2") format("woff2"),
+    url("fonts/BespokeSerif-LightItalic.woff") format("woff"),
+    url("fonts/BespokeSerif-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Regular.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Regular.woff") format("woff"),
+    url("fonts/BespokeSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Italic.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Italic.woff") format("woff"),
+    url("fonts/BespokeSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Medium.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Medium.woff") format("woff"),
+    url("fonts/BespokeSerif-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-MediumItalic.woff2") format("woff2"),
+    url("fonts/BespokeSerif-MediumItalic.woff") format("woff"),
+    url("fonts/BespokeSerif-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Bold.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Bold.woff") format("woff"),
+    url("fonts/BespokeSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-BoldItalic.woff2") format("woff2"),
+    url("fonts/BespokeSerif-BoldItalic.woff") format("woff"),
+    url("fonts/BespokeSerif-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-Extrabold.woff2") format("woff2"),
+    url("fonts/BespokeSerif-Extrabold.woff") format("woff"),
+    url("fonts/BespokeSerif-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Serif";
+  src: url("fonts/BespokeSerif-ExtraboldItalic.woff2") format("woff2"),
+    url("fonts/BespokeSerif-ExtraboldItalic.woff") format("woff"),
+    url("fonts/BespokeSerif-ExtraboldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}

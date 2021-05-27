@@ -1,0 +1,849 @@
+<h1>Using Lenses to build complex React forms in a type-safe way</h1>
+
+<p><em>Lenses</em> allow us to build complex forms quickly and with confidence.</p>
+
+<p>While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.</p>
+
+<h2>Forms are hard</h2>
+
+<p>At BCG Digital Ventures, I work on an internal tool where one particular page has a remarkably complex form. Its implementation has gone through several revisions to increase its stability and make it more maintainable, but even the most advanced version, powered with React, had problems.</p>
+
+<p>The mainstream React form-handling libraries left us hanging: none of them can deal with highly-complex nested data structures in a type-safe way.</p>
+
+<p>Type safety in particular is useful because it tightens the feedback loop: misspelled field names will be highlighted as errors in the IDE, and the IDE will provide reliable and useful autocompletion with integrated documentation.</p>
+
+<p>I looked to the Haskell community for alternative approaches, and discovered the concept of <em>lenses</em>. As an experiment, I reimplemented the form using lenses, which turned out to be capable of handling highly-complex data in a type-safe way.</p>
+
+<p>With lenses, we can build complex forms quickly and with confidence.</p>
+
+<p>Here is a live demo of what we’ll build:</p>
+
+<div>
+  <div class="adm adm-todo"><strong>To do</strong>: add the live demo!</div>
+</div>
+
+<h2>What is a lens?</h2>
+
+<p>To describe what a lens is, we’ll use an example to create a lens from scratch.</p>
+
+<p>Imagine a Person type, and an instance of Person that represents Sherlock Holmes:</p>
+
+<pre>type Person = {
+  firstName: string;
+  lastName: string;
+};
+
+let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes"
+};</pre>
+
+<p>We can get Sherlock’s first name:</p>
+
+<pre>sherlock.firstName
+  // -&gt; "Sherlock"</pre>
+
+<p>The game is afoot!</p>
+
+<p>We could also write some code to update the first name, which we’ll do in a purely functional way, meaning that we won’t modify the object itself, but rather return a new object with the updated data:</p>
+
+<pre>let locky = { ...sherlock, firstName: "Locky" }
+  // -&gt; {
+  //      firstName: "Locky",
+  //      lastName: "Holmes"
+  //    }</pre>
+
+<p>Perhaps Sherlock wouldn’t like to be called Locky. We’ll never know.</p>
+
+<p>We can create functions for getting and updating a person’s first name:</p>
+
+<pre>let getFirstName =
+  (person: Person) =&gt; person.firstName
+
+let setFirstName =
+  (person: Person, firstName: string) =&gt;
+    ({ ...person, firstName: firstName })</pre>
+
+<p>Let’s fix Sherlock’s name:</p>
+
+<pre>getFirstName(locky)
+  // -&gt; "Locky"
+
+setFirstName(locky, "Sherlock")
+  // -&gt; {
+  //      firstName: "Sherlock",
+  //      lastName: "Holmes"
+  //    }</pre>
+
+<p>We can combine the getter and the setter into a single object:</p>
+
+<pre>let firstNameLens = {
+  get: (person: Person) =&gt;
+    person.firstName
+
+  set: (person: Person, firstName: string) =&gt;
+    ({ ...person, firstName: firstName })
+}
+
+firstNameLens.get(locky)
+  // -&gt; "Locky"
+
+firstNameLens.set(locky, "Sherlock")
+  // -&gt; {
+  //      firstName: "Sherlock",
+  //      lastName: "Holmes"
+  //    }</pre>
+
+<p>Congratulations: <code>firstNameLens</code> is your first lens!</p>
+
+<div class="h3-fix"></div>
+<h3>Lenses, more formally</h3>
+
+<p>The lens that we constructed above has the following type:</p>
+
+<pre>type PersonFirstNameLens = {
+  // Given a person,
+  // get a string (the first name)
+  get: (person: Person) =&gt; string;
+
+  // Given a person and a string
+  // (the first name),
+  // return a new person
+  set: (person: Person, firstName: string) =&gt; Person;
+};</pre>
+
+<p>This lens is for two specific types:</p>
+
+<ul>
+  <li>The <code>Person</code> type is the top type: the type that contains the data that you want to extract (using get), or the data that you want to update (using set).</li>
+  <li>The <code>string</code> type is the focused type: the type of the extracted data.</li>
+
+</ul>
+
+<p>With these two types in mind, we can construct a generic Lens type, with two type parameters (<code>T</code> for the top type, and <code>F</code> for the focused type):</p>
+
+<pre>type Lens&lt;T, F&gt; = {
+  get: (t: T) =&gt; F;
+  set: (t: T, f: F) =&gt; T;
+};</pre>
+
+<p>The type definition makes it clear: <mark>a lens is the combination of a getter and a setter, for an immutable data structure</mark>.</p>
+
+<div class="h3-fix"></div>
+<h3>Conveniently creating lenses with forProp()</h3>
+
+<p>It is convenient to have a function that can automatically create a lens for a property. This is where <code>forProp()</code> comes in:</p>
+
+<pre>let firstNameLens =
+  forProp&lt;Person&gt;()("firstName");</pre>
+
+<p>A lens returned by <code>forProp()</code> behaves exactly the same as a manually-constructed one:</p>
+
+<pre>let john: Person = {
+  firstName: "John",
+  lastName: "Watson"
+};
+
+firstNameLens.get(john);
+  // -&gt; "John"
+firstNameLens.set(john, "Joe");
+  // -&gt; { firstName: "Joe", lastName: "Watson" }</pre>
+
+<p>I’ll make a guess that John Watson wouldn’t like to be called Joe.</p>
+
+<p>The <code>forProp()</code> function is type-safe, as it won’t accept non-existent properties:</p>
+
+<pre>// Type error!
+// Person has no property middleName
+let middleNameLens =
+  forProp&lt;Person&gt;()("middleName");</pre>
+
+<p>We’ll not talk about the implementation, but you can check out <a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/lenses.ts" rel="noopener nofollow">its implementation</a> in the demo sandbox.</p>
+
+<h2>Lenses for forms</h2>
+
+<p>A lens-powered form field needs three properties:</p>
+
+<pre>interface BareTextFieldProps&lt;T&gt; {
+  lens: Lens&lt;T, string&gt;;
+  top: T;
+  setTop: (t: T) =&gt; void;
+}</pre>
+
+<p>A form field needs the lens (for getting and setting the data for this field), but also <code>top</code> and <code>setTop()</code>, which are used for getting and setting the top-level object.</p>
+
+<p>Note the similarity between <code>top</code> and <code>setTop()</code> and what the React <code>useState</code> hook returns — we’ll come back to this later.</p>
+
+<p>This minimalist text field’s implementation is as follows:</p>
+
+<pre>export let BareTextField = &lt;T extends any&gt;({
+  lens,
+  top,
+  setTop
+}: BareTextFieldProps&lt;T&gt;) =&gt; {
+  // Read value through lens
+  let value = <mark>lens.get(top)</mark>;
+
+  // Replace top with new instance
+  // updated through lens
+  let setValue = (newValue: string) =&gt; {
+    <mark>setTop(lens.set(top, newValue))</mark>;
+  };
+
+  return (
+    &lt;input
+      type="text"
+      value={value}
+      onChange={e =&gt; setValue(e.target.value)}
+    /&gt;
+  );
+};</pre>
+
+<p>This React component is a controlled component, so the wrapped <code>&lt;input&gt;</code> component is given both a <code>value</code> prop and an <code>onChange</code> prop.</p>
+
+<div class="h3-fix"></div>
+<h3>Minimal form example</h3>
+
+<p>We’ll create a form for a new person. First, we’ll need our lenses:</p>
+
+<pre>let firstNameLens =
+  forProp&lt;Person&gt;()("firstName");
+
+let lastNameLens =
+  forProp&lt;Person&gt;()("lastName");</pre>
+
+<p>We’ll also need a way to create a blank person object:</p>
+
+<pre>let newPerson = (): Person =&gt; ({
+  firstName: "",
+  lastName: ""
+});</pre>
+
+<p>The skeleton of our form will look like this:</p>
+
+<pre>let PersonForm = () =&gt; {
+  let [person, setPerson] = useState(newPerson);
+
+  return (
+    &lt;&gt;
+      {/* to do: add form fields here */}
+      &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+    &lt;/&gt;
+  );
+};</pre>
+
+<p>When the form is created, the person variable is initialized to a new person.</p>
+
+<p>At the end of the form, we show the pretty-printed representation of the person, so that you can see that it indeed is updating the person properly.</p>
+
+<p>Let’s add the fields for the first name and last name:</p>
+
+<pre>&lt;&gt;
+  &lt;BareTextField
+    top={person}
+    setTop={setPerson}
+    lens={firstNameLens}
+  /&gt;
+
+  &lt;BareTextField
+    top={person}
+    setTop={setPerson}
+    lens={lastNameLens}
+  /&gt;
+
+  &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+&lt;/&gt;</pre>
+
+<p>We can reduce the amount of boilerplate by creating an object <code>f</code> that contains <code>top</code> and <code>setTop()</code>, so that we can pass it to the text fields succinctly:</p>
+
+<pre>let PersonForm = () =&gt; {
+  let [person, setPerson] = useState(newPerson);
+  <mark>let f = { top: person, setTop: setPerson };</mark>
+
+  return (
+    &lt;&gt;
+      &lt;BareTextField <mark>{...f}</mark> lens={firstNameLens} /&gt;
+      &lt;BareTextField <mark>{...f}</mark> lens={lastNameLens} /&gt;
+      &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+    &lt;/&gt;
+  );
+};</pre>
+
+<p>With this approach, you can build forms with nested objects in a terse and type-safe way.</p>
+
+<div class="h3-fix"></div>
+<h3>Prettier form example</h3>
+
+<p>The text field we’ve created so far is nothing but a wrapper for an input element. We can build a more full-fledged text field by adding a label and some styling (I am partial to utility-first CSS):</p>
+
+<pre>interface TextFieldProps&lt;T&gt; extends BareTextFieldProps&lt;T&gt; {
+  label: string;
+}
+
+let TextField = &lt;T extends any&gt;({
+  lens,
+  top,
+  setTop,
+  label
+}: TextFieldProps&lt;T&gt;) =&gt; (
+  &lt;label class="block pb-6"&gt;
+    &lt;div style="font-bold"&gt;{label}&lt;/div&gt;
+    &lt;BareTextField
+      lens={lens}
+      top={top}
+      setTop={setTop}
+    /&gt;
+  &lt;/label&gt;
+);</pre>
+
+<p>Once we replace our <code>BareTextField</code> usage in the form with <code>TextField</code> (now with label), we get a nicer form:</p>
+
+<pre>&lt;&gt;
+  &lt;TextField
+    {...f}
+    lens={firstNameLens}
+    label="First name"
+  /&gt;
+  &lt;TextField
+    {...f}
+    lens={lastNameLens}
+    label="Last name"
+  /&gt;
+  &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+&lt;/&gt;</pre>
+
+<h2>Handling nested data by composing lenses</h2>
+
+<p>We are able to build forms for simple objects now, but not for nested objects. Let’s fix that.</p>
+
+<p>Image a <code>Person</code> type with an address inside it:</p>
+
+<pre>type Address = {
+  street: string;
+  number: string;
+};
+
+type Person = {
+  firstName: string;
+  lastName: string;
+  address: Address;
+};</pre>
+
+<p>Let’s take Sherlock as an example person:</p>
+
+<pre>let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes",
+  address: {
+    street: "Butcher Street",
+    number: "221b"
+  }
+}</pre>
+
+<p>We can get Sherlock’s street easily:</p>
+
+<pre>sherlock.address.street</pre>
+
+<p>Updating Sherlock’s street is more cumbersome without lenses:</p>
+
+<pre>let sherlock2 = {
+  ...sherlock,
+  address: {
+    ...sherlock.address,
+    street: <mark>"Baker Street"</mark>
+  }
+}</pre>
+
+<p>If <code>Address</code> were a standalone type, we’d be able to update it succinctly with a lens:</p>
+
+<pre>let sherlocksHome: Address = {
+ street: "Butcher Street",
+ number: "221b"
+}
+
+let streetLens =
+  forProp&lt;Address&gt;()("street");
+
+streetLens.set(sherlocksHome, "Baker Street");
+ // -&gt; { street: <mark>"Baker Street"</mark>, number: "221b" }</pre>
+
+<p>We can, however, create a lens for a person’s address, and for an address’ street, and <em>compose</em> them, so that we get a lens for a person’s street:</p>
+
+<pre>let addressLens =
+  forProp&lt;Person&gt;()("address");
+
+let streetLens =
+  forProp&lt;Address&gt;()("street");
+
+let addressStreetLens =
+  <mark>compose</mark>(addressLens, streetLens);</pre>
+
+<p>The <code>addressStreetLens</code> lens “drills down” into the person type. It behaves like any other lens:</p>
+
+<pre>let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes",
+  address: {
+    street: "Butcher Street",
+    number: "221b"
+  }
+}
+
+addressStreetLens.set(sherlock, "Baker Street");
+  // -&gt; {
+  //      firstName: "Sherlock",
+  //      lastName: "Holmes",
+  //      address: {
+  //        street: <mark>"Baker Street"</mark>,
+  //        number: "221b"
+  //      }
+  //    }</pre>
+
+<p>This works for forms too, like any other lens. Let’s create the lenses we need first:</p>
+
+<pre>let addressLens =
+  forProp&lt;Person&gt;()("address")
+let streetLens =
+  forProp&lt;Address&gt;()("street");
+let houseNumberLens =
+  forProp&lt;Address&gt;()("number");
+let addressStreetLens =
+  compose(addressLens, streetLens);
+let addressNumberLens =
+  compose(addressLens, houseNumberLens);</pre>
+
+<p>Now we can use them in a form:</p>
+
+<pre>&lt;&gt;
+  &lt;TextField
+    {...f}
+    lens={firstNameLens}
+    label="First name" /&gt;
+
+  &lt;TextField
+    {...f}
+    lens={lastNameLens}
+    label="Last name" /&gt;
+
+  <mark>&lt;TextField
+    {...f}
+    lens={addressStreetLens}
+    label="Street" /&gt;</mark>
+
+  <mark>&lt;TextField
+    {...f}
+    lens={addressNumberLens}
+    label="House number" /&gt;</mark>
+
+  &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+&lt;/&gt;</pre>
+
+<p>With <code>compose()</code>, you can build type-safe forms for deeply-nested data structures.</p>
+
+<p>The implementation of <code>compose()</code> looks complex, but it is worth looking at:</p>
+
+<pre>let compose = &lt;T, S, F&gt;(
+  ts: Lens&lt;T, S&gt;,
+  sf: Lens&lt;S, F&gt;
+): Lens&lt;T, F&gt; =&gt; ({
+  get: t =&gt; sf.get(ts.get(t)),
+  set: (t, f) =&gt; ts.set(t, sf.set(ts.get(t), f))
+});</pre>
+
+<p>Pay attention to the type signature: given a <code>Lens&lt;T, S&gt;</code> and a <code>Lens&lt;S, F&gt;</code>, return a <code>Lens&lt;T, F&gt;</code>. Once the type signature is in place, the implementation follows: the type system guides the implementation, and the type system will virtually guarantee correctness.</p>
+
+<h2>Handling lists</h2>
+
+<p>We already saw how to create a lens for a property of an object, using <code>forProp()</code>:</p>
+
+<pre>let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes"
+};
+
+firstNameLens.get(sherlock);
+  // -&gt; "Sherlock"
+
+firstNameLens.set(sherlock, "Locky");
+  // -&gt; {
+  //      firstName: "Locky",
+  //      lastName: "Holmes"
+  //    }</pre>
+
+<p>While handling properties of an object is done with <code>forProp()</code>, handling elements of a list can done with <code>forIndex()</code>:</p>
+
+<pre>let hobbies = ["programming", "arguing"];
+
+let first = <mark>forIndex</mark>&lt;string&gt;(0);
+
+first.get(hobbies);
+  // -&gt; "programming"
+
+first.set(hobbies, "coding");
+  // -&gt; ["coding", "arguing"]</pre>
+
+<p>In practice, though, <code>forIndex()</code> is not nearly as useful as <code>forProp()</code>. The <code>forProp()</code> function works well because we know the properties of an object ahead of time. For lists, on the other hand, the size is not known ahead of time, as lists can grow and shrink during execution.</p>
+
+<p>To get a better understanding of how lists and lenses interact, let’s imagine a Person type with a list of hobbies:</p>
+
+<pre>type Person = {
+  firstName: string;
+  lastName: string;
+  <mark>hobbies: string[];</mark>
+};</pre>
+
+<p>We can create a lens for the list of hobbies:</p>
+
+<pre>let hobbiesLens: Lens&lt;Person, string[]&gt; =
+  forProp&lt;Person&gt;()("hobbies");</pre>
+
+<p>A lens that focuses on a <code>string[]</code> is not directly useful, though. We’ll want to create one text field for each hobby, and a <code>TextField</code> component needs a lens that focuses on a <code>string</code>, not on a <code>string[]</code>.</p>
+
+<p>To access individual list elements, we need lenses for each list element. Rather than a single lens that focuses on a list of hobbies, we need a collection of lenses, each focusing on a single hobby:</p>
+
+<pre>let hobbyLenses: Lens&lt;Person, string&gt;[] =
+  ??? // Implemented further down</pre>
+
+<p>Note the distinction in the type signature: <code>hobbiesLens</code> is one lens, while <code>hobbyLenses</code> is an array of lenses. While <code>hobbiesLens</code> focuses on a string array, <code>hobbyLenses</code> each focus on a single string.</p>
+
+<p>To transform <code>hobbiesLens</code> into <code>hobbyLenses</code>, we need to know the number of elements in the list, so that we can generate the appropriate number of lenses. This is where <code>makeArray()</code> is useful:</p>
+
+<pre>let hobbyLenses: Lens&lt;Person, string&gt;[] =
+  makeArray(hobbiesLens, person.hobbies.length);</pre>
+
+<p>We’ve left the implementation of <code>makeArray()</code> out, but it has this signature, in case you want to give implementing it a shot yourself (or check out the code in the demo):</p>
+
+<pre>(
+  lens: Lens&lt;T, F[]&gt;,
+  length: number
+): Lens&lt;T, F&gt;[]</pre>
+
+<p>Once we have our list of lenses, we can create a <code>TextField</code> for each of these lenses:</p>
+
+<pre>let hobbiesLens = forProp&lt;Person&gt;()("hobbies");
+let PersonForm = () =&gt; {
+  let [person, setPerson] = useState(newPerson);
+  let f = { top: person, setTop: setPerson };
+
+  <mark>let hobbyLenses =
+    makeArray(hobbiesLens, person.hobbies.length);</mark>
+
+  return (
+    &lt;&gt;
+      {<mark>hobbyLenses</mark>.map(hobbyLens =&gt;
+        &lt;TextField
+          {...f}
+          lens={hobbyLens}
+          label="Hobby"
+        /&gt;
+      )}
+
+      &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
+    &lt;/&gt;
+  );
+};</pre>
+
+<p>We now have a form where we can edit existing list elements, but not add or remove any yet.</p>
+
+<div class="h3-fix"></div>
+<h3>Adding and removing list elements</h3>
+
+<p>While the approach above works for modifying existing elements in a list, we need the ability to add new elements to a list and remove elements from a list.</p>
+
+<p>To add an element to a list, we can use <code>push()</code>, whose type signature is <code>(top: T, lens: Lens&lt;T, F[]&gt;, elem: F) =&gt; T</code>:</p>
+
+<pre>let hobbiesLens =
+  forProp&lt;Person&gt;()("hobbies");
+
+let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes",
+  hobbies: <mark>["deducing"]</mark>
+}
+
+<mark>push(sherlock, hobbiesLens, "sleuthing")</mark>
+  // -&gt; {
+  //      firstName: "Sherlock",
+  //      lastName: "Holmes",
+  //      hobbies: <mark>["deducing", "sleuthing"]</mark>
+  //    }</pre>
+
+<p>In a React form, you could use <code>push()</code> as follows:</p>
+
+<pre>&lt;button
+  onClick={() =&gt;
+    setPerson(<mark>push</mark>(sherlock, hobbiesLens, ""))
+  }
+&gt;New hobby&lt;/button&gt;</pre>
+
+<p>The implementation of <code>push()</code> relies on <code>over()</code>, which applies a transformation over the value that the lens focuses on:</p>
+
+<pre>let over = &lt;T, F&gt;(
+  top: T,
+  lens: Lens&lt;T, F&gt;,
+  fn: (f: F) =&gt; F
+): T =&gt;
+  lens.set(top, fn(lens.get(top)));</pre>
+
+<p>The <code>over()</code> function is sometimes called <code>transform()</code> or <code>map()</code>. I prefer the latter personally, because it really feels like mapping. Here’s an example which transform’s Sherlock’s name into UPPERCASE!!!, for no particular reason:</p>
+
+<pre>let firstNameLens =
+  forProp&lt;Person&gt;()("firstName");
+
+let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes"
+}
+
+<mark>over</mark>(
+  person,
+  firstNameLens,
+  <mark>(a) =&gt; a.toUpperCase()</mark>
+);
+// -&gt; {
+//      firstName: <mark>"SHERLOCK"</mark>,
+//      lastName: "Holmes"
+//    }</pre>
+
+<p>Once we have <code>over()</code>, we can implement <code>push()</code>:</p>
+
+<pre>let push = &lt;T, F&gt;(
+  top: T,
+  lens: Lens&lt;T, F[]&gt;,
+  elem: F
+): T =&gt;
+  over(top, lens, elems =&gt; [...elems, elem]);</pre>
+
+<p>Now that we have <code>push()</code>, we can add new elements to a list. We are still lacking the ability to remove elements from a list, though. For this, there’s <code>removeAt()</code>, which removes an element at a specified index:</p>
+
+<pre>let hobbiesLens =
+  forProp&lt;Person&gt;()("hobbies");
+
+let sherlock: Person = {
+  firstName: "Sherlock",
+  lastName: "Holmes",
+  hobbies: <mark>[
+    "deducing",
+    "sleuthing",
+    "investigating",
+  ]</mark>
+}
+
+<mark>removeAt(sherlock, hobbiesLens, 1)</mark>
+  // -&gt; {
+  //      firstName: "Sherlock",
+  //      lastName: "Holmes",
+  //      hobbies: <mark>["deducing", "investigating"]</mark>
+  //    }</pre>
+
+<p>“Sleuthing” is a dated word. Good riddance, I say.</p>
+
+<p>In a React form, you’d use <code>removeAt()</code> like this:</p>
+
+<pre>let hobbyLenses =
+  makeArray(hobbiesLens, person.hobbies.length);
+
+&lt;&gt;
+  {hobbyLenses.map((hobbyLens, <mark>index</mark>) =&gt;
+    &lt;&gt;
+      &lt;TextField
+        {...f}
+        lens={hobbyLens}
+        label="Hobby"
+      /&gt;
+
+      &lt;button
+        onClick={() =&gt;
+          setPerson(
+            <mark>removeAt</mark>(sherlock, hobbiesLens, <mark>index</mark>)
+          )
+        }
+      &gt;Remove hobby&lt;/button&gt;
+    &lt;/&gt;
+  )}
+&lt;/&gt;</pre>
+
+<p>The <code>removeAt()</code> function can also implemented using <code>over()</code>, with some appropriate use of <code>slice()</code> to retain only the elements that are not to be removed:</p>
+
+<pre>let removeAt =
+  &lt;T, F&gt;(
+    top: T,
+    lens: Lens&lt;T, F[]&gt;,
+    idx: number
+  ): T =&gt;
+    over(
+      top,
+      lens,
+      elems =&gt; [
+        ...elems.slice(0, idx),
+        ...elems.slice(idx + 1)
+      ]
+    );</pre>
+
+<p>With all this in place, we have a type-safe way of managing lists.</p>
+
+<h2>Improving on single-select dropdowns</h2>
+
+<p>HTML provides the <code>&lt;select&gt;</code> element to create a dropdown list. Each element of this dropdown list, an <code>&lt;option&gt;</code>, has a value which identifies the selected option:</p>
+
+<pre>&lt;select&gt;
+  &lt;option&gt;&lt;/option&gt;
+  &lt;option value="mari"&gt;Marina&lt;/option&gt;
+  &lt;option value="star"&gt;Stardust&lt;/option&gt;
+  &lt;option value="ruby"&gt;Ruby&lt;/option&gt;
+  &lt;option value="sapp"&gt;Sapphire&lt;/option&gt;
+  &lt;option value="elec"&gt;Electric&lt;/option&gt;
+  &lt;option value="mint"&gt;Mint&lt;/option&gt;
+  &lt;option value="slat"&gt;Slate&lt;/option&gt;
+&lt;/select&gt;</pre>
+
+<p>If we wanted to give a <code>Person</code> a favorite color, we could add a string property:</p>
+
+<pre>type Person = {
+  firstName: string;
+  lastName: string;
+  favoriteColor: string | null;
+};</pre>
+
+<p>We could then use lenses to create a <code>SingleSelectField</code>, similar to our TextField. An implementation for this approach wouldn’t be too challenging.</p>
+
+<p>There’s a limitation with this approach: the single-select dropdown values have to be strings. While this is common when building HTML single-select fields, we can do better, and treat dropdown values as full objects instead.</p>
+
+<p>Imagine a <code>Color</code> type, and a <code>Person</code> whose <code>favoriteColor</code> property is a reference to a <code>Color</code> type:</p>
+
+<pre>type Color = {
+  id: string;
+  name: string;
+  hex: string;
+};
+
+type Person = {
+  firstName: string;
+  lastName: string;
+  favoriteColor: Color | null;
+};</pre>
+
+<p>It’s beneficial to have a reference to <code>Color</code> rather than a <code>string</code>, because it allows us to encode additional information besides a value and a display label. For example, if a person has selected their favorite color, we can show a welcome message in their selected favorite color:</p>
+
+<pre>&lt;div style={{ color: person.favoriteColor?.hex || "#000" }}&gt;
+  Hello, {person.firstName}!
+&lt;/div&gt;</pre>
+
+<p>The options for our single-select dropdown will be objects, and so we’ll need to define that list of objects as an array:</p>
+
+<pre>let allColors: Array&lt;Color&gt; = [
+  { id: "mari", hex: "#0089a8", name: "Marina" },
+  { id: "star", hex: "#e74132", name: "Stardust" },
+  { id: "ruby", hex: "#bc1a50", name: "Ruby" },
+  { id: "sapp", hex: "#45439d", name: "Sapphire" },
+  { id: "elec", hex: "#c2d62e", name: "Electric" },
+  { id: "mint", hex: "#29bc75", name: "Mint" },
+  { id: "slat", hex: "#546173", name: "Slate" },
+];</pre>
+
+<p>I can’t decide whether my favorite color is <span style="font-weight: bold; color: #e74132">Stardust</span> (so warm and powerful!) or <span style="font-weight: bold; color: #29bc75">Mint</span> (so fresh and relaxing!).</p>
+
+<p>We’ll also need a lens for a person’s favorite color:</p>
+
+<pre>let favoriteColorLens: Lens&lt;Person, Color&gt; =
+  forProp&lt;Person&gt;()("favoriteColor");</pre>
+
+<p>We’ll create a <code>DropdownField</code> React component later on, but for now, let’s look at how we’d use it:</p>
+
+<pre>&lt;DropdownField
+  {...f}
+  lens={favoriteColorLens}
+  values={allColors}
+  renderValue={m =&gt; m.name}
+/&gt;</pre>
+
+<p>The <code>DropdownField</code> has the usual properties top and setTop (passed in using <code>{...f}</code>), as well as lens, but there are two additional properties: the <code>values</code> property is the list of all option objects, and the <code>renderValue</code> property is a function that returns the display label:</p>
+
+<pre>interface DropdownFieldProps&lt;T, F&gt; {
+  lens: Lens&lt;T, F | null&gt;;  top: T;
+  setTop: (top: T) =&gt; void;  <mark>values</mark>: Array&lt;F&gt;;
+  <mark>renderValue</mark>: (f: F) =&gt; string;
+}</pre>
+
+<p>We’ll create a <code>DropdownField</code> React component, which will wrap a <code>&lt;select&gt;</code> HTML element. We will require value objects to have an id (hence the <code>F extends { id: string }</code>):</p>
+
+<pre>let DropdownField = &lt;T, F extends { id: string }&gt;(
+ props: DropdownFieldProps&lt;T, F&gt;
+) =&gt; {</pre>
+
+<p>This required id will be used as the <code>value</code> property of an <code>&lt;option&gt;</code> later on.</p>
+
+<p>We’ll use the lens to get the currently-selected option:</p>
+
+<pre>  let value: F | null = props.lens.get(props.top);</pre>
+
+<p>We’ll need a callback function, for use later on, that is triggered when the <code>&lt;select&gt;</code> option changes. We can get the id of the currently-selected option, but we’ll have to loop through all options to find the one that matches:</p>
+
+<pre>  let onChange =
+    (ev: React.ChangeEvent&lt;HTMLSelectElement&gt;) =&gt; {
+      let id = ev.target.value;
+
+      let value =
+        props.values.find(v =&gt; v.id === id)
+        || null;
+
+      props.setTop(
+        props.lens.set(props.top, value)
+      );
+    };</pre>
+
+<p>To render the <code>&lt;select&gt;</code> element, we loop over all values and generate <code>&lt;option&gt;</code> elements for each of them, and we set up the <code>value</code> and <code>onChange</code> properties of the <code>&lt;select&gt;</code> element:</p>
+
+<pre>  return (
+    &lt;select
+      value={value?.id}
+      onChange={onChange}
+    &gt;
+      &lt;option value=""&gt;&lt;/option&gt;
+      {props.values.map(value =&gt; (
+        &lt;option value={value.id} key={value.id}&gt;
+          {props.renderValue(value)}
+        &lt;/option&gt;
+      ))}
+    &lt;/select&gt;
+  );</pre>
+
+<p>Note that the <code>DropdownField</code> implementation has some assumptions built-in. There is always the empty option, and the value type is nullable (<code>F | null</code>, rather than just <code>F</code>). Additionally, each option object must have an id property. These assumptions might not hold in all situations.</p>
+
+<p>Let’s take a moment to think about UX. A <code>&lt;select&gt;</code> element is a kind of single-select form field. Another kind of single-select form field is a set of radio buttons (<code>&lt;input type="radio"&gt;</code>). In HTML, a select dropdown and a set of radio buttons is implemented quite differently, even though they serve a near-identical purpose.</p>
+
+<p>We could define a <code>RadioButtonsField</code> component, and it would be used in a very similar way to a <code>DropdownField</code>:</p>
+
+<pre>&lt;<mark>RadioButtonsField</mark>
+  {...f}
+  lens={favoriteColorLens}
+  values={allColors}
+  renderValue={m =&gt; m.name}
+/&gt;</pre>
+
+<p>The type signature of a <code>RadioButtonsField</code> is nearly identical to that of a <code>DropdownField</code>. The only difference is the type of the <code>renderValue</code> prop: for <code>DropdownField</code>, <code>renderValue</code> has to return a <code>string</code>, while for <code>DropdownField</code>, it can return a <code>JSX.Element</code> as well.</p>
+
+<p>It’s important to highlight what we’ve achieved here. Dropdowns and radio buttons have wildly different implementations in HTML, even though their purpose is nearly identical: picking one item from a list. The nearly-identical signature of <code>RadioButtonsField</code> and <code>DropdownField</code> make the parallels visible, and make it trivial to swap out one type of single-select for the other.</p>
+
+<h2>Future work</h2>
+
+<p>While lenses are an effective way of building forms, there are three areas where more research and development is needed to make lenses stand out as an approach to building React forms:</p>
+
+<ul>
+  <li>
+    <p><strong>Validation:</strong> Lenses can be used in combination with common validation techniques, such as HTML’s built-in validation functionality and schema-based validation. However, these techniques don’t integrate neatly with lenses, and further research is needed to come with an approach where validation feels like a first-class concern.</p>
+  </li>
+  <li>
+    <p><strong>Form helpers:</strong> While lenses themselves are simple, using them effectively for forms requires implementations for all types of form fields, from simple text fields to different types of multi-select lists. The <a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/PersonForm.tsx" rel="noopener nofollow">demo</a> contains the minimal implementation of some types of form fields, which ideally would grow and be properly packaged as an open-source package.</p>
+  </li>
+  <li>
+    <p><strong>Performance:</strong> The performance of this particular implementation of lenses, and implementations of the form fields, has not been a cause for concern so far. Still, it is likely that situations will arise where the performance of lenses is just not adequate. More work needs to be done to ensure that lenses are an appropriate solution, even for unusually large and complex forms.</p>
+  </li>
+
+</ul>
+
+<h2>Closing thoughts</h2>
+
+<p>To me, lenses have proven their worth, and will have a prominent place in my toolbox for building forms. No other approach to building forms gives me the same development speed or gives me as much confidence.</p>
+
+<p>With lenses, I can be confident that the forms I build work, with only a minimum of testing. The real-time IDE feedback and autocompletion means I can work faster, without compromising quality.</p>
