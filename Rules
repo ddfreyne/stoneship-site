@@ -90,6 +90,7 @@ compile '/articles/*' do
   # filter :footnotes
   # filter :autolink
 
+  filter :h2_separator
   filter :run_in_headers
 
   layout '/article.*'

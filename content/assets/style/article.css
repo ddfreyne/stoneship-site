@@ -128,7 +128,11 @@ h1 {
   padding-bottom: calc(1 * 24px);
 }
 
-h2::before {
+.h2-separator {
+  margin-top: 48px;
+}
+
+.h2-separator::after {
   content: "*     *     *";
 
   display: block;
@@ -137,7 +141,7 @@ h2::before {
 
   text-align: center;
 
-  margin: 48px 0 24px 0;
+  margin: 0 0 24px 0;
 }
 
 h2 {

@@ -22,8 +22,6 @@ Class.new(Nanoc::Filter) do
 
       h3.unlink
       para.unlink
-
-      puts
     end
     doc.to_s
   end
