@@ -90,6 +90,8 @@ compile '/articles/*' do
   # filter :footnotes
   # filter :autolink
 
+  filter :run_in_headers
+
   layout '/article.*'
 
   # filter :typography

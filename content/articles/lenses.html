@@ -96,7 +96,6 @@ firstNameLens.set(locky, "Sherlock")
 
 <p>Congratulations: <code>firstNameLens</code> is your first lens!</p>
 
-<div class="h3-fix"></div>
 <h3>Lenses, more formally</h3>
 
 <p>The lens that we constructed above has the following type:</p>
@@ -129,7 +128,6 @@ firstNameLens.set(locky, "Sherlock")
 
 <p>The type definition makes it clear: <mark>a lens is the combination of a getter and a setter, for an immutable data structure</mark>.</p>
 
-<div class="h3-fix"></div>
 <h3>Conveniently creating lenses with forProp()</h3>
 
 <p>It is convenient to have a function that can automatically create a lens for a property. This is where <code>forProp()</code> comes in:</p>
@@ -201,7 +199,6 @@ let middleNameLens =
 
 <p>This React component is a controlled component, so the wrapped <code>&lt;input&gt;</code> component is given both a <code>value</code> prop and an <code>onChange</code> prop.</p>
 
-<div class="h3-fix"></div>
 <h3>Minimal form example</h3>
 
 <p>We’ll create a form for a new person. First, we’ll need our lenses:</p>
@@ -271,7 +268,6 @@ let lastNameLens =
 
 <p>With this approach, you can build forms with nested objects in a terse and type-safe way.</p>
 
-<div class="h3-fix"></div>
 <h3>Prettier form example</h3>
 
 <p>The text field we’ve created so far is nothing but a wrapper for an input element. We can build a more full-fledged text field by adding a label and some styling (I am partial to utility-first CSS):</p>
@@ -545,7 +541,6 @@ let PersonForm = () =&gt; {
 
 <p>We now have a form where we can edit existing list elements, but not add or remove any yet.</p>
 
-<div class="h3-fix"></div>
 <h3>Adding and removing list elements</h3>
 
 <p>While the approach above works for modifying existing elements in a list, we need the ability to add new elements to a list and remove elements from a list.</p>
