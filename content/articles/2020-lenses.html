@@ -363,7 +363,7 @@ let streetLens =
   forProp&lt;Address&gt;()("street");
 
 streetLens.set(sherlocksHome, "Baker Street");
- // -&gt; { street: <mark>"Baker Street"</mark>, number: "221b" }</pre>
+  // -&gt; { street: <mark>"Baker Street"</mark>, number: "221b" }</pre>
 
 <p>We can, however, create a lens for a person’s address, and for an address’ street, and <em>compose</em> them, so that we get a lens for a person’s street:</p>
 
