@@ -1,5 +1,9 @@
 <% render '/_wrapper.*' do %>
   <div class="cols horizontal-scroll">
+    <div class="meta">
+      <%= link_to '← back to articles', @items['/articles.*'] %>
+    </div>
+
     <h1><%= @item[:title] %></h1>
     <%= yield %>
   </div>
