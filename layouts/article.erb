@@ -4,7 +4,12 @@
       <%= link_to '← back to articles', @items['/articles.*'] %>
     </div>
 
-    <h1><%= @item[:title] %></h1>
+    <h1 class="pt-4"><%= @item[:title] %></h1>
+
+    <div class="sans-serif font-xs uppercase letter-spacing-1 lh-md pt-2 pb-3">
+      <div class="pos-relative bottom-2">Published <%= fmt_date Date.parse(@item[:published_on]) %><% if @item[:revised_on] %> • Revised <%= fmt_date Date.parse(@item[:revised_on]) %><% end %></div>
+    </div>
+
     <%= yield %>
   </div>
 
