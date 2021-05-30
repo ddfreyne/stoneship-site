@@ -37,9 +37,17 @@ preprocess do
     end
   end
 
+  def add_created_at
+    # This makes the blogging helper easier to use
+    @items.find_all('/articles/*').each do |article|
+      article[:created_at] = article[:published_on]
+    end
+  end
+
   hide_specials
   assign_cachebuster_id
   find_backlinks
+  add_created_at
 end
 
 passthrough '/tmp/**/*'
@@ -82,6 +90,11 @@ compile '/fiction/*' do
 
   slug = item[:title].downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
   write "/fiction/#{slug}/index.html"
+end
+
+compile '/feed.xml.erb' do
+  filter :erb
+  write '/feed.xml'
 end
 
 compile '/articles/*' do

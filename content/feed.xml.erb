@@ -1,0 +1,9 @@
+<%=
+  atom_feed(
+    limit: 100,
+    articles: @items.find_all('/articles/*'),
+    title: 'Denis Defreyne',
+    author_name: 'Denis Defreyne',
+    author_uri: 'https://denisdefreyne.com',
+  )
+%>
