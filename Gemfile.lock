@@ -17,7 +17,6 @@ GEM
     concurrent-ruby (1.1.8)
     cri (2.15.11)
     d-mark (1.0.0b2)
-    date (3.1.1)
     ddmemoize (1.0.0)
       ddmetrics (~> 1.0)
       ref (~> 2.0)
@@ -32,7 +31,6 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     http_parser.rb (0.6.0)
-    io-wait (0.1.0)
     json (2.5.1)
     json_schema (0.21.0)
     kramdown (2.3.1)
@@ -42,8 +40,7 @@ GEM
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mini_portile2 (2.5.2)
-      net-ftp (~> 0.1)
+    mini_portile2 (2.5.3)
     nanoc (4.12.2)
       addressable (~> 2.5)
       colored (~> 1.2)
@@ -83,12 +80,6 @@ GEM
       listen (~> 3.0)
       nanoc-cli (~> 4.11, >= 4.11.14)
       nanoc-core (~> 4.11, >= 4.11.14)
-    net-ftp (0.1.2)
-      net-protocol
-      time
-    net-protocol (0.1.0)
-      io-wait
-      timeout
     nokogiri (1.11.6)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -133,9 +124,6 @@ GEM
     slow_enumerator_tools (1.1.0)
     sqlite3 (1.4.2)
     systemu (2.6.5)
-    time (0.1.0)
-      date
-    timeout (0.1.1)
     tty-color (0.6.0)
     tty-command (0.10.1)
       pastel (~> 0.8)
