@@ -760,8 +760,12 @@ type Person = {
 <p>The <code>DropdownField</code> has the usual properties top and setTop (passed in using <code>{...f}</code>), as well as lens, but there are two additional properties: the <code>values</code> property is the list of all option objects, and the <code>renderValue</code> property is a function that returns the display label:</p>
 
 <pre>interface DropdownFieldProps&lt;T, F&gt; {
-  lens: Lens&lt;T, F | null&gt;;  top: T;
-  setTop: (top: T) =&gt; void;  <mark>values</mark>: Array&lt;F&gt;;
+  lens: Lens&lt;T, F | null&gt;;
+
+  top: T;
+  setTop: (top: T) =&gt; void;
+
+  <mark>values</mark>: Array&lt;F&gt;;
   <mark>renderValue</mark>: (f: F) =&gt; string;
 }</pre>
 
