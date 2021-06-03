@@ -102,7 +102,7 @@ compile '/articles/*' do
   # filter :kramdown, input: 'GFM'
   # filter :footnotes
   # filter :autolink
-
+  filter :dmark if item.identifier.ext == 'dmark'
   filter :h2_separator
   filter :run_in_headers
 
