@@ -2,7 +2,7 @@
 title: "Using Lenses to build complex React forms in a type-safe way"
 index: false
 published_on: "2020-11-24"
-revised_on: "2021-05-30"
+revised_on: "2021-06-02"
 ---
 
 #p %em{Lenses} allow us to build complex forms quickly and with confidence.
