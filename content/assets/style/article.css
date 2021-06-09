@@ -44,14 +44,12 @@ body {
   hyphenate-limit-zone: 8%;
 }
 
-/* We set a breakpoint at an arbitrary value that’s just over two columns wide. */
-
-@media screen and (max-width: 1214px) {
+@media screen {
   .cols {
-    padding: 24px;
+    padding-top: 24px;
     padding-bottom: calc(48px * 3);
 
-    max-width: calc(432px * 1.25);
+    max-width: 600px;
     margin: 0 auto;
   }
 }
@@ -63,33 +61,6 @@ body {
 
   body .cols {
     padding-bottom: 48px;
-  }
-}
-
-@media screen and (min-width: 1215px) {
-  html,
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .cols {
-    padding: 48px calc(48px * 3) 48px 48px;
-
-    overflow-x: scroll;
-
-    column-count: auto;
-    column-width: calc(486px);
-    column-fill: auto;
-    column-gap: calc(1 * 24px);
-
-    height: 100vh;
-  }
-
-  .cols > * {
-    /* We add a border to the right of all elements in a column, so that we get
-    space on the right hand side of the last column as well. */
-    border-right: 48px solid #fff;
   }
 }
 
@@ -128,7 +99,7 @@ h1 {
 }
 
 .h2-separator {
-  margin-top: 48px;
+  margin-top: calc(3 * 24px);
 }
 
 .h2-separator::after {
@@ -140,7 +111,8 @@ h1 {
 
   text-align: center;
 
-  margin: 0 0 24px 0;
+  margin: 0;
+  margin-bottom: calc(2 * 24px);
 }
 
 h2 {
