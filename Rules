@@ -79,6 +79,7 @@ compile '/assets/style/*.css' do
 end
 
 passthrough '/assets/**/*'
+passthrough '**/assets/**/*'
 
 compile '/fiction/*' do
   filter :kramdown
