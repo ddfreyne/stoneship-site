@@ -1,0 +1,15 @@
+---
+title: "Experiments"
+index: true
+follow: true
+---
+
+<h1>Experiments</h1>
+
+<p class="col-left-sm">This is a collection of experiments I’ve created. It’s incomplete at this point!</p>
+
+<ul class="spacious col-right-md">
+  <% @items.find_all('/experiments/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
+    <li><%= link_to piece[:title], piece %></li>
+  <% end %>
+</ul>
