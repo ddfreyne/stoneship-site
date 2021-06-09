@@ -605,17 +605,16 @@ samp {
   padding: 0.5rem 1rem;
 }
 
-.primary figure {
+.primary figure,
+.primary .figure {
   margin: 0;
   margin-bottom: var(--size-l1);
 
-  box-shadow: 5px 5px var(--gray-200);
+  border: 1px solid var(--gray-200);
 }
 
 .primary figure img {
   display: block;
-
-  border: 1px solid var(--gray-200);
 }
 
 /*** BLOCKS *******************************************************************/
