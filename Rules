@@ -97,6 +97,23 @@ compile '/feed.xml.erb' do
   write '/feed.xml'
 end
 
+compile '/experiments/horizontal-layout/sample.*' do
+  filter :erb
+
+  write item.identifier.without_exts + '/index.html'
+end
+
+passthrough '/experiments/**/*.png'
+
+compile '/experiments/*.md{,.erb}' do
+  filter :erb if item.identifier.ext == 'erb'
+  filter :kramdown, input: 'GFM'
+
+  layout '/new.*'
+
+  write item.identifier.without_exts + '/index.html'
+end
+
 compile '/articles/*' do
   # filter :mark
   # filter :kramdown, input: 'GFM'

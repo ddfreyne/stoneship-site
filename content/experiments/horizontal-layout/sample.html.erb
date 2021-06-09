@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Denis Defreyne / Experiments / Horizontal multi-column layout</title>
+
+      <%# TODO: move these stylesheets into this directory %>
+      <link rel="stylesheet" href="<%= @items["/assets/style/reset.*"].path %>">
+      <link rel="stylesheet" href="<%= @items["/assets/fonts/main.*"].path %>">
+      <link rel="stylesheet" href="<%= @items["/assets/style/article.*"].path %>">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="cols horizontal-scroll">
+      <div class="meta">
+        <a href="/">← back home</a>
+      </div>
+
+      <h1 class="pt-4">Horizontally-scrolling multi-column layout</h1>
+
+      <div class="sans-serif font-xs uppercase letter-spacing-1 lh-md pt-2 pb-3">
+        <div class="pos-relative bottom-2">Published June 2021</div>
+      </div>
+
+      <div>
+        <div class="adm adm-note">
+          <strong>NOTE</strong>: This demo requires a fairly wide window. On smaller window sizes, it falls back to the more conventional article layout.
+        </div>
+      </div>
+
+      <p>The text in this sample is proudly generated using <a href="https://hipsum.co/">Hipster Ipsum</a>, which I was already using before it was cool.</p>
+
+      <p>Normcore whatever thundercats humblebrag marfa twee, williamsburg actually fanny pack before they sold out meditation tumblr helvetica quinoa. Humblebrag four loko af, schlitz messenger bag chambray everyday carry XOXO single-origin coffee. </p>
+
+      <p>Williamsburg meh occupy banh mi listicle tbh put a bird on it synth four dollar toast migas iPhone trust fund glossier. Waistcoat typewriter offal, you probably haven't heard of them yr polaroid chicharrones artisan craft beer gochujang 3 wolf moon shaman kitsch fixie. Listicle swag fixie normcore.</p>
+
+      <div class="h2-separator"></div>
+
+      <h2>Messenger bag vaporware</h2>
+
+      <p>Keytar celiac drinking vinegar raw denim, air plant tofu shaman yuccie raclette man bun marfa. Vape next level glossier synth cray poutine mlkshk pug slow-carb letterpress sartorial yuccie pabst. Man braid cardigan banjo bicycle rights. Cold-pressed whatever tofu pok pok occupy chambray. Listicle marfa pok pok jianbing:</p>
+
+      <ul>
+        <li>Pitchfork: ramps jianbing, air plant, subway tile, …</li>
+        <li>Sartorial: roof party, fashion axe, edison bulb, …</li>
+        <li>Street art: squid, whatever, trust fund, kale chips, …</li>
+      </ul>
+
+      <p>Succulents authentic typewriter af marfa XOXO. Wayfarers polaroid kogi marfa raw denim paleo. Activated charcoal pinterest meggings, prism pabst pop-up four loko deep v portland.</p>
+
+      <div class="h2-separator"></div>
+      <h2>Edison bulb brunch squid XOXO bitters</h2>
+
+      <p>Unicorn tofu direct trade yuccie gastropub. Williamsburg kale chips (twee retro four) loko man braid hella next level cardigan. Enamel pin retro chicharrones, affogato skateboard YOLO freegan crucifix authentic pok pok blue bottle readymade pour-over cold-pressed. Man braid lo-fi XOXO photo booth tacos, sustainable listicle live-edge. Hashtag 8-bit semiotics aesthetic helvetica, fanny pack woke. Butcher selvage ennui XOXO listicle tumblr.</p>
+      <p>Shoreditch snackwave <a href="#">bushwick sustainable banh mi</a>, man braid lumbersexual paleo cloud bread selfies cold-pressed succulents slow-carb.</p>
+
+      <% 5.times do %>
+      <div class="run-in">
+        <h3>Forage authentic fashion axe</h3>
+        <p>Venmo vegan jean shorts, meh pok pok pitchfork twee health goth food truck occupy meditation. Tilde swag marfa synth ugh af tumeric subway tile dreamcatcher etsy irony. XOXO iceland snackwave drinking vinegar YOLO. Lo-fi poutine locavore, wayfarers tilde offal vinyl intelligentsia trust fund selvage.</p>
+      </div>
+      <p>Enamel pin church-key prism scenester <code>bespoke.ethical()</code> health goth locavore fashion axe flannel narwhal butcher man braid glossier meh chillwave.</p>
+      <pre><code>let getFirstName =
+  (person: Person) => person.firstName
+
+let setFirstName =
+  (person: Person, <mark>firstName: string</mark>) =>
+    ({ ...person, firstName: firstName })</code></pre>
+
+      <div class="run-in">
+      <h3>Organic blue bottle ennui</h3>
+      <p>Locavore edison bulb vexillologist, hashtag put a bird on it la croix distillery typewriter messenger bag farm-to-table narwhal butcher ethical. Cardigan kale chips <code>mustache::literally&lt;T></code> dreamcatcher, irony biodiesel 90's truffaut subway tile brunch leggings hot chicken tofu hell of.</p>
+      </div>
+      <ul>
+        <li><strong>Pitchfork</strong>: ramps jianbing, air plant, subway tile, …</li>
+        <li><strong>Sartorial</strong>: roof party, fashion axe, edison bulb, …</li>
+        <li><strong>Street art</strong>: squid, whatever, trust fund, kale chips, …</li>
+      </ul>
+      <p>Seitan dreamcatcher man bun kale chips <a href="#">gastropub</a> crucifix. Pok pok pabst kale chips gastropub flexitarian austin listicle pop-up taiyaki.</p>
+      <p>Vinyl glossier flexitarian shaman, raclette chia paleo kombucha normcore. Pok pok celiac occupy lomo. Truffaut lyft taiyaki art party palo santo, flannel post-ironic. Jean shorts VHS vinyl vegan swag.</p>
+
+      <div class="h2-separator"></div>
+      <h2>Actually trust fund master cleanse</h2>
+      <p>Plaid cred vexillologist, <i>lyft ramps disrupt fashion</i> axe tilde cray. YOLO bushwick banjo yr, selvage copper mug cred ethical leggings beard brunch chicharrones. Readymade austin cloud bread chillwave, godard try-hard brunch DIY fingerstache typewriter ethical fixie hoodie.</p>
+      <blockquote>
+      <p>Craft beer single-origin coffee dreamcatcher, cold-pressed mlkshk poutine pickled shaman hell of man braid. DIY selfies biodiesel sriracha fixie dreamcatcher vegan hoodie mustache skateboard single-origin coffee. Pop-up vaporware yuccie stumptown 3 wolf moon cronut hammock photo booth street art poke.</p>
+      <p>PBR&B hell of occupy locavore ethical. Ethical chambray adaptogen asymmetrical chia 3 wolf moon. Gluten-free affogato craft beer vegan, sriracha messenger bag selfies hexagon heirloom try-hard taxidermy. Pork belly letterpress asymmetrical, ennui brooklyn fingerstache +1 venmo stumptown crucifix master cleanse locavore four loko butcher typewriter.</p>
+      </blockquote>
+      <p>Tumblr vinyl tote bag, meggings hashtag single-origin coffee whatever slow-carb sustainable. Shaman cloud bread ennui post-ironic intelligentsia. Put a bird on it iceland chillwave, dreamcatcher shaman stumptown microdosing 8-bit squid vegan mlkshk salvia.</p>
+      <% end %>
+    </div>
+
+    <%# TODO: move these into this directory %>
+    <script src="/assets/scripts/behavior.js"></script>
+    <script src="/assets/scripts/smoothscroll.min.js"></script>
+
+  </body>
+
+</html>

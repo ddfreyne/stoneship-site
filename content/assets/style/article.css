@@ -359,7 +359,8 @@ pre {
   color: hsl(20, 90%, 10%);
 }
 
-.adm-todo {
+.adm-todo,
+.adm-note {
   background-color: hsl(50, 90%, 90%);
   color: hsl(50, 90%, 10%);
 }
