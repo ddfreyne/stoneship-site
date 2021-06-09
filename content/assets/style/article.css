@@ -1,3 +1,27 @@
+:root {
+  --font-face-serif: "Source Serif Pro", serif;
+  --font-face-sans-serif: "Source Sans Pro", sans-serif;
+
+  --font-face-h1: var(--font-face-serif);
+  --font-face-h2: var(--font-face-serif);
+  --font-face-h3: var(--font-face-sans-serif);
+  --font-face-text: var(--font-face-serif);
+  --font-face-note: var(--font-face-sans-serif);
+  --font-face-code: "Iosevka SS08", monospace;
+}
+
+:root {
+  --gray-100: hsl(30, 7.69%, 94.9%);
+  --gray-200: hsl(0, 6.02%, 83.73%);
+  --gray-300: hsl(6, 7.14%, 72.55%);
+  --gray-400: hsl(4.62, 6.6%, 61.37%);
+  --gray-500: hsl(7.06, 6.67%, 50%);
+  --gray-600: hsl(9.23, 6.6%, 38.63%);
+  --gray-700: hsl(12, 7.14%, 27.45%);
+  --gray-800: hsl(0, 6.02%, 16.27%);
+  --gray-900: hsl(0, 7.69%, 5.1%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,9 +37,11 @@ html {
 }
 
 body {
-  padding: 0;
+  padding: 24px;
 
-  font-family: "Bespoke Serif", serif;
+  font-family: var(--font-face-text);
+
+  color: var(--gray-800);
 
   -webkit-hyphens: auto;
   -webkit-hyphenate-limit-before: 3;
@@ -45,6 +71,10 @@ body {
 }
 
 @media screen {
+  body .meta {
+    padding-top: calc(4 * 24px);
+  }
+
   .cols {
     padding-top: 24px;
     padding-bottom: calc(48px * 3);
@@ -84,52 +114,33 @@ h3 {
   break-inside: avoid;
 }
 
-h1,
-h2 {
-  font-family: Gambarino, serif;
-  font-weight: 400;
-  letter-spacing: -0.02ch;
-}
-
 h1 {
-  font-size: 48px;
+  font-family: var(--font-face-h1);
+  font-weight: 400;
+  font-size: 36px;
+
+  letter-spacing: -0.02ch;
+
   line-height: 48px;
 
-  padding-bottom: calc(1 * 24px);
-}
-
-.h2-separator {
-  margin-top: calc(3 * 24px);
-}
-
-.h2-separator::after {
-  content: "*     *     *";
-
-  display: block;
-
-  font-size: 20px;
-
-  text-align: center;
-
-  margin: 0;
-  margin-bottom: calc(2 * 24px);
+  margin: 0 0 24px 0;
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 48px;
+  font-family: var(--font-face-h2);
+  font-weight: 400;
+  font-size: 24px;
 
-  margin-bottom: -24px;
+  line-height: 24px;
+
+  margin: calc(4 * 24px) 0 0 0;
 }
 
-h3,
-.cols > h3 {
-  /* Explicitly override .cols > h3 to counteract the effects of `.cols > *` above. */
+h3 {
   margin: 0;
-  border-right: 0;
-  padding: 0 1em 0 0;
+  padding: 0 0.75em 0 0;
 
-  font-family: "Bespoke Serif", serif;
+  font-family: var(--font-face-h3);
   font-size: 1rem;
   font-weight: bold;
   line-height: 24px;
@@ -175,7 +186,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: "Iosevka SS08", monospace;
+  font-family: var(--font-face-code);
   font-weight: 400;
 
   -webkit-hyphens: none;
@@ -199,13 +210,15 @@ pre {
   white-space: pre-wrap;
 }
 
-.sans-serif,
-.meta {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+.sans-serif {
+  font-family: var(--font-face-sans-serif);
 }
 
-.font-sm,
-.meta {
+.text-muted {
+  color: var(--gray-600);
+}
+
+.font-sm {
   font-size: 15px;
 }
 
@@ -213,8 +226,7 @@ pre {
   font-size: 14px;
 }
 
-.lh-md,
-.meta {
+.lh-md {
   line-height: 24px;
 }
 
@@ -234,8 +246,7 @@ pre {
   padding-top: calc(8 * 6px);
 }
 
-.pt-5,
-.meta {
+.pt-5 {
   padding-top: calc(16 * 6px);
 }
 
@@ -322,8 +333,7 @@ pre {
 
   break-inside: avoid;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: var(--font-face-sans-serif);
 }
 
 .adm-caution {
