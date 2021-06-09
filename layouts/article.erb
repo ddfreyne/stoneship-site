@@ -1,14 +1,18 @@
 <% render '/_wrapper.*' do %>
   <div class="cols horizontal-scroll">
-    <div class="meta sans-serif font-xs uppercase letter-spacing-1 lh-md">
+    <div class="nav sans-serif font-xs uppercase letter-spacing-1 lh-md">
       <%= link_to '← back to articles', @items['/articles.*'] %>
     </div>
 
-    <div class="sans-serif font-xs uppercase letter-spacing-1 lh-md pt-5 text-muted">
-      <div>Published <%= fmt_date Date.parse(@item[:published_on]) %><% if @item[:revised_on] %> • Revised <%= fmt_date Date.parse(@item[:revised_on]) %><% end %></div>
-    </div>
+    <div class="text-center pt-5 pb-4">
+      <div style="background: #fff">
+        <h1><%= @item[:title] %></h1>
 
-    <h1><%= @item[:title] %></h1>
+        <div class="meta sans-serif font-xs uppercase letter-spacing-1 lh-md text-muted pt-2">
+          <div>Published <%= fmt_date Date.parse(@item[:published_on]) %><% if @item[:revised_on] %><span class="px-1">•</span>Revised <%= fmt_date Date.parse(@item[:revised_on]) %><% end %></div>
+        </div>
+      </div>
+    </div>
 
     <%= yield %>
   </div>

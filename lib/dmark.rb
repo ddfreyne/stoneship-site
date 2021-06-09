@@ -23,6 +23,8 @@ class DMarkTranslator < DMark::Translator
       handle_element_section(element, context)
     when 'contact'
       handle_element_contact(element, context)
+    when 'sidenote'
+      handle_element_sidenote(element, context)
     when 'ref'
       handle_element_ref(element, context)
     when 'em', 'strong', 'ul', 'ol', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'h1', 'h2', 'h3', 'code', 'b', 'i', 'pre', 'mark', 'span', 'a'
@@ -47,6 +49,11 @@ class DMarkTranslator < DMark::Translator
 
   def handle_element_highlight(element, context)
     wrap('span', class: 'bg-green-200 dark:bg-green-800 -mx-1 px-1 rounded') { handle_children(element, context) }
+  end
+
+  def handle_element_sidenote(element, context)
+    ['<span class="sidenote-ref">*</span> '] +
+      wrap('span', class: 'sidenote') { handle_children(element, context) }
   end
 
   def handle_element_firstterm(element, context)

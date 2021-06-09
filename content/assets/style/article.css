@@ -20,6 +20,26 @@
   --gray-700: hsl(12, 7.14%, 27.45%);
   --gray-800: hsl(0, 6.02%, 16.27%);
   --gray-900: hsl(0, 7.69%, 5.1%);
+
+  --red-100: hsl(11.05, 67.86%, 89.02%);
+  --red-200: hsl(7.11, 71.7%, 79.22%);
+  --red-300: hsl(3.1, 74.36%, 69.41%);
+  --red-400: hsl(359.25, 77.56%, 59.8%);
+  --red-500: hsl(355.02, 80.39%, 50%);
+  --red-600: hsl(355.85, 77.56%, 40.2%);
+  --red-700: hsl(357.41, 74.36%, 30.59%);
+  --red-800: hsl(358.42, 71.7%, 20.78%);
+  --red-900: hsl(0, 67.86%, 10.98%);
+
+  --blue-100: hsl(224.62, 95.12%, 91.96%);
+  --blue-200: hsl(224.62, 95.12%, 83.92%);
+  --blue-300: hsl(225, 95.08%, 76.08%);
+  --blue-400: hsl(224.9, 95.09%, 68.04%);
+  --blue-500: hsl(224.85, 95.1%, 60%);
+  --blue-600: hsl(224.81, 95.1%, 48.04%);
+  --blue-700: hsl(224.57, 95.63%, 35.88%);
+  --blue-800: hsl(225, 95.08%, 23.92%);
+  --blue-900: hsl(224.75, 96.72%, 11.96%);
 }
 
 * {
@@ -29,9 +49,7 @@
 
 html {
   font-size: 16px;
-  line-height: 24px;
-
-  overscroll-behavior: contain;
+  line-height: 1.5; /* 24 px */
 
   text-rendering: geometricPrecision;
 }
@@ -71,7 +89,7 @@ body {
 }
 
 @media screen {
-  body .meta {
+  body .nav {
     padding-top: calc(4 * 24px);
   }
 
@@ -84,8 +102,60 @@ body {
   }
 }
 
-@media screen and (max-width: 648px) {
-  body .meta {
+.sidenote {
+  color: var(--red-600);
+
+  display: block;
+
+  text-indent: 0;
+
+  font-family: var(--font-face-sans-serif);
+}
+
+.sidenote-ref {
+  color: var(--red-600);
+}
+
+@media screen and (min-width: 651px) {
+  .cols > * {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1151px) {
+  .sidenote {
+    position: absolute;
+
+    width: calc(248px - 24px);
+    left: calc(100% + 24px);
+
+    margin-top: -24px;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .sidenote {
+    display: inline;
+  }
+
+  .sidenote::before {
+    content: " [";
+  }
+
+  .sidenote::after {
+    content: "]";
+  }
+
+  .sidenote-ref {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body .nav {
     padding-top: 0;
   }
 
@@ -122,8 +192,18 @@ h1 {
   letter-spacing: -0.02ch;
 
   line-height: 48px;
+}
 
-  margin: 0 0 24px 0;
+.meta::after {
+  content: "";
+
+  display: block;
+
+  margin: 24px auto;
+
+  width: 20%;
+
+  border-top: 1px solid var(--gray-500);
 }
 
 h2 {
@@ -168,13 +248,13 @@ ol {
 }
 
 a {
-  color: hsl(228, 100%, 50%);
+  color: var(--blue-500);
 
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: hsl(228, 100%, 20%);
+  color: var(--blue-700);
 }
 
 blockquote {
@@ -205,7 +285,7 @@ pre {
 
   margin-top: 24px;
   padding: 1rem;
-  background: #f0f0f0;
+  background: var(--gray-100);
 
   white-space: pre-wrap;
 }
@@ -224,6 +304,10 @@ pre {
 
 .font-xs {
   font-size: 14px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .lh-md {
@@ -268,6 +352,26 @@ pre {
 
 .pb-5 {
   padding-bottom: calc(16 * 6px);
+}
+
+.px-1 {
+  padding-left: calc(1 * 6px);
+  padding-right: calc(1 * 6px);
+}
+
+.px-2 {
+  padding-left: calc(2 * 6px);
+  padding-right: calc(2 * 6px);
+}
+
+.px-3 {
+  padding-left: calc(4 * 6px);
+  padding-right: calc(4 * 6px);
+}
+
+.px-4 {
+  padding-left: calc(8 * 6px);
+  padding-right: calc(8 * 6px);
 }
 
 .pos-relative {

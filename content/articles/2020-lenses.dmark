@@ -7,7 +7,7 @@ revised_on: "2021-06-02"
 
 #p %em{Lenses} allow us to build complex forms quickly and with confidence.
 
-#p While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.
+#p While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.%sidenote{This works with plain old JavaScript as well, but you’ll probably not get the type-safety advantages of it.} Stuff here.
 
 #h2 Forms are hard
 
