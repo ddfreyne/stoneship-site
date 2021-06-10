@@ -8,7 +8,7 @@ published_on: "2021-05-30"
 
 #h2 Limited-lifetime items with non-trivial cost
 
-#p Some items have a limited lifetime (e.g. 4–5 years) and have a non-trivial cost (e.g. €1500). A non-trivial cost is a cost that, if it were to suddenly show up, would stir up my budget enough to cause stress. For me, these items fit primarily into three categories:
+#p Some items have a limited lifetime (e.g. 4–5 years) and have a non-trivial cost (e.g. €1500). A non-trivial cost is a cost that, if it were to suddenly show up, would stir up my budget enough to cause stress. For me, these items fit primarily into three categories%sidenote{This categorization isn’t all-encompassing: some items with non-trivial cost and limited lifetime don’t fit in properly (e.g. my glasses).}:
 
 #ul
   #li Electronic devices: laptop, phone, speakers, external display, …
@@ -23,9 +23,7 @@ published_on: "2021-05-30"
 
 #p From now on, start budgeting each month the amount of money needed to cover the replacement cost in the expected lifetime. For example, the €1500 for replacing my MacBook Pro over the remaining 20 months of its lifetime comes down to €75/month.
 
-#p For each future purchase with limited lifetime and non-trivial cost, do this budgeting calculation %em{right when you make the purchase}. For example, if I were to replace my MacBook Pro right now (assuming the replacement has the same cost of €1500 and the same expected lifetime of 5 years), I’d immediately start budgeting €1500 spread over 5 years, which comes down to €25/month.
-
-#p Budgeting software exists to make this easier! I use %ref[url=https://www.youneedabudget.com]{You Need A Budget}, which works nicely with this approach. I’m also keeping my eye on %ref[url=https://actualbudget.com]{Actual}.
+#p For each future purchase with limited lifetime and non-trivial cost, do this budgeting calculation %em{right when you make the purchase}. For example, if I were to replace my MacBook Pro right now (assuming the replacement has the same cost of €1500 and the same expected lifetime of 5 years), I’d immediately start budgeting €1500 spread over 5 years, which comes down to €25/month.%sidenote{Budgeting software exists to make this easier! I use %ref[url=https://www.youneedabudget.com]{You Need A Budget}, which works nicely with this approach. I’m also keeping my eye on %ref[url=https://actualbudget.com]{Actual}.}
 
 #h2 Lifetime vs. warranty
 

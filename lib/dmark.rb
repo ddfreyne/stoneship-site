@@ -52,8 +52,9 @@ class DMarkTranslator < DMark::Translator
   end
 
   def handle_element_sidenote(element, context)
-    ['<span class="sidenote-ref">*</span> '] +
-      wrap('span', class: 'sidenote') { handle_children(element, context) }
+    wrap('span', class: 'sidenote') do
+      handle_children(element, context)
+    end
   end
 
   def handle_element_firstterm(element, context)
