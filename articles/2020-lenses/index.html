@@ -27,7 +27,7 @@
             <link rel="stylesheet" href="../../assets/fonts/main.css">
         
         
-        <link rel="stylesheet" href="../../assets/style/article-1k5R3rZ3J4jOrYc0zXSZvNRAJ5s.css">
+        <link rel="stylesheet" href="../../assets/style/article-YpWdaqEgOx5fzY9YdOqhtSyr1o4.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script>
@@ -44,23 +44,21 @@
     </head>
 
     
-  <body><div class="cols horizontal-scroll">
+  <body><div class="cols wrapper sidenote-main">
     <div class="nav sans-serif font-xs uppercase letter-spacing-1 lh-md">
       <a href="../">← back to articles</a>
     </div>
 
-    <div class="text-center pt-5 pb-4">
-      <div style="background: #fff">
-        <h1>Using Lenses to build complex React forms in a type-safe way</h1>
+    <div class="title text-center">
+      <h1>Using Lenses to build complex React forms in a type-safe way</h1>
 
-        <div class="meta sans-serif font-xs uppercase letter-spacing-1 lh-md text-muted pt-2">
-          <div><span class="no-break">November 2020</span> <span class="no-break">(revised June 2021)</span><span class="px-1"> • </span><span class="no-break">Estimated reading time: 27min</span></div>
-        </div>
+      <div class="short-border-below sans-serif font-xs uppercase letter-spacing-1 lh-md text-muted">
+        <div><span class="no-break">November 2020</span> <span class="no-break">(revised June 2021)</span><span class="px-1"> • </span><span class="no-break">Estimated reading time: 27min</span></div>
       </div>
     </div>
 
-    <p><em>Lenses</em> allow us to build complex forms quickly and with confidence.</p><p>While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.<span class="sidenote-ref">*</span> <span class="sidenote">This works with plain old JavaScript as well, but you’ll probably not get the type-safety advantages of it.</span> Stuff here.</p><div class="h2-separator"></div><h2>Forms are hard</h2><p>At BCG Digital Ventures, I work on an internal tool where one particular page has a remarkably complex form. Its implementation has gone through several revisions to increase its stability and make it more maintainable, but even the most advanced version, powered with React, had problems.</p><p>The mainstream React form-handling libraries left us hanging: none of them can deal with highly-complex nested data structures in a type-safe way.</p><p>Type safety in particular is useful because it tightens the feedback loop: misspelled field names will be highlighted as errors in the IDE, and the IDE will provide reliable and useful autocompletion with integrated documentation.</p><p>I looked to the Haskell community for alternative approaches, and discovered the concept of <em>lenses</em>. As an experiment, I reimplemented the form using lenses, which turned out to be capable of handling highly-complex data in a type-safe way.</p><p>With lenses, we can build complex forms quickly and with confidence.</p><p>Here is a live demo of what we’ll build:</p><div><div class="adm adm-todo">
-<strong>To do</strong>: add the live demo!</div></div><div class="h2-separator"></div><h2>What is a lens?</h2><p>To describe what a lens is, we’ll use an example to create a lens from scratch.</p><p>Imagine a Person type, and an instance of Person that represents Sherlock Holmes:</p><pre>type Person = {
+    <p><em>Lenses</em> allow us to build complex forms quickly and with confidence.</p><p>While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.<span class="sidenote text-muted">This works with plain old JavaScript as well, but you’ll probably not get the type-safety advantages of it.</span></p><div class="h2-separator"></div><h2><span>Forms are hard</span></h2><p>At BCG Digital Ventures, I work on an internal tool where one particular page has a remarkably complex form. Its implementation has gone through several revisions to increase its stability and make it more maintainable, but even the most advanced version, powered with React, had problems.</p><p>The mainstream React form-handling libraries left us hanging: none of them can deal with highly-complex nested data structures in a type-safe way.</p><p>Type safety in particular is useful because it tightens the feedback loop: misspelled field names will be highlighted as errors in the IDE, and the IDE will provide reliable and useful autocompletion with integrated documentation.</p><p>I looked to the Haskell community for alternative approaches, and discovered the concept of <em>lenses</em>. As an experiment, I reimplemented the form using lenses, which turned out to be capable of handling highly-complex data in a type-safe way.</p><p>With lenses, we can build complex forms quickly and with confidence.</p><p>Here is a live demo of what we’ll build:</p><div><div class="adm adm-todo">
+<strong>To do</strong>: add the live demo!</div></div><div class="h2-separator"></div><h2><span>What is a lens?</span></h2><p>To describe what a lens is, we’ll use an example to create a lens from scratch.</p><p>Imagine a Person type, and an instance of Person that represents Sherlock Holmes:</p><pre>type Person = {
   firstName: string;
   lastName: string;
 };
@@ -101,7 +99,7 @@ firstNameLens.set(locky, "Sherlock")
   //      firstName: "Sherlock",
   //      lastName: "Holmes"
   //    }</pre><p>Congratulations: <code>firstNameLens</code> is your first lens!</p><div class="run-in">
-<h3>Lenses, more formally</h3>
+<h3><span>Lenses, more formally</span></h3>
 <p>The lens that we constructed above has the following type:</p>
 </div><pre>type PersonFirstNameLens = {
   // Given a person,
@@ -119,7 +117,7 @@ firstNameLens.set(locky, "Sherlock")
   get: (t: T) =&gt; F;
   set: (t: T, f: F) =&gt; T;
 };</pre><p>The type definition makes it clear: <mark>a lens is the combination of a getter and a setter, for an immutable data structure</mark>.</p><div class="run-in">
-<h3>Conveniently creating lenses with forProp()</h3>
+<h3><span>Conveniently creating lenses with forProp()</span></h3>
 <p>It is convenient to have a function that can automatically create a lens for a property. This is where <code>forProp()</code> comes in:</p>
 </div><pre>let firstNameLens =
   forProp&lt;Person&gt;()("firstName");</pre><p>A lens returned by <code>forProp()</code> behaves exactly the same as a manually-constructed one:</p><pre>let john: Person = {
@@ -133,7 +131,7 @@ firstNameLens.set(john, "Joe");
   // -&gt; { firstName: "Joe", lastName: "Watson" }</pre><p>I’ll make a guess that John Watson wouldn’t like to be called Joe.</p><p>The <code>forProp()</code> function is type-safe, as it won’t accept non-existent properties:</p><pre>// Type error!
 // Person has no property middleName
 let middleNameLens =
-  forProp&lt;Person&gt;()("middleName");</pre><p>We’ll not talk about the implementation, but you can check out <a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/lenses.ts" rel="noopener nofollow">its implementation</a> in the demo sandbox.</p><div class="h2-separator"></div><h2>Lenses for forms</h2><p>A lens-powered form field needs three properties:</p><pre>interface BareTextFieldProps&lt;T&gt; {
+  forProp&lt;Person&gt;()("middleName");</pre><p>We’ll not talk about the implementation, but you can check out <a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/lenses.ts" rel="noopener nofollow">its implementation</a> in the demo sandbox.</p><div class="h2-separator"></div><h2><span>Lenses for forms</span></h2><p>A lens-powered form field needs three properties:</p><pre>interface BareTextFieldProps&lt;T&gt; {
   lens: Lens&lt;T, string&gt;;
   top: T;
   setTop: (t: T) =&gt; void;
@@ -159,7 +157,7 @@ let middleNameLens =
     /&gt;
   );
 };</pre><p>This React component is a controlled component, so the wrapped <code>&lt;input&gt;</code> component is given both a <code>value</code> prop and an <code>onChange</code> prop.</p><div class="run-in">
-<h3>Minimal form example</h3>
+<h3><span>Minimal form example</span></h3>
 <p>We’ll create a form for a new person. First, we’ll need our lenses:</p>
 </div><pre>let firstNameLens =
   forProp&lt;Person&gt;()("firstName");
@@ -203,7 +201,7 @@ let lastNameLens =
     &lt;/&gt;
   );
 };</pre><p>With this approach, you can build forms with nested objects in a terse and type-safe way.</p><div class="run-in">
-<h3>Prettier form example</h3>
+<h3><span>Prettier form example</span></h3>
 <p>The text field we’ve created so far is nothing but a wrapper for an input element. We can build a more full-fledged text field by adding a label and some styling (I am partial to utility-first CSS):</p>
 </div><pre>interface TextFieldProps&lt;T&gt; extends BareTextFieldProps&lt;T&gt; {
   label: string;
@@ -235,7 +233,7 @@ let TextField = &lt;T extends any&gt;({
     label="Last name"
   /&gt;
   &lt;pre&gt;{JSON.stringify(person, null, 2)}&lt;/pre&gt;
-&lt;/&gt;</pre><div class="h2-separator"></div><h2>Handling nested data by composing lenses</h2><p>We are able to build forms for simple objects now, but not for nested objects. Let’s fix that.</p><p>Image a <code>Person</code> type with an address inside it:</p><pre>type Address = {
+&lt;/&gt;</pre><div class="h2-separator"></div><h2><span>Handling nested data by composing lenses</span></h2><p>We are able to build forms for simple objects now, but not for nested objects. Let’s fix that.</p><p>Image a <code>Person</code> type with an address inside it:</p><pre>type Address = {
   street: string;
   number: string;
 };
@@ -327,7 +325,7 @@ let addressNumberLens =
 ): Lens&lt;T, F&gt; =&gt; ({
   get: t =&gt; sf.get(ts.get(t)),
   set: (t, f) =&gt; ts.set(t, sf.set(ts.get(t), f))
-});</pre><p>Pay attention to the type signature: given a <code>Lens&lt;T, S&gt;</code> and a <code>Lens&lt;S, F&gt;</code>, return a <code>Lens&lt;T, F&gt;</code>. Once the type signature is in place, the implementation follows: the type system guides the implementation, and the type system will virtually guarantee correctness.</p><div class="h2-separator"></div><h2>Handling lists</h2><p>We already saw how to create a lens for a property of an object, using <code>forProp()</code>:</p><pre>let sherlock: Person = {
+});</pre><p>Pay attention to the type signature: given a <code>Lens&lt;T, S&gt;</code> and a <code>Lens&lt;S, F&gt;</code>, return a <code>Lens&lt;T, F&gt;</code>. Once the type signature is in place, the implementation follows: the type system guides the implementation, and the type system will virtually guarantee correctness.</p><div class="h2-separator"></div><h2><span>Handling lists</span></h2><p>We already saw how to create a lens for a property of an object, using <code>forProp()</code>:</p><pre>let sherlock: Person = {
   firstName: "Sherlock",
   lastName: "Holmes"
 };
@@ -379,7 +377,7 @@ let PersonForm = () =&gt; {
     &lt;/&gt;
   );
 };</pre><p>We now have a form where we can edit existing list elements, but not add or remove any yet.</p><div class="run-in">
-<h3>Adding and removing list elements</h3>
+<h3><span>Adding and removing list elements</span></h3>
 <p>While the approach above works for modifying existing elements in a list, we need the ability to add new elements to a list and remove elements from a list.</p>
 </div><p>To add an element to a list, we can use <code>push()</code>, whose type signature is <code>(top: T, lens: Lens&lt;T, F[]&gt;, elem: F) =&gt; T</code>:</p><pre>let hobbiesLens =
   forProp&lt;Person&gt;()("hobbies");
@@ -477,7 +475,7 @@ let sherlock: Person = {
         ...elems.slice(0, idx),
         ...elems.slice(idx + 1)
       ]
-    );</pre><p>With all this in place, we have a type-safe way of managing lists.</p><div class="h2-separator"></div><h2>Improving on single-select dropdowns</h2><p>HTML provides the <code>&lt;select&gt;</code> element to create a dropdown list. Each element of this dropdown list, an <code>&lt;option&gt;</code>, has a value which identifies the selected option:</p><pre>&lt;select&gt;
+    );</pre><p>With all this in place, we have a type-safe way of managing lists.</p><div class="h2-separator"></div><h2><span>Improving on single-select dropdowns</span></h2><p>HTML provides the <code>&lt;select&gt;</code> element to create a dropdown list. Each element of this dropdown list, an <code>&lt;option&gt;</code>, has a value which identifies the selected option:</p><pre>&lt;select&gt;
   &lt;option&gt;&lt;/option&gt;
   &lt;option value="mari"&gt;Marina&lt;/option&gt;
   &lt;option value="star"&gt;Stardust&lt;/option&gt;
@@ -554,11 +552,11 @@ type Person = {
   lens={favoriteColorLens}
   values={allColors}
   renderValue={m =&gt; m.name}
-/&gt;</pre><p>The type signature of a <code>RadioButtonsField</code> is nearly identical to that of a <code>DropdownField</code>. The only difference is the type of the <code>renderValue</code> prop: for <code>DropdownField</code>, <code>renderValue</code> has to return a <code>string</code>, while for <code>DropdownField</code>, it can return a <code>JSX.Element</code> as well.</p><p>It’s important to highlight what we’ve achieved here. Dropdowns and radio buttons have wildly different implementations in HTML, even though their purpose is nearly identical: picking one item from a list. The nearly-identical signature of <code>RadioButtonsField</code> and <code>DropdownField</code> make the parallels visible, and make it trivial to swap out one type of single-select for the other.</p><div class="h2-separator"></div><h2>Future work</h2><p>While lenses are an effective way of building forms, there are three areas where more research and development is needed to make lenses stand out as an approach to building React forms:</p><ul>
+/&gt;</pre><p>The type signature of a <code>RadioButtonsField</code> is nearly identical to that of a <code>DropdownField</code>. The only difference is the type of the <code>renderValue</code> prop: for <code>DropdownField</code>, <code>renderValue</code> has to return a <code>string</code>, while for <code>DropdownField</code>, it can return a <code>JSX.Element</code> as well.</p><p>It’s important to highlight what we’ve achieved here. Dropdowns and radio buttons have wildly different implementations in HTML, even though their purpose is nearly identical: picking one item from a list. The nearly-identical signature of <code>RadioButtonsField</code> and <code>DropdownField</code> make the parallels visible, and make it trivial to swap out one type of single-select for the other.</p><div class="h2-separator"></div><h2><span>Future work</span></h2><p>While lenses are an effective way of building forms, there are three areas where more research and development is needed to make lenses stand out as an approach to building React forms:</p><ul>
 <li><p><strong>Validation:</strong> Lenses can be used in combination with common validation techniques, such as HTML’s built-in validation functionality and schema-based validation. However, these techniques don’t integrate neatly with lenses, and further research is needed to come with an approach where validation feels like a first-class concern.</p></li>
 <li><p><strong>Form helpers:</strong> While lenses themselves are simple, using them effectively for forms requires implementations for all types of form fields, from simple text fields to different types of multi-select lists. The <a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/PersonForm.tsx" rel="noopener nofollow">demo</a> contains the minimal implementation of some types of form fields, which ideally would grow and be properly packaged as an open-source package.</p></li>
 <li><p><strong>Performance:</strong> The performance of this particular implementation of lenses, and implementations of the form fields, has not been a cause for concern so far. Still, it is likely that situations will arise where the performance of lenses is just not adequate. More work needs to be done to ensure that lenses are an appropriate solution, even for unusually large and complex forms.</p></li>
-</ul><div class="h2-separator"></div><h2>Closing thoughts</h2><p>To me, lenses have proven their worth, and will have a prominent place in my toolbox for building forms. No other approach to building forms gives me the same development speed or gives me as much confidence.</p><p>With lenses, I can be confident that the forms I build work, with only a minimum of testing. The real-time IDE feedback and autocompletion means I can work faster, without compromising quality.</p>
+</ul><div class="h2-separator"></div><h2><span>Closing thoughts</span></h2><p>To me, lenses have proven their worth, and will have a prominent place in my toolbox for building forms. No other approach to building forms gives me the same development speed or gives me as much confidence.</p><p>With lenses, I can be confident that the forms I build work, with only a minimum of testing. The real-time IDE feedback and autocompletion means I can work faster, without compromising quality.</p>
   </div>
 
   <script src="../../assets/scripts/behavior.js"></script>

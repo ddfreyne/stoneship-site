@@ -52,6 +52,9 @@
   --teal-700: #00796b;
   --teal-800: #00695c;
   --teal-900: #004d40;
+
+  --color-link: var(--blue-500);
+  --color-link-hover: var(--blue-700);
 }
 
 * {
@@ -67,8 +70,6 @@ html {
 }
 
 body {
-  padding: 24px;
-
   font-family: var(--font-face-text);
 
   color: var(--gray-800);
@@ -100,82 +101,6 @@ body {
   hyphenate-limit-zone: 8%;
 }
 
-@media screen {
-  body .nav {
-    padding-top: calc(4 * 24px);
-  }
-
-  .cols {
-    padding-top: 24px;
-    padding-bottom: calc(48px * 3);
-
-    max-width: 600px;
-    margin: 0 auto;
-  }
-}
-
-.sidenote {
-  color: var(--red-600);
-
-  display: block;
-
-  text-indent: 0;
-
-  font-family: var(--font-face-sans-serif);
-}
-
-.sidenote-ref {
-  color: var(--red-600);
-}
-
-@media screen and (min-width: 651px) {
-  .cols > * {
-    position: relative;
-  }
-}
-
-@media screen and (min-width: 1151px) {
-  .sidenote {
-    position: absolute;
-
-    width: calc(248px - 24px);
-    left: calc(100% + 24px);
-
-    margin-top: -24px;
-
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  .sidenote {
-    display: inline;
-  }
-
-  .sidenote::before {
-    content: " [";
-  }
-
-  .sidenote::after {
-    content: "]";
-  }
-
-  .sidenote-ref {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  body .nav {
-    padding-top: 0;
-  }
-
-  body .cols {
-    padding-bottom: 48px;
-  }
-}
-
 p {
   margin-top: 24px;
 
@@ -189,7 +114,6 @@ p + p,
   text-indent: 1.5rem;
 }
 
-h1,
 h2,
 h3 {
   break-after: avoid;
@@ -206,18 +130,6 @@ h1 {
   line-height: 48px;
 }
 
-.meta::after {
-  content: "";
-
-  display: block;
-
-  margin: 24px auto;
-
-  width: 20%;
-
-  border-top: 1px solid var(--gray-500);
-}
-
 h2 {
   font-family: var(--font-face-h2);
   font-weight: 400;
@@ -226,6 +138,16 @@ h2 {
   line-height: 24px;
 
   margin: calc(4 * 24px) 0 0 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: calc(3 / 4 * 24px);
+}
+
+h2:after {
+  content: "";
+  align-self: center;
+  border-top: 1px solid var(--gray-500);
 }
 
 h3 {
@@ -260,13 +182,13 @@ ol {
 }
 
 a {
-  color: var(--blue-500);
+  color: var(--color-link);
 
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--blue-700);
+  color: var(--color-link-hover);
 }
 
 blockquote {
@@ -302,12 +224,99 @@ pre {
   white-space: pre-wrap;
 }
 
+/** title **********/
+
+.title {
+  padding: calc(4 * 24px) 0 calc(2 * 24px) 0;
+}
+
+.title h1 {
+  font-family: var(--font-face-h1);
+  font-weight: 400;
+  font-size: 36px;
+
+  letter-spacing: -0.02ch;
+
+  padding-bottom: calc(1 * 24px);
+
+  line-height: 48px;
+}
+
+/** WRAPPER **********/
+
+@media screen {
+  .wrapper {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: calc(2 * 24px) calc(1 * 24px);
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .wrapper {
+    padding: calc(1 * 24px);
+  }
+}
+
+/** SIDENOTES **********/
+
+.sidenote {
+  text-indent: 0;
+
+  font-family: var(--font-face-sans-serif);
+}
+
+@media screen and (min-width: 1049px) {
+  .sidenote-main > * {
+    position: relative;
+  }
+
+  .sidenote {
+    position: absolute;
+
+    display: block;
+
+    width: calc(248px - 24px);
+    left: calc(100% + 24px);
+
+    margin-top: -24px;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 1048px) {
+  .sidenote {
+    display: inline;
+
+    font-style: italic;
+  }
+
+  .sidenote::before {
+    content: " [";
+    font-style: normal;
+  }
+
+  .sidenote::after {
+    content: "]";
+    font-style: normal;
+  }
+}
+
+/** UTILITIES **********/
+
 .sans-serif {
   font-family: var(--font-face-sans-serif);
 }
 
 .text-muted {
-  color: var(--gray-600);
+  color: var(--gray-500);
+
+  --color-link: var(--gray-500);
+  --color-link-hover: var(--gray-700);
 }
 
 .font-sm {
@@ -435,14 +444,26 @@ pre {
 }
 
 .letter-spacing-1 {
-  letter-spacing: 0.07ch;
+  letter-spacing: 0.1ch;
 }
 
 .no-break {
   white-space: nowrap;
 }
 
-/** ADMONITIONS ***************************************************************/
+.short-border-below::after {
+  content: "";
+
+  display: block;
+
+  margin: 24px auto;
+
+  width: 20%;
+
+  border-top: 1px solid var(--gray-500);
+}
+
+/** ADMONITIONS **********/
 
 .adm-wrapper {
 }
