@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 100;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Thin.woff")
     format("woff");
@@ -9,6 +10,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 100;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-ThinItalic.woff")
     format("woff");
@@ -17,6 +19,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 200;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-UltraLight.woff")
     format("woff");
@@ -25,6 +28,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 200;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-UltraLightItalic.woff")
     format("woff");
@@ -33,6 +37,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 300;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Light.woff")
     format("woff");
@@ -41,6 +46,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 300;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-LightItalic.woff")
     format("woff");
@@ -49,6 +55,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 350;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Book.woff")
     format("woff");
@@ -57,6 +64,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 350;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-BookItalic.woff")
     format("woff");
@@ -65,6 +73,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Regular.woff")
     format("woff");
@@ -73,6 +82,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 400;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-RegularItalic.woff")
     format("woff");
@@ -81,6 +91,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 700;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Bold.woff")
     format("woff");
@@ -89,6 +100,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 700;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-BoldItalic.woff")
     format("woff");
@@ -97,6 +109,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 800;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-ExtraBold.woff")
     format("woff");
@@ -105,6 +118,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 800;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-ExtraBoldItalic.woff")
     format("woff");
@@ -113,6 +127,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 900;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-Black.woff")
     format("woff");
@@ -121,6 +136,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 900;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-BlackItalic.woff")
     format("woff");
@@ -129,6 +145,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 950;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-UltraBlack.woff")
     format("woff");
@@ -137,6 +154,7 @@
 @font-face {
   font-family: "Kappa Display";
   font-weight: 950;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-display/fonts/KappaDisplay-UltraBlackItalic.woff")
     format("woff");
