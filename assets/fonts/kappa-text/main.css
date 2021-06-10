@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 100;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Thin.woff") format("woff");
 }
@@ -8,6 +9,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 100;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-ThinItalic.woff")
     format("woff");
@@ -16,6 +18,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 200;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-UltraLight.woff")
     format("woff");
@@ -24,6 +27,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 200;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-UltraLightItalic.woff")
     format("woff");
@@ -32,6 +36,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 300;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Light.woff") format("woff");
 }
@@ -39,6 +44,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 300;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-LightItalic.woff")
     format("woff");
@@ -47,6 +53,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 350;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Book.woff") format("woff");
 }
@@ -54,6 +61,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 350;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-BookItalic.woff")
     format("woff");
@@ -62,6 +70,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Regular.woff")
     format("woff");
@@ -70,6 +79,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 400;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-RegularItalic.woff")
     format("woff");
@@ -78,6 +88,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 700;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Bold.woff") format("woff");
 }
@@ -85,6 +96,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 700;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-BoldItalic.woff")
     format("woff");
@@ -93,6 +105,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 800;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-ExtraBold.woff")
     format("woff");
@@ -101,6 +114,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 800;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-ExtraBoldItalic.woff")
     format("woff");
@@ -109,6 +123,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 900;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-Black.woff") format("woff");
 }
@@ -116,6 +131,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 900;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-BlackItalic.woff")
     format("woff");
@@ -124,6 +140,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 950;
+  font-display: swap;
   font-style: normal;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-UltraBlack.woff")
     format("woff");
@@ -132,6 +149,7 @@
 @font-face {
   font-family: "Kappa Text";
   font-weight: 950;
+  font-display: swap;
   font-style: italic;
   src: url("/assets/fonts/kappa-text/fonts/KappaText-UltraBlackItalic.woff")
     format("woff");
