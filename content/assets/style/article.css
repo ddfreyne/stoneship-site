@@ -345,6 +345,11 @@ h2::after {
     font-size: 0.85rem;
     line-height: 1.5;
   }
+
+  .sidenote-pre,
+  .sidenote-post {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1048px) {
@@ -355,19 +360,13 @@ h2::after {
 
     font-style: italic;
   }
-
-  .sidenote::before {
-    content: " [";
-    font-style: normal;
-  }
-
-  .sidenote::after {
-    content: "]";
-    font-style: normal;
-  }
 }
 
 /** UTILITIES **********/
+
+.d-none {
+  display: none;
+}
 
 .sans-serif {
   font-family: var(--font-face-sans-serif);

@@ -62,9 +62,12 @@ class DMarkTranslator < DMark::Translator
   end
 
   def handle_element_sidenote(element, context)
-    wrap('span', class: 'sidenote text-muted') do
-      handle_children(element, context)
-    end
+    [
+      ' ',
+      '<span class="sidenote-pre text-muted">(</span>',
+      wrap('span', class: 'sidenote text-muted') { handle_children(element, context) },
+      '<span class="sidenote-post text-muted">)</span>',
+    ]
   end
 
   def handle_element_firstterm(element, context)
