@@ -98,32 +98,31 @@ compile '/feed.xml.erb' do
   write '/feed.xml'
 end
 
-compile '/experiments/horizontal-layout/sample.*' do
+compile '/{experiments,articles}/horizontal-layout/sample.*' do
   filter :erb
 
   write item.identifier.without_exts + '/index.html'
 end
 
-passthrough '/experiments/**/*.png'
+passthrough '/{experiments,articles}/**/*.png'
 
-compile '/experiments/*.md{,.erb}' do
-  filter :erb if item.identifier.ext == 'erb'
-  filter :kramdown, input: 'GFM'
+compile '/experiments/*.{md,md.erb,dmark}' do
+  filter :erb if item.identifier.exts.include?('erb')
+  filter :dmark if item.identifier.exts.include?('dmark')
+  filter :kramdown, input: 'GFM' if item.identifier.exts.include?('md')
 
   layout '/new.*'
 
   write item.identifier.without_exts + '/index.html'
 end
 
-compile '/articles/*' do
-  # filter :mark
-  # filter :kramdown, input: 'GFM'
-  # filter :footnotes
-  # filter :autolink
-  filter :dmark if item.identifier.ext == 'dmark'
+compile '/articles/*.{md,md.erb,dmark}' do
+  filter :erb if item.identifier.exts.include?('erb')
+  filter :dmark if item.identifier.exts.include?('dmark')
+  filter :kramdown, input: 'GFM' if item.identifier.exts.include?('md')
+
   filter :h2_separator
   filter :run_in_headers
-  # filter :typography
 
   layout '/article.*'
 
