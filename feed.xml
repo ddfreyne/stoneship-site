@@ -11,7 +11,7 @@
   </author>
   <entry>
     <id>tag:denisdefreyne.com,2021-06-07:/articles/2021-horizontal-layout.md/</id>
-    <title type="html">Horizontally-scrolling multi-column layout</title>
+    <title type="html">Horizontally-scrolling multi-column layout: a retrospective</title>
     <published>2021-06-07T22:00:00Z</published>
     <updated>2021-06-07T22:00:00Z</updated>
     <link rel="alternate" href="http://denisdefreyne.com/articles/2021-horizontal-layout.md/" type="text/html"/>
@@ -93,7 +93,7 @@
 
 &lt;p&gt;CSS’ multi-column support is not usable for long-form content yet. While there is certainly progress made, and the opportunities are exciting, the usability problems related to non-conventional scrolling make it difficult to use, and browser support is too spotty to provide a reliable, comfortable experience.&lt;/p&gt;
 </content>
-    <summary type="html">On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.</summary>
+    <summary type="html">On wide screens, a column of text often needs a considerable amount of whitespace to the left and to the right. I experimented with CSS’ multi-column layout to use screen real estate more efficiently. While I ended up quite liking the aesthetic, usability problems and spotty browser support make this unfortunately an impractical approach.</summary>
   </entry>
   <entry>
     <id>tag:denisdefreyne.com,2021-05-29:/articles/2021-budget-replacement/</id>
