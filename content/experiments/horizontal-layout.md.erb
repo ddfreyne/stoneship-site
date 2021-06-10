@@ -6,8 +6,6 @@ excerpt: "On wide screens, and especially ultra-wide screens, a single column of
 
 # Horizontally-scrolling multi-column layout
 
-[See it in action](/experiments/horizontal-layout/sample/).
-
 On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. This whitespace is needed to prevent the text lines in the column from growing overly long, and thus hard to read.
 
 All this whitespace is wasted screen real estate. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.
@@ -15,6 +13,8 @@ All this whitespace is wasted screen real estate. In this experiment, I aimed at
 <figure style="max-width: 100%" class="col-lg">
   <img style="max-width: 100%; object-fit: contain" src="<%= @items['/experiments/horizontal-layout/screenshot.*'].path %>">
 </figure>
+
+[See it in action](/experiments/horizontal-layout/sample/).
 
 ## What worked
 
@@ -28,7 +28,9 @@ I’m fond of the aesthetic: it reminds me of a book or a magazine.
 
 As excited as I was, this experiment quickly revealed some issues.
 
-**Controlling column widths**: CSS’ multi-column support really wants to divide the available space in an integer number of columns. This means that the actual width of the columns depends on the width of the container (in this experiment, the container is the window). This happens even when setting an explicit column width using the `column-width` property, because this property defines the _ideal_ column width, not the actual column width. [Quoting MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width):
+### Controlling column widths
+
+CSS’ multi-column support really wants to divide the available space in an integer number of columns. This means that the actual width of the columns depends on the width of the container (in this experiment, the container is the window). This happens even when setting an explicit column width using the `column-width` property, because this property defines the _ideal_ column width, not the actual column width. [Quoting MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/column-width):
 
 > The `column-width` CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
 
@@ -36,15 +38,21 @@ As a consequence, it becomes non-obvious that you can scroll right: there is no 
 
 Furthermore, as a result of column widths being calculated based on the container width, resizing the window will resize the columns as well. In this experiment, this behavior is jarring, as text reflows, especially when the viewport is already scrolled considerably to the right.
 
-**Getting scrolling to work**: Horizontal scrolling is easy using a trackpad, but I had to add some custom JavaScript to make the mouse wheel scroll horizontally as well. I intercepted the page-up and page-down keys as well, and injected some custom JavaScript to make smooth scrolling work.
+### Getting scrolling to work
+
+Horizontal scrolling is easy using a trackpad, but I had to add some custom JavaScript to make the mouse wheel scroll horizontally as well. I intercepted the page-up and page-down keys as well, and injected some custom JavaScript to make smooth scrolling work.
 
 Unfortunately, the custom JavaScript is not doing its job quite well. For example, holding space or page-down will not make the scrolling go faster, but instead it will confusingly slow it down. This is a bug in the JavaScript code, but I’d rather rely on native scrolling than on JavaScript.
 
 I saw mentions of a JavaScript-less solution that involves multiple nested CSS transformations (rotating the container 90° and then rotating the container’s children the opposite way), but I could not get this approach to work.
 
-**Padding**: For reasons I don’t fully understand, ensuring that the last column has some right padding is particularly difficult. Without this right padding, the last column sits awkwardly against the window border. I got this to work by adding a fat right border to every element inside the multi-column container, which is a terrible hack and I feel bad about it. Someone needs to come up with a better idea.
+### Padding
 
-**Controlling column breaks**: In multi-column media, like in multi-page media, it becomes important to control how elements are broken across columns. The `break-inside: avoid` CSS property works well, though it seems to be the only well-supported property. CSS’ widows and orphans support is spotty across browsers. So is the `break-after: avoid` property, which I’d love to have used on headers — keeping headers together with the first-following paragraph makes a difference.
+For reasons I don’t fully understand, ensuring that the last column has some right padding is particularly difficult. Without this right padding, the last column sits awkwardly against the window border. I got this to work by adding a fat right border to every element inside the multi-column container, which is a terrible hack and I feel bad about it. Someone needs to come up with a better idea.
+
+### Controlling column breaks
+
+In multi-column media, like in multi-page media, it becomes important to control how elements are broken across columns. The `break-inside: avoid` CSS property works well, though it seems to be the only well-supported property. CSS’ widows and orphans support is spotty across browsers. So is the `break-after: avoid` property, which I’d love to have used on headers — keeping headers together with the first-following paragraph makes a difference.
 
 ## Open questions and future work
 
