@@ -30,6 +30,11 @@
             <meta property="og:description" content="A note in Denis’ digital garden.">
         <% end %>
 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+
         <% unless @item[:layout] == 'cv' %>
             <link rel="stylesheet" href="<%= @items["/assets/style/reset.*"].path %>">
             <link rel="stylesheet" href="<%= @items["/assets/fonts/main.*"].path %>">
