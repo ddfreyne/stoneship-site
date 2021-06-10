@@ -438,6 +438,10 @@ pre {
   letter-spacing: 0.07ch;
 }
 
+.no-break {
+  white-space: nowrap;
+}
+
 /** ADMONITIONS ***************************************************************/
 
 .adm-wrapper {
