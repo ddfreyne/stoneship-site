@@ -123,10 +123,10 @@ compile '/articles/*' do
   filter :dmark if item.identifier.ext == 'dmark'
   filter :h2_separator
   filter :run_in_headers
+  # filter :typography
 
   layout '/article.*'
 
-  # filter :typography
   filter :relativize_paths, type: :html5
 
   write item.identifier.without_ext + '/index.html'
@@ -138,6 +138,7 @@ compile '/notes/*' do
   filter :kramdown, input: 'GFM'
   filter :footnotes
   filter :autolink
+  filter :typography
 
   if item.identifier.match?('/notes/*')
     layout '/bear.*'
@@ -146,7 +147,6 @@ compile '/notes/*' do
     layout '/fiction.*'
   end
 
-  filter :typography
   filter :relativize_paths, type: :html5
 
   if item.identifier =~ '/notes/149E38EC-3FB7-4D4F-8CB1-24BA9A24F8DF-38501-00015B8C3C9DAC34.*'
@@ -166,6 +166,7 @@ compile '/**/*' do
 
   filter :add_ids_to_headers
   filter :toc if item[:toc]
+  filter :typography
 
   if item.identifier.match?('/cv.*')
     layout '/cv.*'
@@ -173,7 +174,6 @@ compile '/**/*' do
     layout '/new.*'
   end
 
-  filter :typography
   filter :relativize_paths, type: :html5
 
   if item.identifier =~ '/index.*'
