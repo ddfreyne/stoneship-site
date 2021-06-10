@@ -557,6 +557,10 @@ samp {
   margin: var(--size-l1) 0 var(--size-s2) 0;
 }
 
+.primary h2:first-child {
+  margin-top: 0;
+}
+
 .primary h3 {
   font-size: var(--size-base);
   line-height: 1.3;

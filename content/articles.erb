@@ -8,8 +8,13 @@ follow: false
 
 <p class="col-left-sm">This is a collection of articles I’ve written.</p>
 
-<ul class="spacious col-right-md">
-  <% @items.find_all('/articles/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
-    <li><%= link_to piece[:title], piece %></li>
+<div class="col-right-md">
+  <% articles_by_year.each do |(year, articles)| %>
+    <h2><%= year %></h2>
+    <ul class="spacious">
+      <% articles.sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
+        <li><%= link_to piece[:title], piece %></li>
+      <% end %>
+    </ul>
   <% end %>
-</ul>
+</div>
