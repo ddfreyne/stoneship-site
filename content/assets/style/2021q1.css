@@ -380,6 +380,18 @@ columns are used for the main content, and the remaining one for side notes.
   margin-bottom: var(--size-l1);
 }
 
+.mb-2 {
+  margin-bottom: calc(2 * var(--size-base)) !important;
+}
+
+.mb-3 {
+  margin-bottom: calc(4 * var(--size-base)) !important;
+}
+
+.mb-4 {
+  margin-bottom: calc(8 * var(--size-base)) !important;
+}
+
 .sm\:order-later {
   order: initial;
 }
@@ -619,6 +631,7 @@ samp {
   margin-bottom: var(--size-l1);
 
   border: 1px solid var(--gray-200);
+  background: var(--gray-200);
 }
 
 .primary figure img {
