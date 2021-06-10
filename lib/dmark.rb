@@ -52,7 +52,7 @@ class DMarkTranslator < DMark::Translator
   end
 
   def handle_element_sidenote(element, context)
-    wrap('span', class: 'sidenote') do
+    wrap('span', class: 'sidenote text-muted') do
       handle_children(element, context)
     end
   end
