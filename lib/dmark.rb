@@ -13,6 +13,8 @@ class DMarkTranslator < DMark::Translator
     case element.name
     when 'h'
       handle_element_h(element, context)
+    when 'h1', 'h2', 'h3'
+      handle_element_hx(element, context)
     when 'highlight'
       handle_element_highlight(element, context)
     when 'firstterm'
@@ -27,7 +29,7 @@ class DMarkTranslator < DMark::Translator
       handle_element_sidenote(element, context)
     when 'ref'
       handle_element_ref(element, context)
-    when 'em', 'strong', 'ul', 'ol', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'h1', 'h2', 'h3', 'code', 'b', 'i', 'pre', 'mark', 'span', 'a'
+    when 'em', 'strong', 'ul', 'ol', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'code', 'b', 'i', 'pre', 'mark', 'span', 'a'
       handle_generic_element(element, context)
     else
       raise "Cannot translate #{element.name}"
@@ -43,6 +45,14 @@ class DMarkTranslator < DMark::Translator
         wrap('span') do
           handle_children(element, context)
         end
+      end
+    end
+  end
+
+  def handle_element_hx(element, context)
+    wrap(element.name) do
+      wrap('span') do
+        handle_children(element, context)
       end
     end
   end
