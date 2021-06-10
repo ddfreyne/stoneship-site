@@ -28,6 +28,11 @@ deploy:
   default:
     kind: rclone
     dst: "fastmail:web/denisdefreyne.com"
+  git:
+    kind: git
+    remote: git@github.com:ddfreyne/denisdefreyne.com.git
+    branch: built
+    forced: true
   next:
     kind: rclone
     dst: "fastmail:web/next.denisdefreyne.com"
