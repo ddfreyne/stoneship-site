@@ -1,0 +1,122 @@
+
+
+    
+        <meta charset="utf-8">
+
+        <title>Separate code reviews into feedback levels</title>
+
+        <!-- metadata -->
+
+        <meta name="generator" content="Nanoc 4.12.2">
+
+        
+
+        <meta property="og:site_name" content="denisdefreyne.com">
+
+        <meta property="og:url" content="https://denisdefreyne.com/notes/tv9tl-9np7m-rvkrl/">
+
+        <meta property="og:title" content="Separate code reviews into feedback levels">
+        <meta property="dc.title" content="Separate code reviews into feedback levels">
+
+        <meta property="og:type" content="website">
+
+        
+
+        
+            <meta property="og:description" content="A note in Denis’ digital garden.">
+        
+
+        <!-- style -->
+
+        
+            <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
+            <link rel="stylesheet" href="../../assets/fonts/main.css">
+        
+        
+        <link rel="stylesheet" href="../../assets/style/2021q1-e5pYXFnTk2scH3DXlZyKYPoCG2c.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- scripts -->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+        <!-- google analytics -->
+
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-15639968-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+             })();
+        </script>
+    
+    
+    
+        <div class="above-footer">
+            <nav class="nav">
+                <ul>
+                    <li><a href="../../">denisdefreyne.com</a></li>
+                    <li><a href="../../software/">software</a></li>
+                    <li><a href="../../talks/">talks</a></li>
+                    <li><a href="../../experiments/">experiments</a></li>
+                    <li><a href="../">notes</a></li>
+                    <li><a href="../../cv/">cv</a></li>
+                </ul>
+            </nav>
+
+            <article class="container primary">
+                <h1>Separate code reviews into feedback&nbsp;levels</h1>
+
+
+<p>When providing feedback in a code review, classify the feedback in three&nbsp;levels:</p>
+
+<ul>
+  <li>
+    <p><strong>blocker</strong>: The change should not be integrated due to severe defects, such as data loss and interruption of service. A change with too-low test coverage is also a good reason for a blocker, as is a change that would incur too much tech&nbsp;debt.</p>
+  </li>
+  <li>
+    <p><strong>recommendation</strong>: The change contains a problem that should not block integration, but would best be addressed soon after. Recommendations are typically&nbsp;refactorings.</p>
+  </li>
+  <li>
+    <p><strong>nitpick</strong>: The change contains a small problem (based on the reviewer’s opinion) that should not block integration, and might not be worth&nbsp;addressing.</p>
+  </li>
+</ul>
+
+<p>This is still relevant during outages, though the definition of a “blocker” could be relaxed, e.g. by removing the test coverage&nbsp;requirement.</p>
+
+
+<div class="hr"></div>
+
+<div class="col-left-sm main-footer muted">
+  <div>Last revised:</div>
+  <div class="pb-base">June 2021</div>
+</div>
+
+<div class="col-center-sm main-footer muted">
+  
+    <div>Backlinks:</div>
+    <ul class="pb-base">
+      
+        <li><a href="../mmcwz-wtcwz-mrtrk/">Fast code reviews are crucial for team velocity</a></li>
+      
+    </ul>
+  
+</div>
+
+            </article>
+        </div>
+
+        <footer class="footer muted">
+            <div>© 2007–2021</div>
+            <div>made in Berlin</div>
+        </footer>
+
+        <script>hljs.highlightAll();</script>
+    
+
+
+

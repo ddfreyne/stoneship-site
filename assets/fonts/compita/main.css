@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Compita";
+  font-weight: 200;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 200;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 300;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 300;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-LightItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-RegularItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 500;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-MediumItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 600;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 600;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-SemiBoldItalic.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/assets/fonts/compita/fonts/Compita-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Compita";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/assets/fonts/compita/fonts/Compita-BoldItalic.woff") format("woff");
+}

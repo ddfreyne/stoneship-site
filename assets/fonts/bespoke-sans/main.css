@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Light.woff2") format("woff2"),
+    url("fonts/BespokeSans-Light.woff") format("woff"),
+    url("fonts/BespokeSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-LightItalic.woff2") format("woff2"),
+    url("fonts/BespokeSans-LightItalic.woff") format("woff"),
+    url("fonts/BespokeSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Regular.woff2") format("woff2"),
+    url("fonts/BespokeSans-Regular.woff") format("woff"),
+    url("fonts/BespokeSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Italic.woff2") format("woff2"),
+    url("fonts/BespokeSans-Italic.woff") format("woff"),
+    url("fonts/BespokeSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Medium.woff2") format("woff2"),
+    url("fonts/BespokeSans-Medium.woff") format("woff"),
+    url("fonts/BespokeSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-MediumItalic.woff2") format("woff2"),
+    url("fonts/BespokeSans-MediumItalic.woff") format("woff"),
+    url("fonts/BespokeSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Bold.woff2") format("woff2"),
+    url("fonts/BespokeSans-Bold.woff") format("woff"),
+    url("fonts/BespokeSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-BoldItalic.woff2") format("woff2"),
+    url("fonts/BespokeSans-BoldItalic.woff") format("woff"),
+    url("fonts/BespokeSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-Extrabold.woff2") format("woff2"),
+    url("fonts/BespokeSans-Extrabold.woff") format("woff"),
+    url("fonts/BespokeSans-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bespoke Sans";
+  src: url("fonts/BespokeSans-ExtraboldItalic.woff2") format("woff2"),
+    url("fonts/BespokeSans-ExtraboldItalic.woff") format("woff"),
+    url("fonts/BespokeSans-ExtraboldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
