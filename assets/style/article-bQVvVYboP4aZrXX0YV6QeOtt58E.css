@@ -57,6 +57,10 @@
   --color-link-hover: var(--blue-700);
 }
 
+:root {
+  counter-reset: h2;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -128,26 +132,6 @@ h1 {
   letter-spacing: -0.02ch;
 
   line-height: 48px;
-}
-
-h2 {
-  font-family: var(--font-face-h2);
-  font-weight: 400;
-  font-size: 24px;
-
-  line-height: 24px;
-
-  margin: calc(4 * 24px) 0 0 0;
-
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: calc(3 / 4 * 24px);
-}
-
-h2:after {
-  content: "";
-  align-self: center;
-  border-top: 1px solid var(--gray-500);
 }
 
 h3 {
@@ -224,7 +208,7 @@ pre {
   white-space: pre-wrap;
 }
 
-/** title **********/
+/** TITLE **********/
 
 .title {
   padding: calc(4 * 24px) 0 calc(2 * 24px) 0;
@@ -242,6 +226,44 @@ pre {
   line-height: 48px;
 }
 
+/** H2 **********/
+
+h2 {
+  font-family: var(--font-face-h2);
+  font-weight: 400;
+  font-size: 24px;
+
+  line-height: 24px;
+
+  margin: calc(4 * 24px) 0 0 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: calc(3 / 4 * 24px);
+}
+
+h2::after {
+  content: "";
+  align-self: center;
+  border-top: 1px solid var(--gray-500);
+}
+
+@media screen and (min-width: 697px) {
+  /* breakpoint: 600 + 48*2 + 1 */
+
+  h2::before {
+    counter-increment: h2;
+
+    content: counter(h2, upper-roman);
+    position: absolute;
+    left: -100px;
+
+    color: var(--gray-500);
+    width: calc(100px - 12px);
+    text-align: right;
+  }
+}
+
 /** WRAPPER **********/
 
 @media screen {
@@ -252,9 +274,15 @@ pre {
 
     padding: calc(2 * 24px) calc(1 * 24px);
   }
+
+  .wrapper > * {
+    position: relative;
+  }
 }
 
 @media screen and (max-width: 648px) {
+  /* breakpoint: 600 + 48 */
+
   .wrapper {
     padding: calc(1 * 24px);
   }
@@ -269,16 +297,14 @@ pre {
 }
 
 @media screen and (min-width: 1049px) {
-  .sidenote-main > * {
-    position: relative;
-  }
+  /* breakpoint: 600 + (200+24)*2 + 1 */
 
   .sidenote {
     position: absolute;
 
     display: block;
 
-    width: calc(248px - 24px);
+    width: calc(200px + 24px);
     left: calc(100% + 24px);
 
     margin-top: -24px;
@@ -289,6 +315,8 @@ pre {
 }
 
 @media screen and (max-width: 1048px) {
+  /* breakpoint: 600 + (200+24)*2 */
+
   .sidenote {
     display: inline;
 
