@@ -2,13 +2,99 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://denisdefreyne.com/">
   <id>http://denisdefreyne.com/</id>
   <title>Denis Defreyne</title>
-  <updated>2021-05-29T22:00:00Z</updated>
+  <updated>2021-06-07T22:00:00Z</updated>
   <link rel="alternate" href="http://denisdefreyne.com/" type="text/html"/>
   <link rel="self" href="http://denisdefreyne.com/feed.xml" type="application/atom+xml"/>
   <author>
     <name>Denis Defreyne</name>
     <uri>https://denisdefreyne.com</uri>
   </author>
+  <entry>
+    <id>tag:denisdefreyne.com,2021-06-07:/articles/2021-horizontal-layout.md/</id>
+    <title type="html">Horizontally-scrolling multi-column layout</title>
+    <published>2021-06-07T22:00:00Z</published>
+    <updated>2021-06-07T22:00:00Z</updated>
+    <link rel="alternate" href="http://denisdefreyne.com/articles/2021-horizontal-layout.md/" type="text/html"/>
+    <content type="html">&lt;p&gt;On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. This whitespace is needed to prevent the text lines in the column from growing overly long, and thus hard to read.&lt;/p&gt;
+
+&lt;p&gt;All this whitespace is wasted screen real estate. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.&lt;/p&gt;
+
+&lt;figure style="max-width: 100%" class="col-lg"&gt;
+  &lt;img style="max-width: 100%; object-fit: contain" src="/experiments/horizontal-layout/screenshot.png"&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href="/experiments/horizontal-layout/sample/"&gt;See it in action&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2 id="what-worked"&gt;What worked&lt;/h2&gt;
+
+&lt;p&gt;So much less wasted screen real estate!&lt;/p&gt;
+
+&lt;p&gt;I found that reading an article involved a lot less scrolling up and down to refer to previous bits of writing. This makes sense, as there’s considerably more text visible on the screen.&lt;/p&gt;
+
+&lt;p&gt;I’m fond of the aesthetic: it reminds me of a book or a magazine.&lt;/p&gt;
+
+&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2 id="what-didnt-work"&gt;What didn’t work&lt;/h2&gt;
+
+&lt;p&gt;As excited as I was, this experiment quickly revealed some issues.&lt;/p&gt;
+
+
+
+&lt;div class="run-in"&gt;
+&lt;h3 id="controlling-column-widths"&gt;Controlling column widths&lt;/h3&gt;
+&lt;p&gt;CSS’ multi-column support really wants to divide the available space in an integer number of columns. This means that the actual width of the columns depends on the width of the container (in this experiment, the container is the window). This happens even when setting an explicit column width using the &lt;code&gt;column-width&lt;/code&gt; property, because this property defines the &lt;em&gt;ideal&lt;/em&gt; column width, not the actual column width. &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-width"&gt;Quoting MDN&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The &lt;code&gt;column-width&lt;/code&gt; CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the &lt;code&gt;column-width&lt;/code&gt; value.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a consequence, it becomes non-obvious that you can scroll right: there is no indication that there is more text (more columns) past the last-visible column. In this experiment, I cheated and made the next column half visible, which I think gives enough of a hint that there is more content than what is visible.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, as a result of column widths being calculated based on the container width, resizing the window will resize the columns as well. In this experiment, this behavior is jarring, as text reflows, especially when the viewport is already scrolled considerably to the right.&lt;/p&gt;
+
+
+
+&lt;div class="run-in"&gt;
+&lt;h3 id="getting-scrolling-to-work"&gt;Getting scrolling to work&lt;/h3&gt;
+&lt;p&gt;Horizontal scrolling is easy using a trackpad, but I had to add some custom JavaScript to make the mouse wheel scroll horizontally as well. I intercepted the page-up and page-down keys as well, and injected some custom JavaScript to make smooth scrolling work.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, the custom JavaScript is not doing its job quite well. For example, holding space or page-down will not make the scrolling go faster, but instead it will confusingly slow it down. This is a bug in the JavaScript code, but I’d rather rely on native scrolling than on JavaScript.&lt;/p&gt;
+
+&lt;p&gt;I saw mentions of a JavaScript-less solution that involves multiple nested CSS transformations (rotating the container 90° and then rotating the container’s children the opposite way), but I could not get this approach to work.&lt;/p&gt;
+
+
+
+&lt;div class="run-in"&gt;
+&lt;h3 id="padding"&gt;Padding&lt;/h3&gt;
+&lt;p&gt;For reasons I don’t fully understand, ensuring that the last column has some right padding is particularly difficult. Without this right padding, the last column sits awkwardly against the window border. I got this to work by adding a fat right border to every element inside the multi-column container, which is a terrible hack and I feel bad about it. Someone needs to come up with a better idea.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class="run-in"&gt;
+&lt;h3 id="controlling-column-breaks"&gt;Controlling column breaks&lt;/h3&gt;
+&lt;p&gt;In multi-column media, like in multi-page media, it becomes important to control how elements are broken across columns. The &lt;code&gt;break-inside: avoid&lt;/code&gt; CSS property works well, though it seems to be the only well-supported property. CSS’ widows and orphans support is spotty across browsers. So is the &lt;code&gt;break-after: avoid&lt;/code&gt; property, which I’d love to have used on headers — keeping headers together with the first-following paragraph makes a difference.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2 id="open-questions-and-future-work"&gt;Open questions and future work&lt;/h2&gt;
+
+&lt;p&gt;Is horizontal scrolling a good idea? It’s unconventional, but does that mean it should be avoided?&lt;/p&gt;
+
+&lt;p&gt;Overflowing columns in the block direction would be sweet. &lt;a href="https://www.smashingmagazine.com/2019/01/css-multiple-column-layout-multicol/"&gt;Quoting Rachel Andrew&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For Level 2 of the specification, we are considering how to enable a method by which overflow columns, those which currently end up causing the horizontal scrollbar, could instead be created in the block direction. This would mean that &lt;strong&gt;you could have a multicol container with a height, and once the content had made columns which filled that container, a new set of columns would be created below&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(Emphasis mine.) This approach would eliminate issues with scrolling (no JavaScript needed, and scrolling would be vertical and thus more conventional).&lt;/p&gt;
+
+&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2 id="closing-thoughts"&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;p&gt;CSS’ multi-column support is not usable for long-form content yet. While there is certainly progress made, and the opportunities are exciting, the usability problems related to non-conventional scrolling make it difficult to use, and browser support is too spotty to provide a reliable, comfortable experience.&lt;/p&gt;
+</content>
+    <summary type="html">On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.</summary>
+  </entry>
   <entry>
     <id>tag:denisdefreyne.com,2021-05-29:/articles/2021-budget-replacement/</id>
     <title type="html">Budget for replacing past purchases</title>
@@ -20,6 +106,7 @@
 &lt;li&gt;Larger appliances: dishwasher, washing machine, …&lt;/li&gt;
 &lt;li&gt;Furniture with limited lifetime: office chair, mattress, …&lt;/li&gt;
 &lt;/ul&gt;&lt;p&gt;This explicitly excludes items with non-trivial cost that have a long (expected) lifetime. For example, this does this not include my expensive (but gorgeous) kitchen table, which hopefully will last forever.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;How to budget for replacement&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;To start, make a list of all items with limited lifetime and non-trivial cost (use the categorization above as a guideline). For each item, roughly estimate its remaining expected lifetime, and the cost to replace it. For example: I bought my MacBook Pro in late 2017 and expect its lifetime to be 5 years. At the time of writing (early 2021), the expected remaining lifetime is roughly 20 months, and replacing it would cost roughly €1500.&lt;/p&gt;&lt;p&gt;From now on, start budgeting each month the amount of money needed to cover the replacement cost in the expected lifetime. For example, the €1500 for replacing my MacBook Pro over the remaining 20 months of its lifetime comes down to €75/month.&lt;/p&gt;&lt;p&gt;For each future purchase with limited lifetime and non-trivial cost, do this budgeting calculation &lt;em&gt;right when you make the purchase&lt;/em&gt;. For example, if I were to replace my MacBook Pro right now (assuming the replacement has the same cost of €1500 and the same expected lifetime of 5 years), I’d immediately start budgeting €1500 spread over 5 years, which comes down to €25/month.&lt;span class="sidenote text-muted"&gt;Budgeting software exists to make this easier! I use &lt;a href="https://www.youneedabudget.com"&gt;You Need A Budget&lt;/a&gt;, which works nicely with this approach. I’m also keeping my eye on &lt;a href="https://actualbudget.com"&gt;Actual&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Lifetime vs. warranty&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;It is safe to use the warranty period as the lifetime, but this can be overly pessimistic. For example, my 2017 MacBook Pro is out of warranty, but I expect to keep on using it for at least another year.&lt;/p&gt;&lt;p&gt;In the end, it comes down to how much risk (uncertainty) you’re willing to take on.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Advantages&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;I am able to deal with unanticipated expenses easily. Ideally, I only replace the item once I have all the money for replacement saved up, but even if I need to replace it before its expected lifetime ends, I will at least have a helpful part of the money saved up.&lt;/p&gt;&lt;p&gt;I am able to find out which items have extended past its expected lifetime. While this does not require me in any way to replace them, I can do so with no financial impact.&lt;/p&gt;&lt;p&gt;It makes me prefer purchasing long-lasting items over short-lasting ones, as short-lasting items will have a potentially higher monthly cost (for budgeting) associated with them.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Disadvantages&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;It looks rather gloomy to immediately start budgeting for replacing an expensive item, right after purchasing it.&lt;/p&gt;</content>
+    <summary type="html">One way in which budgeting reduces financial anxiety is by predicting expenses based on the expected lifetime of a purchase.</summary>
   </entry>
   <entry>
     <id>tag:denisdefreyne.com,2021-05-29:/articles/2021-proposal-documents/</id>
@@ -56,6 +143,7 @@
 &lt;li&gt;&lt;p&gt;It might be worth adding a &lt;a href="https://en.wikipedia.org/wiki/Responsibility_assignment_matrix"&gt;RACI matrix&lt;/a&gt; to the document, to state who is responsible, accountable, consulted, and informed.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;It might be worth documenting the thought process that went into the proposed solution. References (bibliography) would then probably go into a subsection of the &lt;i&gt;Proposed solution&lt;/i&gt; section.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;</content>
+    <summary type="html">In any collaborative environment, opportunities for change often arise. When such an opportunity presents itself, write up a structured proposal document describing how to tackle this opportunity. With this document, a decision on whether or not to implement the proposal can be made quickly and confidently.</summary>
   </entry>
   <entry>
     <id>tag:denisdefreyne.com,2020-11-23:/articles/2020-lenses/</id>
@@ -563,6 +651,7 @@ type Person = {
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Form helpers:&lt;/strong&gt; While lenses themselves are simple, using them effectively for forms requires implementations for all types of form fields, from simple text fields to different types of multi-select lists. The &lt;a href="https://codesandbox.io/s/bcgdv-lenses-demo-8n4n5?file=/src/PersonForm.tsx" rel="noopener nofollow"&gt;demo&lt;/a&gt; contains the minimal implementation of some types of form fields, which ideally would grow and be properly packaged as an open-source package.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Performance:&lt;/strong&gt; The performance of this particular implementation of lenses, and implementations of the form fields, has not been a cause for concern so far. Still, it is likely that situations will arise where the performance of lenses is just not adequate. More work needs to be done to ensure that lenses are an appropriate solution, even for unusually large and complex forms.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Closing thoughts&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;To me, lenses have proven their worth, and will have a prominent place in my toolbox for building forms. No other approach to building forms gives me the same development speed or gives me as much confidence.&lt;/p&gt;&lt;p&gt;With lenses, I can be confident that the forms I build work, with only a minimum of testing. The real-time IDE feedback and autocompletion means I can work faster, without compromising quality.&lt;/p&gt;</content>
+    <summary type="html">Lenses enable building complex forms quickly and with confidence. Lenses themselves are simple, but they provide significant benefits when used with React forms with TypeScript, reducing the change of mistakes and speeding up the feedback loop.</summary>
   </entry>
 </feed>
 
