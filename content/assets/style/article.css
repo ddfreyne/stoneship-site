@@ -312,6 +312,16 @@ mark {
   margin-top: 1.5rem;
 
   grid-column: full;
+
+  height: 20rem;
+  overflow: hidden;
+}
+
+.hero img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
 }
 
 /** TITLE **********/

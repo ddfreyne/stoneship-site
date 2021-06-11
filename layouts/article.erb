@@ -4,7 +4,15 @@
       <%= link_to '← back to articles', @items['/articles.*'] %>
     </div>
 
-    <div class="hero" style="<% if @item[:banner] %>background: url(<%= @items[@item[:banner]].path %>);<% end %> background-size: 100%; height: 20rem"></div>
+    <!--
+    <div class="hero" style="<% if @item[:banner] %>background: url(<%= @items[@item[:banner]].path %>);<% end %> background-size: 120%; height: 20rem"></div>
+    -->
+
+    <% if @item[:banner] %>
+      <div class="hero"><img src="<%= @items[@item[:banner]].path %>"></div>
+    <% else %>
+      <div class="hero"></div>
+    <% end %>
 
     <div class="title text-center">
       <h1><%= @item[:title] %></h1>
