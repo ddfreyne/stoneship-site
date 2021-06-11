@@ -19,7 +19,7 @@
 
 &lt;p&gt;All this whitespace is wasted screen real estate. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.&lt;/p&gt;
 
-&lt;figure style="max-width: 100%" class="col-lg"&gt;
+&lt;figure class="col-lg"&gt;
   &lt;img style="max-width: 100%; object-fit: contain" src="/experiments/horizontal-layout/screenshot.png"&gt;
 &lt;/figure&gt;
 

@@ -194,7 +194,7 @@ ol {
 a {
   color: var(--color-link);
 
-  text-underline-offset: 0.1875rem;
+  text-underline-offset: 0.1875em;
 }
 
 a:hover {
@@ -262,10 +262,81 @@ mark {
   background: var(--yellow-300);
 }
 
+/** WRAPPER **********/
+
+@media screen {
+  .wrapper {
+    padding: 1.5rem 0 3rem 0;
+
+    display: grid;
+
+    grid-template-columns:
+      [full-start] 1.5rem
+      [wide-start] minmax(0, 1fr)
+      [base-start] minmax(0, 37.5rem)
+      [base-end] minmax(0, 1fr)
+      [wide-end] 1.5rem
+      [full-end];
+
+    column-gap: 0;
+  }
+
+  .wrapper > * {
+    grid-column: base;
+
+    position: relative;
+  }
+
+  .wrapper > figure {
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-column: wide;
+
+    max-width: calc(2 * 37.5rem);
+  }
+}
+
+/** HERO **********/
+
+.hero {
+  margin-top: 1.5rem;
+
+  grid-column: full;
+
+  height: 30vh;
+
+  background-color: var(--gray-100);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
+
+  position: relative;
+}
+
+.hero-img-attribution {
+  grid-column: full;
+
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+
+  padding: 0.1rem 0.3rem;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  font-family: var(--font-face-sans-serif);
+  font-size: 0.75rem;
+}
+
+.hero-img-attribution:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 /** TITLE **********/
 
 .title {
-  padding: calc(4 * 1.5rem) 0 calc(2 * 1.5rem) 0;
+  padding: 3rem 0 3rem 0;
 }
 
 .title h1 {
@@ -315,45 +386,6 @@ h2::after {
     color: var(--gray-500);
     width: calc(5rem - 0.75rem);
     text-align: right;
-  }
-}
-
-/** WRAPPER **********/
-
-@media screen {
-  .wrapper {
-    max-width: calc(2 * 37.5rem);
-    margin: 0 auto;
-
-    padding: 3rem 1.5rem;
-
-    display: grid;
-
-    grid-template-columns:
-      [full-start] minmax(0, 1fr)
-      [base-start] minmax(0, 37.5rem)
-      [base-end] minmax(0, 1fr)
-      [full-end];
-
-    column-gap: 0;
-  }
-
-  .wrapper > * {
-    grid-column: base;
-
-    position: relative;
-  }
-
-  .wrapper > figure {
-    grid-column: full;
-  }
-}
-
-@media screen and (max-width: 40.5rem) {
-  /* breakpoint: 37.5rem + 4rem */
-
-  .wrapper {
-    padding: 1.5rem;
   }
 }
 
