@@ -146,7 +146,7 @@ h1 {
 }
 
 h3 {
-  margin: 0;
+  margin: -0.06rem 0 0.06rem 0;
   padding: 0 0.75em 0 0;
 
   font-family: var(--font-face-h3);
