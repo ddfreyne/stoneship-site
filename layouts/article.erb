@@ -8,7 +8,7 @@
       <h1><%= @item[:title] %></h1>
 
       <div class="short-border-below sans-serif font-xs uppercase letter-spacing-1 lh-md text-muted">
-        <div><span class="no-break"><%= fmt_date Date.parse(@item[:published_on]) %></span><% if @item[:revised_on] %> <span class="no-break">(revised <%= fmt_date Date.parse(@item[:revised_on]) %>)</span><% end %><span class="px-1"> • </span><span class="no-break">Estimated reading time: <%= ReadingTime.calc(yield, complexity: @item.fetch(:reading_time_complexity, 0)) %>min</span></div>
+        <div><span class="no-break"><%= fmt_date Date.parse(@item[:published_on]) %></span><% if @item[:revised_on] %> <span class="no-break">(revised <%= fmt_date Date.parse(@item[:revised_on]) %>)</span><% end %><span class="px-1"> • </span><span class="no-break"><%= ReadingTime.calc(yield, complexity: @item.fetch(:reading_time_complexity, 0)) %>min read</span></div>
       </div>
     </div>
 
