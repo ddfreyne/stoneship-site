@@ -196,6 +196,7 @@ kbd,
 pre,
 samp {
   font-family: var(--font-face-code);
+  font-size: 0.905rem;
   font-weight: 400;
 
   -webkit-hyphens: none;
