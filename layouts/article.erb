@@ -5,7 +5,9 @@
     </div>
 
     <% if @item[:banner] %>
-      <div class="hero" style="background-image: url(<%= @items[@item[:banner]].path %>);"></div>
+      <div class="hero" style="background-image: url(<%= @items[@item[:banner]].path %>);">
+        <div class="hero-img-attribution text-muted"><%= @item[:banner_attribution] %></div>
+      </div>
     <% else %>
       <div class="hero"></div>
     <% end %>
