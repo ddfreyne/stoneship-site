@@ -231,7 +231,7 @@ pre {
   white-space: pre-wrap;
 }
 
-strong {
+blockquote strong {
   font-weight: normal;
   font-style: italic;
 
@@ -242,18 +242,6 @@ strong {
 
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-}
-
-blockquote strong {
-  /* background-color: var(--yellow-100);
-
-  padding: 0.0625rem 0.25rem 0;
-
-  font-weight: normal;
-
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  */
 }
 
 figure {
