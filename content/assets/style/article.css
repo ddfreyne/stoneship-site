@@ -300,22 +300,16 @@ mark {
 /** HERO **********/
 
 .hero {
-  background: var(--gray-100);
-
   margin-top: 1.5rem;
 
   grid-column: full;
 
-  min-height: 10vh;
-  max-height: 25vh;
-  overflow: hidden;
-}
+  height: 30vh;
 
-.hero img {
-  display: block;
-
-  max-width: 100%;
-  height: auto;
+  background-color: var(--gray-100);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 25%;
 }
 
 /** TITLE **********/

@@ -104,7 +104,7 @@ compile '/{experiments,articles}/horizontal-layout/sample.*' do
   write item.identifier.without_exts + '/index.html'
 end
 
-passthrough '/{experiments,articles}/**/*.png'
+passthrough '/{experiments,articles}/**/*.{png,jpg}'
 
 compile '/experiments/*.{md,md.erb,dmark}' do
   filter :erb if item.identifier.exts.include?('erb')
