@@ -140,6 +140,10 @@ p + p,
   text-indent: 1.5rem;
 }
 
+li:first-child > p {
+  margin-top: 0;
+}
+
 h2,
 h3 {
   break-after: avoid;
