@@ -262,10 +262,62 @@ mark {
   background: var(--yellow-300);
 }
 
+/** WRAPPER **********/
+
+@media screen {
+  .wrapper {
+    max-width: calc(2 * 37.5rem);
+    margin: 0 auto;
+
+    padding: 1.5rem 0 3rem 0;
+
+    display: grid;
+
+    grid-template-columns:
+      [full-start] minmax(0, 1fr)
+      [base-start] minmax(0, 37.5rem)
+      [base-end] minmax(0, 1fr)
+      [full-end];
+
+    column-gap: 3rem;
+  }
+
+  .wrapper > * {
+    grid-column: base;
+
+    position: relative;
+  }
+
+  .wrapper > figure {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    grid-column: full;
+  }
+}
+
+@media screen and (max-width: 40.5rem) {
+  /* breakpoint: 37.5rem + 4rem */
+
+  .wrapper {
+    column-gap: 1.5rem;
+  }
+}
+
+/** HERO **********/
+
+.hero {
+  background: var(--gray-100);
+
+  margin-top: 1.5rem;
+
+  grid-column: full;
+}
+
 /** TITLE **********/
 
 .title {
-  padding: calc(4 * 1.5rem) 0 calc(2 * 1.5rem) 0;
+  padding: 3rem 0 3rem 0;
 }
 
 .title h1 {
@@ -315,45 +367,6 @@ h2::after {
     color: var(--gray-500);
     width: calc(5rem - 0.75rem);
     text-align: right;
-  }
-}
-
-/** WRAPPER **********/
-
-@media screen {
-  .wrapper {
-    max-width: calc(2 * 37.5rem);
-    margin: 0 auto;
-
-    padding: 3rem 1.5rem;
-
-    display: grid;
-
-    grid-template-columns:
-      [full-start] minmax(0, 1fr)
-      [base-start] minmax(0, 37.5rem)
-      [base-end] minmax(0, 1fr)
-      [full-end];
-
-    column-gap: 0;
-  }
-
-  .wrapper > * {
-    grid-column: base;
-
-    position: relative;
-  }
-
-  .wrapper > figure {
-    grid-column: full;
-  }
-}
-
-@media screen and (max-width: 40.5rem) {
-  /* breakpoint: 37.5rem + 4rem */
-
-  .wrapper {
-    padding: 1.5rem;
   }
 }
 

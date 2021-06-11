@@ -4,6 +4,8 @@
       <%= link_to '← back to articles', @items['/articles.*'] %>
     </div>
 
+    <div class="hero" style="<% if @item[:banner] %>background: url(<%= @items[@item[:banner]].path %>);<% end %> background-size: 100%; height: 20rem"></div>
+
     <div class="title text-center">
       <h1><%= @item[:title] %></h1>
 
