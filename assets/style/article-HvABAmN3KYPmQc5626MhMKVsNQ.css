@@ -53,6 +53,17 @@
   --blue-800: hsl(225, 95.08%, 23.92%);
   --blue-900: hsl(224.75, 96.72%, 11.96%);
 
+  --purple-050: hsl(264.71, 100%, 98%);
+  --purple-100: hsl(264.71, 100%, 90%);
+  --purple-200: hsl(264.71, 100%, 80%);
+  --purple-300: hsl(265.1, 100%, 70%);
+  --purple-400: hsl(265, 100%, 60%);
+  --purple-500: hsl(264.94, 100%, 50%);
+  --purple-600: hsl(265, 100%, 40%);
+  --purple-700: hsl(265.1, 100%, 30%);
+  --purple-800: hsl(264.71, 100%, 20%);
+  --purple-900: hsl(264.71, 100%, 10%);
+
   /* material design */
   --teal-050: #e0f2f1;
   --teal-100: #b2dfdb;
@@ -220,8 +231,21 @@ pre {
   white-space: pre-wrap;
 }
 
+strong {
+  font-weight: normal;
+  font-style: italic;
+
+  color: var(--purple-600);
+  background-color: var(--purple-050);
+
+  padding: 0.0625rem 0.2rem 0;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 blockquote strong {
-  background-color: var(--yellow-100);
+  /* background-color: var(--yellow-100);
 
   padding: 0.0625rem 0.25rem 0;
 
@@ -229,6 +253,7 @@ blockquote strong {
 
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  */
 }
 
 figure {
@@ -239,6 +264,10 @@ figure {
 
 figure img {
   display: block;
+}
+
+mark {
+  background: var(--yellow-300);
 }
 
 /** TITLE **********/
