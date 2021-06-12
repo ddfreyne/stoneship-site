@@ -10,11 +10,11 @@
     <uri>https://denisdefreyne.com</uri>
   </author>
   <entry>
-    <id>tag:denisdefreyne.com,2021-06-07:/articles/2021-horizontal-layout.md/</id>
+    <id>tag:denisdefreyne.com,2021-06-07:/articles/2021-horizontal-layout/</id>
     <title type="html">Horizontally-scrolling multi-column layout: a retrospective</title>
     <published>2021-06-07T22:00:00Z</published>
     <updated>2021-06-07T22:00:00Z</updated>
-    <link rel="alternate" href="http://denisdefreyne.com/articles/2021-horizontal-layout.md/" type="text/html"/>
+    <link rel="alternate" href="http://denisdefreyne.com/articles/2021-horizontal-layout/" type="text/html"/>
     <content type="html">&lt;p&gt;On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. This whitespace is needed to prevent the text lines in the column from growing overly long, and thus hard to read.&lt;/p&gt;
 
 &lt;p&gt;All this whitespace is wasted screen real estate. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.&lt;/p&gt;
