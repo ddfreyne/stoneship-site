@@ -15,7 +15,7 @@
     <div>
       <div class="d-flex sep-dot lg:sep-none lg:flex-column font-face-sans-serif font-xs lh-rel-base text-muted text-right pt-3 lhs">
         <div class="no-break"><%= fmt_date Date.parse(@item[:published_on]) %></div>
-        <% if @item[:revised_on] %><div class="no-break">(revised <%= fmt_date Date.parse(@item[:revised_on]) %>)</div><% end %>
+        <% if @item[:revised_on] %><div class="no-break">revised <%= fmt_date Date.parse(@item[:revised_on]) %></div><% end %>
         <div class="no-break lg:pb-3">Denis Defreyne</div>
         <div class="no-break"><%= ReadingTime.calc(yield, complexity: @item.fetch(:reading_time_complexity, 0)) %>min read</div>
       </div>
