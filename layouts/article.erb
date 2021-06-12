@@ -1,24 +1,23 @@
 <% render '/_wrapper.*' do %>
   <div class="cols wrapper sidenote-main">
-    <div class="nav sans-serif font-xs uppercase letter-spacing-1 lh-md">
-      <%= link_to '← back to articles', @items['/articles.*'] %>
+    <div class="col-full px-3">
+      <div class="max-width-base lg:max-width-md mx-auto nav font-face-sans-serif font-xs uppercase letter-spacing-1 lh-md mb-3">
+        <%= link_to '← back to articles', @items['/articles.*'] %>
+      </div>
     </div>
 
-    <% if @item[:banner] %>
-      <div class="hero" style="background-image: url(<%= @items[@item[:banner]].path %>);">
-        <div class="hero-img-attribution text-muted"><%= @item[:banner_attribution] %></div>
+    <div class="col-full mb-4 px-3 bg-teal-600 fg-white">
+      <div class="max-width-base lg:max-width-md mx-auto py-4 lg:py-5">
+        <h1 class="max-width-base lg:max-width-md-left font-face-display font-weight-700 font-size-l3 lg:font-size-l4 lh-rel-s3 no-hyphens"><%= @item[:title] %></h1>
       </div>
-    <% else %>
-      <div class="hero"></div>
-    <% end %>
+    </div>
 
-    <div class="col-full title pt-4 pb-4 text-center">
-      <div class="max-width-base mx-auto">
-      <h1><%= @item[:title] %></h1>
-
-      <div class="short-border-below sans-serif font-xs uppercase letter-spacing-1 lh-md text-muted">
-        <div><span class="no-break"><%= fmt_date Date.parse(@item[:published_on]) %></span><% if @item[:revised_on] %> <span class="no-break">(revised <%= fmt_date Date.parse(@item[:revised_on]) %>)</span><% end %><span class="px-1"> • </span><span class="no-break"><%= ReadingTime.calc(yield, complexity: @item.fetch(:reading_time_complexity, 0)) %>min read</span></div>
-      </div>
+    <div>
+      <div class="d-flex sep-dot lg:sep-none lg:flex-column font-face-sans-serif font-xs lh-rel-base text-muted text-right pt-3 lhs">
+        <div class="no-break"><%= fmt_date Date.parse(@item[:published_on]) %></div>
+        <% if @item[:revised_on] %><div class="no-break">(revised <%= fmt_date Date.parse(@item[:revised_on]) %>)</div><% end %>
+        <div class="no-break lg:pb-3">Denis Defreyne</div>
+        <div class="no-break"><%= ReadingTime.calc(yield, complexity: @item.fetch(:reading_time_complexity, 0)) %>min read</div>
       </div>
     </div>
 

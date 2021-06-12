@@ -14,7 +14,6 @@ follow: false
 
     <% articles.sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
       <h3><%= piece[:title] %></h3>
-      <a href="<%= piece.path %>" class="col-lg figure" style="display: block; <% if piece[:banner] %>background: url(<%= @items[piece[:banner]].path %>);<% end %> background-size: 100%; height: 10rem"></a>
       <p class="mb-3"><%= piece[:excerpt] %> <%= link_to 'Read more', piece %></p>
     <% end %>
   <% end %>
