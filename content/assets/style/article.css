@@ -866,6 +866,12 @@ h2::after {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 65.5rem) {
+  .lg\:text-shadow-retro {
+    text-shadow: 0.12ch 0.12ch 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
 .letter-spacing-1 {
   letter-spacing: 0.1ch;
 }

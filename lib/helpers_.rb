@@ -24,6 +24,13 @@ def meta_robots
   end
 end
 
+def sorted_articles
+  @items
+    .find_all('/articles/*')
+    .sort_by { |i| Date.parse(i[:published_on]) }
+    .reverse
+end
+
 def articles_by_year
   @items
     .find_all('/articles/*')

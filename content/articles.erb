@@ -9,12 +9,8 @@ follow: false
 <p class="col-left-sm">This is a collection of articles I’ve written.</p>
 
 <div class="col-right-md">
-  <% articles_by_year.each do |(year, articles)| %>
-    <h2><%= year %></h2>
-
-    <% articles.sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |piece| %>
-      <h3><%= piece[:title] %></h3>
-      <p class="mb-3"><%= piece[:excerpt] %> <%= link_to 'Read more', piece %></p>
-    <% end %>
+  <% sorted_articles.each do |article| %>
+    <h2><%= link_to article[:title], article %></h2>
+    <p class="mb-3"><%= article[:excerpt] %> <%= link_to 'Read more', article %></p>
   <% end %>
 </div>
