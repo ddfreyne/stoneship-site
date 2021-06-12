@@ -335,10 +335,6 @@ mark {
 
 /** TITLE **********/
 
-.title {
-  padding: 3rem 0 3rem 0;
-}
-
 .title h1 {
   font-family: var(--font-face-h1);
   font-weight: 400;
@@ -436,6 +432,22 @@ h2::after {
 
 /** UTILITIES **********/
 
+.col-base {
+  grid-column: base;
+}
+
+.col-wide {
+  grid-column: wide;
+}
+
+.col-full {
+  grid-column: full;
+}
+
+.max-width-base {
+  max-width: 37.5rem;
+}
+
 .d-none {
   display: none;
 }
@@ -461,6 +473,11 @@ h2::after {
 
 .lh-md {
   line-height: 1.5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pt-1 {
