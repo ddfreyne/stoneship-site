@@ -308,42 +308,6 @@ mark {
   }
 }
 
-/** HERO **********/
-
-.hero {
-  /* margin-top: 1.5rem; */
-
-  /* grid-column: full; */
-
-  height: 30vh;
-
-  /* background-color: var(--gray-100);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 25%; */
-
-  position: relative;
-}
-
-.hero-img-attribution {
-  grid-column: full;
-
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-
-  padding: 0.1rem 0.3rem;
-
-  background: rgba(255, 255, 255, 0.25);
-
-  font-family: var(--font-face-sans-serif);
-  font-size: 0.75rem;
-}
-
-.hero-img-attribution:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-
 /** H2 **********/
 
 h2 {
