@@ -27,13 +27,7 @@ end
 def sorted_articles
   @items
     .find_all('/articles/*')
+    .reject { |i| i[:draft] }
     .sort_by { |i| Date.parse(i[:published_on]) }
     .reverse
-end
-
-def articles_by_year
-  @items
-    .find_all('/articles/*')
-    .group_by { |i| Date.parse(i[:published_on]).year }
-    .transform_values { |is| is.sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') } }
 end

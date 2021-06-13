@@ -37,6 +37,10 @@ preprocess do
     end
   end
 
+  def delete_drafts
+    @items.delete_if { |i| i[:draft] }
+  end
+
   def add_created_at
     # This makes the blogging helper easier to use
     @items.find_all('/articles/*').each do |article|
@@ -48,6 +52,7 @@ preprocess do
   assign_cachebuster_id
   find_backlinks
   add_created_at
+  delete_drafts
 end
 
 passthrough '/tmp/**/*'
@@ -79,6 +84,10 @@ compile '/assets/style/*.{css,scss}' do
   write item.identifier.without_ext + cbid_part + '.css'
 end
 
+compile '/_redirects.*' do
+  write '/_redirects'
+end
+
 passthrough '/assets/**/*'
 passthrough '**/assets/**/*'
 
@@ -99,7 +108,7 @@ compile '/feed.xml.erb' do
   write '/feed.xml'
 end
 
-compile '/{experiments,articles}/horizontal-layout/sample.*' do
+compile '/{experiments,articles}/2021-horizontal-layout/sample.*' do
   filter :erb
 
   write item.identifier.without_exts + '/index.html'
