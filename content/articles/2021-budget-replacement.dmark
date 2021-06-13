@@ -1,12 +1,11 @@
 ---
 title: "Budget for replacing past purchases"
 index: false
-published_on: "2021-05-30"
+published_on: "2021-06-13"
 excerpt: "One way in which budgeting reduces financial anxiety is by predicting expenses based on the expected lifetime of a purchase."
-draft: true
 ---
 
-#p One way in which budgeting reduces financial anxiety is by predicting expenses based on the expected lifetime of a purchase.
+#p Unexpected expenses can cause financial anxiety. This is true for me, even though I have a good salary and a solid emergency buffer. One way in which I reduce my financial anxiety is by predicting expenses based on the expected lifetime of a purchase.
 
 #h2 Limited-lifetime items with non-trivial cost
 
@@ -21,9 +20,17 @@ draft: true
 
 #h2 How to budget for replacement
 
-#p To start, make a list of all items with limited lifetime and non-trivial cost (use the categorization above as a guideline). For each item, roughly estimate its remaining expected lifetime, and the cost to replace it. For example: I bought my MacBook Pro in late 2017 and expect its lifetime to be 5 years. At the time of writing (early 2021), the expected remaining lifetime is roughly 20 months, and replacing it would cost roughly €1500.
+#p Starting out with this technique requires some initial setup. Once that’s done, the technique is easy to apply on a monthly basis.
 
-#p From now on, start budgeting each month the amount of money needed to cover the replacement cost in the expected lifetime. For example, the €1500 for replacing my MacBook Pro over the remaining 20 months of its lifetime comes down to €75/month.
+#h3 Starting out
+
+#p Make a list of all items with limited lifetime and non-trivial cost. You can use the categorization above as a guideline.
+
+#p For each item, roughly estimate its remaining expected lifetime, and the cost to replace it. For example: I bought my MacBook Pro in late 2017 and expect its lifetime to be 5 years. At the time of writing (early 2021), the expected remaining lifetime is roughly 20 months, and replacing it would cost roughly €1500.
+
+#h3 Monthly budgeting
+
+#p Each month, budget the amount of money needed to cover the replacement cost in the expected lifetime. For example, the €1500 for replacing my MacBook Pro over the remaining 20 months of its lifetime comes down to €75/month.
 
 #p For each future purchase with limited lifetime and non-trivial cost, do this budgeting calculation %em{right when you make the purchase}. For example, if I were to replace my MacBook Pro right now (assuming the replacement has the same cost of €1500 and the same expected lifetime of 5 years), I’d immediately start budgeting €1500 spread over 5 years, which comes down to €25/month.%sidenote{Budgeting software exists to make this easier! I use %ref[url=https://www.youneedabudget.com]{You Need A Budget}, which works nicely with this approach. I’m also keeping my eye on %ref[url=https://actualbudget.com]{Actual}.}
 
@@ -35,11 +42,15 @@ draft: true
 
 #h2 Advantages
 
-#p I am able to deal with unanticipated expenses easily. Ideally, I only replace the item once I have all the money for replacement saved up, but even if I need to replace it before its expected lifetime ends, I will at least have a helpful part of the money saved up.
+#ul
+  #li
+    #p %strong{I am able to deal with unanticipated expenses} in a straightforward, no-anxiety way. Ideally, I only replace the item once I have all the money for replacement saved up, but even if I need to replace it before its expected lifetime ends, I will at least have a helpful part of the money saved up.
 
-#p I am able to find out which items have extended past its expected lifetime. While this does not require me in any way to replace them, I can do so with no financial impact.
+  #li
+    #p %strong{I see which items have extended past their expected lifetime.} Because these items have been fully-funded, I can replace them with no financial impact—if I need or want to.
 
-#p It makes me prefer purchasing long-lasting items over short-lasting ones, as short-lasting items will have a potentially higher monthly cost (for budgeting) associated with them.
+  #li
+    #p %strong{It makes me prefer purchasing long-lasting items} over short-lasting ones, as short-lasting items will have a potentially higher monthly cost (for budgeting) associated with them.
 
 #h2 Disadvantages
 
