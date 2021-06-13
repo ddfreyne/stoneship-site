@@ -71,7 +71,8 @@ compile '/well-known/**/*' do
   write item.identifier.to_s.sub(/^\//, '/.')
 end
 
-compile '/assets/style/*.css' do
+compile '/assets/style/*.{css,scss}' do
+  filter :sass, syntax: :scss if item.identifier.ext == 'scss'
   filter :relativize_paths, type: :css
 
   cbid_part = item[:cbid] ? '-' + item[:cbid] : ''
