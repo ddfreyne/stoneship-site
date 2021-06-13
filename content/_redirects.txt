@@ -1,2 +1,3 @@
-/experiments2/horizontal-layout              /articles/2021-horizontal-layout
-/experiments2/horizontal-layout/sample       /articles/2021-horizontal-layout/sample
+/experiments                                /articles
+/experiments/horizontal-layout              /articles/2021-horizontal-layout
+/experiments/horizontal-layout/sample       /articles/2021-horizontal-layout/sample
