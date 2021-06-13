@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://denisdefreyne.com/_redirects</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
     <loc>http://denisdefreyne.com/articles/</loc>
     <lastmod>2021-06-12</lastmod>
   </url>
   <url>
-    <loc>http://denisdefreyne.com/articles/2020-lenses/</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
-    <loc>http://denisdefreyne.com/articles/2021-budget-replacement/</loc>
-    <lastmod>2021-06-12</lastmod>
-  </url>
-  <url>
     <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/</loc>
-    <lastmod>2021-06-12</lastmod>
+    <lastmod>2021-06-13</lastmod>
   </url>
   <url>
-    <loc>http://denisdefreyne.com/articles/2021-proposal-documents/</loc>
-    <lastmod>2021-06-10</lastmod>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/assets/scripts/behavior.js</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/assets/scripts/smoothscroll.min.js</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/assets/style/article.css</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/banner.png</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/sample/</loc>
+    <lastmod>2021-06-13</lastmod>
+  </url>
+  <url>
+    <loc>http://denisdefreyne.com/articles/2021-horizontal-layout/screenshot.png</loc>
+    <lastmod>2021-06-13</lastmod>
   </url>
   <url>
     <loc>http://denisdefreyne.com/cv/</loc>
