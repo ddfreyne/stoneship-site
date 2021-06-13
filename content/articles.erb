@@ -11,6 +11,7 @@ follow: false
 <div class="col-right-md">
   <% sorted_articles.each do |article| %>
     <h2><%= link_to article[:title], article %></h2>
+    <div class="muted"><%= fmt_date Date.parse(article[:published_on]) %></div>
     <p class="mb-3"><%= article[:excerpt] %> <%= link_to 'Read more', article %></p>
   <% end %>
 </div>
