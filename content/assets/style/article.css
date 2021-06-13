@@ -377,7 +377,7 @@ h2::after {
     margin-top: -1.5rem;
 
     font-size: 0.85rem;
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   .sidenote-pre,
@@ -511,15 +511,15 @@ h2::after {
 }
 
 .lh-rel-s3 {
-  line-height: 1;
+  line-height: 1.0935;
 }
 
 .lh-rel-s2 {
-  line-height: 1.1;
+  line-height: 1.215;
 }
 
 .lh-rel-s1 {
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 .lh-rel-base {
