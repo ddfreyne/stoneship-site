@@ -2,13 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://denisdefreyne.com/">
   <id>http://denisdefreyne.com/</id>
   <title>Denis Defreyne</title>
-  <updated>2021-06-08T22:00:00Z</updated>
+  <updated>2021-06-12T22:00:00Z</updated>
   <link rel="alternate" href="http://denisdefreyne.com/" type="text/html"/>
   <link rel="self" href="http://denisdefreyne.com/feed.xml" type="application/atom+xml"/>
   <author>
     <name>Denis Defreyne</name>
     <uri>https://denisdefreyne.com</uri>
   </author>
+  <entry>
+    <id>tag:denisdefreyne.com,2021-06-12:/articles/2021-budget-replacement/</id>
+    <title type="html">Budget for replacing past purchases</title>
+    <published>2021-06-12T22:00:00Z</published>
+    <updated>2021-06-12T22:00:00Z</updated>
+    <link rel="alternate" href="http://denisdefreyne.com/articles/2021-budget-replacement/" type="text/html"/>
+    <content type="html">&lt;p&gt;Unexpected expenses can cause financial anxiety. This is true for me, even though I have a good salary and a solid emergency buffer. One way in which I reduce my financial anxiety is by predicting expenses based on the expected lifetime of a purchase.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Limited-lifetime items with non-trivial cost&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Some items have a limited lifetime (e.g. 4–5 years) and have a non-trivial cost (e.g. €1500). A non-trivial cost is a cost that, if it were to suddenly show up, would stir up my budget enough to cause stress. For me, these items fit primarily into three categories: &lt;span class="sidenote-pre text-muted"&gt;(&lt;/span&gt;&lt;span class="sidenote text-muted"&gt;This categorization isn’t all-encompassing: some items with non-trivial cost and limited lifetime don’t fit in properly, e.g. my glasses.&lt;/span&gt;&lt;span class="sidenote-post text-muted"&gt;)&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Electronic devices: laptop, phone, speakers, external display, …&lt;/li&gt;
+&lt;li&gt;Larger appliances: dishwasher, washing machine, …&lt;/li&gt;
+&lt;li&gt;Furniture with limited lifetime: office chair, mattress, …&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;This explicitly excludes items with non-trivial cost that have a long (expected) lifetime. For example, this does this not include my expensive (but gorgeous) kitchen table, which hopefully will last forever.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;How to budget for replacement&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;Starting out with this technique requires some initial setup. Once that’s done, the technique is easy to apply on a monthly basis.&lt;/p&gt;&lt;div class="run-in"&gt;
+&lt;h3&gt;&lt;span&gt;Starting out&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Make a list of all items with limited lifetime and non-trivial cost. You can use the categorization above as a guideline.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;For each item, roughly estimate its remaining expected lifetime, and the cost to replace it. For example: I bought my MacBook Pro in late 2017 and expect its lifetime to be 5 years. At the time of writing (early 2021), the expected remaining lifetime is roughly 20 months, and replacing it would cost roughly €1500.&lt;/p&gt;&lt;div class="run-in"&gt;
+&lt;h3&gt;&lt;span&gt;Monthly budgeting&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Each month, budget the amount of money needed to cover the replacement cost in the expected lifetime. For example, the €1500 for replacing my MacBook Pro over the remaining 20 months of its lifetime comes down to €75/month.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;For each future purchase with limited lifetime and non-trivial cost, do this budgeting calculation &lt;em&gt;right when you make the purchase&lt;/em&gt;. For example, if I were to replace my MacBook Pro right now (assuming the replacement has the same cost of €1500 and the same expected lifetime of 5 years), I’d immediately start budgeting €1500 spread over 5 years, which comes down to €25/month. &lt;span class="sidenote-pre text-muted"&gt;(&lt;/span&gt;&lt;span class="sidenote text-muted"&gt;Budgeting software exists to make this easier! I use &lt;a href="https://www.youneedabudget.com"&gt;You Need A Budget&lt;/a&gt;, which works nicely with this approach. I’m also keeping my eye on &lt;a href="https://actualbudget.com"&gt;Actual&lt;/a&gt;.&lt;/span&gt;&lt;span class="sidenote-post text-muted"&gt;)&lt;/span&gt;&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Lifetime vs. warranty&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;It is safe to use the warranty period as the lifetime, but this can be overly pessimistic. For example, my 2017 MacBook Pro is out of warranty, but I expect to keep on using it for at least another year.&lt;/p&gt;&lt;p&gt;In the end, it comes down to how much risk (uncertainty) you’re willing to take on.&lt;/p&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Advantages&lt;/span&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;I am able to deal with unanticipated expenses&lt;/strong&gt; in a straightforward, no-anxiety way. Ideally, I only replace the item once I have all the money for replacement saved up, but even if I need to replace it before its expected lifetime ends, I will at least have a helpful part of the money saved up.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;I see which items have extended past their expected lifetime.&lt;/strong&gt; Because these items have been fully-funded, I can replace them with no financial impact — if I need or want to.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;It makes me prefer purchasing long-lasting items&lt;/strong&gt; over short-lasting ones, as short-lasting items will have a potentially higher monthly cost (for budgeting) associated with them.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;div class="h2-separator"&gt;&lt;/div&gt;&lt;h2&gt;&lt;span&gt;Disadvantages&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;It looks rather gloomy to immediately start budgeting for replacing an expensive item, right after purchasing it.&lt;/p&gt;</content>
+    <summary type="html">One way in which budgeting reduces financial anxiety is by predicting expenses based on the expected lifetime of a purchase.</summary>
+  </entry>
   <entry>
     <id>tag:denisdefreyne.com,2021-06-08:/articles/2021-horizontal-layout/</id>
     <title type="html">Horizontally-scrolling multi-column layout: a retrospective</title>
