@@ -1,0 +1,314 @@
+/** DISPLAY ********************/
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:flex-column {
+    flex-direction: column;
+  }
+}
+
+/** FONT ********************/
+
+.font-weight-100 {
+  font-weight: 100;
+}
+
+.font-weight-200 {
+  font-weight: 200;
+}
+
+.font-weight-300 {
+  font-weight: 300;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+/** TEXT ********************/
+
+.no-hyphens {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.1ch;
+}
+
+/** SPACING ********************/
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pt-1 {
+  padding-top: calc(1 * 0.375rem);
+}
+
+.pt-2 {
+  padding-top: calc(2 * 0.375rem);
+}
+
+.pt-3 {
+  padding-top: calc(4 * 0.375rem);
+}
+
+.pt-4 {
+  padding-top: calc(8 * 0.375rem);
+}
+
+.pt-5 {
+  padding-top: calc(16 * 0.375rem);
+}
+
+.pb-1 {
+  padding-bottom: calc(1 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:pb-1 {
+    padding-bottom: calc(1 * 0.375rem);
+  }
+}
+
+.pb-2 {
+  padding-bottom: calc(2 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:pb-2 {
+    padding-bottom: calc(2 * 0.375rem);
+  }
+}
+
+.pb-3 {
+  padding-bottom: calc(4 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:pb-3 {
+    padding-bottom: calc(4 * 0.375rem);
+  }
+}
+
+.pb-4 {
+  padding-bottom: calc(8 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:pb-4 {
+    padding-bottom: calc(8 * 0.375rem);
+  }
+}
+
+.pb-5 {
+  padding-bottom: calc(16 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:pb-5 {
+    padding-bottom: calc(16 * 0.375rem);
+  }
+}
+
+.mt-1 {
+  margin-top: calc(1 * 0.375rem);
+}
+
+.mt-2 {
+  margin-top: calc(2 * 0.375rem);
+}
+
+.mt-3 {
+  margin-top: calc(4 * 0.375rem);
+}
+
+.mt-4 {
+  margin-top: calc(8 * 0.375rem);
+}
+
+.mt-5 {
+  margin-top: calc(16 * 0.375rem);
+}
+
+.mb-1 {
+  margin-bottom: calc(1 * 0.375rem);
+}
+
+.mb-2 {
+  margin-bottom: calc(2 * 0.375rem);
+}
+
+.mb-3 {
+  margin-bottom: calc(4 * 0.375rem);
+}
+
+.mb-4 {
+  margin-bottom: calc(8 * 0.375rem);
+}
+
+.mb-5 {
+  margin-bottom: calc(16 * 0.375rem);
+}
+
+.px-1 {
+  padding-left: calc(1 * 0.375rem);
+  padding-right: calc(1 * 0.375rem);
+}
+
+.px-2 {
+  padding-left: calc(2 * 0.375rem);
+  padding-right: calc(2 * 0.375rem);
+}
+
+.px-3 {
+  padding-left: calc(4 * 0.375rem);
+  padding-right: calc(4 * 0.375rem);
+}
+
+.px-4 {
+  padding-left: calc(8 * 0.375rem);
+  padding-right: calc(8 * 0.375rem);
+}
+
+.px-5 {
+  padding-left: calc(16 * 0.375rem);
+  padding-right: calc(16 * 0.375rem);
+}
+
+.py-1 {
+  padding-top: calc(1 * 0.375rem);
+  padding-bottom: calc(1 * 0.375rem);
+}
+
+.py-2 {
+  padding-top: calc(2 * 0.375rem);
+  padding-bottom: calc(2 * 0.375rem);
+}
+
+.py-3 {
+  padding-top: calc(4 * 0.375rem);
+  padding-bottom: calc(4 * 0.375rem);
+}
+
+.py-4 {
+  padding-top: calc(8 * 0.375rem);
+  padding-bottom: calc(8 * 0.375rem);
+}
+
+.py-5 {
+  padding-top: calc(16 * 0.375rem);
+  padding-bottom: calc(16 * 0.375rem);
+}
+
+@media screen and (min-width: 65.5rem) {
+  .lg\:py-5 {
+    padding-top: calc(16 * 0.375rem);
+    padding-bottom: calc(16 * 0.375rem);
+  }
+}
+
+/** POSITION ********************/
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.bottom-1 {
+  bottom: calc(1 * 0.375rem);
+}
+
+.bottom-2 {
+  bottom: calc(2 * 0.375rem);
+}
+
+.bottom-3 {
+  bottom: calc(4 * 0.375rem);
+}
+
+.bottom-4 {
+  bottom: calc(8 * 0.375rem);
+}
+
+.bottom-5 {
+  bottom: calc(16 * 0.375rem);
+}
+
+.bottom-n1 {
+  bottom: calc(-1 * 1 * 0.375rem);
+}
+
+.bottom-n2 {
+  bottom: calc(-1 * 2 * 0.375rem);
+}
+
+.bottom-n3 {
+  bottom: calc(-1 * 4 * 0.375rem);
+}
+
+.bottom-n4 {
+  bottom: calc(-1 * 8 * 0.375rem);
+}
+
+.bottom-n5 {
+  bottom: calc(-1 * 16 * 0.375rem);
+}

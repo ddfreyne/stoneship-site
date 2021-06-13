@@ -40,18 +40,20 @@
             <link rel="stylesheet" href="<%= @items["/assets/fonts/main.*"].path %>">
         <% end %>
         <%
-            stylesheet =
+            stylesheets =
                 if @item[:layout] == 'cv'
-                    'cv'
+                    ['cv']
                 elsif @item.identifier.match?('/fiction/*')
-                    'fiction'
+                    ['fiction']
                 elsif @item.identifier.match?('/articles/*')
-                    'article'
+                    ['util', 'article']
                 else
-                    '2021q1'
+                    ['2021q1']
                 end
         %>
-        <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
+        <% stylesheets.each do |stylesheet| %>
+            <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
+        <% end %>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script>
