@@ -5,7 +5,7 @@ index: false
 published_on: "2021-06-08"
 ---
 
-On wide screens, and especially ultra-wide screens, a single column of text often means that a considerable amount of whitespace is needed to the left and the right of this text column. This whitespace is needed to prevent the text lines in the column from growing overly long, and thus hard to read.
+On wide screens, and especially ultra-wide screens, a single column of text often requires a considerable amount of whitespace to the left and the right. This whitespace is needed to prevent the text lines in the column from growing overly long, and thus hard to read.
 
 All this whitespace is wasted screen real estate. In this experiment, I aimed at using screen real estate more efficiently using CSS’ multi-column support.
 
@@ -19,13 +19,13 @@ All this whitespace is wasted screen real estate. In this experiment, I aimed at
 
 So much less wasted screen real estate!
 
-I found that reading an article involved a lot less scrolling up and down to refer to previous bits of writing. This makes sense, as there’s considerably more text visible on the screen.
+Reading an article involved a lot less scrolling up and down to refer to previous bits of in the article. This makes sense, as there’s considerably more text visible on the screen.
 
 I’m fond of the aesthetic: it reminds me of a book or a magazine.
 
 ## What didn’t work
 
-As excited as I was, this experiment quickly revealed some issues.
+As excited as I was, this experiment revealed some issues.
 
 ### Controlling column widths
 
@@ -33,7 +33,7 @@ CSS’ multi-column support really wants to divide the available space in an int
 
 > The `column-width` CSS property sets the ideal column width in a multi-column layout. The container will have as many columns as can fit without any of them having a width less than the `column-width` value.
 
-As a consequence, it becomes non-obvious that you can scroll right: there is no indication that there is more text (more columns) past the last-visible column. In this experiment, I cheated and made the next column half visible, which I think gives enough of a hint that there is more content than what is visible.
+As a consequence, it becomes non-obvious that you can scroll right: there is no indication that there are additional columns past the last-visible column. To resolve this problem in this experiment, I cheated and made the next column half visible, which I think gives enough of a hint that there is more content beyond what is visible.
 
 Furthermore, as a result of column widths being calculated based on the container width, resizing the window will resize the columns as well. In this experiment, this behavior is jarring, as text reflows, especially when the viewport is already scrolled considerably to the right.
 
