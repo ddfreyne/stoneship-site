@@ -114,6 +114,7 @@ compile '/articles/2021-horizontal-layout/sample.*' do
   write item.identifier.without_exts + '/index.html'
 end
 
+passthrough '/articles/**/sample/**/*'
 passthrough '/articles/**/*.{png,jpg}'
 
 compile '/articles/*.{md,md.erb,dmark}' do

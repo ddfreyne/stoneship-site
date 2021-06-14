@@ -98,6 +98,13 @@ $scale: (
     padding-bottom: calc(#{$j} * 0.375rem) !important;
   }
 
+  .p-#{$i} {
+    padding-top: calc(#{$j} * 0.375rem) !important;
+    padding-right: calc(#{$j} * 0.375rem) !important;
+    padding-bottom: calc(#{$j} * 0.375rem) !important;
+    padding-left: calc(#{$j} * 0.375rem) !important;
+  }
+
   .mt-#{$i} {
     margin-top: calc(#{$j} * 0.375rem) !important;
   }
@@ -124,6 +131,13 @@ $scale: (
     margin-bottom: calc(#{$j} * 0.375rem) !important;
   }
 
+  .m-#{$i} {
+    margin-top: calc(#{$j} * 0.375rem) !important;
+    margin-right: calc(#{$j} * 0.375rem) !important;
+    margin-bottom: calc(#{$j} * 0.375rem) !important;
+    margin-left: calc(#{$j} * 0.375rem) !important;
+  }
+
   .top-#{$i} {
     top: calc(#{$j} * 0.375rem) !important;
   }
@@ -132,12 +146,28 @@ $scale: (
     top: calc(-1 * #{$j} * 0.375rem) !important;
   }
 
+  .right-#{$i} {
+    right: calc(#{$j} * 0.375rem) !important;
+  }
+
+  .right-n#{$i} {
+    right: calc(-1 * #{$j} * 0.375rem) !important;
+  }
+
   .bottom-#{$i} {
     bottom: calc(#{$j} * 0.375rem) !important;
   }
 
   .bottom-n#{$i} {
     bottom: calc(-1 * #{$j} * 0.375rem) !important;
+  }
+
+  .left-#{$i} {
+    left: calc(#{$j} * 0.375rem) !important;
+  }
+
+  .left-n#{$i} {
+    left: calc(-1 * #{$j} * 0.375rem) !important;
   }
 }
 
@@ -166,6 +196,12 @@ $scale: (
     padding-top: calc(16 * 0.375rem) !important;
     padding-bottom: calc(16 * 0.375rem) !important;
   }
+}
+
+/** BORDER ********************/
+
+.border-1 {
+  border: 1px solid #000;
 }
 
 /** POSITION ********************/

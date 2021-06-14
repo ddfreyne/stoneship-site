@@ -29,7 +29,7 @@ class DMarkTranslator < DMark::Translator
       handle_element_sidenote(element, context)
     when 'ref'
       handle_element_ref(element, context)
-    when 'em', 'strong', 'ul', 'ol', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'code', 'b', 'i', 'pre', 'mark', 'span', 'a'
+    when 'em', 'strong', 'ul', 'ol', 'li', 'p', 'dl', 'dt', 'dd', 'table', 'tr', 'td', 'div', 'code', 'b', 'i', 'pre', 'mark', 'span', 'a', 'iframe', 'figure', 'script'
       handle_generic_element(element, context)
     else
       raise "Cannot translate #{element.name}"

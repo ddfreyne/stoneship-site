@@ -26,7 +26,8 @@ excerpt: "Lenses enable building complex forms quickly and with confidence. Lens
 
 #p Here is a live demo of what we’ll build:
 
-#div %div[class=adm adm-todo]{%strong{To do}: add the live demo!}
+#div[id=lenses-demo-root,style=isolation: isolate,class=max-width-base lg:max-width-md my-3 p-3 border-1]
+#script[src=sample/index.js]
 
 #h2 What is a lens?
 
