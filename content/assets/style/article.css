@@ -340,7 +340,7 @@ h2::after {
     position: absolute;
     left: -5rem;
 
-    color: var(--gray-500);
+    color: var(--gray-400);
     width: calc(5rem - 0.75rem);
     text-align: right;
   }
