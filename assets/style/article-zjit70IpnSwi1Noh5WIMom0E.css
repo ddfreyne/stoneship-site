@@ -284,7 +284,7 @@ mark {
     grid-template-columns:
       [full-start] 1.5rem
       [wide-start] minmax(0, 1fr)
-      [base-start] minmax(0, 37.5rem)
+      [base-start] minmax(0, 34rem)
       [base-end] minmax(0, 1fr)
       [wide-end] 1.5rem
       [full-end];
@@ -304,7 +304,7 @@ mark {
 
     grid-column: wide;
 
-    max-width: calc(2 * 37.5rem);
+    max-width: calc(2 * 34rem);
   }
 }
 
@@ -330,8 +330,8 @@ h2::after {
   border-top: 1px solid var(--gray-500);
 }
 
-@media screen and (min-width: 41.5rem) {
-  /* breakpoint: 37.5rem + 4rem */
+@media screen and (min-width: 40rem) {
+  /* breakpoint: 34rem + 6rem */
 
   h2::before {
     counter-increment: h2;
@@ -340,7 +340,7 @@ h2::after {
     position: absolute;
     left: -5rem;
 
-    color: var(--gray-500);
+    color: var(--gray-400);
     width: calc(5rem - 0.75rem);
     text-align: right;
   }
@@ -354,8 +354,8 @@ h2::after {
   font-family: var(--font-face-sans-serif);
 }
 
-@media screen and (max-width: 65.5rem) {
-  /* breakpoint: 37.5rem + (12.5 + 1.5)*2 */
+@media screen and (max-width: 62rem) {
+  /* breakpoint: 34rem + (12.5 + 1.5)*2 */
 
   .sidenote {
     display: inline;
@@ -363,8 +363,8 @@ h2::after {
   }
 }
 
-@media screen and (min-width: 65.5rem) {
-  /* breakpoint: 37.5rem + (12.5 + 1.5)*2 + 1px */
+@media screen and (min-width: 62rem) {
+  /* breakpoint: 34rem + (12.5 + 1.5)*2 + 1px */
 
   .sidenote {
     position: absolute;
@@ -416,31 +416,39 @@ h2::after {
 }
 
 .max-width-base {
-  max-width: 37.5rem;
+  max-width: 34rem;
 }
 
 .max-width-md {
-  max-width: calc(37.5rem + 2 * 12.5rem + 2 * 1.5rem);
+  max-width: calc(34rem + 2 * 12.5rem + 2 * 1.5rem);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
 }
 
 @media screen and (min-width: 65.5rem) {
   .lg\:max-width-md {
-    max-width: calc(37.5rem + 2 * 12.5rem + 2 * 1.5rem);
+    max-width: calc(34rem + 2 * 12.5rem + 2 * 1.5rem);
   }
 }
 
 .max-width-md-left {
-  max-width: calc(37.5rem + 1 * 12.5rem + 1 * 1.5rem);
+  max-width: calc(34rem + 1 * 12.5rem + 1 * 1.5rem);
 }
 
 @media screen and (min-width: 65.5rem) {
   .lg\:max-width-md-left {
-    max-width: calc(37.5rem + 1 * 12.5rem + 1 * 1.5rem);
+    max-width: calc(34rem + 1 * 12.5rem + 1 * 1.5rem);
   }
 }
 
 .max-width-wide {
-  max-width: calc(37.5rem * 2);
+  max-width: calc(34rem * 2);
 }
 
 .sep-dot > *::before {
