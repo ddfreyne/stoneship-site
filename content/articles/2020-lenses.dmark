@@ -2,29 +2,37 @@
 title: "Using Lenses to build complex React forms in a type-safe way"
 index: false
 published_on: "2020-11-24"
-revised_on: "2021-06-02"
+revised_on: "2021-06-21"
 reading_time_complexity: 1
 draft: true
 excerpt: "Lenses enable building complex forms quickly and with confidence. Lenses themselves are simple, but they provide significant benefits when used with React forms with TypeScript, reducing the change of mistakes and speeding up the feedback loop."
 ---
 
-#p %em{Lenses} allow us to build complex forms quickly and with confidence.
+#p Forms in React are not straightforward to build. For trivial forms, plain-old React is good, but once the forms get more complex, you’ll likely find yourself searching for a good form-building library for React.
 
-#p While lenses themselves are simple by themselves (they’re bi-directional accessors for immutable objects), they provide significant benefits when applied for React forms in combination with TypeScript.%sidenote{This works with plain old JavaScript as well, but you’ll probably not get the type-safety advantages of it.}
+#p In this article, I propose an alternative approach to building forms, one based on %em{lenses}, tightly integrated with TypeScript%sidenote{The approach outlined in this article will work with JavaScript as well, but you’ll not get the type-safety benefits.} to tighten the feedback loop, reducing the change of mistakes and speeding up development.
 
-#h2 Forms are hard
+#h2 The trouble with forms
 
-#p At BCG Digital Ventures, I work on an internal tool where one particular page has a remarkably complex form. Its implementation has gone through several revisions to increase its stability and make it more maintainable, but even the most advanced version, powered with React, had problems.
+#p During my time at BCG Digital Ventures, I worked on an internal tool where one particular page has a remarkably complex form. It had dozens and dozens of text fields, radio buttons, checkboxes, and dropdowns, and in addition to all that, it had editable lists inside editable lists, with even more form elements inside.
 
-#p The mainstream React form-handling libraries left us hanging: none of them can deal with highly-complex nested data structures in a type-safe way.
+#p The implementation of this form had gone through several revisions to increase its stability and make it more maintainable. The penultimate version was built with %ref[url=https://formik.org/]{Formik}, which removed a ton of complexity and provided a good out-of-the-box experience.
 
-#p Type safety in particular is useful because it tightens the feedback loop: misspelled field names will be highlighted as errors in the IDE, and the IDE will provide reliable and useful autocompletion with integrated documentation.
+#p However, even the version built with Formik had issues. Like other mainstream React form-handling libraries, Formik has trouble dealing with highly-complex nested data structures. In particular, I found that spelling mistakes in field names%sidenote{I make typign mistakes all the time, and have trouble detecting them — perhaps I’m mildly dyslexic?} are hard to detect, and require extensive automated or manual testing to uncover.
 
-#p I looked to the Haskell community for alternative approaches, and discovered the concept of %em{lenses}. As an experiment, I reimplemented the form using lenses, which turned out to be capable of handling highly-complex data in a type-safe way.
+#p We can improve on this by making good use of the type system!
 
-#p With lenses, we can build complex forms quickly and with confidence.
+#h3 Tightening the feedback loop using type safety
 
-#p Here is a live demo of what we’ll build:
+#p Many mainstream React form libraries are written in plain-old JavaScript. Some of them are written in TypeScript, but are lax with types, and provide no type safety. Type safety is useful because tightens the feedback loop: misspelled field names will be highlighted as errors in the IDE in real time, and the IDE will provide reliable and useful autocompletion with integrated documentation.
+
+#p The functional programming community came up with the concept of %em{lenses}. Lenses, as you’ll see in more detail further down, are in essence bi-directional accessors for immutable objects. The immutability fits in nicely with React, and the type safety they provide will tighten the feedback loop.
+
+#p I reimplemented the remarkably complex form using lenses, which turned out to be a great idea, as lenses are capable of handling highly-complex data in a type-safe way. Lenses helped eliminated bugs and prevent regressions, and significantly sped up development. With lenses, we can build complex forms quickly and with confidence.
+
+#h3 Demo app
+
+#p Here is a live demo of something you can build with lenses:
 
 #div[id=lenses-demo-root,style=isolation: isolate,class=max-width-base lg:max-width-md my-3 p-3 border-1]
 #script[src=sample/index.js]
@@ -143,7 +151,7 @@ excerpt: "Lenses enable building complex forms quickly and with confidence. Lens
 
 #h3 Conveniently creating lenses with forProp()
 
-#p It is convenient to have a function that can automatically create a lens for a property. This is where %code{forProp()} comes in:
+#p It is convenient to have a function that can automatically create a lens for a property. This is where %code{forProp()} comes in:%sidenote{The double function invocation is necessary! When creating a lens using %code{forProp}, we need to specify the top type. If %code{forProp} only had a single function invocation, we’d have to specify both the top type %em{and} the focus type, because TypeScript does not (yet) support partial type inference. We’re working around this limitation by having two function invocations. See %ref[url=https://github.com/microsoft/TypeScript/issues/26242]{TypeScript issue #26242} for details.}
 
 #pre
   let firstNameLens =
@@ -872,9 +880,11 @@ excerpt: "Lenses enable building complex forms quickly and with confidence. Lens
 
 #p Note that the %code{DropdownField} implementation has some assumptions built-in. There is always the empty option, and the value type is nullable (%code{F | null}, rather than just %code{F}). Additionally, each option object must have an id property. These assumptions might not hold in all situations.
 
-#p Let’s take a moment to think about UX. A %code{<select>} element is a kind of single-select form field. Another kind of single-select form field is a set of radio buttons (%code{<input type="radio">}). In HTML, a select dropdown and a set of radio buttons is implemented quite differently, even though they serve a near-identical purpose.
+#h3 Dropdowns versus radio buttons
 
-#p We could define a %code{RadioButtonsField} component, and it would be used in a very similar way to a %code{DropdownField}:
+#p Let’s take a moment to think about UX. A %code{<select>} element is a kind of single-select form field. Another kind of single-select form field is a set of radio buttons (%code{<input type="radio">}). In HTML, a select dropdown and a set of radio buttons is implemented quite differently, even though they serve a near-identical purpose: selecting one item from a collection.
+
+#p We could define a %code{RadioButtonsField} component, whose usage resembles %code{DropdownField}:
 
 #pre
   <%mark{RadioButtonsField}
@@ -884,9 +894,9 @@ excerpt: "Lenses enable building complex forms quickly and with confidence. Lens
     renderValue={m => m.name%}
   />
 
-#p The type signature of a %code{RadioButtonsField} is nearly identical to that of a %code{DropdownField}. The only difference is the type of the %code{renderValue} prop: for %code{DropdownField}, %code{renderValue} has to return a %code{string}, while for %code{DropdownField}, it can return a %code{JSX.Element} as well.
+#p The type signature of a %code{RadioButtonsField} is nearly identical to that of a %code{DropdownField}. The only difference is the type of the %code{renderValue} prop: for %code{DropdownField}, %code{renderValue} has to return a %code{string}, while for %code{DropdownField}, it can also return a %code{JSX.Element}.
 
-#p It’s important to highlight what we’ve achieved here. Dropdowns and radio buttons have wildly different implementations in HTML, even though their purpose is nearly identical: picking one item from a list. The nearly-identical signature of %code{RadioButtonsField} and %code{DropdownField} make the parallels visible, and make it trivial to swap out one type of single-select for the other.
+#p This approach makes it trivial to swap a %code{DropdownField} for a %code{RadioButtonsField}. In plain-old HTML or React, this would not be the case, because dropdowns and radio buttons have wildly different implementations. Ideally, components with a similar purpose have a (near-)identical type signatures. This way, we can delay UX decisions around which kind of single-select field to use (dropdown or radio buttons), as we’ll be able to change one for the other trivially.
 
 #h2 Future work
 

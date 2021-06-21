@@ -48,11 +48,11 @@ preprocess do
     end
   end
 
+  delete_drafts
   hide_specials
   assign_cachebuster_id
   find_backlinks
   add_created_at
-  delete_drafts
 end
 
 passthrough '/tmp/**/*'
@@ -125,6 +125,7 @@ compile '/articles/*.{md,md.erb,dmark}' do
   filter :h2_separator
   filter :run_in_headers
   filter :typography
+  filter :shy
 
   layout '/article.*'
 
