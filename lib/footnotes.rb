@@ -28,24 +28,7 @@ Nanoc::Filter.define(:footnotes) do |content, _params = {}|
 
     sidenote_content = footnote_content.map(&:to_html).join('')
     sidenote_markup = <<~SIDENOTE_MARKUP.strip
-      <span class="sidenote"
-        ><input
-          aria-label="Show sidenote"
-          type="checkbox"
-          id="sidenote__checkbox--#{footnote_id}"
-          class="sidenote__checkbox"
-        ><label
-          tabindex="0"
-          title=""
-          aria-describedby="sidenote-#{footnote_id}"
-          for="sidenote__checkbox--#{footnote_id}"
-          class="sidenote__label"
-        >&lowast;</label
-        ><small
-          id="sidenote-#{footnote_id}"
-          class="sidenote__content muted"
-        >#{sidenote_content}</small
-      ></span>
+      <span class="sidenote-pre text-muted"> (</span><span class="sidenote text-muted">#{sidenote_content.strip}</span><span class="sidenote-post text-muted">)</span>
     SIDENOTE_MARKUP
 
     sup.replace(sidenote_markup)

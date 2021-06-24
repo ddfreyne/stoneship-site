@@ -1,0 +1,243 @@
+:root {
+  --font-face-base: "Public Sans", sans-serif;
+  --font-face-code: "Iosevka SS08", monospace;
+
+  --font-size-s1: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-l1: calc(var(--font-size-md) * 1.35);
+  --font-size-l2: calc(var(--font-size-l1) * 1.35);
+  --font-size-l3: calc(var(--font-size-l2) * 1.35);
+}
+
+:root {
+  --color-link: var(--blue-500);
+  --color-link-hover: var(--blue-700);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.5; /* 24 px */
+
+  text-rendering: geometricPrecision;
+}
+
+body {
+  font-family: var(--font-face-base);
+
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+
+  -moz-hyphens: auto;
+  -moz-hyphenate-limit-chars: 6 3 3;
+  -moz-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-zone: 8%;
+
+  -ms-hyphens: auto;
+  -ms-hyphenate-limit-chars: 6 3 3;
+  -ms-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-last: always;
+  -ms-hyphenate-limit-zone: 8%;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+p {
+  margin-top: 1.5rem;
+
+  widows: 2;
+  orphans: 2;
+}
+
+ul,
+ol {
+  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+li:first-child > p:first-child {
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-link);
+
+  text-underline-offset: 0.1875em;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+
+  font-size: var(--font-size-l3);
+  line-height: 3rem;
+}
+
+h2 {
+  margin-top: 3rem;
+  font-size: var(--font-size-l2);
+  line-height: 3rem;
+}
+
+h3 {
+  margin-top: 3rem;
+  position: relative;
+  top: 0.75rem;
+  font-size: var(--font-size-l1);
+  line-height: 3rem;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-face-code);
+  font-size: 0.905rem;
+  font-weight: 400;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code {
+  color: var(--teal-800);
+}
+
+pre > code {
+  color: var(--gray-900);
+}
+
+pre {
+  break-before: avoid;
+  break-inside: avoid;
+
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--gray-100);
+
+  white-space: pre-wrap;
+}
+
+blockquote {
+  font-style: italic;
+  padding-left: 1.5rem;
+}
+
+blockquote em {
+  font-style: normal;
+}
+
+blockquote strong {
+  font-style: normal;
+}
+
+mark {
+  background: var(--yellow-300);
+}
+
+.border-b-gray-100 {
+  border-bottom: 1px solid var(--gray-100);
+}
+
+/** WRAPPER **********/
+
+@media screen {
+  .wrapper {
+    display: grid;
+
+    grid-template-columns:
+      [full-start wide-start] 3rem
+      [base-start] minmax(0, 34rem)
+      [base-end] minmax(0, 1fr)
+      [wide-end] 1.5rem
+      [full-end];
+
+    column-gap: 0;
+  }
+
+  .wrapper > * {
+    grid-column: base;
+
+    position: relative;
+  }
+
+  .wrapper > figure {
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-column: wide;
+
+    max-width: calc(2 * 34rem);
+  }
+}
+
+.text-muted {
+  color: var(--gray-500);
+
+  --color-link: var(--gray-500);
+  --color-link-hover: var(--gray-700);
+}
+
+/** SIDENOTES **********/
+
+.sidenote {
+  font-family: var(--font-face-base);
+}
+
+@media screen and (max-width: 62rem) {
+  /* breakpoint: 34rem + (12.5 + 1.5)*2 */
+
+  .sidenote {
+    display: inline;
+    font-style: italic;
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  /* breakpoint: 34rem + (12.5 + 1.5)*2 + 1px */
+
+  .sidenote {
+    position: absolute;
+
+    display: block;
+
+    width: calc(12.5rem - 0.5rem);
+    left: calc(100% + 1.5rem);
+
+    margin-top: -1.5rem;
+  }
+
+  .sidenote,
+  .sidenote code {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .sidenote-pre,
+  .sidenote-post {
+    display: none;
+  }
+
+  .sidenote {
+    display: block;
+    font-style: normal;
+  }
+}

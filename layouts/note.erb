@@ -1,0 +1,9 @@
+<% render '/_wrapper.*' do %>
+  <div class="py-3 px-4 pos-fixed bg-white border-b-gray-100 z-100 w-100">// <a href="/">denisdefreyne.com</a> / <%= link_to_unless_current 'notes', @items['/notes.*'] %></div>
+
+  <div class="wrapper pt-5 pb-4">
+    <h1><%= @item[:title] %></h1>
+
+    <%= yield %>
+  </div>
+<% end %>

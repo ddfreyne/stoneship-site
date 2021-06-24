@@ -130,6 +130,14 @@ compile '/articles/*.{md,md.erb,dmark}' do
   write item.identifier.without_exts + '/index.html'
 end
 
+compile '/notes.*' do
+  filter :erb
+
+  layout '/note.*'
+
+  write item.identifier.without_exts + '/index.html'
+end
+
 compile '/notes/*' do
   filter :wikilinks
   filter :mark
@@ -138,12 +146,7 @@ compile '/notes/*' do
   filter :autolink
   filter :typography
 
-  if item.identifier.match?('/notes/*')
-    layout '/bear.*'
-    layout '/new.*'
-  else
-    layout '/fiction.*'
-  end
+  layout '/note.*'
 
   filter :relativize_paths, type: :html5
 
