@@ -82,6 +82,13 @@ a:hover {
   color: var(--color-link-hover);
 }
 
+a[href*="//"]:not([href*="denisdefreyne.com"]):after
+{
+  content: " ↗";
+
+  color: var(--color-link);
+}
+
 h1 {
   margin-bottom: 1.5rem;
 
