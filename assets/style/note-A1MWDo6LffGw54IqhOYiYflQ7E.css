@@ -171,7 +171,7 @@ mark {
     display: grid;
 
     grid-template-columns:
-      [full-start wide-start] 3rem
+      [full-start wide-start] 1.5rem
       [base-start] minmax(0, 34rem)
       [base-end] minmax(0, 1fr)
       [wide-end] 1.5rem
