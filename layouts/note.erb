@@ -11,7 +11,7 @@
 
         <% if @item[:is_linked_from]&.any? %>
           <div class="">Backlinks:</div>
-          <div class="pb-3">
+          <div class="pb-3 text-indent-inverted">
             <% @item[:is_linked_from].map { |id| @items[id] }.sort_by { |i| i[:title] }.each do |note| %>
               <div><%= link_to note[:title], note %></div>
             <% end %>

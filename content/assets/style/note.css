@@ -203,6 +203,11 @@ mark {
   --color-link-hover: var(--gray-700);
 }
 
+.text-indent-inverted {
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
 /** SIDENOTES **********/
 
 .sidenote {
