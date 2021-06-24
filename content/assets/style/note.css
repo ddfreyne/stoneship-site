@@ -130,6 +130,8 @@ h1 {
 
   font-size: var(--font-size-l3);
   line-height: 3rem;
+
+  letter-spacing: -0.035ch;
 }
 
 h2 {
