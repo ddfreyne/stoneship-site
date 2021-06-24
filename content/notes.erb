@@ -6,6 +6,6 @@ title: "Notes"
 
 <ul>
   <% @items.find_all('/notes/*').sort_by { |i| i[:title].downcase.gsub(/[^a-z]/, '') }.each do |note| %>
-    <li><%= link_to note[:title], note, class: 'block link' %></li>
+    <li class="pb-2"><%= link_to note[:title], note, class: 'block link' %></li>
   <% end %>
 </ul>
