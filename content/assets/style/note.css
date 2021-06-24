@@ -16,7 +16,7 @@
 
   --color-link-fg: var(--blue-500);
   --color-link-fg-hover: var(--blue-700);
-  --color-link-fg-muted: var(--gray-500);
+  --color-link-fg-muted: var(--gray-400);
   --color-link-fg-hover-muted: var(--gray-700);
 
   --color-border: var(--gray-100);
@@ -34,13 +34,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-fg: var(--gray-100);
-    --color-fg-muted: var(--gray-500);
-    --color-bg: var(--gray-800);
+    --color-fg-muted: var(--gray-400);
+    --color-bg: var(--gray-850);
 
-    --color-link-fg: var(--blue-300);
+    --color-link-fg: var(--blue-400);
     --color-link-fg-hover: var(--blue-100);
-    --color-link-fg-muted: var(--gray-500);
-    --color-link-fg-hover-muted: var(--gray-300);
+    --color-link-fg-muted: var(--gray-400);
+    --color-link-fg-hover-muted: var(--gray-200);
 
     --color-border: var(--gray-700);
 
