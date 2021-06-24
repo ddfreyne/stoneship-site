@@ -11,10 +11,13 @@
 
 :root {
   --color-fg: var(--gray-900);
+  --color-fg-muted: var(--gray-500);
   --color-bg: #fff;
 
-  --color-link: var(--blue-500);
-  --color-link-hover: var(--blue-700);
+  --color-link-fg: var(--blue-500);
+  --color-link-fg-hover: var(--blue-700);
+  --color-link-fg-muted: var(--gray-500);
+  --color-link-fg-hover-muted: var(--gray-700);
 
   --color-border: var(--gray-100);
 
@@ -25,15 +28,19 @@
   --color-pre-fg: #000;
 
   --color-code-fg: var(--teal-800);
+  --color-code-fg-muted: var(--teal-600);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-fg: var(--gray-100);
+    --color-fg-muted: var(--gray-500);
     --color-bg: var(--gray-800);
 
-    --color-link: var(--blue-400);
-    --color-link-hover: var(--blue-200);
+    --color-link-fg: var(--blue-300);
+    --color-link-fg-hover: var(--blue-100);
+    --color-link-fg-muted: var(--gray-500);
+    --color-link-fg-hover-muted: var(--gray-300);
 
     --color-border: var(--gray-700);
 
@@ -44,6 +51,7 @@
     --color-pre-fg: #fff;
 
     --color-code-fg: var(--teal-200);
+    --color-code-fg-muted: var(--teal-400);
   }
 }
 
@@ -109,20 +117,20 @@ li:first-child > p:first-child {
 }
 
 a {
-  color: var(--color-link);
+  color: var(--color-link-fg);
 
   text-underline-offset: 0.1875em;
 }
 
 a:hover {
-  color: var(--color-link-hover);
+  color: var(--color-link-fg-hover);
 }
 
 a[href*="//"]:not([href*="denisdefreyne.com"]):after
 {
   content: " ↗";
 
-  color: var(--color-link);
+  color: var(--color-link-fg);
 }
 
 h1 {
@@ -240,17 +248,21 @@ mark {
 }
 
 .text-muted {
-  /* TODO: tweak for dark mode */
+  color: var(--color-fg-muted);
 
-  color: var(--gray-500);
+  --color-link-fg: var(--color-link-fg-muted);
+  --color-link-fg-hover: var(--color-link-fg-hover-muted);
 
-  --color-link: var(--gray-500);
-  --color-link-hover: var(--gray-700);
+  --color-code-fg: var(--color-code-fg-muted);
 }
 
 .text-indent-inverted {
   padding-left: 1rem;
   text-indent: -1rem;
+}
+
+.font-normal {
+  font-style: normal !important;
 }
 
 /** SIDENOTES **********/
