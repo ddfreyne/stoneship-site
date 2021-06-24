@@ -24,10 +24,11 @@
             <meta property="og:description" content="A note in Denis’ digital garden.">
         
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
 
         
             <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
@@ -35,7 +36,9 @@
         
         
         
-            <link rel="stylesheet" href="../../assets/style/2021q1-6qDkm4eW0QtLScGtWgi5mgy3I.css">
+            <link rel="stylesheet" href="../../assets/style/util-byT6V584sYgSwWqp7s5tdeLjg.css">
+        
+            <link rel="stylesheet" href="../../assets/style/note-mPKdQLU1IZdrKtoHNaf4nFc3Xd8.css">
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,28 +58,28 @@
     </head>
 
     
-    <body>
-        <div class="above-footer">
-            <nav class="nav">
-                <ul>
-                    <li><a href="../../">denisdefreyne.com</a></li>
-                    <li><a href="../../software/">software</a></li>
-                    <li><a href="../../talks/">talks</a></li>
-                    <li><a href="../../articles/">articles</a></li>
-                    <li><a href="../">notes</a></li>
-                    <li><a href="../../cv/">cv</a></li>
-                </ul>
-            </nav>
+  <body><div class="py-3 px-4 pos-fixed bg-white border-b-gray-100 z-100 w-100">// <a href="../../">denisdefreyne.com</a> / <a href="../">notes</a></div>
 
-            <article class="container primary">
-                <h1>Why can’t I git-push to a remote filesystem?</h1>
+  <div class="wrapper pt-5 pb-4">
+    <div>
+      <div class="sidenote text-muted pt-3">
+        
+          <div class="pb-1">Last revised:</div>
+          <div class="pb-3">April 2021</div>
+        
 
+        
+      </div>
+    </div>
 
+    <h1>Why can’t I git-push to a remote filesystem?</h1>
+
+    
 <p>I’d like to not be tied to central hosting platform. I’m using GitHub and GitLab at the moment, but I’d love to host my own Git&nbsp;repos.</p>
 
 <p>I can already host my own web site without running my own web server. I’d like to be able to host my Git repos (read-only) without needing to run a server&nbsp;either.</p>
 
-<p>Because a Git repo is just a bunch of files structured in a certain way, it’d be feasible to write a frontend app that presents the contents of a Git repository in a nice way. It might be necessary to pre-calculate and store derived data for performance&nbsp;reasons.<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--precalculate" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-precalculate" for="sidenote__checkbox--precalculate" class="sidenote__label">∗</label><small id="sidenote-precalculate" class="sidenote__content muted">What about an alternative Git repository format that is optimized for consumption by a frontend-only web UI?&nbsp;</small></span></p>
+<p>Because a Git repo is just a bunch of files structured in a certain way, it’d be feasible to write a frontend app that presents the contents of a Git repository in a nice way. It might be necessary to pre-calculate and store derived data for performance&nbsp;reasons.<span class="sidenote-pre text-muted"> (</span><span class="sidenote text-muted">What about an alternative Git repository format that is optimized for consumption by a frontend-only web UI?&nbsp;</span><span class="sidenote-post text-muted">)</span></p>
 
 <p>Making changes to a Git repo (pushing changes) would be more difficult. The filesystem protocols for it exist though; WebDAV is a thing. Git even supported it at some point in the past, but seemingly not&nbsp;anymore.</p>
 
@@ -85,26 +88,7 @@
 <p>In general, it feels like the world is dominated by APIs built on top of HTTP yet no common language. Each API needs its own implementation, often per-language. APIs are not discoverable. This is in contrast to filesystems and protocols like HTTP and&nbsp;WebDAV.</p>
 
 
-
-<div class="hr"></div>
-
-<div class="col-left-sm main-footer muted">
-  <div>Last revised:</div>
-  <div class="pb-base">April 2021</div>
-</div>
-
-<div class="col-center-sm main-footer muted">
-  
-</div>
-
-            </article>
-        </div>
-
-        <footer class="footer muted">
-            <div>© 2007–2021</div>
-            <div>made in Berlin</div>
-        </footer>
-    
+  </div>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>

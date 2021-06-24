@@ -24,10 +24,11 @@
             <meta property="og:description" content="A note in Denis’ digital garden.">
         
 
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
 
         
             <link rel="stylesheet" href="../../assets/style/reset-x474zZ4mc7j473vXXmQEP4oTpk.css">
@@ -35,7 +36,9 @@
         
         
         
-            <link rel="stylesheet" href="../../assets/style/2021q1-6qDkm4eW0QtLScGtWgi5mgy3I.css">
+            <link rel="stylesheet" href="../../assets/style/util-byT6V584sYgSwWqp7s5tdeLjg.css">
+        
+            <link rel="stylesheet" href="../../assets/style/note-mPKdQLU1IZdrKtoHNaf4nFc3Xd8.css">
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,23 +58,28 @@
     </head>
 
     
-    <body>
-        <div class="above-footer">
-            <nav class="nav">
-                <ul>
-                    <li><a href="../../">denisdefreyne.com</a></li>
-                    <li><a href="../../software/">software</a></li>
-                    <li><a href="../../talks/">talks</a></li>
-                    <li><a href="../../articles/">articles</a></li>
-                    <li><a href="../">notes</a></li>
-                    <li><a href="../../cv/">cv</a></li>
-                </ul>
-            </nav>
+  <body><div class="py-3 px-4 pos-fixed bg-white border-b-gray-100 z-100 w-100">// <a href="../../">denisdefreyne.com</a> / <a href="../">notes</a></div>
 
-            <article class="container primary">
-                <h1>Lightweight markup languages are inadequate for technical writing</h1>
+  <div class="wrapper pt-5 pb-4">
+    <div>
+      <div class="sidenote text-muted pt-3">
+        
+          <div class="pb-1">Last revised:</div>
+          <div class="pb-3">June 2021</div>
+        
 
+        
+          <div class="pb-1">Backlinks:</div>
+          
+            <div class="pb-1"><a href="../crfhf-79rvk-r7hlp/">The format of a note</a></div>
+          
+        
+      </div>
+    </div>
 
+    <h1>Lightweight markup languages are inadequate for technical writing</h1>
+
+    
 <p>The family of <i>lightweight markup languages</i> includes <a href="https://daringfireball.net/projects/markdown/">Markdown</a>, <a href="https://asciidoc.org">AsciiDoc</a>, <a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>, and more. These are all simple textual formats that can be transformed into HTML, thereby avoiding the need to write verbose HTML in the first place. All these lightweight markup languages have their own unique issues, but they share the same fundamental problem of having a lack of&nbsp;expressivity.</p>
 
 <p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> is <em>the</em> ubiquitous writing format of the 21st century. Many dedicated writing apps now default to, or support only Markdown. Even software that isn’t aimed at writing itself, such as Slack, have adopted a variation of&nbsp;it.</p>
@@ -111,7 +119,7 @@
 <p><mark><strong>To elaborate</strong>: Markdown has a very useful HTML fallback, though Markdown inside HTML is not supported.
 </mark></p>
 
-<p>In the last few years, the <a href="https://commonmark.org">CommonMark</a> project has emerged as a de-facto standard for Markdown. It has helped in improving consistency across Markdown implementations<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--commonmark" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-commonmark" for="sidenote__checkbox--commonmark" class="sidenote__label">∗</label><small id="sidenote-commonmark" class="sidenote__content muted">Interestingly, Markdown’s original author, John Gruber, is not involved in CommonMark.&nbsp;</small></span>. Having a standard is beneficial, but it does not solve the shortcomings listed in this section: the issues are shortcomings of the language itself, not of the lack of a&nbsp;standard.</p>
+<p>In the last few years, the <a href="https://commonmark.org">CommonMark</a> project has emerged as a de-facto standard for Markdown. It has helped in improving consistency across Markdown implementations<span class="sidenote-pre text-muted"> (</span><span class="sidenote text-muted">Interestingly, Markdown’s original author, John Gruber, is not involved in CommonMark.&nbsp;</span><span class="sidenote-post text-muted">)</span>. Having a standard is beneficial, but it does not solve the shortcomings listed in this section: the issues are shortcomings of the language itself, not of the lack of a&nbsp;standard.</p>
 
 <h3 id="emphasis-and-italics">Emphasis and&nbsp;italics</h3>
 <p>Markdown provides markup for emphasis (<code>*bleep*</code> becomes <code>&lt;em&gt;bleep&lt;/em&gt;</code>) and strong emphasis (<code>**bloop**</code> becomes <code>&lt;strong&gt;bloop&lt;/strong&gt;</code>). It does not provide markup for italic (<code>&lt;i&gt;</code>) nor bold (<code>&lt;b&gt;</code>). While this is a good design choice, Markdown doesn’t provide markup options where italic would otherwise be&nbsp;used.</p>
@@ -125,7 +133,7 @@
 <h3 id="urls-and-paths">URLs and&nbsp;paths</h3>
 <p>Markdown does not provide a way to mark up URLS or file paths. A common alternative approach is to mark up URLs or file paths as code, using backticks: <code>/home/denis/archive/2021/notes/markdown.md</code>.</p>
 
-<p>While it can be aesthetically pleasing to use the formatting for the <code>code</code> element, using <code>code</code> for URLs is problematic because it either hyphenates incorrectly (if hyphenation is enabled), or does not hyphenate at all, creating an awkward space on the previous line, or making the text overflow, running past the right edge of its container<span class="sidenote"><input aria-label="Show sidenote" type="checkbox" id="sidenote__checkbox--1" class="sidenote__checkbox"><label tabindex="0" title="" aria-describedby="sidenote-1" for="sidenote__checkbox--1" class="sidenote__label">∗</label><small id="sidenote-1" class="sidenote__content muted">I escaped LaTeX, but I did not escape overfull hbox, badness 10000.&nbsp;</small></span>.</p>
+<p>While it can be aesthetically pleasing to use the formatting for the <code>code</code> element, using <code>code</code> for URLs is problematic because it either hyphenates incorrectly (if hyphenation is enabled), or does not hyphenate at all, creating an awkward space on the previous line, or making the text overflow, running past the right edge of its container<span class="sidenote-pre text-muted"> (</span><span class="sidenote text-muted">I escaped LaTeX, but I did not escape overfull hbox, badness 10000.&nbsp;</span><span class="sidenote-post text-muted">)</span>.</p>
 
 <p>Marking up URLs and paths explicitly is a good idea, because <a href="../f79fn-fpfnp-lrcht/">URLs and paths require special word-breaking rules</a>. Markdown does not provide appropriate markup for this use case, but a fallback to HTML is&nbsp;possible.</p>
 
@@ -181,33 +189,7 @@
 </mark></p>
 
 
-
-<div class="hr"></div>
-
-<div class="col-left-sm main-footer muted">
-  <div>Last revised:</div>
-  <div class="pb-base">June 2021</div>
-</div>
-
-<div class="col-center-sm main-footer muted">
-  
-    <div>Backlinks:</div>
-    <ul class="pb-base">
-      
-        <li><a href="../crfhf-79rvk-r7hlp/">The format of a note</a></li>
-      
-    </ul>
-  
-</div>
-
-            </article>
-        </div>
-
-        <footer class="footer muted">
-            <div>© 2007–2021</div>
-            <div>made in Berlin</div>
-        </footer>
-    
+  </div>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
