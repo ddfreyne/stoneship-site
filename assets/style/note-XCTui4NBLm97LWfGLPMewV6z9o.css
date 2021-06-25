@@ -134,8 +134,6 @@ a[href*="//"]:not([href*="denisdefreyne.com"]):after
 }
 
 h1 {
-  margin-bottom: 1.5rem;
-
   font-size: var(--font-size-l3);
   line-height: 3rem;
 
