@@ -41,24 +41,22 @@
             <link rel="stylesheet" href="<%= @items["/assets/fonts/main.*"].path %>">
         <% end %>
         <%
-            stylesheets =
+            stylesheet =
                 if @item[:layout] == 'cv'
-                    ['cv']
+                    'cv'
                 elsif @item.identifier.match?('/fiction/*')
-                    ['fiction']
+                    'fiction'
                 elsif @item.identifier.match?('/articles/*')
-                    ['util', 'article']
+                    'article'
                 elsif @item.identifier.match?('/notes.*')
-                    ['util', 'note']
+                    'note'
                 elsif @item.identifier.match?('/notes/**')
-                    ['util', 'note']
+                    'note'
                 else
-                    ['2021q1']
+                    '2021q1'
                 end
         %>
-        <% stylesheets.each do |stylesheet| %>
-            <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
-        <% end %>
+        <link rel="stylesheet" href="<%= @items["/assets/style/#{stylesheet}.*"].path %>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="alternate" type="application/atom+xml" href="<%= @items["/feed.*"].path %>" title="Atom feed for denisdefreyne.com articles" >
