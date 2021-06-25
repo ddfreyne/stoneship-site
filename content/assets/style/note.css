@@ -217,33 +217,15 @@ mark {
 
 @media screen {
   .wrapper {
-    display: grid;
-
-    grid-template-columns:
-      [full-start wide-start] 1.5rem
-      [base-start] minmax(0, 34rem)
-      [base-end] minmax(0, 1fr)
-      [wide-end] 1.5rem
-      [full-end];
-
-    column-gap: 0;
+    max-width: 34rem;
   }
 
   .wrapper > * {
-    grid-column: base;
-
     position: relative;
   }
-
-  .wrapper > figure {
-    margin-left: auto;
-    margin-right: auto;
-
-    grid-column: wide;
-
-    max-width: calc(2 * 34rem);
-  }
 }
+
+/** UTILS **********/
 
 .text-muted {
   color: var(--color-fg-muted);
@@ -270,7 +252,7 @@ mark {
 }
 
 @media screen and (max-width: 51rem) {
-  /* breakpoint: 37rem + (12.5 + 1.5)*2 */
+  /* breakpoint: 34 + 1.5*2+ (12.5 + 1.5)*2 */
 
   .sidenote {
     display: inline;
@@ -279,7 +261,7 @@ mark {
 }
 
 @media screen and (min-width: 51rem) {
-  /* breakpoint: 37rem + (12.5 + 1.5)*2 + 1px */
+  /* breakpoint: 34 + 1.5*2 + (12.5 + 1.5)*2 */
 
   .sidenote {
     position: absolute;
