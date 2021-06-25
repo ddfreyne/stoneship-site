@@ -34,7 +34,7 @@ excerpt: "Lenses enable building complex forms quickly and with confidence. Lens
 
 #p Here is a live demo of something you can build with lenses:
 
-#div[id=lenses-demo-root,style=isolation: isolate,class=max-width-base lg:max-width-md my-3 p-3 border-1]
+#div[id=lenses-demo-root,style=isolation: isolate,class=max-width-base lg:max-width-md my-3 p-3 border-1-gray-400]
 #script[src=sample/index.js]
 
 #h2 What is a lens?

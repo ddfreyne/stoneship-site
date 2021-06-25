@@ -295,12 +295,6 @@ $colors: (
   }
 }
 
-/** BORDER ********************/
-
-.border-1 {
-  border: 1px solid #000;
-}
-
 /** POSITION ********************/
 
 .pos-relative {
@@ -339,12 +333,38 @@ $colors: (
 
 @each $name, $color in $colors {
   @each $num, $val in $color {
+    .border-b-1-#{$name}-#{$num} {
+      border-bottom: 1px solid var(--#{$name}-#{$num});
+    }
+
+    .border-1-#{$name}-#{$num} {
+      border: 1px solid var(--#{$name}-#{$num});
+    }
+
     .bg-#{$name}-#{$num} {
       background: var(--#{$name}-#{$num});
     }
 
     .fg-#{$name}-#{$num} {
       color: var(--#{$name}-#{$num});
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .dark\:border-b-1-#{$name}-#{$num} {
+        border-bottom: 1px solid var(--#{$name}-#{$num});
+      }
+
+      .dark\:border-1-#{$name}-#{$num} {
+        border: 1px solid var(--#{$name}-#{$num});
+      }
+
+      .dark\:bg-#{$name}-#{$num} {
+        background: var(--#{$name}-#{$num});
+      }
+
+      .dark\:fg-#{$name}-#{$num} {
+        color: var(--#{$name}-#{$num});
+      }
     }
   }
 }
