@@ -7,6 +7,8 @@ draft: false
 
 #p In any collaborative environment, opportunities for change often arise. When such an opportunity presents itself, write up a structured proposal document describing how to tackle this opportunity. With this document, a decision on whether or not to implement the proposal can be made quickly and confidently.
 
+#p I use this approach extensively, both at my employers as well as for side projects that are used by others. These documents are often called %firstterm{RFC}s (short for %firstterm{requests for comment}).
+
 #h2 Motivation
 
 #p Whether when working alone or collaborating with others, opportunities for change will come up. While many such changes are trivial, some are not:
