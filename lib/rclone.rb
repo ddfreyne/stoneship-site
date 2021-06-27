@@ -13,7 +13,7 @@ module Nanoc
           '.git/*',
           '--auto-confirm',
           '--verbose',
-          '--ignore-times'
+          '--ignore-times',
         ].freeze
 
         def run

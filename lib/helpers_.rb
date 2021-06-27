@@ -9,16 +9,12 @@ include Nanoc::Helpers::Breadcrumbs
 def meta_robots
   values = []
 
-  if @item[:index].equal?(false)
-    values << 'noindex'
-  end
+  values << 'noindex' if @item[:index].equal?(false)
 
-  if @item[:follow].equal?(false)
-    values << 'nofollow'
-  end
+  values << 'nofollow' if @item[:follow].equal?(false)
 
   if values.any?
-    %[<meta name="robots" content="#{values.join(', ')}">]
+    %(<meta name="robots" content="#{values.join(', ')}">)
   else
     ''
   end

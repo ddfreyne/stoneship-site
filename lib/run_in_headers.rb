@@ -9,9 +9,7 @@ Class.new(Nanoc::Filter) do
     doc = Nokogiri::HTML.fragment(content)
     doc.css('h3 + p').each do |para|
       h3 = para.previous
-      while h3.text?
-        h3 = h3.previous
-      end
+      h3 = h3.previous while h3.text?
 
       div = Nokogiri::XML::Node.new('div', doc)
       div['class'] = 'run-in'

@@ -13,9 +13,9 @@ Nanoc::Filter.define(:footnotes) do |content, _params = {}|
     footnote_id = footnote['id'].sub(/^fn:/, '')
     footnotes_map[footnote_id] =
       footnote
-        .children
-        .reject { |n| n.text? && n.content.strip == '' }
-        .flat_map { |n| n.element? && n.name == 'p' ? n.children : [] }
+      .children
+      .reject { |n| n.text? && n.content.strip == '' }
+      .flat_map { |n| n.element? && n.name == 'p' ? n.children : [] }
   end
 
   # Remove footnotes
