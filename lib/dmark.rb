@@ -77,7 +77,7 @@ class DMarkTranslator < DMark::Translator
   def handle_element_listing(element, context)
     lang = element.attributes['lang']
     code_attributes = lang ? { class: "language-#{lang}" } : {}
-    wrap('pre', class: 'px-4 py-3 bg-blue-100 dark:bg-blue-900 rounded-md') do
+    wrap('pre') do
       wrap('code', code_attributes) do
         handle_children(element, context)
       end

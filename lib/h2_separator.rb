@@ -11,7 +11,7 @@ Class.new(Nanoc::Filter) do
       div = Nokogiri::XML::Node.new('div', doc)
       div['class'] = 'h2-separator'
 
-      h2.previous.add_next_sibling(div)
+      h2.add_previous_sibling(div)
     end
     doc.to_s
   end

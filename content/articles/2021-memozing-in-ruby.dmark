@@ -1,0 +1,66 @@
+---
+title: "The art of memoizing in&nbsp;Ruby"
+published_on: "2021-06-13"
+draft: true
+excerpt: "TODO"
+---
+
+#p When you have a function that is expensive to call, and you need to use its return value multiple times, you can remember the return value and reuse it, without having to call the function again. This technique is called %firstterm{memoization}.%sidenote{Not to be confused with %i{memorization}—there’s no R in that word!}
+
+#p The simplest way to do so is using local variables, but that’s not always feasible. In this article, TODO
+
+#ol
+  #li Local variables
+  #li Basic memoization
+  #li Argument-aware memoization
+  #li Memoization DSL
+  #li Memoization for frozen objects
+  #li Memory-efficient memoization
+  #li Thread-safe memoization
+
+#section %h{Local variables}
+  #p In many cases, you can use local variables to remember values, without having to recalculate them. In the following example, %code{calc_base_price} is called twice:
+
+  #listing[lang=ruby]
+    def total_price
+      vat = calc_base_price * VAT_RATE
+      calc_base_price + vat
+    end
+
+  #p Calling %code{#calc_base_price} twice might not be an issue, but if it is, and the call is a bottleneck, it can be a good idea to stick the return value in a local variable:
+
+  #listing[lang=ruby]
+    def total_price
+      %mark{base_price} = calc_base_price
+      vat = %mark{base_price} * VAT_RATE
+      %mark{base_price} + vat
+    end
+
+  #p Local variables are great, but aren’t always applicable.
+
+  #p TODO: this only works for pure functions
+
+#section %h{Basic memoization}
+  #p stuff
+
+#section %h{Argument-aware memoization}
+  #p stuff
+
+#section %h{Memoization DSL}
+  #p stuff
+
+#section %h{Memoization for frozen objects}
+  #p stuff
+
+#section %h{Memory-efficient memoization}
+  #p stuff
+
+#section %h{Thread-safe memoization}
+  #p stuff
+
+#section %h{Future work}
+  #p metrics
+  #p extra performance
+  #p tweaking memoization for use cases
+  #p ddmemoize
+  #p other implementations
