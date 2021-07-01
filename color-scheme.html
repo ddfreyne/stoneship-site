@@ -114,6 +114,21 @@
         return Swatches('blue', colors);
       }
 
+
+      let Greens = (darkMode) => {
+        let base = chroma("hsl(90, 95%, 45%)");
+        let white = chroma("white");
+        let black = chroma("black");
+
+        let colors = chroma.scale([white, base, black]).mode('hsl').padding(0.1).colors(9).map(c => chroma(c));
+
+        if (darkMode) {
+          colors = colors.map((c) => c.set("lch.c", "*0.8")).reverse();
+        }
+
+        return Swatches('green', colors);
+      }
+
       let Purples = (darkMode) => {
         let base = chroma("hsl(265, 100%, 50%)");
         let white = chroma("white");
@@ -148,6 +163,7 @@
             <div style="display: flex">
               <div style="padding: 100px; background: #eee; display: flex">
                 ${Reds(false)}
+                ${Greens(false)}
                 ${Grays(false)}
                 ${Yellows(false)}
                 ${Blues(false)}
@@ -156,6 +172,7 @@
               </div>
               <div style="padding: 100px; background: #333; display: flex">
                 ${Reds(true)}
+                ${Greens(true)}
                 ${Grays(true)}
                 ${Yellows(true)}
                 ${Blues(true)}

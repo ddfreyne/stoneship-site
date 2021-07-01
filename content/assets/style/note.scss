@@ -189,6 +189,14 @@ pre {
   white-space: pre-wrap;
 }
 
+del {
+  color: var(--red-500);
+}
+
+ins {
+  color: var(--green-600);
+}
+
 blockquote {
   font-style: italic;
   padding-left: 1.5rem;
