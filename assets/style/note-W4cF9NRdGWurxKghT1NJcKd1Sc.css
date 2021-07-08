@@ -2267,6 +2267,12 @@ ol {
   margin-top: 1.5rem;
   padding-left: 1.5rem; }
 
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0; }
+
 li:first-child > p:first-child {
   margin-top: 0; }
 
